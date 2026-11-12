@@ -1,0 +1,55 @@
+[build-system]
+requires = ["hatchling>=1.27.0"]
+build-backend = "hatchling.build"
+
+[project]
+name = "excavator"
+version = "0.1.0"
+description = "Excavator backend scaffolding"
+requires-python = ">=3.12,<3.13"
+dependencies = [
+  "fastapi",
+  "uvicorn",
+  "pydantic",
+  "pydantic-settings",
+  "sqlalchemy",
+  "alembic",
+  "psycopg",
+  "httpx",
+  "structlog",
+  "packaging",
+]
+
+[dependency-groups]
+dev = [
+  "pytest",
+  "pytest-cov",
+  "ruff",
+  "mypy",
+]
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/excavator"]
+
+[tool.pytest.ini_options]
+addopts = "--cov=excavator --cov-report=term-missing"
+testpaths = ["tests"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py312"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B", "SIM"]
+
+[tool.ruff.format]
+quote-style = "double"
+indent-style = "space"
+line-ending = "auto"
+
+[tool.mypy]
+python_version = "3.12"
+strict = true
+files = ["src", "tests"]
+warn_unused_configs = true
+show_error_codes = true
