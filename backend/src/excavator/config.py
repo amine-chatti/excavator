@@ -21,19 +21,3 @@ class Settings(BaseSettings):
         description="GitHub access token used for read-only requests.",
     )
     LOG_LEVEL: str = Field(default="INFO", description="Logging level.")
-
-    def _redacted_display(self) -> str:
-        token_value = "**********" if self.GITHUB_TOKEN is not None else None
-        return (
-            "Settings("
-            f"database_url={self.DATABASE_URL!r}, "
-            f"github_token={token_value!r}, "
-            f"log_level={self.LOG_LEVEL!r}"
-            ")"
-        )
-
-    def __repr__(self) -> str:
-        return self._redacted_display()
-
-    def __str__(self) -> str:
-        return self._redacted_display()
