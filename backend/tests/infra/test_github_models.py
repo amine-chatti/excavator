@@ -45,6 +45,7 @@ def _pull_request(repository_id: int, number: int = 1) -> PullRequest:
         merged=False,
         merge_method="unknown",
         base_ref="main",
+        created_at=datetime(2026, 1, 2, tzinfo=UTC),
         url="https://github.com/octocat/hello-world/pull/1",
     )
 
@@ -56,6 +57,7 @@ def _issue(repository_id: int, number: int = 1) -> Issue:
         title="Track a bug",
         body="Description",
         state="open",
+        created_at=datetime(2026, 1, 3, tzinfo=UTC),
         url="https://github.com/octocat/hello-world/issues/1",
     )
 
@@ -76,6 +78,8 @@ def _review_comment(pull_request_id: int, github_id: int = 1001) -> ReviewCommen
         start_side="RIGHT",
         subject_type="line",
         body="Please update this.",
+        created_at=datetime(2026, 1, 4, tzinfo=UTC),
+        updated_at=datetime(2026, 1, 4, tzinfo=UTC),
         url="https://github.com/octocat/hello-world/pull/1#discussion_r1001",
     )
 
@@ -109,6 +113,69 @@ def test_duplicate_file_change_is_rejected(engine: Engine) -> None:
 
         with pytest.raises(IntegrityError):
             session.commit()
+
+
+def test_pull_request_without_github_timestamp_is_rejected(engine: Engine) -> None:
+    with Session(engine) as session:
+        repository = _repository()
+        session.add(repository)
+        session.flush()
+        pull_request = _pull_request(repository.id)
+        del pull_request.created_at
+        session.add(pull_request)
+
+        with pytest.raises(IntegrityError):
+            session.commit()
+
+
+def test_review_comment_without_github_timestamps_is_rejected(engine: Engine) -> None:
+    with Session(engine) as session:
+        repository = _repository()
+        session.add(repository)
+        session.flush()
+        pull_request = _pull_request(repository.id)
+        session.add(pull_request)
+        session.flush()
+        comment = _review_comment(pull_request.id)
+        del comment.created_at
+        del comment.updated_at
+        session.add(comment)
+
+        with pytest.raises(IntegrityError):
+            session.commit()
+
+
+def test_issue_without_github_timestamp_is_rejected(engine: Engine) -> None:
+    with Session(engine) as session:
+        repository = _repository()
+        session.add(repository)
+        session.flush()
+        issue = _issue(repository.id)
+        del issue.created_at
+        session.add(issue)
+
+        with pytest.raises(IntegrityError):
+            session.commit()
+
+
+def test_review_comment_updated_at_is_unchanged_by_other_update(engine: Engine) -> None:
+    with Session(engine) as session:
+        repository = _repository()
+        session.add(repository)
+        session.flush()
+        pull_request = _pull_request(repository.id)
+        session.add(pull_request)
+        session.flush()
+        comment = _review_comment(pull_request.id)
+        session.add(comment)
+        session.commit()
+        original_updated_at = comment.updated_at
+
+        comment.body = "Updated body"
+        session.commit()
+        session.refresh(comment)
+
+        assert comment.updated_at == original_updated_at
 
 
 def test_duplicate_pull_request_is_rejected(engine: Engine) -> None:
@@ -205,6 +272,19 @@ def test_invalid_pull_request_merge_sha_is_rejected(engine: Engine) -> None:
             session.commit()
 
 
+def test_invalid_pull_request_head_sha_is_rejected(engine: Engine) -> None:
+    with Session(engine) as session:
+        repository = _repository()
+        session.add(repository)
+        session.flush()
+        pull_request = _pull_request(repository.id)
+        pull_request.head_sha = "a" * 39
+        session.add(pull_request)
+
+        with pytest.raises(IntegrityError):
+            session.commit()
+
+
 def test_invalid_review_comment_values_are_rejected(engine: Engine) -> None:
     with Session(engine) as session:
         repository = _repository()
@@ -264,6 +344,38 @@ def test_invalid_review_comment_line_range_is_rejected(engine: Engine) -> None:
         comment = _review_comment(pull_request.id)
         comment.start_line = 3
         comment.line = 2
+        session.add(comment)
+
+        with pytest.raises(IntegrityError):
+            session.commit()
+
+
+def test_invalid_review_comment_commit_sha_is_rejected(engine: Engine) -> None:
+    with Session(engine) as session:
+        repository = _repository()
+        session.add(repository)
+        session.flush()
+        pull_request = _pull_request(repository.id)
+        session.add(pull_request)
+        session.flush()
+        comment = _review_comment(pull_request.id)
+        comment.commit_sha = "a" * 39
+        session.add(comment)
+
+        with pytest.raises(IntegrityError):
+            session.commit()
+
+
+def test_invalid_review_comment_original_commit_sha_is_rejected(engine: Engine) -> None:
+    with Session(engine) as session:
+        repository = _repository()
+        session.add(repository)
+        session.flush()
+        pull_request = _pull_request(repository.id)
+        session.add(pull_request)
+        session.flush()
+        comment = _review_comment(pull_request.id)
+        comment.original_commit_sha = "a" * 39
         session.add(comment)
 
         with pytest.raises(IntegrityError):
@@ -391,6 +503,9 @@ def test_github_constraint_names_follow_expected_convention() -> None:
         "ck_review_comments_line_range",
         "uq_issues_repository_id_number",
         "ck_issues_state",
+        "ck_pull_requests_head_sha_length",
+        "ck_review_comments_commit_sha_length",
+        "ck_review_comments_original_commit_sha_length",
     }
     tables = [
         cast(Table, FileChange.__table__),
@@ -405,5 +520,10 @@ def test_github_constraint_names_follow_expected_convention() -> None:
         for constraint in table.constraints
         if constraint.name in expected_names
     }
+    index_names = {index.name for table in tables for index in table.indexes}
 
     assert actual_names == expected_names
+    assert index_names == {
+        "ix_review_comments_pull_request_id",
+        "ix_pull_request_commits_commit_id",
+    }
