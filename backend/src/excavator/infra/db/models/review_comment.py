@@ -1,6 +1,6 @@
 from __future__ import annotations
 
-from datetime import UTC, datetime
+from datetime import datetime
 
 from sqlalchemy import (
     BigInteger,
@@ -15,11 +15,6 @@ from sqlalchemy.orm import Mapped, mapped_column
 
 from excavator.infra.db.base import Base
 from excavator.infra.db.types import UTCDateTime
-
-
-def _utc_now() -> datetime:
-    return datetime.now(UTC)
-
 
 class ReviewComment(Base):
     __tablename__ = "review_comments"
@@ -40,6 +35,11 @@ class ReviewComment(Base):
         CheckConstraint(
             "subject_type IS NULL OR subject_type IN ('line', 'file')",
             name="subject_type",
+        ),
+        CheckConstraint("length(commit_sha) = 40", name="commit_sha_length"),
+        CheckConstraint(
+            "length(original_commit_sha) = 40",
+            name="original_commit_sha_length",
         ),
     )
 
@@ -64,15 +64,6 @@ class ReviewComment(Base):
     subject_type: Mapped[str | None] = mapped_column(String, nullable=True)
     body: Mapped[str] = mapped_column(Text, nullable=False)
     author_login: Mapped[str | None] = mapped_column(String, nullable=True)
-    created_at: Mapped[datetime] = mapped_column(
-        UTCDateTime(),
-        default=_utc_now,
-        nullable=False,
-    )
-    updated_at: Mapped[datetime] = mapped_column(
-        UTCDateTime(),
-        default=_utc_now,
-        onupdate=_utc_now,
-        nullable=False,
-    )
+    created_at: Mapped[datetime] = mapped_column(UTCDateTime(), nullable=False)
+    updated_at: Mapped[datetime] = mapped_column(UTCDateTime(), nullable=False)
     url: Mapped[str] = mapped_column(Text, nullable=False)
