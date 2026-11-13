@@ -1,16 +1,15 @@
 from __future__ import annotations
 
 from collections.abc import Iterator
-from datetime import UTC, datetime
+from datetime import UTC, datetime, timedelta, timezone
 from sqlite3 import Connection
 from typing import cast
 
 import pytest
-from sqlalchemy import Table, create_engine, event, inspect, select
+from sqlalchemy import Table, create_engine, delete, event, inspect, select
 from sqlalchemy.engine import Engine
-from sqlalchemy.exc import IntegrityError
+from sqlalchemy.exc import IntegrityError, StatementError
 from sqlalchemy.orm import Session
-from sqlalchemy.pool import ConnectionRecord
 
 from excavator.infra.db.base import Base
 from excavator.infra.db.models import Commit, Repository
@@ -23,7 +22,7 @@ def engine() -> Iterator[Engine]:
     @event.listens_for(test_engine, "connect")
     def enable_sqlite_foreign_keys(
         dbapi_connection: Connection,
-        _: ConnectionRecord,
+        _: object,
     ) -> None:
         dbapi_connection.execute("PRAGMA foreign_keys=ON")
 
@@ -51,7 +50,52 @@ def _commit(repository_id: int, message: str = "Initial commit") -> Commit:
 def test_tables_create_successfully_on_sqlite(engine: Engine) -> None:
     table_names = set(inspect(engine).get_table_names())
 
-    assert table_names == {"repository", "commit"}
+    assert table_names == {"repositories", "commits"}
+
+
+def test_naive_repository_datetime_is_rejected(engine: Engine) -> None:
+    with Session(engine) as session:
+        session.add(
+            Repository(owner="octocat", name="hello-world", created_at=datetime(2026, 1, 1))
+        )
+
+        with pytest.raises(StatementError, match="UTCDateTime requires an aware datetime"):
+            session.commit()
+
+
+def test_naive_commit_datetime_is_rejected(engine: Engine) -> None:
+    with Session(engine) as session:
+        repository = _repository()
+        session.add(repository)
+        session.flush()
+        commit = _commit(repository.id)
+        commit.authored_at = datetime(2026, 1, 1)
+        session.add(commit)
+
+        with pytest.raises(StatementError, match="UTCDateTime requires an aware datetime"):
+            session.commit()
+
+
+def test_aware_non_utc_datetimes_round_trip_as_utc(engine: Engine) -> None:
+    authored_at = datetime(2026, 1, 1, 12, tzinfo=timezone(timedelta(hours=5, minutes=30)))
+    created_at = datetime(2026, 1, 1, 13, tzinfo=timezone(timedelta(hours=5, minutes=30)))
+
+    with Session(engine) as session:
+        repository = _repository()
+        repository.created_at = created_at
+        session.add(repository)
+        session.flush()
+        commit = _commit(repository.id)
+        commit.authored_at = authored_at
+        session.add(commit)
+        session.commit()
+        session.refresh(repository)
+        session.refresh(commit)
+
+        assert repository.created_at == created_at.astimezone(UTC)
+        assert repository.created_at.tzinfo is UTC
+        assert commit.authored_at == authored_at.astimezone(UTC)
+        assert commit.authored_at.tzinfo is UTC
 
 
 def test_duplicate_repository_is_rejected(engine: Engine) -> None:
@@ -81,6 +125,41 @@ def test_invalid_indexing_status_is_rejected(engine: Engine) -> None:
             session.commit()
 
 
+def test_invalid_sha_length_is_rejected(engine: Engine) -> None:
+    with Session(engine) as session:
+        repository = _repository()
+        session.add(repository)
+        session.flush()
+        commit = _commit(repository.id)
+        commit.sha = "a" * 39
+        session.add(commit)
+
+        with pytest.raises(IntegrityError):
+            session.commit()
+
+
+def test_unknown_repository_id_is_rejected(engine: Engine) -> None:
+    with Session(engine) as session:
+        session.add(_commit(repository_id=999))
+
+        with pytest.raises(IntegrityError):
+            session.commit()
+
+
+def test_deleting_repository_cascades_to_commits(engine: Engine) -> None:
+    with Session(engine) as session:
+        repository = _repository()
+        session.add(repository)
+        session.flush()
+        session.add(_commit(repository.id))
+        session.commit()
+
+        session.execute(delete(Repository).where(Repository.id == repository.id))
+        session.commit()
+
+        assert session.execute(select(Commit)).scalars().all() == []
+
+
 def test_commit_message_round_trips_verbatim(engine: Engine) -> None:
     message = "Fix unicode: café\n\nTrailing whitespace   \n\t"
 
@@ -103,13 +182,14 @@ def test_constraint_names_follow_metadata_convention() -> None:
     commit_indexes = {index.name for index in commit_table.indexes}
 
     assert repository_constraints == {
-        "pk_repository",
-        "uq_repository_owner",
-        "ck_repository_indexing_status_values",
+        "pk_repositories",
+        "uq_repositories_owner_name",
+        "ck_repositories_indexing_status_values",
     }
     assert commit_constraints == {
-        "pk_commit",
-        "uq_commit_repository_id",
-        "fk_commit_repository_id_repository",
+        "pk_commits",
+        "uq_commits_repository_id_sha",
+        "ck_commits_sha_length",
+        "fk_commits_repository_id_repositories",
     }
-    assert commit_indexes == {"ix_commit_repository_id"}
+    assert commit_indexes == set()
