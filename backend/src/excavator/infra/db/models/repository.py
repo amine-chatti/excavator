@@ -14,7 +14,7 @@ def _utc_now() -> datetime:
 
 
 class Repository(Base):
-    __tablename__ = "repository"
+    __tablename__ = "repositories"
     __table_args__ = (
         UniqueConstraint("owner", "name"),
         CheckConstraint(
