@@ -5,7 +5,7 @@ import structlog
 from pydantic import SecretStr
 
 from excavator.config import Settings
-from excavator.logging import _redact_sensitive_values, configure_logging
+from excavator.logging import _redact_sensitive_values, configure_logging, get_logger
 
 
 def test_structlog_output_redacts_secret(capsys: pytest.CaptureFixture[str]) -> None:
@@ -40,3 +40,7 @@ def test_redaction_handles_non_string_sensitive_values() -> None:
     redacted = _redact_sensitive_values(None, "info", event_dict)
 
     assert redacted == event_dict
+
+
+def test_get_logger_returns_named_logger() -> None:
+    assert get_logger("test").name == "test"
