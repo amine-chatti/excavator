@@ -16,6 +16,7 @@ from sqlalchemy.orm import Mapped, mapped_column
 from excavator.infra.db.base import Base
 from excavator.infra.db.types import UTCDateTime
 
+
 class ReviewComment(Base):
     __tablename__ = "review_comments"
     __table_args__ = (

@@ -8,6 +8,7 @@ from sqlalchemy.orm import Mapped, mapped_column
 from excavator.infra.db.base import Base
 from excavator.infra.db.types import UTCDateTime
 
+
 class Issue(Base):
     __tablename__ = "issues"
     __table_args__ = (
