@@ -3,8 +3,8 @@ from __future__ import annotations
 import pytest
 
 from excavator.core.evidence import (
-    EvidenceLevel,
     EpistemicLabel,
+    EvidenceLevel,
     label_for_level,
     validate_quote,
 )

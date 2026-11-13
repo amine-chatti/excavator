@@ -1,6 +1,6 @@
 from __future__ import annotations
 
-from sqlalchemy import CheckConstraint, ForeignKey, Index, String, Text
+from sqlalchemy import CheckConstraint, ForeignKey, Index, Text
 from sqlalchemy.orm import Mapped, mapped_column
 
 from excavator.infra.db.base import Base
@@ -17,7 +17,12 @@ class Symbol(Base):
             "status IN ('exists', 'deleted')",
             name="status",
         ),
-        Index("ix_symbols_repository_id_current_path_qualified_name", "repository_id", "current_path", "qualified_name"),
+        Index(
+            "ix_symbols_repository_id_current_path_qualified_name",
+            "repository_id",
+            "current_path",
+            "qualified_name",
+        ),
     )
 
     id: Mapped[int] = mapped_column(primary_key=True)

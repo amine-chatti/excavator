@@ -1,7 +1,7 @@
 """SQLAlchemy models."""
 
-from excavator.infra.db.models.commit import Commit
 from excavator.infra.db.models.analysis import Analysis
+from excavator.infra.db.models.commit import Commit
 from excavator.infra.db.models.evidence_link import EvidenceLink
 from excavator.infra.db.models.file_change import FileChange
 from excavator.infra.db.models.issue import Issue
