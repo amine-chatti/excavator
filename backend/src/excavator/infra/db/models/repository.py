@@ -6,6 +6,7 @@ from sqlalchemy import CheckConstraint, String, UniqueConstraint
 from sqlalchemy.orm import Mapped, mapped_column
 
 from excavator.infra.db.base import Base
+from excavator.infra.db.types import UTCDateTime
 
 
 def _utc_now() -> datetime:
@@ -33,10 +34,12 @@ class Repository(Base):
     )
     head_sha_indexed: Mapped[str | None] = mapped_column(String, nullable=True)
     created_at: Mapped[datetime] = mapped_column(
+        UTCDateTime(),
         default=_utc_now,
         nullable=False,
     )
     updated_at: Mapped[datetime] = mapped_column(
+        UTCDateTime(),
         default=_utc_now,
         onupdate=_utc_now,
         nullable=False,
