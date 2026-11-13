@@ -10,7 +10,7 @@ from excavator.infra.db.types import UTCDateTime
 
 
 class Commit(Base):
-    __tablename__ = "commit"
+    __tablename__ = "commits"
     __table_args__ = (UniqueConstraint("repository_id", "sha"),)
 
     id: Mapped[int] = mapped_column(primary_key=True)
