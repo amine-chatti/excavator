@@ -17,6 +17,7 @@ class PullRequestCommit(Base):
     )
     commit_id: Mapped[int] = mapped_column(
         ForeignKey("commits.id", ondelete="CASCADE"),
+        index=True,
         primary_key=True,
     )
     ordinal: Mapped[int | None] = mapped_column(Integer, nullable=True)

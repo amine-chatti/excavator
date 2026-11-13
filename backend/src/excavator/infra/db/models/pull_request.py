@@ -21,10 +21,6 @@ class PullRequest(Base):
             "merge_commit_sha IS NULL OR length(merge_commit_sha) = 40",
             name="merge_commit_sha_length",
         ),
-        CheckConstraint(
-            "head_sha IS NULL OR length(head_sha) = 40",
-            name="head_sha_length",
-        ),
     )
 
     id: Mapped[int] = mapped_column(primary_key=True)
