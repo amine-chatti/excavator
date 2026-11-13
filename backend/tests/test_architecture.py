@@ -11,6 +11,7 @@ FORBIDDEN_MODULES = {
     "fastapi",
     "sqlalchemy",
 }
+CORE_FORBIDDEN_MODULES = FORBIDDEN_MODULES | {"excavator.languages"}
 
 
 def _iter_python_files(directory: Path) -> list[Path]:
@@ -24,7 +25,7 @@ def _find_forbidden_imports(file_path: Path) -> list[str]:
         if isinstance(node, ast.Import):
             for alias in node.names:
                 if (
-                    alias.name in FORBIDDEN_MODULES
+                    alias.name in CORE_FORBIDDEN_MODULES
                     or alias.name.startswith("fastapi.")
                     or alias.name.startswith("sqlalchemy.")
                 ):
@@ -32,7 +33,7 @@ def _find_forbidden_imports(file_path: Path) -> list[str]:
         elif isinstance(node, ast.ImportFrom):
             module_name = node.module or ""
             if (
-                module_name in FORBIDDEN_MODULES
+                module_name in CORE_FORBIDDEN_MODULES
                 or module_name.startswith("excavator.api")
                 or module_name.startswith("excavator.infra")
             ):

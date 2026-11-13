@@ -60,9 +60,7 @@ class PythonAnalyzer:
         occurrences: dict[str, int],
     ) -> None:
         for statement in statements:
-            self._visit_statement(
-                statement, scope_name, scope_kind, lines, symbols, occurrences
-            )
+            self._visit_statement(statement, scope_name, scope_kind, lines, symbols, occurrences)
 
     def _visit_statement(
         self,
@@ -75,16 +73,16 @@ class PythonAnalyzer:
     ) -> None:
         if isinstance(statement, _DEFINITION_NODES):
             is_class = isinstance(statement, ast.ClassDef)
-            kind = SymbolKind.CLASS if is_class else (
-                SymbolKind.METHOD if scope_kind == "class" else SymbolKind.FUNCTION
+            kind = (
+                SymbolKind.CLASS
+                if is_class
+                else (SymbolKind.METHOD if scope_kind == "class" else SymbolKind.FUNCTION)
             )
             qualified_name = _qualified_name(statement.name, scope_name, scope_kind)
             index = occurrences.get(qualified_name, 0)
             occurrences[qualified_name] = index + 1
             start_line = (
-                statement.decorator_list[0].lineno
-                if statement.decorator_list
-                else statement.lineno
+                statement.decorator_list[0].lineno if statement.decorator_list else statement.lineno
             )
             symbols.append(
                 ExtractedSymbol(
@@ -113,13 +111,9 @@ class PythonAnalyzer:
 
         for child in ast.iter_child_nodes(statement):
             if isinstance(child, ast.stmt):
-                self._visit_statement(
-                    child, scope_name, scope_kind, lines, symbols, occurrences
-                )
-            elif isinstance(child, ast.ExceptHandler) or isinstance(child, ast.match_case):
-                self._visit_block(
-                    child.body, scope_name, scope_kind, lines, symbols, occurrences
-                )
+                self._visit_statement(child, scope_name, scope_kind, lines, symbols, occurrences)
+            elif isinstance(child, (ast.ExceptHandler, ast.match_case)):
+                self._visit_block(child.body, scope_name, scope_kind, lines, symbols, occurrences)
 
 
 def _qualified_name(name: str, scope_name: str | None, scope_kind: str) -> str:
@@ -134,8 +128,7 @@ def _split_lines(text: str) -> list[str]:
     return _LINE_SPLITTER.split(text)
 
 
-def _body_hash(
-    lines: list[str], start_line: int, end_line: int
-) -> str:
+def _body_hash(lines: list[str], start_line: int, end_line: int) -> str:
+    """Hash the exact inclusive source range after normalizing line endings."""
     body = "\n".join(lines[start_line - 1 : end_line])
     return hashlib.sha256(body.encode("utf-8")).hexdigest()
