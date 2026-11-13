@@ -31,7 +31,15 @@ def _commit(repository_id: int, message: str = "Initial commit") -> Commit:
 def test_tables_create_successfully_on_sqlite(engine: Engine) -> None:
     table_names = set(inspect(engine).get_table_names())
 
-    assert table_names == {"repositories", "commits"}
+    assert table_names == {
+        "repositories",
+        "commits",
+        "file_changes",
+        "pull_requests",
+        "pull_request_commits",
+        "review_comments",
+        "issues",
+    }
 
 
 def test_naive_repository_datetime_is_rejected(engine: Engine) -> None:
