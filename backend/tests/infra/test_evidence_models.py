@@ -343,6 +343,26 @@ def test_analysis_commit_sha_length_is_rejected(engine: Engine) -> None:
             session.commit()
 
 
+def test_analysis_outcome_check_rejects_bad_value(engine: Engine) -> None:
+    with Session(engine) as session:
+        repository = _repository()
+        session.add(repository)
+        session.flush()
+        symbol = _symbol(repository.id)
+        session.add(symbol)
+        session.flush()
+        session.add(
+            Analysis(
+                symbol_id=symbol.id,
+                analyzed_commit_sha="a" * 40,
+                outcome="unknown",
+            )
+        )
+
+        with pytest.raises(IntegrityError):
+            session.commit()
+
+
 def test_evidence_link_requires_exactly_one_source(engine: Engine) -> None:
     with Session(engine) as session:
         _, _, _, _, _, analysis = _persist_evidence_context(session)
@@ -438,6 +458,17 @@ def test_evidence_link_quote_checks_reject_bad_values(engine: Engine) -> None:
             session.commit()
 
 
+def test_evidence_link_quote_offsets_are_rejected(engine: Engine) -> None:
+    with Session(engine) as session:
+        _, commit, _, _, _, analysis = _persist_evidence_context(session)
+        link = _evidence_link(analysis.id, commit.id)
+        link.quote_start = -1
+        session.add(link)
+
+        with pytest.raises(IntegrityError):
+            session.commit()
+
+
 def test_evidence_link_unicode_quote_round_trips_verbatim(engine: Engine) -> None:
     quote = "café\nsecond"
     with Session(engine) as session:
@@ -518,13 +549,25 @@ def test_issue_reference_method_check_rejects_bad_value(engine: Engine) -> None:
             session.commit()
 
 
-def test_issue_reference_uniques_are_rejected(engine: Engine) -> None:
+def test_issue_reference_commit_unique_is_rejected(engine: Engine) -> None:
     with Session(engine) as session:
-        _, commit, pull_request, _, issue, _ = _persist_evidence_context(session)
+        _, commit, _, _, issue, _ = _persist_evidence_context(session)
         session.add_all(
             [
                 _issue_reference(issue.id, commit.id),
                 _issue_reference(issue.id, commit.id),
+            ]
+        )
+
+        with pytest.raises(IntegrityError):
+            session.commit()
+
+
+def test_issue_reference_pull_request_unique_is_rejected(engine: Engine) -> None:
+    with Session(engine) as session:
+        _, _, pull_request, _, issue, _ = _persist_evidence_context(session)
+        session.add_all(
+            [
                 IssueReference(
                     pull_request_id=pull_request.id,
                     issue_id=issue.id,
