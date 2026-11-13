@@ -39,6 +39,11 @@ def test_tables_create_successfully_on_sqlite(engine: Engine) -> None:
         "pull_request_commits",
         "review_comments",
         "issues",
+        "symbols",
+        "symbol_versions",
+        "analyses",
+        "evidence_links",
+        "issue_references",
     }
 
 
