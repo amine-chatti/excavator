@@ -36,17 +36,13 @@ class ReviewComment(Base):
             "subject_type IS NULL OR subject_type IN ('line', 'file')",
             name="subject_type",
         ),
-        CheckConstraint("length(commit_sha) = 40", name="commit_sha_length"),
-        CheckConstraint(
-            "length(original_commit_sha) = 40",
-            name="original_commit_sha_length",
-        ),
     )
 
     id: Mapped[int] = mapped_column(primary_key=True)
     github_id: Mapped[int] = mapped_column(BigInteger, nullable=False)
     pull_request_id: Mapped[int] = mapped_column(
         ForeignKey("pull_requests.id", ondelete="CASCADE"),
+        index=True,
         nullable=False,
     )
     review_github_id: Mapped[int | None] = mapped_column(BigInteger, nullable=True)
