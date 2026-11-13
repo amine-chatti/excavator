@@ -1,34 +1,15 @@
 from __future__ import annotations
 
-from collections.abc import Iterator
 from datetime import UTC, datetime, timedelta, timezone
-from sqlite3 import Connection
 from typing import cast
 
 import pytest
-from sqlalchemy import Table, create_engine, delete, event, inspect, select
+from sqlalchemy import Table, delete, inspect, select
 from sqlalchemy.engine import Engine
 from sqlalchemy.exc import IntegrityError, StatementError
 from sqlalchemy.orm import Session
 
-from excavator.infra.db.base import Base
 from excavator.infra.db.models import Commit, Repository
-
-
-@pytest.fixture
-def engine() -> Iterator[Engine]:
-    test_engine = create_engine("sqlite+pysqlite:///:memory:")
-
-    @event.listens_for(test_engine, "connect")
-    def enable_sqlite_foreign_keys(
-        dbapi_connection: Connection,
-        _: object,
-    ) -> None:
-        dbapi_connection.execute("PRAGMA foreign_keys=ON")
-
-    Base.metadata.create_all(test_engine)
-    yield test_engine
-    test_engine.dispose()
 
 
 def _repository(owner: str = "octocat", name: str = "hello-world") -> Repository:
@@ -50,7 +31,15 @@ def _commit(repository_id: int, message: str = "Initial commit") -> Commit:
 def test_tables_create_successfully_on_sqlite(engine: Engine) -> None:
     table_names = set(inspect(engine).get_table_names())
 
-    assert table_names == {"repositories", "commits"}
+    assert table_names == {
+        "repositories",
+        "commits",
+        "file_changes",
+        "pull_requests",
+        "pull_request_commits",
+        "review_comments",
+        "issues",
+    }
 
 
 def test_naive_repository_datetime_is_rejected(engine: Engine) -> None:
