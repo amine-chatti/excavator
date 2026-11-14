@@ -104,6 +104,7 @@ def _run_git(repository: Path, arguments: list[str]) -> bytes:
         "-C",
         str(repository),
         "--no-pager",
+        "--literal-pathspecs",
         "-c",
         "core.quotepath=false",
         "-c",

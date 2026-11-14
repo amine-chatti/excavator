@@ -155,6 +155,17 @@ def test_rejects_invalid_file_paths(tmp_path: Path, file_path: str) -> None:
         read_file_versions(repo, file_path)
 
 
+@pytest.mark.parametrize("file_path", [":(top)a.py", ":!a.py", "*.py", "a?.py", "[ab].py"])
+def test_treats_pathspec_magic_as_literal(tmp_path: Path, file_path: str) -> None:
+    repo = _repository(tmp_path)
+    _write(repo, "a.py", b"a")
+    _write(repo, "b.py", b"b")
+    _commit(repo)
+
+    with pytest.raises(GitHistoryError, match="no Git history"):
+        read_file_versions(repo, file_path)
+
+
 @pytest.mark.parametrize("ref", ["", "--exec=x", "HEAD x", "HEAD\n", "-x", "a..b", "\0"])
 def test_rejects_invalid_refs(tmp_path: Path, ref: str) -> None:
     repo = _repository(tmp_path)
