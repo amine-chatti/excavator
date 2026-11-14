@@ -5,6 +5,7 @@ from collections.abc import Iterator
 from datetime import UTC, datetime
 from sqlite3 import Connection
 
+import httpx
 import pytest
 from fastapi import FastAPI
 from fastapi.testclient import TestClient
@@ -16,7 +17,7 @@ from excavator.api.dependencies import get_llm_client, get_session
 from excavator.api.main import create_app
 from excavator.infra.db.base import Base
 from excavator.infra.db.models import Commit, Repository, Symbol, SymbolVersion
-from excavator.infra.llm_client import LLMClientError, LLMRateLimitError
+from excavator.infra.llm_client import LLMClientError, LLMRateLimitError, OllamaClient
 
 
 @pytest.fixture
@@ -24,6 +25,7 @@ def explanation_api(
     monkeypatch: pytest.MonkeyPatch,
 ) -> Iterator[tuple[TestClient, Session, int]]:
     monkeypatch.delenv("ANTHROPIC_API_KEY", raising=False)
+    monkeypatch.setenv("EXPLAIN_PROVIDER", "anthropic")
     engine = create_engine(
         "sqlite+pysqlite:///:memory:",
         connect_args={"check_same_thread": False},
@@ -114,6 +116,22 @@ def _valid_response() -> str:
     )
 
 
+def _ollama_response_with_fabrication() -> str:
+    payload = json.loads(_valid_response())
+    payload["claims"].append(
+        {
+            "text": "Fabricated claim.",
+            "quotes": [
+                {
+                    "snippet_id": f"commit:{'f' * 40}:message",
+                    "quote": "this quote is not in the evidence",
+                }
+            ],
+        }
+    )
+    return json.dumps(payload)
+
+
 def test_explain_api_success_and_get_stored_explanation(
     explanation_api: tuple[TestClient, Session, int],
 ) -> None:
@@ -162,6 +180,39 @@ def test_explain_api_without_key_is_503(
     response = test_client.post(f"/symbols/{symbol_id}/explain")
     assert response.status_code == 503
     assert response.json() == {"detail": "explanation service is not configured"}
+
+
+def test_ollama_provider_posts_explanation_and_drops_fabricated_quote(
+    explanation_api: tuple[TestClient, Session, int],
+    monkeypatch: pytest.MonkeyPatch,
+) -> None:
+    test_client, _, symbol_id = explanation_api
+    monkeypatch.setenv("EXPLAIN_PROVIDER", "ollama")
+    monkeypatch.delenv("ANTHROPIC_API_KEY", raising=False)
+    response_text = _ollama_response_with_fabrication()
+    requests: list[httpx.Request] = []
+
+    def handler(request: httpx.Request) -> httpx.Response:
+        requests.append(request)
+        return httpx.Response(200, json={"message": {"content": response_text}})
+
+    app = test_client.app
+    assert isinstance(app, FastAPI)
+    app.dependency_overrides[get_llm_client] = lambda: OllamaClient(
+        base_url="http://ollama.test:11434",
+        transport=httpx.MockTransport(handler),
+    )
+
+    response = test_client.post(f"/symbols/{symbol_id}/explain")
+
+    assert response.status_code == 200
+    body = response.json()
+    assert body["status"] == "explained"
+    assert body["dropped_claim_count"] == 1
+    assert [claim["text"] for claim in body["claims"]] == ["It avoids repeated work."]
+    assert body["claims"][0]["quotes"][0]["quote"] == "reduces repeated work"
+    assert str(requests[0].url) == "http://ollama.test:11434/api/chat"
+    assert test_client.get(f"/symbols/{symbol_id}/explanation").json()["claims"] == body["claims"]
 
 
 @pytest.mark.parametrize(

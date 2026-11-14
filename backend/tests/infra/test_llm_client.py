@@ -10,9 +10,11 @@ from excavator.config import Settings
 from excavator.infra.llm_client import (
     ANTHROPIC_VERSION,
     LLM_API_TIMEOUT_SECONDS,
+    OLLAMA_API_TIMEOUT_SECONDS,
     AnthropicClient,
     LLMClientError,
     LLMRateLimitError,
+    OllamaClient,
 )
 from excavator.logging import _redact_sensitive_values
 
@@ -134,6 +136,7 @@ def test_settings_have_optional_key_and_expected_model(monkeypatch: pytest.Monke
 
 
 def test_dependency_builds_client_when_configured(monkeypatch: pytest.MonkeyPatch) -> None:
+    monkeypatch.setenv("EXPLAIN_PROVIDER", "anthropic")
     monkeypatch.setenv("ANTHROPIC_API_KEY", "configured-secret")
     monkeypatch.setenv("EXPLAIN_MODEL", "configured-model")
 
@@ -142,6 +145,136 @@ def test_dependency_builds_client_when_configured(monkeypatch: pytest.MonkeyPatc
     assert isinstance(client, AnthropicClient)
     assert client._api_key == "configured-secret"
     assert client._model == "configured-model"
+
+
+def test_dependency_builds_ollama_client_without_anthropic_key(
+    monkeypatch: pytest.MonkeyPatch,
+) -> None:
+    monkeypatch.setenv("EXPLAIN_PROVIDER", "ollama")
+    monkeypatch.delenv("ANTHROPIC_API_KEY", raising=False)
+    monkeypatch.setenv("OLLAMA_BASE_URL", "http://ollama.test:11434")
+    monkeypatch.setenv("OLLAMA_MODEL", "configured-ollama-model")
+
+    client = get_llm_client()
+
+    assert isinstance(client, OllamaClient)
+    assert client._base_url == "http://ollama.test:11434"
+    assert client._model == "configured-ollama-model"
+
+
+def test_ollama_client_sends_chat_request_and_parses_content() -> None:
+    calls: list[httpx.Request] = []
+
+    def handler(request: httpx.Request) -> httpx.Response:
+        calls.append(request)
+        return httpx.Response(200, json={"message": {"content": '{"summary":"ok"}'}})
+
+    base_url = "http://ollama.internal"
+    client = OllamaClient(
+        model="llama-test",
+        base_url=f"{base_url}/",
+        transport=httpx.MockTransport(handler),
+    )
+
+    assert client.complete("system prompt", "user prompt") == '{"summary":"ok"}'
+    request = calls[0]
+    assert str(request.url) == f"{base_url}/api/chat"
+    body = json.loads(request.content)
+    assert body == {
+        "model": "llama-test",
+        "messages": [
+            {"role": "system", "content": "system prompt"},
+            {"role": "user", "content": "user prompt"},
+        ],
+        "stream": False,
+        "format": "json",
+    }
+    assert OLLAMA_API_TIMEOUT_SECONDS == 180
+
+
+@pytest.mark.parametrize(
+    "response",
+    [
+        httpx.Response(
+            200,
+            content=b"private response body",
+            headers={"content-type": "application/json"},
+        ),
+        httpx.Response(200, json=[]),
+        httpx.Response(200, json={"message": None}),
+        httpx.Response(200, json={"message": {}}),
+        httpx.Response(200, json={"message": {"content": 42}}),
+    ],
+)
+def test_ollama_malformed_responses_are_generic(response: httpx.Response) -> None:
+    base_url = "http://ollama.internal"
+    client = OllamaClient(
+        base_url=base_url,
+        transport=httpx.MockTransport(lambda _request: response),
+    )
+
+    with pytest.raises(LLMClientError, match="malformed response") as error:
+        client.complete("system", "user")
+    assert base_url not in str(error.value)
+    assert "private response body" not in str(error.value)
+
+
+def test_ollama_wrong_content_type_is_rejected_without_leaking_body() -> None:
+    base_url = "http://ollama.internal"
+    body = "private response body"
+    client = OllamaClient(
+        base_url=base_url,
+        transport=httpx.MockTransport(
+            lambda _request: httpx.Response(200, text=body, headers={"content-type": "text/plain"})
+        ),
+    )
+
+    with pytest.raises(LLMClientError, match="malformed response") as error:
+        client.complete("system", "user")
+    assert base_url not in str(error.value)
+    assert body not in str(error.value)
+
+
+def test_ollama_non_200_status_is_generic() -> None:
+    base_url = "http://ollama.internal"
+    body = "private response body"
+    client = OllamaClient(
+        base_url=base_url,
+        transport=httpx.MockTransport(lambda _request: httpx.Response(503, text=body)),
+    )
+
+    with pytest.raises(LLMClientError, match="status 503") as error:
+        client.complete("system", "user")
+    assert base_url not in str(error.value)
+    assert body not in str(error.value)
+
+
+@pytest.mark.parametrize(
+    ("error_type", "message"),
+    [
+        (httpx.ConnectError, "request failed"),
+        (httpx.ReadTimeout, "timed out"),
+    ],
+)
+def test_ollama_request_errors_are_generic(
+    error_type: type[httpx.RequestError],
+    message: str,
+) -> None:
+    base_url = "http://ollama.internal"
+    private_text = "private response body"
+
+    def fail(request: httpx.Request) -> httpx.Response:
+        raise error_type(f"{base_url} {private_text}", request=request)
+
+    client = OllamaClient(
+        base_url=base_url,
+        transport=httpx.MockTransport(fail),
+    )
+
+    with pytest.raises(LLMClientError, match=message) as error:
+        client.complete("system", "user")
+    assert base_url not in str(error.value)
+    assert private_text not in str(error.value)
 
 
 def test_logging_redacts_anthropic_api_key_fields(caplog: pytest.LogCaptureFixture) -> None:
