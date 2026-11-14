@@ -7,7 +7,7 @@ from sqlalchemy.orm import Session
 from excavator.config import Settings
 from excavator.infra.db.session import session_scope
 from excavator.infra.github_client import GitHubClient, HttpGitHubClient
-from excavator.infra.llm_client import AnthropicClient, LLMClient
+from excavator.infra.llm_client import AnthropicClient, LLMClient, OllamaClient
 
 
 def get_session() -> Iterator[Session]:
@@ -22,6 +22,11 @@ def get_github_client() -> GitHubClient:
 
 def get_llm_client() -> LLMClient | None:
     settings = Settings()
+    if settings.EXPLAIN_PROVIDER == "ollama":
+        return OllamaClient(
+            model=settings.OLLAMA_MODEL,
+            base_url=settings.OLLAMA_BASE_URL,
+        )
     if settings.ANTHROPIC_API_KEY is None:
         return None
     return AnthropicClient(
