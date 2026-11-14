@@ -14,7 +14,7 @@ dependencies = [
   "pydantic-settings",
   "sqlalchemy",
   "alembic",
-  "psycopg",
+  "psycopg[binary]",
   "httpx",
   "structlog",
   "packaging",
