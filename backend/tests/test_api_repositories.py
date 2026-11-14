@@ -1,0 +1,417 @@
+from __future__ import annotations
+
+import subprocess
+from collections.abc import Iterator
+from contextlib import contextmanager
+from pathlib import Path
+from sqlite3 import Connection
+
+import pytest
+from fastapi.testclient import TestClient
+from sqlalchemy import create_engine, event, select
+from sqlalchemy.engine import Engine
+from sqlalchemy.orm import Session
+from sqlalchemy.pool import StaticPool
+
+from excavator.api.dependencies import get_session
+from excavator.api.main import create_app
+from excavator.api.routes.repositories import repository_path
+from excavator.infra.db.base import Base
+from excavator.infra.db.models import Commit, Repository, Symbol, SymbolVersion
+from excavator.infra.git_history import GitHistoryError
+
+
+def _git(repo: Path, *arguments: str) -> bytes:
+    completed = subprocess.run(
+        ["git", "-C", str(repo), *arguments],
+        check=True,
+        capture_output=True,
+    )
+    return completed.stdout
+
+
+def _git_repository(root: Path, owner: str = "owner", name: str = "repo") -> Path:
+    repo = root / owner / name
+    repo.mkdir(parents=True)
+    _git(repo, "init", "-q")
+    _git(repo, "config", "user.name", "API Tests")
+    _git(repo, "config", "user.email", "api@example.invalid")
+    _git(repo, "config", "commit.gpgsign", "false")
+    _git(repo, "config", "core.autocrlf", "false")
+    hooks = repo / "hooks"
+    hooks.mkdir()
+    _git(repo, "config", "core.hooksPath", str(hooks))
+    _git(repo, "branch", "-M", "main")
+    return repo
+
+
+def _commit(repo: Path, message: str) -> str:
+    _git(repo, "add", "-A")
+    _git(repo, "commit", "-q", "-m", message)
+    return _git(repo, "rev-parse", "HEAD").decode().strip()
+
+
+def _write(repo: Path, path: str, content: bytes) -> None:
+    target = repo / path
+    target.parent.mkdir(parents=True, exist_ok=True)
+    target.write_bytes(content)
+
+
+@pytest.fixture
+def engine() -> Iterator[Engine]:
+    test_engine = create_engine(
+        "sqlite+pysqlite:///:memory:",
+        connect_args={"check_same_thread": False},
+        poolclass=StaticPool,
+    )
+
+    @event.listens_for(test_engine, "connect")
+    def enable_sqlite_foreign_keys(
+        dbapi_connection: Connection,
+        _: object,
+    ) -> None:
+        dbapi_connection.execute("PRAGMA foreign_keys=ON")
+
+    Base.metadata.create_all(test_engine)
+    yield test_engine
+    test_engine.dispose()
+
+
+@pytest.fixture
+def client(
+    engine: Engine,
+    tmp_path: Path,
+    monkeypatch: pytest.MonkeyPatch,
+) -> Iterator[tuple[TestClient, Session, Path]]:
+    root = tmp_path / "repositories"
+    root.mkdir()
+    monkeypatch.setenv("REPOS_ROOT", str(root))
+    app = create_app()
+    session = Session(engine)
+
+    def override_session() -> Iterator[Session]:
+        try:
+            yield session
+            session.commit()
+        except Exception:
+            session.rollback()
+            raise
+
+    app.dependency_overrides[get_session] = override_session
+    with TestClient(app) as test_client:
+        yield test_client, session, root
+    session.close()
+
+
+def test_create_repository_success_and_client_path_is_ignored(
+    client: tuple[TestClient, Session, Path],
+) -> None:
+    test_client, session, root = client
+    _git_repository(root)
+
+    response = test_client.post(
+        "/repositories",
+        json={"owner": "owner", "name": "repo", "path": str(root / "other")},
+    )
+
+    assert response.status_code == 201
+    assert response.json()["owner"] == "owner"
+    assert response.json()["name"] == "repo"
+    assert session.scalar(select(Repository).where(Repository.owner == "owner")) is not None
+
+
+def test_duplicate_repository_returns_conflict(
+    client: tuple[TestClient, Session, Path],
+) -> None:
+    test_client, _, root = client
+    _git_repository(root)
+
+    assert (
+        test_client.post("/repositories", json={"owner": "owner", "name": "repo"}).status_code
+        == 201
+    )
+    duplicate = test_client.post(
+        "/repositories",
+        json={"owner": "owner", "name": "repo"},
+    )
+
+    assert duplicate.status_code == 409
+    assert duplicate.json() == {"detail": "repository already exists"}
+
+
+@pytest.mark.parametrize("value", ["", ".", "..", "a/b", r"a\b", "C:\\repo"])
+def test_invalid_repository_identifier_returns_422(
+    client: tuple[TestClient, Session, Path],
+    value: str,
+) -> None:
+    response = client[0].post("/repositories", json={"owner": value, "name": "repo"})
+
+    assert response.status_code == 422
+    assert response.json() == {"detail": "invalid request"}
+
+
+def test_missing_repository_directory_returns_404(
+    client: tuple[TestClient, Session, Path],
+) -> None:
+    response = client[0].post(
+        "/repositories",
+        json={"owner": "owner", "name": "missing"},
+    )
+
+    assert response.status_code == 404
+    assert response.json() == {"detail": "repository directory not found"}
+
+
+def test_list_repositories_is_ordered_by_id(
+    client: tuple[TestClient, Session, Path],
+) -> None:
+    test_client, _, root = client
+    _git_repository(root, "owner", "first")
+    _git_repository(root, "owner", "second")
+    test_client.post("/repositories", json={"owner": "owner", "name": "first"})
+    test_client.post("/repositories", json={"owner": "owner", "name": "second"})
+
+    response = test_client.get("/repositories")
+
+    assert response.status_code == 200
+    assert [item["name"] for item in response.json()] == ["first", "second"]
+
+
+def _create_analyzable_repo(test_client: TestClient, root: Path) -> tuple[Path, int]:
+    repo = _git_repository(root)
+    _write(repo, "old.py", b"def keep():\n    return 1\n\ndef remove():\n    return 2\n")
+    _commit(repo, "initial")
+    _write(repo, "old.py", b"def keep():\n    return 3\n\ndef remove():\n    return 2\n")
+    (repo / "old.py").rename(repo / "new.py")
+    _commit(repo, "rename")
+    _write(repo, "new.py", b"def keep():\n    return 3\n")
+    _commit(repo, "remove")
+    repository_id = test_client.post(
+        "/repositories",
+        json={"owner": "owner", "name": "repo"},
+    ).json()["id"]
+    return repo, repository_id
+
+
+def test_analyze_then_symbols_and_lineage(
+    client: tuple[TestClient, Session, Path],
+) -> None:
+    test_client, _, root = client
+    _, repository_id = _create_analyzable_repo(test_client, root)
+
+    analyzed = test_client.post(
+        f"/repositories/{repository_id}/analyze",
+        json={"file_path": "new.py", "ref": "main"},
+    )
+    symbols = test_client.get(f"/repositories/{repository_id}/symbols")
+
+    assert analyzed.status_code == 200
+    assert analyzed.json()["commit_count"] == 3
+    assert analyzed.json()["lineage_count"] == 2
+    assert symbols.status_code == 200
+    assert symbols.json()["total"] == 2
+    symbol_id = symbols.json()["items"][0]["id"]
+    lineage = test_client.get(f"/symbols/{symbol_id}/lineage")
+    assert lineage.status_code == 200
+    assert lineage.json()["symbol"]["id"] == symbol_id
+    assert lineage.json()["versions"][0]["commit_message"] == "initial"
+
+
+def test_analyze_twice_is_idempotent(
+    client: tuple[TestClient, Session, Path],
+) -> None:
+    test_client, session, root = client
+    _, repository_id = _create_analyzable_repo(test_client, root)
+
+    first = test_client.post(
+        f"/repositories/{repository_id}/analyze",
+        json={"file_path": "new.py"},
+    ).json()
+    second = test_client.post(
+        f"/repositories/{repository_id}/analyze",
+        json={"file_path": "new.py"},
+    ).json()
+
+    assert first["symbol_ids"] == second["symbol_ids"]
+    assert len(session.execute(select(Symbol)).scalars().all()) == 2
+    assert len(session.execute(select(SymbolVersion)).scalars().all()) == 4
+    assert len(session.execute(select(Commit)).scalars().all()) == 3
+
+
+def test_analyze_error_mappings_and_path_sanitization(
+    client: tuple[TestClient, Session, Path],
+    monkeypatch: pytest.MonkeyPatch,
+) -> None:
+    test_client, _, root = client
+    _, repository_id = _create_analyzable_repo(test_client, root)
+    absolute = str(root / "secret.py")
+
+    invalid = test_client.post(
+        f"/repositories/{repository_id}/analyze",
+        json={"file_path": absolute},
+    )
+    unsupported = test_client.post(
+        f"/repositories/{repository_id}/analyze",
+        json={"file_path": "file.txt"},
+    )
+    unknown = test_client.post(
+        "/repositories/999/analyze",
+        json={"file_path": "file.py"},
+    )
+    no_history = test_client.post(
+        f"/repositories/{repository_id}/analyze",
+        json={"file_path": "missing.py"},
+    )
+
+    from excavator.api.routes import analysis as analysis_routes
+
+    def raise_git_failure(*args: object, **kwargs: object) -> object:
+        raise GitHistoryError("git command failed: " + absolute)
+
+    monkeypatch.setattr(analysis_routes, "analyze_file", raise_git_failure)
+    failed = test_client.post(
+        f"/repositories/{repository_id}/analyze",
+        json={"file_path": "new.py"},
+    )
+
+    assert invalid.status_code == 422
+    assert absolute not in invalid.text
+    assert unsupported.status_code == 422
+    assert unknown.status_code == 404
+    assert no_history.status_code == 404
+    assert failed.status_code == 502
+    assert failed.json() == {"detail": "local Git operation failed"}
+    assert absolute not in failed.text
+
+
+@pytest.mark.parametrize(
+    "payload",
+    [
+        {"file_path": "new.py", "ref": ""},
+        {"file_path": "new.py", "ref": "-main"},
+        {"file_path": "new.py", "ref": "main..old"},
+        {"file_path": "new.py", "ref": "main branch"},
+        {"file_path": "new.py", "ref": "main\nbranch"},
+        {"file_path": "new.py", "max_commits": 0},
+    ],
+)
+def test_analyze_invalid_git_inputs_are_sanitized(
+    client: tuple[TestClient, Session, Path],
+    payload: dict[str, object],
+) -> None:
+    test_client, _, root = client
+    _, repository_id = _create_analyzable_repo(test_client, root)
+
+    response = test_client.post(
+        f"/repositories/{repository_id}/analyze",
+        json=payload,
+    )
+
+    assert response.status_code == 422
+    assert str(root) not in response.text
+
+
+def test_repository_path_rejects_outside_root() -> None:
+    repository = Repository(owner="..", name="outside")
+
+    with pytest.raises(ValueError, match="outside REPOS_ROOT"):
+        repository_path(Path("root"), repository)
+
+
+def test_create_repository_rejects_resolved_path_outside_root(
+    client: tuple[TestClient, Session, Path],
+    monkeypatch: pytest.MonkeyPatch,
+) -> None:
+    test_client, _, root = client
+    _git_repository(root)
+    original_resolve = Path.resolve
+
+    def resolve_outside(path: Path, strict: bool = False) -> Path:
+        if path.name == "repo":
+            return root.parent / "outside"
+        return original_resolve(path, strict=strict)
+
+    monkeypatch.setattr(Path, "resolve", resolve_outside)
+    response = test_client.post(
+        "/repositories",
+        json={"owner": "owner", "name": "repo"},
+    )
+
+    assert response.status_code == 422
+    assert response.json() == {"detail": "invalid repository path"}
+
+
+def test_analysis_value_error_maps_to_422(
+    client: tuple[TestClient, Session, Path],
+    monkeypatch: pytest.MonkeyPatch,
+) -> None:
+    test_client, _, root = client
+    _, repository_id = _create_analyzable_repo(test_client, root)
+
+    from excavator.api.routes import analysis as analysis_routes
+
+    def raise_value_error(*args: object, **kwargs: object) -> object:
+        raise ValueError("invalid analysis input")
+
+    monkeypatch.setattr(analysis_routes, "analyze_file", raise_value_error)
+    response = test_client.post(
+        f"/repositories/{repository_id}/analyze",
+        json={"file_path": "new.py"},
+    )
+
+    assert response.status_code == 422
+    assert response.json() == {"detail": "invalid analysis input"}
+
+
+def test_symbols_pagination_filters_and_total(
+    client: tuple[TestClient, Session, Path],
+) -> None:
+    test_client, _, root = client
+    _, repository_id = _create_analyzable_repo(test_client, root)
+    test_client.post(
+        f"/repositories/{repository_id}/analyze",
+        json={"file_path": "new.py"},
+    )
+
+    response = test_client.get(
+        f"/repositories/{repository_id}/symbols",
+        params={"path": "new.py", "kind": "function", "status": "exists", "limit": 1},
+    )
+
+    assert response.status_code == 200
+    assert response.json()["total"] == 1
+    assert len(response.json()["items"]) == 1
+
+
+def test_lineage_and_openapi_errors(
+    client: tuple[TestClient, Session, Path],
+) -> None:
+    test_client = client[0]
+
+    assert test_client.get("/symbols/999/lineage").status_code == 404
+    openapi = test_client.get("/openapi.json")
+
+    assert openapi.status_code == 200
+    assert "/repositories" in openapi.json()["paths"]
+
+
+def test_session_dependency_closes_transaction(monkeypatch: pytest.MonkeyPatch) -> None:
+    events: list[str] = []
+
+    @contextmanager
+    def fake_scope() -> Iterator[Session]:
+        events.append("open")
+        try:
+            yield Session()
+        finally:
+            events.append("close")
+
+    import excavator.api.dependencies as dependencies
+
+    monkeypatch.setattr(dependencies, "session_scope", fake_scope)
+    iterator = dependencies.get_session()
+    next(iterator)
+    with pytest.raises(StopIteration):
+        next(iterator)
+
+    assert events == ["open", "close"]
