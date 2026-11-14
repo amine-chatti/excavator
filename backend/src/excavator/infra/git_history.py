@@ -17,6 +17,7 @@ from excavator.core.lineage import FileVersion
 
 GIT_TIMEOUT_SECONDS = 30
 RENAME_SIMILARITY = 50
+NO_HISTORY_MESSAGE_PREFIX = "no Git history found for path "
 _DRIVE_PREFIX = re.compile(r"^[A-Za-z]:")
 _RECORD_SEPARATOR = b"\x1e"
 _SCRUBBED_ENVIRONMENT = (
@@ -66,7 +67,7 @@ def read_file_versions(
     log_output = _run_git(repository, log_args)
     records = _parse_log(log_output)
     if not records:
-        raise GitHistoryError(f"no Git history found for path {file_path!r}")
+        raise GitHistoryError(f"{NO_HISTORY_MESSAGE_PREFIX}{file_path!r}")
 
     versions: list[FileVersion] = []
     for commit_sha, status, commit_path in records:

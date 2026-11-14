@@ -9,7 +9,11 @@ import pytest
 from excavator.core.lineage import build_file_history
 from excavator.core.matching import ChangeKind
 from excavator.infra import git_history
-from excavator.infra.git_history import GitHistoryError, read_file_versions
+from excavator.infra.git_history import (
+    NO_HISTORY_MESSAGE_PREFIX,
+    GitHistoryError,
+    read_file_versions,
+)
 from excavator.languages.registry import get_analyzer
 
 GIT_TIMEOUT: Final = git_history.GIT_TIMEOUT_SECONDS
@@ -236,8 +240,9 @@ def test_treats_pathspec_magic_as_literal(tmp_path: Path, file_path: str) -> Non
     _write(repo, "b.py", b"b")
     _commit(repo)
 
-    with pytest.raises(GitHistoryError, match="no Git history"):
+    with pytest.raises(GitHistoryError) as error:
         read_file_versions(repo, file_path)
+    assert str(error.value).startswith(NO_HISTORY_MESSAGE_PREFIX)
 
 
 @pytest.mark.parametrize("ref", ["", "--exec=x", "HEAD x", "HEAD\n", "-x", "a..b", "\0"])

@@ -10,7 +10,7 @@ from excavator.api.dependencies import get_session
 from excavator.api.routes.repositories import repository_path
 from excavator.infra.analysis_service import AnalysisSummary, UnsupportedLanguageError, analyze_file
 from excavator.infra.db.models import Repository
-from excavator.infra.git_history import GitHistoryError
+from excavator.infra.git_history import NO_HISTORY_MESSAGE_PREFIX, GitHistoryError
 
 router = APIRouter(prefix="/repositories", tags=["analysis"])
 
@@ -97,7 +97,7 @@ def analyze_repository_file(
     except ValueError as exc:
         raise HTTPException(status_code=422, detail=str(exc)) from exc
     except GitHistoryError as exc:
-        if str(exc).startswith("no Git history found for path "):
+        if str(exc).startswith(NO_HISTORY_MESSAGE_PREFIX):
             raise HTTPException(status_code=404, detail="no history found for file") from exc
         raise HTTPException(status_code=502, detail="local Git operation failed") from exc
     return _analysis_response(summary)
