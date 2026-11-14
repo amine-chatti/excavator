@@ -3,11 +3,13 @@ from __future__ import annotations
 import os
 import subprocess
 import sys
+from contextlib import suppress
 from pathlib import Path
 from uuid import uuid4
 
 import pytest
 from sqlalchemy import create_engine, select, text
+from sqlalchemy.engine import Engine
 from sqlalchemy.orm import Session
 
 from excavator.infra.analysis_service import analyze_file
@@ -63,6 +65,53 @@ def _run_alembic(database_url: str, schema: str, *arguments: str) -> None:
     )
 
 
+def _cleanup_schema(
+    database_url: str,
+    schema: str,
+    admin_engine: Engine,
+    application_engine: Engine | None,
+) -> None:
+    cleanup_error: BaseException | None = None
+    try:
+        _run_alembic(database_url, schema, "downgrade", "base")
+        with admin_engine.connect() as connection:
+            remaining_tables = (
+                connection.execute(
+                    text(
+                        "SELECT table_name FROM information_schema.tables "
+                        "WHERE table_schema = :schema AND table_name <> 'alembic_version'"
+                    ),
+                    {"schema": schema},
+                )
+                .scalars()
+                .all()
+            )
+        assert not remaining_tables, f"Tables remain after downgrade: {remaining_tables}"
+    except BaseException as error:
+        cleanup_error = error
+    finally:
+        try:
+            with admin_engine.begin() as connection:
+                connection.execute(text(f'DROP SCHEMA IF EXISTS "{schema}" CASCADE'))
+        except BaseException as error:
+            if cleanup_error is None:
+                cleanup_error = error
+        finally:
+            if application_engine is not None:
+                try:
+                    application_engine.dispose()
+                except BaseException as error:
+                    if cleanup_error is None:
+                        cleanup_error = error
+            try:
+                admin_engine.dispose()
+            except BaseException as error:
+                if cleanup_error is None:
+                    cleanup_error = error
+    if cleanup_error is not None:
+        raise cleanup_error
+
+
 @pytest.mark.postgres
 def test_postgres_migrations_and_analysis(tmp_path: Path) -> None:
     database_url = os.environ.get("TEST_POSTGRES_URL")
@@ -112,12 +161,9 @@ def test_postgres_migrations_and_analysis(tmp_path: Path) -> None:
         assert first.symbol_ids == second.symbol_ids
         assert [symbol.id for symbol in first_symbols] == [symbol.id for symbol in second_symbols]
         assert len(second_versions) == len(first_versions)
-    finally:
-        if application_engine is not None:
-            application_engine.dispose()
-        try:
-            _run_alembic(database_url, schema, "downgrade", "head:base")
-        finally:
-            with admin_engine.begin() as connection:
-                connection.execute(text(f'DROP SCHEMA IF EXISTS "{schema}" CASCADE'))
-            admin_engine.dispose()
+    except BaseException:
+        with suppress(BaseException):
+            _cleanup_schema(database_url, schema, admin_engine, application_engine)
+        raise
+    else:
+        _cleanup_schema(database_url, schema, admin_engine, application_engine)
