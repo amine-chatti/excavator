@@ -43,6 +43,11 @@
 - `OLLAMA_BASE_URL` defaults to `http://localhost:11434`.
 - `OLLAMA_MODEL` defaults to `llama3.2:3b`.
 
+## Extractive mode
+
+Extractive mode returns original sentences from linked commits, pull requests, reviews, and
+issues. It does not generate text or explain why a change happened by itself.
+
 ## Testing
 
 - The PostgreSQL test is opt-in. Set `TEST_POSTGRES_URL` and run `pytest -m postgres`.

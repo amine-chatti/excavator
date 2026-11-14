@@ -1,7 +1,7 @@
 from __future__ import annotations
 
 from datetime import datetime
-from typing import Annotated
+from typing import Annotated, Literal
 
 from fastapi import APIRouter, Depends, HTTPException, Query
 from pydantic import BaseModel
@@ -10,6 +10,7 @@ from sqlalchemy.orm import Session
 
 from excavator.api.dependencies import get_llm_client, get_session
 from excavator.infra.db.models import Commit, Symbol, SymbolVersion
+from excavator.infra.explain.extractive import extract_symbol_evidence
 from excavator.infra.explain.service import (
     ExplanationClaim,
     ExplanationError,
@@ -82,6 +83,21 @@ class StoredExplanationResponse(BaseModel):
     status: str
     summary: str
     claims: list[ExplanationClaimResponse]
+
+
+class ExtractiveExtractResponse(BaseModel):
+    source_kind: Literal["commit", "pull_request", "review_comment", "issue"]
+    reference: str | int
+    excerpt: str
+    lineage_event: Literal["added", "modified", "renamed", "moved", "removed"] | None
+    created_at: datetime
+    label: Literal["quote"]
+    epistemic_label: Literal["verified"]
+
+
+class ExtractiveExplanationResponse(BaseModel):
+    status: Literal["extracts", "no_evidence"]
+    extracts: list[ExtractiveExtractResponse]
 
 
 @router.get("/repositories/{repository_id}/symbols", response_model=SymbolListResponse)
@@ -212,4 +228,32 @@ def get_symbol_explanation(
         status=result.status,
         summary=result.summary,
         claims=[_claim_response(claim) for claim in result.claims],
+    )
+
+
+@router.get(
+    "/symbols/{symbol_id}/extractive-explanation",
+    response_model=ExtractiveExplanationResponse,
+)
+def get_extractive_explanation(
+    symbol_id: int,
+    session: Annotated[Session, Depends(get_session)],
+) -> ExtractiveExplanationResponse:
+    if session.get(Symbol, symbol_id) is None:
+        raise HTTPException(status_code=404, detail="symbol not found")
+    extracts = extract_symbol_evidence(session, symbol_id)
+    return ExtractiveExplanationResponse(
+        status="extracts" if extracts else "no_evidence",
+        extracts=[
+            ExtractiveExtractResponse(
+                source_kind=extract.source_kind,
+                reference=extract.reference,
+                excerpt=extract.excerpt,
+                lineage_event=extract.lineage_event,
+                created_at=extract.created_at,
+                label=extract.label,
+                epistemic_label=extract.epistemic_label,
+            )
+            for extract in extracts
+        ],
     )

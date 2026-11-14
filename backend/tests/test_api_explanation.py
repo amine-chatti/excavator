@@ -9,7 +9,7 @@ import httpx
 import pytest
 from fastapi import FastAPI
 from fastapi.testclient import TestClient
-from sqlalchemy import create_engine, event
+from sqlalchemy import create_engine, event, select
 from sqlalchemy.orm import Session
 from sqlalchemy.pool import StaticPool
 
@@ -213,6 +213,69 @@ def test_ollama_provider_posts_explanation_and_drops_fabricated_quote(
     assert body["claims"][0]["quotes"][0]["quote"] == "reduces repeated work"
     assert str(requests[0].url) == "http://ollama.test:11434/api/chat"
     assert test_client.get(f"/symbols/{symbol_id}/explanation").json()["claims"] == body["claims"]
+
+
+def test_extractive_explanation_needs_no_llm_configuration(
+    explanation_api: tuple[TestClient, Session, int],
+    monkeypatch: pytest.MonkeyPatch,
+) -> None:
+    test_client, _, symbol_id = explanation_api
+    for name in (
+        "ANTHROPIC_API_KEY",
+        "EXPLAIN_PROVIDER",
+        "EXPLAIN_MODEL",
+        "OLLAMA_BASE_URL",
+        "OLLAMA_MODEL",
+    ):
+        monkeypatch.delenv(name, raising=False)
+    app = test_client.app
+    assert isinstance(app, FastAPI)
+    app.dependency_overrides[get_llm_client] = lambda: pytest.fail(
+        "extractive mode must not request an LLM client"
+    )
+
+    response = test_client.get(f"/symbols/{symbol_id}/extractive-explanation")
+
+    assert response.status_code == 200
+    body = response.json()
+    assert body["status"] == "extracts"
+    assert body["extracts"] == [
+        {
+            "source_kind": "commit",
+            "reference": "f" * 40,
+            "excerpt": "The new lookup reduces repeated work.",
+            "lineage_event": "added",
+            "created_at": "2026-03-01T00:00:00Z",
+            "label": "quote",
+            "epistemic_label": "verified",
+        }
+    ]
+
+
+def test_extractive_explanation_returns_no_evidence_status(
+    explanation_api: tuple[TestClient, Session, int],
+) -> None:
+    test_client, session, symbol_id = explanation_api
+    commit = session.scalar(select(Commit))
+    assert commit is not None
+    commit.message = "  "
+    session.flush()
+
+    response = test_client.get(f"/symbols/{symbol_id}/extractive-explanation")
+
+    assert response.status_code == 200
+    assert response.json() == {"status": "no_evidence", "extracts": []}
+
+
+def test_extractive_explanation_unknown_symbol_is_404(
+    explanation_api: tuple[TestClient, Session, int],
+) -> None:
+    test_client, _, _ = explanation_api
+
+    response = test_client.get("/symbols/999/extractive-explanation")
+
+    assert response.status_code == 404
+    assert response.json() == {"detail": "symbol not found"}
 
 
 @pytest.mark.parametrize(
