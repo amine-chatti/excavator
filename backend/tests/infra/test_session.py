@@ -76,11 +76,11 @@ def test_baseline_migration_has_a_working_offline_downgrade() -> None:
         assert f"DROP TABLE {table.name}" in completed.stdout
 
 
-def test_baseline_migration_is_the_single_head() -> None:
+def test_nullable_url_migration_is_the_single_head() -> None:
     config = Config(str(BACKEND_ROOT / "alembic.ini"))
     script = ScriptDirectory.from_config(config)
 
-    assert script.get_heads() == ["0001_baseline"]
+    assert script.get_heads() == ["0002_nullable_commit_url"]
 
 
 def test_create_db_engine_uses_supplied_url() -> None:
