@@ -42,6 +42,7 @@ def test_tables_create_successfully_on_sqlite(engine: Engine) -> None:
         "symbols",
         "symbol_versions",
         "analyses",
+        "analysis_claims",
         "evidence_links",
         "issue_references",
     }
