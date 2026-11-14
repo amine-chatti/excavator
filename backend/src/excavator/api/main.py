@@ -6,6 +6,7 @@ from fastapi.responses import JSONResponse
 
 from excavator.api.routes.analysis import router as analysis_router
 from excavator.api.routes.health import router as health_router
+from excavator.api.routes.pull_requests import router as pull_requests_router
 from excavator.api.routes.repositories import router as repositories_router
 from excavator.api.routes.symbols import router as symbols_router
 from excavator.config import Settings
@@ -19,6 +20,7 @@ def create_app() -> FastAPI:
     app = FastAPI(title="Excavator")
     app.state.settings = settings
     app.include_router(health_router)
+    app.include_router(pull_requests_router)
     app.include_router(repositories_router)
     app.include_router(analysis_router)
     app.include_router(symbols_router)
