@@ -22,6 +22,14 @@ class Settings(BaseSettings):
         default=Path("."),
         description="Root directory containing local repositories.",
     )
+    GIT_REMOTE_BASE: str = Field(
+        default="https://github.com",
+        description="Base URL used when cloning repositories.",
+    )
+    ALLOW_LOCAL_REMOTES: bool = Field(
+        default=False,
+        description="Allow local clone remotes for controlled tests.",
+    )
     GITHUB_TOKEN: SecretStr | None = Field(
         default=None,
         description="GitHub access token used for read-only requests.",
