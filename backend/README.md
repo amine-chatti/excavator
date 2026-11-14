@@ -1,5 +1,7 @@
 # Backend
 
+See [LIMITATIONS.md](LIMITATIONS.md) for supported behavior, security guidance, and known limits.
+
 ## Running the Postgres integration test
 
 From `backend\`, set the connection URL for an available PostgreSQL server and
@@ -10,5 +12,5 @@ $env:TEST_POSTGRES_URL = "postgresql+psycopg://user:password@localhost:5432/data
 uv run pytest -m postgres tests\integration\test_postgres.py
 ```
 
-The test creates and removes a uniquely named temporary schema. The `libpq`
-client library must be loadable by `psycopg`.
+The test creates and removes a uniquely named temporary schema. The
+`psycopg[binary]` dependency bundles the PostgreSQL client library.
