@@ -34,4 +34,12 @@ class Settings(BaseSettings):
         default=None,
         description="GitHub access token used for read-only requests.",
     )
+    ANTHROPIC_API_KEY: SecretStr | None = Field(
+        default=None,
+        description="Anthropic API key used for symbol explanations.",
+    )
+    EXPLAIN_MODEL: str = Field(
+        default="claude-sonnet-5-5",
+        description="Anthropic model used for symbol explanations.",
+    )
     LOG_LEVEL: str = Field(default="INFO", description="Logging level.")
