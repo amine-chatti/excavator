@@ -161,6 +161,7 @@ def _parse_pull_request(value: object) -> PullRequestData:
         merged_at=merged_at,
         url=url,
         base_ref=base["ref"],
+        # This endpoint does not reliably include a merged boolean.
         merged=bool(merged_at_value),
         merge_method="unknown",
     )
