@@ -8,8 +8,15 @@ from pydantic import BaseModel
 from sqlalchemy import func, or_, select
 from sqlalchemy.orm import Session
 
-from excavator.api.dependencies import get_session
+from excavator.api.dependencies import get_llm_client, get_session
 from excavator.infra.db.models import Commit, Symbol, SymbolVersion
+from excavator.infra.explain.service import (
+    ExplanationClaim,
+    ExplanationError,
+    explain_symbol,
+    get_stored_explanation,
+)
+from excavator.infra.llm_client import LLMClient, LLMClientError, LLMRateLimitError
 
 router = APIRouter(tags=["symbols"])
 
@@ -45,6 +52,36 @@ class LineageVersionResponse(BaseModel):
 class SymbolLineageResponse(BaseModel):
     symbol: SymbolResponse
     versions: list[LineageVersionResponse]
+
+
+class ExplanationQuoteResponse(BaseModel):
+    snippet_id: str
+    source_type: str
+    quote: str
+    level: str
+    epistemic_label: str
+
+
+class ExplanationClaimResponse(BaseModel):
+    position: int
+    text: str
+    quotes: list[ExplanationQuoteResponse]
+
+
+class ExplanationResponse(BaseModel):
+    status: str
+    summary: str | None
+    claims: list[ExplanationClaimResponse]
+    dropped_claim_count: int
+    truncated: bool
+    truncated_snippet_count: int
+    omitted_snippet_count: int
+
+
+class StoredExplanationResponse(BaseModel):
+    status: str
+    summary: str
+    claims: list[ExplanationClaimResponse]
 
 
 @router.get("/repositories/{repository_id}/symbols", response_model=SymbolListResponse)
@@ -114,4 +151,65 @@ def get_symbol_lineage(
             )
             for version, commit in rows
         ],
+    )
+
+
+def _claim_response(claim: ExplanationClaim) -> ExplanationClaimResponse:
+    return ExplanationClaimResponse(
+        position=claim.position,
+        text=claim.text,
+        quotes=[
+            ExplanationQuoteResponse(
+                snippet_id=quote.snippet_id,
+                source_type=quote.source_type,
+                quote=quote.quote,
+                level=quote.level,
+                epistemic_label=quote.epistemic_label,
+            )
+            for quote in claim.quotes
+        ],
+    )
+
+
+@router.post("/symbols/{symbol_id}/explain", response_model=ExplanationResponse)
+def explain_symbol_route(
+    symbol_id: int,
+    session: Annotated[Session, Depends(get_session)],
+    client: Annotated[LLMClient | None, Depends(get_llm_client)],
+) -> ExplanationResponse:
+    if session.get(Symbol, symbol_id) is None:
+        raise HTTPException(status_code=404, detail="symbol not found")
+    if client is None:
+        raise HTTPException(status_code=503, detail="explanation service is not configured")
+    try:
+        result = explain_symbol(session, symbol_id, client)
+    except LLMRateLimitError:
+        raise HTTPException(status_code=429, detail="LLM rate limit exceeded") from None
+    except (LLMClientError, ExplanationError):
+        raise HTTPException(status_code=502, detail="explanation request failed") from None
+    return ExplanationResponse(
+        status=result.status,
+        summary=result.summary,
+        claims=[_claim_response(claim) for claim in result.claims],
+        dropped_claim_count=result.dropped_claim_count,
+        truncated=result.truncated,
+        truncated_snippet_count=result.truncated_snippet_count,
+        omitted_snippet_count=result.omitted_snippet_count,
+    )
+
+
+@router.get("/symbols/{symbol_id}/explanation", response_model=StoredExplanationResponse)
+def get_symbol_explanation(
+    symbol_id: int,
+    session: Annotated[Session, Depends(get_session)],
+) -> StoredExplanationResponse:
+    if session.get(Symbol, symbol_id) is None:
+        raise HTTPException(status_code=404, detail="symbol not found")
+    result = get_stored_explanation(session, symbol_id)
+    if result is None or result.summary is None:
+        raise HTTPException(status_code=404, detail="explanation not found")
+    return StoredExplanationResponse(
+        status=result.status,
+        summary=result.summary,
+        claims=[_claim_response(claim) for claim in result.claims],
     )
