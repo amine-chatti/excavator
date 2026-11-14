@@ -20,10 +20,22 @@ from excavator.api.dependencies import get_github_client, get_session
 from excavator.api.main import create_app
 from excavator.api.routes.repositories import repository_path
 from excavator.infra.db.base import Base
-from excavator.infra.db.models import Commit, Repository, Symbol, SymbolVersion
+from excavator.infra.db.models import (
+    Commit,
+    PullRequest,
+    Repository,
+    Symbol,
+    SymbolVersion,
+)
 from excavator.infra.git_clone import GitCloneError
 from excavator.infra.git_history import GitHistoryError
-from excavator.infra.github_client import GitHubClientError, GitHubRateLimitError, PullRequestData
+from excavator.infra.github_client import (
+    GitHubClientError,
+    GitHubRateLimitError,
+    IssueData,
+    PullRequestData,
+    ReviewCommentData,
+)
 
 
 def _git(repo: Path, *arguments: str) -> bytes:
@@ -558,6 +570,187 @@ def test_analyze_twice_is_idempotent(
     assert len(session.execute(select(Symbol)).scalars().all()) == 2
     assert len(session.execute(select(SymbolVersion)).scalars().all()) == 4
     assert len(session.execute(select(Commit)).scalars().all()) == 3
+
+
+def test_discussion_api_ingestion_and_paginated_lists(
+    client: tuple[TestClient, Session, Path],
+) -> None:
+    test_client, session, root = client
+    _git_repository(root)
+    repository_id = test_client.post(
+        "/repositories", json={"owner": "owner", "name": "repo"}
+    ).json()["id"]
+    pr = PullRequest(
+        repository_id=repository_id,
+        number=15,
+        title="Discussion",
+        body="Fixes #31",
+        state="open",
+        merged=False,
+        merged_at=None,
+        merge_method="unknown",
+        base_ref="main",
+        author_login=None,
+        created_at=datetime(2026, 1, 1, tzinfo=UTC),
+        url="https://github.com/owner/repo/pull/15",
+    )
+    session.add(pr)
+    session.commit()
+
+    class FakeClient:
+        def list_review_comments(
+            self, owner: str, name: str, number: int
+        ) -> tuple[ReviewCommentData, ...]:
+            return ()
+
+        def get_issue(self, owner: str, name: str, number: int) -> IssueData | None:
+            return IssueData(
+                number=31,
+                title="Issue 31",
+                body=None,
+                state="open",
+                author_login=None,
+                created_at=datetime(2026, 1, 1, tzinfo=UTC),
+                closed_at=None,
+                url="https://github.com/owner/repo/issues/31",
+            )
+
+    app = cast(FastAPI, test_client.app)
+    app.dependency_overrides[get_github_client] = lambda: FakeClient()
+    ingested = test_client.post(f"/repositories/{repository_id}/ingest-discussion")
+    assert ingested.status_code == 200
+    assert ingested.json() == {
+        "review_comment_count": 0,
+        "issue_count": 1,
+        "issue_reference_count": 1,
+        "skipped_pull_request_count": 0,
+        "failed_items": [],
+    }
+    issues = test_client.get(f"/repositories/{repository_id}/issues", params={"limit": 1})
+    comments = test_client.get(
+        f"/repositories/{repository_id}/pull-requests/15/review-comments",
+        params={"limit": 1, "offset": 0},
+    )
+    assert issues.status_code == 200
+    assert issues.json()["total"] == 1
+    assert issues.json()["items"][0]["number"] == 31
+    assert comments.status_code == 200
+    assert comments.json() == {"items": [], "total": 0}
+
+
+def test_discussion_api_404s(
+    client: tuple[TestClient, Session, Path],
+) -> None:
+    test_client, _, root = client
+    assert test_client.post("/repositories/999/ingest-discussion").status_code == 404
+    assert test_client.get("/repositories/999/issues").status_code == 404
+    assert test_client.get("/repositories/999/pull-requests/1/review-comments").status_code == 404
+    _git_repository(root)
+    repository_id = test_client.post(
+        "/repositories", json={"owner": "owner", "name": "repo"}
+    ).json()["id"]
+    response = test_client.post(f"/repositories/{repository_id}/ingest-discussion")
+    assert response.status_code == 404
+    assert response.json() == {"detail": "repository has no stored pull requests"}
+    assert (
+        test_client.get(
+            f"/repositories/{repository_id}/pull-requests/999/review-comments"
+        ).status_code
+        == 404
+    )
+
+
+@pytest.mark.parametrize(
+    ("error", "status", "detail"),
+    [
+        (GitHubRateLimitError("secret token"), 429, "GitHub rate limit exceeded"),
+        (GitHubClientError("private path"), 502, "GitHub API request failed"),
+    ],
+)
+def test_discussion_api_maps_errors_generically(
+    client: tuple[TestClient, Session, Path],
+    error: Exception,
+    status: int,
+    detail: str,
+) -> None:
+    test_client, session, root = client
+    _git_repository(root)
+    repository_id = test_client.post(
+        "/repositories", json={"owner": "owner", "name": "repo"}
+    ).json()["id"]
+    session.add(
+        PullRequest(
+            repository_id=repository_id,
+            number=1,
+            title="PR",
+            body=None,
+            state="open",
+            merged=False,
+            merged_at=None,
+            merge_method="unknown",
+            base_ref="main",
+            author_login=None,
+            created_at=datetime(2026, 1, 1, tzinfo=UTC),
+            url="https://github.com/owner/repo/pull/1",
+        )
+    )
+    session.commit()
+
+    class FailingClient:
+        def list_review_comments(
+            self, owner: str, name: str, number: int
+        ) -> tuple[ReviewCommentData, ...]:
+            raise error
+
+        def get_issue(self, owner: str, name: str, number: int) -> IssueData | None:
+            return None
+
+    app = cast(FastAPI, test_client.app)
+    app.dependency_overrides[get_github_client] = lambda: FailingClient()
+    response = test_client.post(f"/repositories/{repository_id}/ingest-discussion")
+    assert response.status_code == status
+    assert response.json() == {"detail": detail}
+    assert "secret token" not in response.text
+    assert "private path" not in response.text
+
+
+def test_discussion_api_maps_unexpected_service_client_error(
+    client: tuple[TestClient, Session, Path],
+    monkeypatch: pytest.MonkeyPatch,
+) -> None:
+    test_client, session, root = client
+    _git_repository(root)
+    repository_id = test_client.post(
+        "/repositories", json={"owner": "owner", "name": "repo"}
+    ).json()["id"]
+    session.add(
+        PullRequest(
+            repository_id=repository_id,
+            number=1,
+            title="PR",
+            body=None,
+            state="open",
+            merged=False,
+            merged_at=None,
+            merge_method="unknown",
+            base_ref="main",
+            author_login=None,
+            created_at=datetime(2026, 1, 1, tzinfo=UTC),
+            url="https://github.com/owner/repo/pull/1",
+        )
+    )
+    session.commit()
+
+    from excavator.api.routes import pull_requests as routes
+
+    def fail(*args: object, **kwargs: object) -> object:
+        raise GitHubClientError("do not expose")
+
+    monkeypatch.setattr(routes, "ingest_discussion", fail)
+    response = test_client.post(f"/repositories/{repository_id}/ingest-discussion")
+    assert response.status_code == 502
+    assert response.json() == {"detail": "GitHub API request failed"}
+    assert "do not expose" not in response.text
 
 
 def test_analyze_error_mappings_and_path_sanitization(
