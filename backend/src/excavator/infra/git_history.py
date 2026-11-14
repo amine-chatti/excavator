@@ -1,3 +1,11 @@
+"""Read local Git file history.
+
+Requires Git 2.31 or newer for ``--diff-merges=first-parent``. The reader
+knows that ``--first-parent`` flattens side branches into the merge,
+``--follow`` is a heuristic, and ``max_commits`` makes the oldest returned
+commit the lineage baseline so every symbol there appears added.
+"""
+
 from __future__ import annotations
 
 import os
@@ -8,8 +16,18 @@ from pathlib import Path
 from excavator.core.lineage import FileVersion
 
 GIT_TIMEOUT_SECONDS = 30
+RENAME_SIMILARITY = 50
 _DRIVE_PREFIX = re.compile(r"^[A-Za-z]:")
 _RECORD_SEPARATOR = b"\x1e"
+_SCRUBBED_ENVIRONMENT = (
+    "GIT_DIR",
+    "GIT_WORK_TREE",
+    "GIT_INDEX_FILE",
+    "GIT_OBJECT_DIRECTORY",
+    "GIT_ALTERNATE_OBJECT_DIRECTORIES",
+    "GIT_COMMON_DIR",
+    "GIT_NAMESPACE",
+)
 
 
 class GitHistoryError(Exception):
@@ -25,13 +43,18 @@ def read_file_versions(
     """Read the versions of a file touched by Git history, oldest first."""
     _validate_inputs(repo_path, file_path, ref, max_commits)
     repository = Path(repo_path)
+    prefix = _run_git(repository, ["rev-parse", "--show-prefix"])
+    if prefix not in {b"", b"\n"}:
+        raise ValueError("repo_path must be the repository root")
 
     log_args = [
+        "-c",
+        "log.showSignature=false",
         "log",
         "--follow",
         "--first-parent",
         "--diff-merges=first-parent",
-        "--find-renames=20%",
+        f"--find-renames={RENAME_SIMILARITY}%",
         "--name-status",
         "-z",
         "--format=%x1e%H",
@@ -90,8 +113,11 @@ def _validate_inputs(
     if _has_control_character(ref):
         raise ValueError("ref must not contain control characters")
 
-    if max_commits is not None and max_commits < 1:
-        raise ValueError("max_commits must be at least 1")
+    if max_commits is not None:
+        if isinstance(max_commits, bool) or not isinstance(max_commits, int):
+            raise ValueError("max_commits must be an integer or None")
+        if max_commits < 1:
+            raise ValueError("max_commits must be at least 1")
 
 
 def _has_control_character(value: str) -> bool:
@@ -109,9 +135,13 @@ def _run_git(repository: Path, arguments: list[str]) -> bytes:
         "core.quotepath=false",
         "-c",
         "core.autocrlf=false",
+        "-c",
+        "safe.bareRepository=all",
         *arguments,
     ]
     environment = os.environ.copy()
+    for variable in _SCRUBBED_ENVIRONMENT:
+        environment.pop(variable, None)
     environment.update({"GIT_TERMINAL_PROMPT": "0", "GIT_OPTIONAL_LOCKS": "0"})
     try:
         completed = subprocess.run(
