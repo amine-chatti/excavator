@@ -54,6 +54,11 @@ class EvidenceLink(Base):
         index=True,
         nullable=False,
     )
+    claim_id: Mapped[int | None] = mapped_column(
+        ForeignKey("analysis_claims.id", ondelete="CASCADE"),
+        index=True,
+        nullable=True,
+    )
     commit_id: Mapped[int | None] = mapped_column(
         ForeignKey("commits.id", ondelete="CASCADE"),
         index=True,

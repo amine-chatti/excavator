@@ -76,11 +76,39 @@ def test_baseline_migration_has_a_working_offline_downgrade() -> None:
         assert f"DROP TABLE {table.name}" in completed.stdout
 
 
-def test_nullable_url_migration_is_the_single_head() -> None:
+def test_explanation_storage_migration_is_the_single_head() -> None:
     config = Config(str(BACKEND_ROOT / "alembic.ini"))
     script = ScriptDirectory.from_config(config)
 
-    assert script.get_heads() == ["0002_nullable_commit_url"]
+    assert script.get_heads() == ["0003_explanation_storage"]
+
+
+def test_offline_migration_contains_explanation_storage_constraints() -> None:
+    sql = _offline_sql()
+
+    assert "explanation_summary" in sql
+    assert "ck_analyses_explanation_summary_outcome" in sql
+    assert "CREATE TABLE analysis_claims" in sql
+    assert "uq_analysis_claims_analysis_id_position" in sql
+    assert "ck_analysis_claims_position_non_negative" in sql
+    assert "ck_analysis_claims_text_non_empty" in sql
+    assert "fk_analysis_claims_analysis_id_analyses" in sql
+    assert "claim_id" in sql
+    assert "fk_evidence_links_claim_id_analysis_claims" in sql
+
+
+def test_offline_downgrade_removes_explanation_storage() -> None:
+    completed = subprocess.run(
+        [sys.executable, "-m", "alembic", "downgrade", "head:base", "--sql"],
+        cwd=BACKEND_ROOT,
+        check=True,
+        capture_output=True,
+        text=True,
+    )
+
+    assert "DROP TABLE analysis_claims" in completed.stdout
+    assert "DROP COLUMN claim_id" in completed.stdout
+    assert "DROP COLUMN explanation_summary" in completed.stdout
 
 
 def test_create_db_engine_uses_supplied_url() -> None:

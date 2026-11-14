@@ -1,6 +1,7 @@
 """SQLAlchemy models."""
 
 from excavator.infra.db.models.analysis import Analysis
+from excavator.infra.db.models.analysis_claim import AnalysisClaim
 from excavator.infra.db.models.commit import Commit
 from excavator.infra.db.models.evidence_link import EvidenceLink
 from excavator.infra.db.models.file_change import FileChange
@@ -15,6 +16,7 @@ from excavator.infra.db.models.symbol_version import SymbolVersion
 
 __all__ = [
     "Analysis",
+    "AnalysisClaim",
     "Commit",
     "EvidenceLink",
     "FileChange",
