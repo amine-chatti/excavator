@@ -11,6 +11,7 @@ from sqlalchemy.orm import Session
 
 from excavator.api.dependencies import get_session
 from excavator.infra.db.models import Repository
+from excavator.infra.git_clone import GitCloneError, clone_repository
 
 router = APIRouter(prefix="/repositories", tags=["repositories"])
 
@@ -31,9 +32,17 @@ def _validate_identifier(value: str) -> str:
 class RepositoryCreate(BaseModel):
     owner: str
     name: str
+    clone: bool = False
 
     _owner_validator = field_validator("owner")(_validate_identifier)
-    _name_validator = field_validator("name")(_validate_identifier)
+
+    @field_validator("name")
+    @classmethod
+    def validate_name(cls, value: str) -> str:
+        value = _validate_identifier(value)
+        if value.endswith(".git"):
+            raise ValueError("name must not end with '.git'")
+        return value
 
 
 class RepositoryResponse(BaseModel):
@@ -80,6 +89,21 @@ def create_repository(
         candidate.relative_to(root.expanduser().resolve())
     except ValueError:
         raise HTTPException(status_code=422, detail="invalid repository path") from None
+    if payload.clone and not candidate.exists():
+        try:
+            clone_repository(
+                payload.owner,
+                payload.name,
+                root,
+                request.app.state.settings.GIT_REMOTE_BASE,
+                allow_local=request.app.state.settings.ALLOW_LOCAL_REMOTES,
+            )
+        except FileExistsError:
+            raise HTTPException(status_code=409, detail="repository already exists") from None
+        except ValueError as exc:
+            raise HTTPException(status_code=422, detail=str(exc)) from exc
+        except GitCloneError:
+            raise HTTPException(status_code=502, detail="repository clone failed") from None
     if not candidate.is_dir():
         raise HTTPException(status_code=404, detail="repository directory not found")
 
