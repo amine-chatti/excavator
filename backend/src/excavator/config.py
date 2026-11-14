@@ -1,5 +1,7 @@
 from __future__ import annotations
 
+from pathlib import Path
+
 from pydantic import Field, SecretStr
 from pydantic_settings import BaseSettings, SettingsConfigDict
 
@@ -15,6 +17,10 @@ class Settings(BaseSettings):
     DATABASE_URL: str = Field(
         default="postgresql+psycopg://excavator:excavator@localhost:5432/excavator",
         description="Primary database connection string.",
+    )
+    REPOS_ROOT: Path = Field(
+        default=Path("."),
+        description="Root directory containing local repositories.",
     )
     GITHUB_TOKEN: SecretStr | None = Field(
         default=None,
