@@ -3,6 +3,7 @@ from __future__ import annotations
 import subprocess
 from collections.abc import Iterator
 from contextlib import contextmanager
+from datetime import UTC, datetime
 from pathlib import Path
 from sqlite3 import Connection
 from typing import cast
@@ -15,13 +16,14 @@ from sqlalchemy.engine import Engine
 from sqlalchemy.orm import Session
 from sqlalchemy.pool import StaticPool
 
-from excavator.api.dependencies import get_session
+from excavator.api.dependencies import get_github_client, get_session
 from excavator.api.main import create_app
 from excavator.api.routes.repositories import repository_path
 from excavator.infra.db.base import Base
 from excavator.infra.db.models import Commit, Repository, Symbol, SymbolVersion
 from excavator.infra.git_clone import GitCloneError
 from excavator.infra.git_history import GitHistoryError
+from excavator.infra.github_client import GitHubClientError, GitHubRateLimitError, PullRequestData
 
 
 def _git(repo: Path, *arguments: str) -> bytes:
@@ -296,6 +298,205 @@ def test_list_repositories_is_ordered_by_id(
 
     assert response.status_code == 200
     assert [item["name"] for item in response.json()] == ["first", "second"]
+
+
+def _api_pull_request(number: int) -> PullRequestData:
+    return PullRequestData(
+        number=number,
+        title=f"PR {number}",
+        body="body",
+        state="open",
+        author_login="author",
+        created_at=datetime(2026, 1, 1, tzinfo=UTC),
+        merged_at=None,
+        url=f"https://github.com/owner/repo/pull/{number}",
+        base_ref="main",
+        merged=False,
+        merge_method="unknown",
+    )
+
+
+def test_ingest_pull_requests_and_list_pagination(
+    client: tuple[TestClient, Session, Path],
+) -> None:
+    test_client, _, root = client
+    _, repository_id = _create_analyzable_repo(test_client, root)
+    assert (
+        test_client.post(
+            f"/repositories/{repository_id}/analyze",
+            json={"file_path": "new.py"},
+        ).status_code
+        == 200
+    )
+
+    class FakeClient:
+        calls = 0
+
+        def list_pull_requests_for_commit(
+            self,
+            owner: str,
+            name: str,
+            sha: str,
+        ) -> tuple[PullRequestData, ...]:
+            self.calls += 1
+            return (_api_pull_request(self.calls),)
+
+    app = cast(FastAPI, test_client.app)
+    app.dependency_overrides[get_github_client] = lambda: FakeClient()
+    response = test_client.post(
+        f"/repositories/{repository_id}/ingest-pull-requests",
+        json={"file_path": "new.py"},
+    )
+
+    assert response.status_code == 200
+    assert response.json()["pull_request_count"] == 2
+    assert response.json()["pull_request_commit_count"] == 2
+    listed = test_client.get(
+        f"/repositories/{repository_id}/pull-requests",
+        params={"limit": 1, "offset": 1},
+    )
+    assert listed.status_code == 200
+    assert listed.json()["total"] == 2
+    assert len(listed.json()["items"]) == 1
+
+
+def test_ingest_pull_requests_requires_analyzed_file(
+    client: tuple[TestClient, Session, Path],
+) -> None:
+    test_client, _, root = client
+    _git_repository(root)
+    repository_id = test_client.post(
+        "/repositories",
+        json={"owner": "owner", "name": "repo"},
+    ).json()["id"]
+
+    response = test_client.post(
+        f"/repositories/{repository_id}/ingest-pull-requests",
+        json={"file_path": "file.py"},
+    )
+
+    assert response.status_code == 404
+    assert response.json() == {"detail": "file has not been analyzed"}
+
+
+def test_ingest_pull_requests_unknown_repository_returns_404(
+    client: tuple[TestClient, Session, Path],
+) -> None:
+    response = client[0].post(
+        "/repositories/999/ingest-pull-requests",
+        json={"file_path": "file.py"},
+    )
+
+    assert response.status_code == 404
+    assert response.json() == {"detail": "repository not found"}
+
+
+def test_ingest_pull_requests_honors_max_commits(
+    client: tuple[TestClient, Session, Path],
+) -> None:
+    test_client, _, root = client
+    _, repository_id = _create_analyzable_repo(test_client, root)
+    assert (
+        test_client.post(
+            f"/repositories/{repository_id}/analyze",
+            json={"file_path": "new.py"},
+        ).status_code
+        == 200
+    )
+
+    class FakeClient:
+        def list_pull_requests_for_commit(
+            self,
+            owner: str,
+            name: str,
+            sha: str,
+        ) -> tuple[PullRequestData, ...]:
+            return (_api_pull_request(20),)
+
+    app = cast(FastAPI, test_client.app)
+    app.dependency_overrides[get_github_client] = lambda: FakeClient()
+    response = test_client.post(
+        f"/repositories/{repository_id}/ingest-pull-requests",
+        json={"file_path": "new.py", "max_commits": 1},
+    )
+
+    assert response.status_code == 200
+    assert response.json()["pull_request_commit_count"] == 1
+
+
+def test_list_pull_requests_unknown_repository_returns_404(
+    client: tuple[TestClient, Session, Path],
+) -> None:
+    response = client[0].get("/repositories/999/pull-requests")
+
+    assert response.status_code == 404
+    assert response.json() == {"detail": "repository not found"}
+
+
+@pytest.mark.parametrize(
+    ("error", "status_code"),
+    [(GitHubRateLimitError("limited"), 429), (GitHubClientError("failed"), 502)],
+)
+def test_ingest_pull_requests_maps_client_errors(
+    client: tuple[TestClient, Session, Path],
+    error: Exception,
+    status_code: int,
+) -> None:
+    test_client, _, root = client
+    _, repository_id = _create_analyzable_repo(test_client, root)
+    assert (
+        test_client.post(
+            f"/repositories/{repository_id}/analyze",
+            json={"file_path": "new.py"},
+        ).status_code
+        == 200
+    )
+
+    class FailingClient:
+        def list_pull_requests_for_commit(
+            self,
+            owner: str,
+            name: str,
+            sha: str,
+        ) -> tuple[PullRequestData, ...]:
+            raise error
+
+    app = cast(FastAPI, test_client.app)
+    app.dependency_overrides[get_github_client] = lambda: FailingClient()
+    response = test_client.post(
+        f"/repositories/{repository_id}/ingest-pull-requests",
+        json={"file_path": "new.py"},
+    )
+
+    assert response.status_code == status_code
+
+
+def test_ingest_pull_requests_maps_unexpected_client_error(
+    client: tuple[TestClient, Session, Path],
+    monkeypatch: pytest.MonkeyPatch,
+) -> None:
+    test_client, _, root = client
+    _, repository_id = _create_analyzable_repo(test_client, root)
+    assert (
+        test_client.post(
+            f"/repositories/{repository_id}/analyze",
+            json={"file_path": "new.py"},
+        ).status_code
+        == 200
+    )
+
+    from excavator.api.routes import pull_requests as pull_request_routes
+
+    def fail_ingest(*args: object, **kwargs: object) -> object:
+        raise GitHubClientError("failed")
+
+    monkeypatch.setattr(pull_request_routes, "ingest_pull_requests", fail_ingest)
+    response = test_client.post(
+        f"/repositories/{repository_id}/ingest-pull-requests",
+        json={"file_path": "new.py"},
+    )
+
+    assert response.status_code == 502
 
 
 def _create_analyzable_repo(test_client: TestClient, root: Path) -> tuple[Path, int]:
