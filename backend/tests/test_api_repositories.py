@@ -5,8 +5,10 @@ from collections.abc import Iterator
 from contextlib import contextmanager
 from pathlib import Path
 from sqlite3 import Connection
+from typing import cast
 
 import pytest
+from fastapi import FastAPI
 from fastapi.testclient import TestClient
 from sqlalchemy import create_engine, event, select
 from sqlalchemy.engine import Engine
@@ -18,6 +20,7 @@ from excavator.api.main import create_app
 from excavator.api.routes.repositories import repository_path
 from excavator.infra.db.base import Base
 from excavator.infra.db.models import Commit, Repository, Symbol, SymbolVersion
+from excavator.infra.git_clone import GitCloneError
 from excavator.infra.git_history import GitHistoryError
 
 
@@ -150,6 +153,18 @@ def test_invalid_repository_identifier_returns_422(
     assert response.json() == {"detail": "invalid request"}
 
 
+def test_invalid_repository_name_suffix_returns_422(
+    client: tuple[TestClient, Session, Path],
+) -> None:
+    response = client[0].post(
+        "/repositories",
+        json={"owner": "owner", "name": "repo.git"},
+    )
+
+    assert response.status_code == 422
+    assert response.json() == {"detail": "invalid request"}
+
+
 def test_missing_repository_directory_returns_404(
     client: tuple[TestClient, Session, Path],
 ) -> None:
@@ -160,6 +175,112 @@ def test_missing_repository_directory_returns_404(
 
     assert response.status_code == 404
     assert response.json() == {"detail": "repository directory not found"}
+
+
+def _create_bare_remote(root: Path) -> Path:
+    source = _git_repository(root / "source")
+    _write(source, "file.py", b"def value():\n    return 1\n")
+    _commit(source, "initial")
+    remote_root = root / "remotes"
+    bare = remote_root / "owner" / "repo.git"
+    bare.parent.mkdir(parents=True)
+    _git(bare.parent, "init", "--bare", "-q", bare.name)
+    _git(source, "remote", "add", "origin", str(bare))
+    _git(source, "push", "-q", "origin", "HEAD:main")
+    subprocess.run(
+        ["git", "--git-dir", str(bare), "symbolic-ref", "HEAD", "refs/heads/main"],
+        check=True,
+        capture_output=True,
+    )
+    return remote_root
+
+
+def test_clone_repository_then_analyze(
+    client: tuple[TestClient, Session, Path],
+) -> None:
+    test_client, session, root = client
+    remote_root = _create_bare_remote(root)
+    app = cast(FastAPI, test_client.app)
+    app.state.settings.GIT_REMOTE_BASE = str(remote_root)
+    app.state.settings.ALLOW_LOCAL_REMOTES = True
+
+    response = test_client.post(
+        "/repositories",
+        json={"owner": "owner", "name": "repo", "clone": True},
+    )
+
+    assert response.status_code == 201
+    assert (root / "owner" / "repo" / "file.py").is_file()
+    repository_id = response.json()["id"]
+    analysis = test_client.post(
+        f"/repositories/{repository_id}/analyze",
+        json={"file_path": "file.py"},
+    )
+    assert analysis.status_code == 200
+    assert session.get(Repository, repository_id) is not None
+
+
+def test_clone_true_with_existing_directory_keeps_existing_behavior(
+    client: tuple[TestClient, Session, Path],
+) -> None:
+    test_client, _, root = client
+    _git_repository(root)
+
+    response = test_client.post(
+        "/repositories",
+        json={"owner": "owner", "name": "repo", "clone": True},
+    )
+
+    assert response.status_code == 201
+
+
+def test_clone_failure_returns_generic_502(
+    client: tuple[TestClient, Session, Path],
+    monkeypatch: pytest.MonkeyPatch,
+) -> None:
+    test_client, _, root = client
+    absolute = str(root / "private")
+
+    from excavator.api.routes import repositories as repository_routes
+
+    def fail_clone(*args: object, **kwargs: object) -> None:
+        raise GitCloneError("git clone failed: " + absolute)
+
+    monkeypatch.setattr(repository_routes, "clone_repository", fail_clone)
+    response = test_client.post(
+        "/repositories",
+        json={"owner": "owner", "name": "repo", "clone": True},
+    )
+
+    assert response.status_code == 502
+    assert response.json() == {"detail": "repository clone failed"}
+    assert absolute not in response.text
+
+
+@pytest.mark.parametrize(
+    ("exception", "status_code"),
+    [(FileExistsError("exists"), 409), (ValueError("invalid remote"), 422)],
+)
+def test_clone_preflight_errors_are_mapped(
+    client: tuple[TestClient, Session, Path],
+    monkeypatch: pytest.MonkeyPatch,
+    exception: Exception,
+    status_code: int,
+) -> None:
+    test_client, _, _ = client
+
+    from excavator.api.routes import repositories as repository_routes
+
+    def fail_clone(*args: object, **kwargs: object) -> None:
+        raise exception
+
+    monkeypatch.setattr(repository_routes, "clone_repository", fail_clone)
+    response = test_client.post(
+        "/repositories",
+        json={"owner": "owner", "name": "repo", "clone": True},
+    )
+
+    assert response.status_code == status_code
 
 
 def test_list_repositories_is_ordered_by_id(
