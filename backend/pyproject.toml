@@ -32,8 +32,11 @@ dev = [
 packages = ["src/excavator"]
 
 [tool.pytest.ini_options]
-addopts = "--cov=excavator --cov-report=term-missing"
+addopts = '--cov=excavator --cov-report=term-missing -m "not postgres"'
 testpaths = ["tests"]
+markers = [
+  "postgres: requires TEST_POSTGRES_URL and an available PostgreSQL server",
+]
 
 [tool.ruff]
 line-length = 100
