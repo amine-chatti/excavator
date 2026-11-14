@@ -2,6 +2,7 @@ from __future__ import annotations
 
 from fastapi import FastAPI
 from fastapi.exceptions import RequestValidationError
+from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import JSONResponse
 
 from excavator.api.routes.analysis import router as analysis_router
@@ -19,6 +20,12 @@ def create_app() -> FastAPI:
 
     app = FastAPI(title="Excavator")
     app.state.settings = settings
+    app.add_middleware(
+        CORSMiddleware,
+        allow_origins=["http://localhost:5173", "http://127.0.0.1:5173"],
+        allow_methods=["GET"],
+        allow_credentials=False,
+    )
     app.include_router(health_router)
     app.include_router(pull_requests_router)
     app.include_router(repositories_router)
