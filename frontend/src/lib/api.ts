@@ -1,7 +1,9 @@
 import type {
   ExtractiveExplanationResponse,
+  ExplainResponse,
   LineageResponse,
   RepositoryRecord,
+  StoredExplanationResponse,
   SymbolsResponse,
 } from "@/lib/api-types";
 
@@ -19,19 +21,34 @@ export class ApiError extends Error {
   }
 }
 
-async function requestJson<T>(path: string): Promise<T> {
+async function requestJson<T>(path: string, method: "GET" | "POST" = "GET"): Promise<T> {
   let response: Response;
   try {
     response = await fetch(`${API_BASE_URL}${path}`, {
+      method,
       headers: { Accept: "application/json" },
     });
   } catch {
     throw new ApiError("The field server could not be reached.");
   }
   if (!response.ok) {
-    throw new ApiError(`The field server returned ${response.status}.`, response.status);
+    let detail: unknown;
+    try {
+      detail = (await response.json()) as { detail?: unknown };
+      detail = typeof detail === "object" && detail !== null && "detail" in detail
+        ? detail.detail
+        : undefined;
+    } catch {
+      detail = undefined;
+    }
+    const serverMessage = typeof detail === "string" ? detail : `The field server returned ${response.status}.`;
+    throw new ApiError(serverMessage, response.status);
   }
-  return (await response.json()) as T;
+  try {
+    return (await response.json()) as T;
+  } catch {
+    throw new ApiError("The field server returned an unreadable response.", response.status);
+  }
 }
 
 export function listRepositories(): Promise<RepositoryRecord[]> {
@@ -52,4 +69,19 @@ export function getExtractiveExplanation(
   return requestJson<ExtractiveExplanationResponse>(
     `/symbols/${symbolId}/extractive-explanation`,
   );
+}
+
+export async function getStoredExplanation(symbolId: number): Promise<StoredExplanationResponse | null> {
+  try {
+    return await requestJson<StoredExplanationResponse>(`/symbols/${symbolId}/explanation`);
+  } catch (error) {
+    if (error instanceof ApiError && error.status === 404 && error.message === "explanation not found") {
+      return null;
+    }
+    throw error;
+  }
+}
+
+export function postExplanation(symbolId: number): Promise<ExplainResponse> {
+  return requestJson<ExplainResponse>(`/symbols/${symbolId}/explain`, "POST");
 }

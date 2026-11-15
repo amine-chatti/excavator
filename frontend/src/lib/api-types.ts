@@ -59,3 +59,35 @@ export interface ExtractiveExplanationResponse {
   status: "extracts" | "no_evidence";
   extracts: ExtractiveExtract[];
 }
+
+export type ExplanationStatus = "explained" | "insufficient_evidence";
+
+export interface ExplanationQuote {
+  snippet_id: string;
+  source_type: "commit_message" | "pull_request" | "review_comment" | "issue";
+  quote: string;
+  level: string;
+  epistemic_label: string;
+}
+
+export interface ExplanationClaim {
+  position: number;
+  text: string;
+  quotes: ExplanationQuote[];
+}
+
+export interface StoredExplanationResponse {
+  status: "explained";
+  summary: string;
+  claims: ExplanationClaim[];
+}
+
+export interface ExplainResponse {
+  status: ExplanationStatus;
+  summary: string | null;
+  claims: ExplanationClaim[];
+  dropped_claim_count: number;
+  truncated: boolean;
+  truncated_snippet_count: number;
+  omitted_snippet_count: number;
+}

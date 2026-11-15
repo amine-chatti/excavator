@@ -34,7 +34,7 @@ export function FieldIndex(props: Props) {
       <div className="wordmark"><span className="wordmark-mark">E</span><span>EXCAVATOR<small>FIELD NOTEBOOK · 01</small></span></div>
       <div className="rail-section">
         <label className="eyebrow" htmlFor="repository-select">Repository</label>
-        <Select value={props.repositoryId === null ? undefined : String(props.repositoryId)} onValueChange={(value) => props.onRepositoryChange(Number(value))}>
+        <Select value={props.repositoryId === null ? "" : String(props.repositoryId)} onValueChange={(value) => props.onRepositoryChange(Number(value))}>
           <SelectTrigger id="repository-select" className="repo-select"><SelectValue placeholder="Choose a dig site" /></SelectTrigger>
           <SelectContent>{props.repositories.map((repo) => <SelectItem key={repo.id} value={String(repo.id)}>{repo.owner}/{repo.name}</SelectItem>)}</SelectContent>
         </Select>
