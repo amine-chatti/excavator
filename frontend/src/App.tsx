@@ -152,6 +152,14 @@ export default function App() {
 
   const retryDetails = () => { if (selectedId !== null) void loadDetails(selectedId); };
   const activeSymbol = symbols.find((item) => item.id === selectedId) ?? null;
+  const aiHere = demoMode ? symbols.filter((symbol) => demoAiSymbolIds.has(symbol.id)) : [];
+  const featured = aiHere.find((symbol) => symbol.qualified_name.endsWith("format_filename")) ?? aiHere[0] ?? symbols.find((symbol) => symbol.qualified_name.endsWith("format_filename")) ?? symbols[0] ?? null;
+  const showNextAiExample = () => {
+    if (!aiHere.length) return;
+    const index = aiHere.findIndex((symbol) => symbol.id === selectedId);
+    const next = aiHere[(index + 1) % aiHere.length];
+    if (next) { setSelectedId(next.id); setSelectedEvent(null); }
+  };
   const activeExplanation = selectedId === null ? undefined : explanationBySymbol[selectedId];
   const activeTimeline = lineage ? makeTimeline(lineage.versions, lineage.symbol.status) : null;
   const historicalEventCount = activeTimeline?.points.filter((point) => !point.baseline && point.kind !== "carried").length ?? 0;
@@ -190,7 +198,7 @@ export default function App() {
               <article><strong>{symbols.filter((symbol) => symbol.kind === "function").length}</strong><span>functions</span></article>
             </div><p>Counts come from the repository index. Select any symbol in the explorer to open its timeline and source evidence.</p></section>}
             <motion.div className="intro-demo" aria-hidden="true"><svg viewBox="0 0 520 170"><motion.path d="M260 8V152" initial={{ pathLength: 0 }} animate={{ pathLength: [0, 1, 1] }} transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }} /><motion.circle cx="260" cy="42" r="10" initial={{ scale: 0 }} animate={{ scale: [0, 1, 1, 0] }} transition={{ duration: 4, repeat: Infinity, times: [0, .2, .8, 1] }} /><motion.rect x="248" y="88" width="24" height="24" initial={{ scale: 0 }} animate={{ scale: [0, 1, 1, 0] }} transition={{ duration: 4, repeat: Infinity, delay: .8, times: [0, .2, .8, 1] }} /><motion.path d="M250 145l10-18 10 18z" initial={{ scale: 0 }} animate={{ scale: [0, 1, 1, 0] }} transition={{ duration: 4, repeat: Infinity, delay: 1.7, times: [0, .2, .8, 1] }} /></svg><span>NEWER</span><span>OLDER</span></motion.div>
-            <motion.button className="intro-button" disabled={symbolsLoading || !symbols.length} whileHover={{ y: -3 }} whileTap={{ scale: .98 }} onClick={() => { const first = symbols.find((symbol) => symbol.qualified_name.endsWith("format_filename")) ?? symbols[0]; if (first) setSelectedId(first.id); }}>Dig into format_filename <span>↗</span></motion.button>
+            <motion.button className="intro-button" disabled={symbolsLoading || !symbols.length} whileHover={{ y: -3 }} whileTap={{ scale: .98 }} onClick={() => { if (featured) setSelectedId(featured.id); }}>Dig into {demoMode && featured ? featured.qualified_name : "format_filename"} <span>↗</span></motion.button>
           </motion.section>}
         </AnimatePresence>
         <footer className="main-footer"><span>EXCAVATOR <i>·</i> A FIELD NOTEBOOK FOR CODE</span><span>EXTRACTIVE RECORDS ONLY</span></footer>
@@ -199,7 +207,7 @@ export default function App() {
         <div className="evidence-head"><span className="panel-kicker">SOURCE MATERIAL</span><h2>Evidence</h2><p>Developer words stay verbatim. Model interpretation is marked separately.</p></div>
         {detailLoading ? <div className="evidence-wait">Loading evidence…</div> : detailError ? <p className="evidence-wait">Evidence could not be loaded.</p> : extractive ? <Unearthed data={extractive} selectedEvent={selectedEvent?.kind ?? null} eventKindCounts={eventKindCounts} onSelectEvent={selectEvidenceEvent} /> : <div className="evidence-wait">Select a symbol to read its history and sources.</div>}
         <div className="evidence-divider" />
-        {activeSymbol && <WhyChanged state={activeExplanation ?? { status: "loading" }} deleted={activeSymbol.status === "deleted"} demoMode={demoMode} onGenerate={() => void generateExplanation(activeSymbol.id)} onRetry={() => activeExplanation?.status === "error" && activeExplanation.retryAction === "load" ? loadExplanation(activeSymbol.id, true) : void generateExplanation(activeSymbol.id)} />}
+        {activeSymbol && <WhyChanged state={activeExplanation ?? { status: "loading" }} deleted={activeSymbol.status === "deleted"} demoMode={demoMode} onNextExample={demoMode && aiHere.length ? showNextAiExample : undefined} onGenerate={() => void generateExplanation(activeSymbol.id)} onRetry={() => activeExplanation?.status === "error" && activeExplanation.retryAction === "load" ? loadExplanation(activeSymbol.id, true) : void generateExplanation(activeSymbol.id)} />}
       </aside>
     </div>
   </TooltipProvider></MotionConfig>;

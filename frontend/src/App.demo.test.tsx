@@ -47,7 +47,7 @@ function demoFetch(withExplanation: boolean) {
     throw new Error(`Unexpected demo request: ${path}`);
   });
 }
-
+const symbolRow = async () => (await screen.findAllByRole("button", { name: /click\.format_filename/ })).find((el) => el.classList.contains("specimen-row"))!;
 describe("saved-data demo mode", () => {
   afterEach(() => {
     cleanup();
@@ -62,7 +62,7 @@ describe("saved-data demo mode", () => {
     render(<App />);
 
     expect(await screen.findByText("SAMPLE DATA")).toBeTruthy();
-    const firstSymbol = await screen.findByRole("button", { name: /click\.format_filename/ });
+    const firstSymbol = await symbolRow();
     fireEvent.click(firstSymbol);
     fireEvent.click(await screen.findByRole("button", { name: "Replay saved example" }));
     expect(await screen.findByRole("heading", { name: "Replaying saved explanation" })).toBeTruthy();
@@ -76,7 +76,7 @@ describe("saved-data demo mode", () => {
     vi.stubEnv("VITE_DEMO_MODE", "true");
     vi.stubGlobal("fetch", demoFetch(false));
     render(<App />);
-    fireEvent.click(await screen.findByRole("button", { name: /click\.format_filename/ }));
+    fireEvent.click(await symbolRow());
     expect(await screen.findByRole("heading", { name: "No saved AI example" })).toBeTruthy();
     expect(screen.getByText("To generate an AI explanation, run Excavator locally with an AI key.")).toBeTruthy();
   });
