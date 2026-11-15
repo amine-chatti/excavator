@@ -1,0 +1,97 @@
+{
+  "symbol": {
+    "id": 57,
+    "repository_id": 2,
+    "language": "python",
+    "kind": "method",
+    "qualified_name": "Signer.__init__",
+    "current_path": "src/itsdangerous/signer.py",
+    "status": "exists"
+  },
+  "versions": [
+    {
+      "commit_sha": "8e611d7373acc874cc8bd3fc480cf3cf7b5b6a10",
+      "commit_message": "Merge pull request #107 from pallets/split",
+      "authored_at": "2018-10-18T03:17:25Z",
+      "path": "src/itsdangerous/signer.py",
+      "qualified_name": "Signer.__init__",
+      "start_line": 97,
+      "end_line": 123,
+      "body_hash": "a1a9f6c18054ff7ace4cbac5f03b92afa8f2d3646809be98af3eac326409ef4f",
+      "parse_status": "ok",
+      "lineage_method": "exact"
+    },
+    {
+      "commit_sha": "3703fbdedd13b2630dd9be75a3638408c193765d",
+      "commit_message": "Merge pull request #149 from pallets/drop-python2",
+      "authored_at": "2020-04-14T23:48:30Z",
+      "path": "src/itsdangerous/signer.py",
+      "qualified_name": "Signer.__init__",
+      "start_line": 91,
+      "end_line": 125,
+      "body_hash": "6e1f4524cad923def3d4d16d4c2cfe0ae47f69729ef801501ac0ed3e042b6a0e",
+      "parse_status": "ok",
+      "lineage_method": "exact"
+    },
+    {
+      "commit_sha": "2881d93e31c3e80641e28b858cbff71d3899afa0",
+      "commit_message": "Merge pull request #141 from lepture/key-rotate",
+      "authored_at": "2020-05-12T23:16:13Z",
+      "path": "src/itsdangerous/signer.py",
+      "qualified_name": "Signer.__init__",
+      "start_line": 91,
+      "end_line": 135,
+      "body_hash": "93ee43d056179196b84255f0fb9e0a95facce9b61a0c3bc2007ca11d4f9bb81e",
+      "parse_status": "ok",
+      "lineage_method": "exact"
+    },
+    {
+      "commit_sha": "786f5de1616e359a2a4c25d5524c181d400e4edd",
+      "commit_message": "Merge pull request #156 from pallets/docs-concepts",
+      "authored_at": "2020-05-12T23:46:28Z",
+      "path": "src/itsdangerous/signer.py",
+      "qualified_name": "Signer.__init__",
+      "start_line": 108,
+      "end_line": 152,
+      "body_hash": "6f7b67369e198a0463d2032cdf3833aca5f918218e9113917df07ce59e11e8c4",
+      "parse_status": "ok",
+      "lineage_method": "exact"
+    },
+    {
+      "commit_sha": "4559e76d632ecfda09515746790670be3c59b726",
+      "commit_message": "Merge pull request #186 from pallets/typing",
+      "authored_at": "2020-08-31T18:50:36Z",
+      "path": "src/itsdangerous/signer.py",
+      "qualified_name": "Signer.__init__",
+      "start_line": 120,
+      "end_line": 159,
+      "body_hash": "6dcb75f7c88f560d12b2f16039ebcab64454500a4540005fddf9b55acf7a49d3",
+      "parse_status": "ok",
+      "lineage_method": "exact"
+    },
+    {
+      "commit_sha": "b46ebef579ef0a86517453e8106c9d7d5cf7dd29",
+      "commit_message": "Merge branch '2.0.x'",
+      "authored_at": "2021-05-18T15:12:24Z",
+      "path": "src/itsdangerous/signer.py",
+      "qualified_name": "Signer.__init__",
+      "start_line": 120,
+      "end_line": 164,
+      "body_hash": "2c717c0674b8ee1bdab34ae023eb695fa082090b3fef67763ea8f7424402b8b1",
+      "parse_status": "ok",
+      "lineage_method": "exact"
+    },
+    {
+      "commit_sha": "bc88e945d31c407e16c3f4e1c713c12dd598e58d",
+      "commit_message": "improve typing (#373)",
+      "authored_at": "2024-04-13T18:55:04Z",
+      "path": "src/itsdangerous/signer.py",
+      "qualified_name": "Signer.__init__",
+      "start_line": 121,
+      "end_line": 165,
+      "body_hash": "58ade5aef09196f0b5fb0907084e8b3baef9c740958d3e2c32896dd62f575a75",
+      "parse_status": "ok",
+      "lineage_method": "exact"
+    }
+  ]
+}

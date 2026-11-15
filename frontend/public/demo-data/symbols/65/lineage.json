@@ -1,0 +1,37 @@
+{
+  "symbol": {
+    "id": 65,
+    "repository_id": 2,
+    "language": "python",
+    "kind": "function",
+    "qualified_name": "_make_keys_list",
+    "current_path": "src/itsdangerous/signer.py",
+    "status": "exists"
+  },
+  "versions": [
+    {
+      "commit_sha": "4559e76d632ecfda09515746790670be3c59b726",
+      "commit_message": "Merge pull request #186 from pallets/typing",
+      "authored_at": "2020-08-31T18:50:36Z",
+      "path": "src/itsdangerous/signer.py",
+      "qualified_name": "_make_keys_list",
+      "start_line": 60,
+      "end_line": 64,
+      "body_hash": "c4ade4eededa1b9bec9e5c2447cfded5d51dbb6c314522ddbc248cc7f0ca95a6",
+      "parse_status": "ok",
+      "lineage_method": "exact"
+    },
+    {
+      "commit_sha": "bc88e945d31c407e16c3f4e1c713c12dd598e58d",
+      "commit_message": "improve typing (#373)",
+      "authored_at": "2024-04-13T18:55:04Z",
+      "path": "src/itsdangerous/signer.py",
+      "qualified_name": "_make_keys_list",
+      "start_line": 59,
+      "end_line": 65,
+      "body_hash": "24147bcf2bbea337554eb1ed1279b0085ad6a2b84a874a4e4ae00397e1915e0f",
+      "parse_status": "ok",
+      "lineage_method": "exact"
+    }
+  ]
+}

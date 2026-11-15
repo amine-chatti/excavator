@@ -1,0 +1,122 @@
+{
+  "status": "extracts",
+  "extracts": [
+    {
+      "source_kind": "commit",
+      "reference": "c2d9461914c3624b49b596e3bd5d76dc32b406d1",
+      "excerpt": "Initial import from flatland.util.signals",
+      "lineage_event": "added",
+      "created_at": "2010-02-14T17:40:29Z",
+      "label": "quote",
+      "epistemic_label": "verified"
+    },
+    {
+      "source_kind": "commit",
+      "reference": "73e7d1d2dfff8a6103faad7ee608083231c28be6",
+      "excerpt": "Sphinx documentation.",
+      "lineage_event": "modified",
+      "created_at": "2010-02-16T00:35:48Z",
+      "label": "quote",
+      "epistemic_label": "verified"
+    },
+    {
+      "source_kind": "commit",
+      "reference": "fae6164cda6c5e9af89895a22f700402fa4b5ec5",
+      "excerpt": "Add an initial set of type hints",
+      "lineage_event": "moved",
+      "created_at": "2023-02-26T11:17:50Z",
+      "label": "quote",
+      "epistemic_label": "verified"
+    },
+    {
+      "source_kind": "commit",
+      "reference": "fae6164cda6c5e9af89895a22f700402fa4b5ec5",
+      "excerpt": "These focus on the public API with the private aspect omitted.",
+      "lineage_event": "moved",
+      "created_at": "2023-02-26T11:17:50Z",
+      "label": "quote",
+      "epistemic_label": "verified"
+    },
+    {
+      "source_kind": "commit",
+      "reference": "fae6164cda6c5e9af89895a22f700402fa4b5ec5",
+      "excerpt": "This is",
+      "lineage_event": "moved",
+      "created_at": "2023-02-26T11:17:50Z",
+      "label": "quote",
+      "epistemic_label": "verified"
+    },
+    {
+      "source_kind": "commit",
+      "reference": "fae6164cda6c5e9af89895a22f700402fa4b5ec5",
+      "excerpt": "because these are hard to type, and may not be required with modern",
+      "lineage_event": "moved",
+      "created_at": "2023-02-26T11:17:50Z",
+      "label": "quote",
+      "epistemic_label": "verified"
+    },
+    {
+      "source_kind": "commit",
+      "reference": "fae6164cda6c5e9af89895a22f700402fa4b5ec5",
+      "excerpt": "python.",
+      "lineage_event": "moved",
+      "created_at": "2023-02-26T11:17:50Z",
+      "label": "quote",
+      "epistemic_label": "verified"
+    },
+    {
+      "source_kind": "commit",
+      "reference": "fae6164cda6c5e9af89895a22f700402fa4b5ec5",
+      "excerpt": "However, this should still be useful if adopted for code",
+      "lineage_event": "moved",
+      "created_at": "2023-02-26T11:17:50Z",
+      "label": "quote",
+      "epistemic_label": "verified"
+    },
+    {
+      "source_kind": "commit",
+      "reference": "fae6164cda6c5e9af89895a22f700402fa4b5ec5",
+      "excerpt": "that uses blinker.",
+      "lineage_event": "moved",
+      "created_at": "2023-02-26T11:17:50Z",
+      "label": "quote",
+      "epistemic_label": "verified"
+    },
+    {
+      "source_kind": "commit",
+      "reference": "c8703aa7c09d7081362647f6659ab2f587279649",
+      "excerpt": "Merge pull request #94 from pallets-eco/lazy-annotations",
+      "lineage_event": "modified",
+      "created_at": "2023-04-12T21:31:57Z",
+      "label": "quote",
+      "epistemic_label": "verified"
+    },
+    {
+      "source_kind": "commit",
+      "reference": "c8703aa7c09d7081362647f6659ab2f587279649",
+      "excerpt": "lazy annotations",
+      "lineage_event": "modified",
+      "created_at": "2023-04-12T21:31:57Z",
+      "label": "quote",
+      "epistemic_label": "verified"
+    },
+    {
+      "source_kind": "commit",
+      "reference": "64423dfadc9a35000b5399ca3d94a480ec7efe99",
+      "excerpt": "Merge pull request #144 from pallets-eco/simplify-refs",
+      "lineage_event": "modified",
+      "created_at": "2024-04-27T02:45:35Z",
+      "label": "quote",
+      "epistemic_label": "verified"
+    },
+    {
+      "source_kind": "commit",
+      "reference": "64423dfadc9a35000b5399ca3d94a480ec7efe99",
+      "excerpt": "simplify weakref handling",
+      "lineage_event": "modified",
+      "created_at": "2024-04-27T02:45:35Z",
+      "label": "quote",
+      "epistemic_label": "verified"
+    }
+  ]
+}

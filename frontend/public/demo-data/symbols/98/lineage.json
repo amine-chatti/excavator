@@ -1,0 +1,49 @@
+{
+  "symbol": {
+    "id": 98,
+    "repository_id": 3,
+    "language": "python",
+    "kind": "method",
+    "qualified_name": "PAsyncWrapper.__call__",
+    "current_path": "src/blinker/base.py",
+    "status": "deleted"
+  },
+  "versions": [
+    {
+      "commit_sha": "64423dfadc9a35000b5399ca3d94a480ec7efe99",
+      "commit_message": "Merge pull request #144 from pallets-eco/simplify-refs",
+      "authored_at": "2024-04-27T02:45:35Z",
+      "path": "src/blinker/base.py",
+      "qualified_name": "PAsyncWrapper.__call__",
+      "start_line": 33,
+      "end_line": 33,
+      "body_hash": "5663792c13475eb4f4a69f5b336734502d17fb314cc8e591e1fc9382dfde93c2",
+      "parse_status": "ok",
+      "lineage_method": "exact"
+    },
+    {
+      "commit_sha": "fd8a169d633f84874cbc95cddc225240ed4013ff",
+      "commit_message": "Merge pull request #150 from pallets-eco/collections-abc",
+      "authored_at": "2024-04-28T17:17:52Z",
+      "path": "src/blinker/base.py",
+      "qualified_name": "PAsyncWrapper.__call__",
+      "start_line": 35,
+      "end_line": 35,
+      "body_hash": "d21db9b3a2b3bd2761c70aea8f71c74aaa48f10bf375a6cdb4a2301638eea4ec",
+      "parse_status": "ok",
+      "lineage_method": "exact"
+    },
+    {
+      "commit_sha": "952a97b0aefbd39b52c9ad83bfe9f4aaf188dfee",
+      "commit_message": "Merge pull request #156 from pallets-eco/wrapper-type",
+      "authored_at": "2024-05-06T16:59:20Z",
+      "path": "src/blinker/base.py",
+      "qualified_name": "PAsyncWrapper.__call__",
+      "start_line": 35,
+      "end_line": 35,
+      "body_hash": "d21db9b3a2b3bd2761c70aea8f71c74aaa48f10bf375a6cdb4a2301638eea4ec",
+      "parse_status": "ok",
+      "lineage_method": "exact"
+    }
+  ]
+}

@@ -1,0 +1,50 @@
+{
+  "status": "extracts",
+  "extracts": [
+    {
+      "source_kind": "commit",
+      "reference": "8e611d7373acc874cc8bd3fc480cf3cf7b5b6a10",
+      "excerpt": "Merge pull request #107 from pallets/split",
+      "lineage_event": "added",
+      "created_at": "2018-10-18T03:17:25Z",
+      "label": "quote",
+      "epistemic_label": "verified"
+    },
+    {
+      "source_kind": "commit",
+      "reference": "8e611d7373acc874cc8bd3fc480cf3cf7b5b6a10",
+      "excerpt": "Refactor from single module to package",
+      "lineage_event": "added",
+      "created_at": "2018-10-18T03:17:25Z",
+      "label": "quote",
+      "epistemic_label": "verified"
+    },
+    {
+      "source_kind": "commit",
+      "reference": "4559e76d632ecfda09515746790670be3c59b726",
+      "excerpt": "Merge pull request #186 from pallets/typing",
+      "lineage_event": "modified",
+      "created_at": "2020-08-31T18:50:36Z",
+      "label": "quote",
+      "epistemic_label": "verified"
+    },
+    {
+      "source_kind": "commit",
+      "reference": "4559e76d632ecfda09515746790670be3c59b726",
+      "excerpt": "add typing with mypy",
+      "lineage_event": "modified",
+      "created_at": "2020-08-31T18:50:36Z",
+      "label": "quote",
+      "epistemic_label": "verified"
+    },
+    {
+      "source_kind": "commit",
+      "reference": "bc88e945d31c407e16c3f4e1c713c12dd598e58d",
+      "excerpt": "improve typing (#373)",
+      "lineage_event": "modified",
+      "created_at": "2024-04-13T18:55:04Z",
+      "label": "quote",
+      "epistemic_label": "verified"
+    }
+  ]
+}

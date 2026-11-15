@@ -1,0 +1,109 @@
+{
+  "symbol": {
+    "id": 85,
+    "repository_id": 3,
+    "language": "python",
+    "kind": "method",
+    "qualified_name": "Signal.connect_via",
+    "current_path": "src/blinker/base.py",
+    "status": "exists"
+  },
+  "versions": [
+    {
+      "commit_sha": "fa3be696ab410308191ed4af804a31d2ba60144d",
+      "commit_message": "Added Signal.connect_via() decorator.",
+      "authored_at": "2010-07-21T10:07:13Z",
+      "path": "blinker/base.py",
+      "qualified_name": "Signal.connect_via",
+      "start_line": 113,
+      "end_line": 137,
+      "body_hash": "f43d066d798ee49e866334ec0837871cdfca0be049adf1ec7ba31d9e987b336b",
+      "parse_status": "ok",
+      "lineage_method": "exact"
+    },
+    {
+      "commit_sha": "904d8d3803e84257c08526e9047474215aa1c976",
+      "commit_message": "Merge pull request #63 from tirkarthi/fix-warnings",
+      "authored_at": "2020-11-07T17:17:12Z",
+      "path": "blinker/base.py",
+      "qualified_name": "Signal.connect_via",
+      "start_line": 160,
+      "end_line": 184,
+      "body_hash": "a8f6a6434398ca3e5400cf57162d55e8cffef6020c7226291d4ecb41b9ac28cb",
+      "parse_status": "ok",
+      "lineage_method": "exact"
+    },
+    {
+      "commit_sha": "084d2bdb86f7e2e29e4bc88d5317955b9c4d76dc",
+      "commit_message": "Merge pull request #72 from pallets-eco/refresh",
+      "authored_at": "2022-07-17T16:44:48Z",
+      "path": "blinker/base.py",
+      "qualified_name": "Signal.connect_via",
+      "start_line": 160,
+      "end_line": 184,
+      "body_hash": "b21da2c85b33874faff3409c6dccaa481b3301f80781cf2e7addd601f6494654",
+      "parse_status": "ok",
+      "lineage_method": "exact"
+    },
+    {
+      "commit_sha": "f9d51929f71295d0b0f3acfce2e47656bd0472e1",
+      "commit_message": "Move to src/ layout",
+      "authored_at": "2023-01-19T00:08:51Z",
+      "path": "src/blinker/base.py",
+      "qualified_name": "Signal.connect_via",
+      "start_line": 154,
+      "end_line": 180,
+      "body_hash": "b9be7fc76f001b646349e94d1ab6944c9866b455fa9dba51c71d4520c3827b13",
+      "parse_status": "ok",
+      "lineage_method": "exact"
+    },
+    {
+      "commit_sha": "fae6164cda6c5e9af89895a22f700402fa4b5ec5",
+      "commit_message": "Add an initial set of type hints",
+      "authored_at": "2023-02-26T11:17:50Z",
+      "path": "src/blinker/base.py",
+      "qualified_name": "Signal.connect_via",
+      "start_line": 175,
+      "end_line": 203,
+      "body_hash": "57a359a8b452b3eccf1cec947614f2d04147ad3c9a4d11d25cd8b996334e7963",
+      "parse_status": "ok",
+      "lineage_method": "exact"
+    },
+    {
+      "commit_sha": "64423dfadc9a35000b5399ca3d94a480ec7efe99",
+      "commit_message": "Merge pull request #144 from pallets-eco/simplify-refs",
+      "authored_at": "2024-04-27T02:45:35Z",
+      "path": "src/blinker/base.py",
+      "qualified_name": "Signal.connect_via",
+      "start_line": 169,
+      "end_line": 194,
+      "body_hash": "cd53a9bfb0b142c0f9aada37a3dad7a674b3158254946f7c1ac8db5acb308384",
+      "parse_status": "ok",
+      "lineage_method": "exact"
+    },
+    {
+      "commit_sha": "fd8a169d633f84874cbc95cddc225240ed4013ff",
+      "commit_message": "Merge pull request #150 from pallets-eco/collections-abc",
+      "authored_at": "2024-04-28T17:17:52Z",
+      "path": "src/blinker/base.py",
+      "qualified_name": "Signal.connect_via",
+      "start_line": 171,
+      "end_line": 196,
+      "body_hash": "a01c2c3ed1f743c6bf4ed0fda02215b9ac0b56104671b3cc73101dbf7bad78cf",
+      "parse_status": "ok",
+      "lineage_method": "exact"
+    },
+    {
+      "commit_sha": "f1bbce1023728a3622687a949bc0beb66be0a6c0",
+      "commit_message": "Merge pull request #151 from pallets-eco/cleanup-docs",
+      "authored_at": "2024-04-28T19:47:40Z",
+      "path": "src/blinker/base.py",
+      "qualified_name": "Signal.connect_via",
+      "start_line": 164,
+      "end_line": 188,
+      "body_hash": "7edaf3aeb71153e329a351347b6f66af92eee072b89ca1922fae6bc242242f08",
+      "parse_status": "ok",
+      "lineage_method": "exact"
+    }
+  ]
+}

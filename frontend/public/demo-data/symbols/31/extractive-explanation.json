@@ -1,0 +1,104 @@
+{
+  "status": "extracts",
+  "extracts": [
+    {
+      "source_kind": "commit",
+      "reference": "de79af181f2164d90d14b0176f4a7bc420138d97",
+      "excerpt": "Merge pull request #451 from mitsuhiko/feature/unicode-cmd",
+      "lineage_event": "added",
+      "created_at": "2015-11-05T21:35:30Z",
+      "label": "quote",
+      "epistemic_label": "verified"
+    },
+    {
+      "source_kind": "commit",
+      "reference": "de79af181f2164d90d14b0176f4a7bc420138d97",
+      "excerpt": "Added support for dealing with unicode argv on win py2",
+      "lineage_event": "added",
+      "created_at": "2015-11-05T21:35:30Z",
+      "label": "quote",
+      "epistemic_label": "verified"
+    },
+    {
+      "source_kind": "commit",
+      "reference": "55601835e6fe2cb077715ce959b28bb0c14dc6c9",
+      "excerpt": "Fixed an issue with get_os_args and export it.",
+      "lineage_event": "modified",
+      "created_at": "2015-11-05T21:57:30Z",
+      "label": "quote",
+      "epistemic_label": "verified"
+    },
+    {
+      "source_kind": "commit",
+      "reference": "0859d19c5b29ac9cf2895e06e91312b627e6e692",
+      "excerpt": "Only return unicode params from get_os_args if unchanged.",
+      "lineage_event": "modified",
+      "created_at": "2015-11-06T11:00:18Z",
+      "label": "quote",
+      "epistemic_label": "verified"
+    },
+    {
+      "source_kind": "commit",
+      "reference": "97de2c97275f52adc5c6ef8bb8aa993ce997fe7e",
+      "excerpt": "Merge pull request #1532 from pallets/drop-python2",
+      "lineage_event": "moved",
+      "created_at": "2020-04-20T14:16:07Z",
+      "label": "quote",
+      "epistemic_label": "verified"
+    },
+    {
+      "source_kind": "commit",
+      "reference": "97de2c97275f52adc5c6ef8bb8aa993ce997fe7e",
+      "excerpt": "Drop Python 2",
+      "lineage_event": "moved",
+      "created_at": "2020-04-20T14:16:07Z",
+      "label": "quote",
+      "epistemic_label": "verified"
+    },
+    {
+      "source_kind": "commit",
+      "reference": "21e35874e7d6e829a8093fc720ec4cf51020b79e",
+      "excerpt": "mention click in deprecation message",
+      "lineage_event": "modified",
+      "created_at": "2021-04-15T22:21:08Z",
+      "label": "quote",
+      "epistemic_label": "verified"
+    },
+    {
+      "source_kind": "commit",
+      "reference": "ffeddbaf0c8226201136593d29324c951f2b2fa3",
+      "excerpt": "Merge pull request #1856 from pallets/typing",
+      "lineage_event": "modified",
+      "created_at": "2021-04-23T16:25:23Z",
+      "label": "quote",
+      "epistemic_label": "verified"
+    },
+    {
+      "source_kind": "commit",
+      "reference": "ffeddbaf0c8226201136593d29324c951f2b2fa3",
+      "excerpt": "add typing annotations",
+      "lineage_event": "modified",
+      "created_at": "2021-04-23T16:25:23Z",
+      "label": "quote",
+      "epistemic_label": "verified"
+    },
+    {
+      "source_kind": "commit",
+      "reference": "6411f425fae545f42795665af4162006b36c5e4a",
+      "excerpt": "Merge pull request #2130 from pallets/remove-deprecated-code",
+      "lineage_event": "removed",
+      "created_at": "2021-11-11T00:49:47Z",
+      "label": "quote",
+      "epistemic_label": "verified"
+    },
+    {
+      "source_kind": "commit",
+      "reference": "6411f425fae545f42795665af4162006b36c5e4a",
+      "excerpt": "remove deprecated code",
+      "lineage_event": "removed",
+      "created_at": "2021-11-11T00:49:47Z",
+      "label": "quote",
+      "epistemic_label": "verified"
+    }
+  ]
+}

@@ -1,0 +1,49 @@
+{
+  "symbol": {
+    "id": 13,
+    "repository_id": 1,
+    "language": "python",
+    "kind": "method",
+    "qualified_name": "_LazyFile.close",
+    "current_path": "src/click/utils.py",
+    "status": "exists"
+  },
+  "versions": [
+    {
+      "commit_sha": "a0d426d89434fcade5e96545d5203682c4fc5249",
+      "commit_message": "Merge branch '4.x-maintenance'",
+      "authored_at": "2015-06-21T21:23:19Z",
+      "path": "click/utils.py",
+      "qualified_name": "LazyFile.close",
+      "start_line": 176,
+      "end_line": 179,
+      "body_hash": "650b3f421061919b4c8db83b8406d24c0ff4f7f285ac98380cb4c2a6a17d05b0",
+      "parse_status": "ok",
+      "lineage_method": "exact"
+    },
+    {
+      "commit_sha": "ffeddbaf0c8226201136593d29324c951f2b2fa3",
+      "commit_message": "Merge pull request #1856 from pallets/typing",
+      "authored_at": "2021-04-23T16:25:23Z",
+      "path": "src/click/utils.py",
+      "qualified_name": "LazyFile.close",
+      "start_line": 161,
+      "end_line": 164,
+      "body_hash": "b02b7d93826654b0c97eec8721dc4c379f08abd45428f834ea68e8345265f15a",
+      "parse_status": "ok",
+      "lineage_method": "exact"
+    },
+    {
+      "commit_sha": "333c28d79cd982990ee98eef61ec20ab1a4f38ba",
+      "commit_message": "Mark clearly functions private status. Deprecated Python 2 utilities. (#3695)",
+      "authored_at": "2026-07-17T19:24:58Z",
+      "path": "src/click/utils.py",
+      "qualified_name": "_LazyFile.close",
+      "start_line": 183,
+      "end_line": 186,
+      "body_hash": "b02b7d93826654b0c97eec8721dc4c379f08abd45428f834ea68e8345265f15a",
+      "parse_status": "ok",
+      "lineage_method": "rename_detected"
+    }
+  ]
+}

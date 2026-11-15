@@ -1,0 +1,85 @@
+{
+  "symbol": {
+    "id": 80,
+    "repository_id": 3,
+    "language": "python",
+    "kind": "method",
+    "qualified_name": "NamedSignal.__repr__",
+    "current_path": "src/blinker/base.py",
+    "status": "exists"
+  },
+  "versions": [
+    {
+      "commit_sha": "c2d9461914c3624b49b596e3bd5d76dc32b406d1",
+      "commit_message": "Initial import from flatland.util.signals",
+      "authored_at": "2010-02-14T17:40:29Z",
+      "path": "blinker/base.py",
+      "qualified_name": "NamedSignal.__repr__",
+      "start_line": 205,
+      "end_line": 207,
+      "body_hash": "9c42f21f1719afe04356b94f24cb7d5208c8f33d351face6d253debc415f32bd",
+      "parse_status": "ok",
+      "lineage_method": "exact"
+    },
+    {
+      "commit_sha": "6f86085e71661d874c6c56f49c76044c9b7f29c0",
+      "commit_message": "Merge pull request #41 from hugovk/rm-eol",
+      "authored_at": "2019-11-02T21:04:35Z",
+      "path": "blinker/base.py",
+      "qualified_name": "NamedSignal.__repr__",
+      "start_line": 417,
+      "end_line": 419,
+      "body_hash": "dc60e6a9acddadf445265c694852d40de938144354bf4fd559dbf84f2f49399b",
+      "parse_status": "ok",
+      "lineage_method": "exact"
+    },
+    {
+      "commit_sha": "f9d51929f71295d0b0f3acfce2e47656bd0472e1",
+      "commit_message": "Move to src/ layout",
+      "authored_at": "2023-01-19T00:08:51Z",
+      "path": "src/blinker/base.py",
+      "qualified_name": "NamedSignal.__repr__",
+      "start_line": 412,
+      "end_line": 414,
+      "body_hash": "75c405f3e20460d136f33ebed7e5d17e043b84166804670534085cbb77e173a1",
+      "parse_status": "ok",
+      "lineage_method": "exact"
+    },
+    {
+      "commit_sha": "fae6164cda6c5e9af89895a22f700402fa4b5ec5",
+      "commit_message": "Add an initial set of type hints",
+      "authored_at": "2023-02-26T11:17:50Z",
+      "path": "src/blinker/base.py",
+      "qualified_name": "NamedSignal.__repr__",
+      "start_line": 504,
+      "end_line": 506,
+      "body_hash": "1a1b2ebf080630aef5d5c3b7366ea7be3045004ba20969af650bd8aa95c01336",
+      "parse_status": "ok",
+      "lineage_method": "exact"
+    },
+    {
+      "commit_sha": "d32c27a9fcc825e22f5993b30f35b20f515a9f9d",
+      "commit_message": "Update the requirements",
+      "authored_at": "2023-11-01T21:51:34Z",
+      "path": "src/blinker/base.py",
+      "qualified_name": "NamedSignal.__repr__",
+      "start_line": 513,
+      "end_line": 515,
+      "body_hash": "68b4581652597760fa8d23d6340ae53c3e80ba6889dea7689a839c96e18e5082",
+      "parse_status": "ok",
+      "lineage_method": "exact"
+    },
+    {
+      "commit_sha": "64423dfadc9a35000b5399ca3d94a480ec7efe99",
+      "commit_message": "Merge pull request #144 from pallets-eco/simplify-refs",
+      "authored_at": "2024-04-27T02:45:35Z",
+      "path": "src/blinker/base.py",
+      "qualified_name": "NamedSignal.__repr__",
+      "start_line": 506,
+      "end_line": 508,
+      "body_hash": "1e4fa5f9b10e7e111dcc442c99e424482314fa0c1d5803e0483bccc888e5752c",
+      "parse_status": "ok",
+      "lineage_method": "exact"
+    }
+  ]
+}

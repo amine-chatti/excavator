@@ -1,0 +1,25 @@
+{
+  "symbol": {
+    "id": 104,
+    "repository_id": 3,
+    "language": "python",
+    "kind": "function",
+    "qualified_name": "Signal._make_cleanup_sender.<locals>.cleanup",
+    "current_path": "src/blinker/base.py",
+    "status": "exists"
+  },
+  "versions": [
+    {
+      "commit_sha": "64423dfadc9a35000b5399ca3d94a480ec7efe99",
+      "commit_message": "Merge pull request #144 from pallets-eco/simplify-refs",
+      "authored_at": "2024-04-27T02:45:35Z",
+      "path": "src/blinker/base.py",
+      "qualified_name": "Signal._make_cleanup_sender.<locals>.cleanup",
+      "start_line": 438,
+      "end_line": 442,
+      "body_hash": "78f94f4d1809a526203405263354cf7e4b6881220dc22760bd456f2a574da24a",
+      "parse_status": "ok",
+      "lineage_method": "exact"
+    }
+  ]
+}

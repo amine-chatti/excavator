@@ -1,0 +1,61 @@
+{
+  "symbol": {
+    "id": 17,
+    "repository_id": 1,
+    "language": "python",
+    "kind": "method",
+    "qualified_name": "_LazyFile.__iter__",
+    "current_path": "src/click/utils.py",
+    "status": "exists"
+  },
+  "versions": [
+    {
+      "commit_sha": "a0d426d89434fcade5e96545d5203682c4fc5249",
+      "commit_message": "Merge branch '4.x-maintenance'",
+      "authored_at": "2015-06-21T21:23:19Z",
+      "path": "click/utils.py",
+      "qualified_name": "LazyFile.__iter__",
+      "start_line": 194,
+      "end_line": 196,
+      "body_hash": "d55ab03537108bfc918653ff22597917fa5bcd110d76c1ac669b2922154caeb0",
+      "parse_status": "ok",
+      "lineage_method": "exact"
+    },
+    {
+      "commit_sha": "ffeddbaf0c8226201136593d29324c951f2b2fa3",
+      "commit_message": "Merge pull request #1856 from pallets/typing",
+      "authored_at": "2021-04-23T16:25:23Z",
+      "path": "src/click/utils.py",
+      "qualified_name": "LazyFile.__iter__",
+      "start_line": 179,
+      "end_line": 181,
+      "body_hash": "235086b045748f603d08c25966948651caef3378a1b3a1c5c1d5f530c65717c4",
+      "parse_status": "ok",
+      "lineage_method": "exact"
+    },
+    {
+      "commit_sha": "56db54650fd083cc35bc4891ffbda6e5e08e2762",
+      "commit_message": "enable deferred evaluation of annotations (#2270)",
+      "authored_at": "2023-08-20T18:48:26Z",
+      "path": "src/click/utils.py",
+      "qualified_name": "LazyFile.__iter__",
+      "start_line": 192,
+      "end_line": 194,
+      "body_hash": "fc1072af7504990fb07b924884c8e513e077cdb71f405b5ab220cdfa4a5a5ad9",
+      "parse_status": "ok",
+      "lineage_method": "exact"
+    },
+    {
+      "commit_sha": "333c28d79cd982990ee98eef61ec20ab1a4f38ba",
+      "commit_message": "Mark clearly functions private status. Deprecated Python 2 utilities. (#3695)",
+      "authored_at": "2026-07-17T19:24:58Z",
+      "path": "src/click/utils.py",
+      "qualified_name": "_LazyFile.__iter__",
+      "start_line": 206,
+      "end_line": 208,
+      "body_hash": "fc1072af7504990fb07b924884c8e513e077cdb71f405b5ab220cdfa4a5a5ad9",
+      "parse_status": "ok",
+      "lineage_method": "rename_detected"
+    }
+  ]
+}

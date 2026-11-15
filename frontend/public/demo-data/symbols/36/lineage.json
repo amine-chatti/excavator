@@ -1,0 +1,73 @@
+{
+  "symbol": {
+    "id": 36,
+    "repository_id": 1,
+    "language": "python",
+    "kind": "function",
+    "qualified_name": "_detect_program_name",
+    "current_path": "src/click/utils.py",
+    "status": "exists"
+  },
+  "versions": [
+    {
+      "commit_sha": "6c1eabae3bc08fba81f8b18f8a9111a93f2b0107",
+      "commit_message": "Merge pull request #1609 from MLH-Fellowship/program-name-detection",
+      "authored_at": "2020-08-06T03:27:35Z",
+      "path": "src/click/utils.py",
+      "qualified_name": "_detect_program_name",
+      "start_line": 443,
+      "end_line": 489,
+      "body_hash": "765d8cb2e3839bc13b39f4c4c9bc3312b2474b08e869ec25eb40444920cee2ca",
+      "parse_status": "ok",
+      "lineage_method": "exact"
+    },
+    {
+      "commit_sha": "ffeddbaf0c8226201136593d29324c951f2b2fa3",
+      "commit_message": "Merge pull request #1856 from pallets/typing",
+      "authored_at": "2021-04-23T16:25:23Z",
+      "path": "src/click/utils.py",
+      "qualified_name": "_detect_program_name",
+      "start_line": 486,
+      "end_line": 534,
+      "body_hash": "9a0b1dcd744f9daecd69451130959999f682b5e187fb1588c89e022f10438e47",
+      "parse_status": "ok",
+      "lineage_method": "exact"
+    },
+    {
+      "commit_sha": "bf9da4838986af3bc09a1b16974d154c61dcbe3f",
+      "commit_message": "Merge pull request #2215 from adriangb/fix-anyio",
+      "authored_at": "2022-03-17T22:16:08Z",
+      "path": "src/click/utils.py",
+      "qualified_name": "_detect_program_name",
+      "start_line": 477,
+      "end_line": 528,
+      "body_hash": "98e8c80e4b4e634eae2cf31d595469aa21ebb47eb19371d7fe497b85b24130ec",
+      "parse_status": "ok",
+      "lineage_method": "exact"
+    },
+    {
+      "commit_sha": "d9af5cfa009c927a96d10ed38a3e37979876a12e",
+      "commit_message": "Merge branch '8.1.x'",
+      "authored_at": "2023-07-06T18:34:29Z",
+      "path": "src/click/utils.py",
+      "qualified_name": "_detect_program_name",
+      "start_line": 520,
+      "end_line": 572,
+      "body_hash": "4bb4e0238100612d6a134cde99fdac6b426ff0d28d4c894b43afb564b048b402",
+      "parse_status": "ok",
+      "lineage_method": "exact"
+    },
+    {
+      "commit_sha": "56db54650fd083cc35bc4891ffbda6e5e08e2762",
+      "commit_message": "enable deferred evaluation of annotations (#2270)",
+      "authored_at": "2023-08-20T18:48:26Z",
+      "path": "src/click/utils.py",
+      "qualified_name": "_detect_program_name",
+      "start_line": 523,
+      "end_line": 575,
+      "body_hash": "4ee499115889a4a5ef67e6b0ff3034fc1f75e2a2378a7b9ccb66a68553cf2354",
+      "parse_status": "ok",
+      "lineage_method": "exact"
+    }
+  ]
+}

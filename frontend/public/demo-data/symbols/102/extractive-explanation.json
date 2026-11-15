@@ -1,0 +1,59 @@
+{
+  "status": "extracts",
+  "extracts": [
+    {
+      "source_kind": "commit",
+      "reference": "64423dfadc9a35000b5399ca3d94a480ec7efe99",
+      "excerpt": "Merge pull request #144 from pallets-eco/simplify-refs",
+      "lineage_event": "added",
+      "created_at": "2024-04-27T02:45:35Z",
+      "label": "quote",
+      "epistemic_label": "verified"
+    },
+    {
+      "source_kind": "commit",
+      "reference": "64423dfadc9a35000b5399ca3d94a480ec7efe99",
+      "excerpt": "simplify weakref handling",
+      "lineage_event": "added",
+      "created_at": "2024-04-27T02:45:35Z",
+      "label": "quote",
+      "epistemic_label": "verified"
+    },
+    {
+      "source_kind": "commit",
+      "reference": "fd8a169d633f84874cbc95cddc225240ed4013ff",
+      "excerpt": "Merge pull request #150 from pallets-eco/collections-abc",
+      "lineage_event": "modified",
+      "created_at": "2024-04-28T17:17:52Z",
+      "label": "quote",
+      "epistemic_label": "verified"
+    },
+    {
+      "source_kind": "commit",
+      "reference": "fd8a169d633f84874cbc95cddc225240ed4013ff",
+      "excerpt": "use collections.abc instead of typing",
+      "lineage_event": "modified",
+      "created_at": "2024-04-28T17:17:52Z",
+      "label": "quote",
+      "epistemic_label": "verified"
+    },
+    {
+      "source_kind": "commit",
+      "reference": "16e4bd70a19353d9d7cf47e4df7de54936296377",
+      "excerpt": "Merge pull request #174 from projectgus/bugfix/weakref_disconnect_shutdown",
+      "lineage_event": "modified",
+      "created_at": "2024-11-08T16:54:39Z",
+      "label": "quote",
+      "epistemic_label": "verified"
+    },
+    {
+      "source_kind": "commit",
+      "reference": "16e4bd70a19353d9d7cf47e4df7de54936296377",
+      "excerpt": "Fix \"Exception ignored\" in weakref callback during interpreter shutdown.",
+      "lineage_event": "modified",
+      "created_at": "2024-11-08T16:54:39Z",
+      "label": "quote",
+      "epistemic_label": "verified"
+    }
+  ]
+}

@@ -1,0 +1,230 @@
+{
+  "status": "extracts",
+  "extracts": [
+    {
+      "source_kind": "commit",
+      "reference": "c4579f81ac5490a5722678c01c0fc9e0589a4d5b",
+      "excerpt": "Added ``Signal.temporarily_connected_to`` context manager",
+      "lineage_event": "added",
+      "created_at": "2010-02-14T20:36:57Z",
+      "label": "quote",
+      "epistemic_label": "verified"
+    },
+    {
+      "source_kind": "commit",
+      "reference": "73e7d1d2dfff8a6103faad7ee608083231c28be6",
+      "excerpt": "Sphinx documentation.",
+      "lineage_event": "modified",
+      "created_at": "2010-02-16T00:35:48Z",
+      "label": "quote",
+      "epistemic_label": "verified"
+    },
+    {
+      "source_kind": "commit",
+      "reference": "6b57dccd11923a094101e178f6033b0a46c52c10",
+      "excerpt": "Renamed 'temporarily_connected_to' to simply 'connected_to'.",
+      "lineage_event": "modified",
+      "created_at": "2010-07-20T18:00:25Z",
+      "label": "quote",
+      "epistemic_label": "verified"
+    },
+    {
+      "source_kind": "commit",
+      "reference": "6b57dccd11923a094101e178f6033b0a46c52c10",
+      "excerpt": "Old spelling will be deprecated in 1.2 and removed in the release after.",
+      "lineage_event": "modified",
+      "created_at": "2010-07-20T18:00:25Z",
+      "label": "quote",
+      "epistemic_label": "verified"
+    },
+    {
+      "source_kind": "commit",
+      "reference": "50ac3faf7d154b6bd57ed3341dae3a31cab82013",
+      "excerpt": "Doc cleanup.",
+      "lineage_event": "modified",
+      "created_at": "2010-07-21T10:06:38Z",
+      "label": "quote",
+      "epistemic_label": "verified"
+    },
+    {
+      "source_kind": "commit",
+      "reference": "b1d5adf43e69a61a6f825a1533933b8b732ff942",
+      "excerpt": "Upgrade temporarily_connected_to to a deprecation warning.",
+      "lineage_event": "modified",
+      "created_at": "2011-10-27T04:04:52Z",
+      "label": "quote",
+      "epistemic_label": "verified"
+    },
+    {
+      "source_kind": "commit",
+      "reference": "1d4b226d5042622363ec63418523e3c7365c6fc8",
+      "excerpt": "Doc updates",
+      "lineage_event": "modified",
+      "created_at": "2013-07-04T13:20:47Z",
+      "label": "quote",
+      "epistemic_label": "verified"
+    },
+    {
+      "source_kind": "commit",
+      "reference": "f9d51929f71295d0b0f3acfce2e47656bd0472e1",
+      "excerpt": "Move to src/ layout",
+      "lineage_event": "moved",
+      "created_at": "2023-01-19T00:08:51Z",
+      "label": "quote",
+      "epistemic_label": "verified"
+    },
+    {
+      "source_kind": "commit",
+      "reference": "33a14971c34fcd15deb2b18b50c9bd411eb6ed74",
+      "excerpt": "Fix issues reported by flake8",
+      "lineage_event": "modified",
+      "created_at": "2023-01-19T00:33:20Z",
+      "label": "quote",
+      "epistemic_label": "verified"
+    },
+    {
+      "source_kind": "commit",
+      "reference": "fae6164cda6c5e9af89895a22f700402fa4b5ec5",
+      "excerpt": "Add an initial set of type hints",
+      "lineage_event": "modified",
+      "created_at": "2023-02-26T11:17:50Z",
+      "label": "quote",
+      "epistemic_label": "verified"
+    },
+    {
+      "source_kind": "commit",
+      "reference": "fae6164cda6c5e9af89895a22f700402fa4b5ec5",
+      "excerpt": "These focus on the public API with the private aspect omitted.",
+      "lineage_event": "modified",
+      "created_at": "2023-02-26T11:17:50Z",
+      "label": "quote",
+      "epistemic_label": "verified"
+    },
+    {
+      "source_kind": "commit",
+      "reference": "fae6164cda6c5e9af89895a22f700402fa4b5ec5",
+      "excerpt": "This is",
+      "lineage_event": "modified",
+      "created_at": "2023-02-26T11:17:50Z",
+      "label": "quote",
+      "epistemic_label": "verified"
+    },
+    {
+      "source_kind": "commit",
+      "reference": "fae6164cda6c5e9af89895a22f700402fa4b5ec5",
+      "excerpt": "because these are hard to type, and may not be required with modern",
+      "lineage_event": "modified",
+      "created_at": "2023-02-26T11:17:50Z",
+      "label": "quote",
+      "epistemic_label": "verified"
+    },
+    {
+      "source_kind": "commit",
+      "reference": "fae6164cda6c5e9af89895a22f700402fa4b5ec5",
+      "excerpt": "python.",
+      "lineage_event": "modified",
+      "created_at": "2023-02-26T11:17:50Z",
+      "label": "quote",
+      "epistemic_label": "verified"
+    },
+    {
+      "source_kind": "commit",
+      "reference": "fae6164cda6c5e9af89895a22f700402fa4b5ec5",
+      "excerpt": "However, this should still be useful if adopted for code",
+      "lineage_event": "modified",
+      "created_at": "2023-02-26T11:17:50Z",
+      "label": "quote",
+      "epistemic_label": "verified"
+    },
+    {
+      "source_kind": "commit",
+      "reference": "fae6164cda6c5e9af89895a22f700402fa4b5ec5",
+      "excerpt": "that uses blinker.",
+      "lineage_event": "modified",
+      "created_at": "2023-02-26T11:17:50Z",
+      "label": "quote",
+      "epistemic_label": "verified"
+    },
+    {
+      "source_kind": "commit",
+      "reference": "7577b88afce38232746a7172e99928e61fc8a5ab",
+      "excerpt": "Merge pull request #139 from pallets-eco/refresh",
+      "lineage_event": "modified",
+      "created_at": "2024-04-26T18:30:16Z",
+      "label": "quote",
+      "epistemic_label": "verified"
+    },
+    {
+      "source_kind": "commit",
+      "reference": "7577b88afce38232746a7172e99928e61fc8a5ab",
+      "excerpt": "update project files",
+      "lineage_event": "modified",
+      "created_at": "2024-04-26T18:30:16Z",
+      "label": "quote",
+      "epistemic_label": "verified"
+    },
+    {
+      "source_kind": "commit",
+      "reference": "7e2c85ab3a3084fc72262fa62df8ab337477ea55",
+      "excerpt": "Merge pull request #142 from pallets-eco/deprecations",
+      "lineage_event": "modified",
+      "created_at": "2024-04-26T19:03:48Z",
+      "label": "quote",
+      "epistemic_label": "verified"
+    },
+    {
+      "source_kind": "commit",
+      "reference": "7e2c85ab3a3084fc72262fa62df8ab337477ea55",
+      "excerpt": "update deprecations",
+      "lineage_event": "modified",
+      "created_at": "2024-04-26T19:03:48Z",
+      "label": "quote",
+      "epistemic_label": "verified"
+    },
+    {
+      "source_kind": "commit",
+      "reference": "fd8a169d633f84874cbc95cddc225240ed4013ff",
+      "excerpt": "Merge pull request #150 from pallets-eco/collections-abc",
+      "lineage_event": "modified",
+      "created_at": "2024-04-28T17:17:52Z",
+      "label": "quote",
+      "epistemic_label": "verified"
+    },
+    {
+      "source_kind": "commit",
+      "reference": "fd8a169d633f84874cbc95cddc225240ed4013ff",
+      "excerpt": "use collections.abc instead of typing",
+      "lineage_event": "modified",
+      "created_at": "2024-04-28T17:17:52Z",
+      "label": "quote",
+      "epistemic_label": "verified"
+    },
+    {
+      "source_kind": "commit",
+      "reference": "f1bbce1023728a3622687a949bc0beb66be0a6c0",
+      "excerpt": "Merge pull request #151 from pallets-eco/cleanup-docs",
+      "lineage_event": "modified",
+      "created_at": "2024-04-28T19:47:40Z",
+      "label": "quote",
+      "epistemic_label": "verified"
+    },
+    {
+      "source_kind": "commit",
+      "reference": "f1bbce1023728a3622687a949bc0beb66be0a6c0",
+      "excerpt": "clean up docstrings",
+      "lineage_event": "modified",
+      "created_at": "2024-04-28T19:47:40Z",
+      "label": "quote",
+      "epistemic_label": "verified"
+    },
+    {
+      "source_kind": "commit",
+      "reference": "8c983ecd764e1d113d24522838c2a7312460b7eb",
+      "excerpt": "remove previously deprecated code (#172)",
+      "lineage_event": "removed",
+      "created_at": "2024-10-01T18:46:09Z",
+      "label": "quote",
+      "epistemic_label": "verified"
+    }
+  ]
+}

@@ -1,0 +1,73 @@
+{
+  "symbol": {
+    "id": 34,
+    "repository_id": 1,
+    "language": "python",
+    "kind": "method",
+    "qualified_name": "_PacifyFlushWrapper.flush",
+    "current_path": "src/click/utils.py",
+    "status": "exists"
+  },
+  "versions": [
+    {
+      "commit_sha": "38a2712d596a5df9288c1817748b71197d8c7c57",
+      "commit_message": "Merge pull request #1106 from frankier/prevent-epipe-exit-120",
+      "authored_at": "2018-09-19T17:39:51Z",
+      "path": "click/utils.py",
+      "qualified_name": "PacifyFlushWrapper.flush",
+      "start_line": 431,
+      "end_line": 437,
+      "body_hash": "0fb5f9f7de1dae5f458a1e75582c89f4e0f88424e21ecc7f13a75fb9ffde130a",
+      "parse_status": "ok",
+      "lineage_method": "exact"
+    },
+    {
+      "commit_sha": "7239794a610f3ccae3aaf8bfe273ac70cc58ff07",
+      "commit_message": "Merge branch '7.x'",
+      "authored_at": "2020-03-08T16:27:19Z",
+      "path": "src/click/utils.py",
+      "qualified_name": "PacifyFlushWrapper.flush",
+      "start_line": 445,
+      "end_line": 452,
+      "body_hash": "2896318b3061040e76d67e84463272cdc9adb95074099b58f25d8c0291e30672",
+      "parse_status": "ok",
+      "lineage_method": "exact"
+    },
+    {
+      "commit_sha": "97de2c97275f52adc5c6ef8bb8aa993ce997fe7e",
+      "commit_message": "Merge pull request #1532 from pallets/drop-python2",
+      "authored_at": "2020-04-20T14:16:07Z",
+      "path": "src/click/utils.py",
+      "qualified_name": "PacifyFlushWrapper.flush",
+      "start_line": 430,
+      "end_line": 437,
+      "body_hash": "b046024ed9574cb686af645e0c7b93c18ee415da6c6a0c80a01c5921a1d6cb07",
+      "parse_status": "ok",
+      "lineage_method": "exact"
+    },
+    {
+      "commit_sha": "ffeddbaf0c8226201136593d29324c951f2b2fa3",
+      "commit_message": "Merge pull request #1856 from pallets/typing",
+      "authored_at": "2021-04-23T16:25:23Z",
+      "path": "src/click/utils.py",
+      "qualified_name": "PacifyFlushWrapper.flush",
+      "start_line": 473,
+      "end_line": 480,
+      "body_hash": "96437d94309dbfef6fc34c9f72d21d2d5b3c311284e7e9511ed2148dd4ca8267",
+      "parse_status": "ok",
+      "lineage_method": "exact"
+    },
+    {
+      "commit_sha": "333c28d79cd982990ee98eef61ec20ab1a4f38ba",
+      "commit_message": "Mark clearly functions private status. Deprecated Python 2 utilities. (#3695)",
+      "authored_at": "2026-07-17T19:24:58Z",
+      "path": "src/click/utils.py",
+      "qualified_name": "_PacifyFlushWrapper.flush",
+      "start_line": 549,
+      "end_line": 556,
+      "body_hash": "96437d94309dbfef6fc34c9f72d21d2d5b3c311284e7e9511ed2148dd4ca8267",
+      "parse_status": "ok",
+      "lineage_method": "rename_detected"
+    }
+  ]
+}

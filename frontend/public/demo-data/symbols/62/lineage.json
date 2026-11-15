@@ -1,0 +1,61 @@
+{
+  "symbol": {
+    "id": 62,
+    "repository_id": 2,
+    "language": "python",
+    "kind": "method",
+    "qualified_name": "Signer.unsign",
+    "current_path": "src/itsdangerous/signer.py",
+    "status": "exists"
+  },
+  "versions": [
+    {
+      "commit_sha": "8e611d7373acc874cc8bd3fc480cf3cf7b5b6a10",
+      "commit_message": "Merge pull request #107 from pallets/split",
+      "authored_at": "2018-10-18T03:17:25Z",
+      "path": "src/itsdangerous/signer.py",
+      "qualified_name": "Signer.unsign",
+      "start_line": 166,
+      "end_line": 175,
+      "body_hash": "b404e8a3e5abe47a0ba5cf5df275d9fb3aa35699c1f752211631ce271bddfae6",
+      "parse_status": "ok",
+      "lineage_method": "exact"
+    },
+    {
+      "commit_sha": "3703fbdedd13b2630dd9be75a3638408c193765d",
+      "commit_message": "Merge pull request #149 from pallets/drop-python2",
+      "authored_at": "2020-04-14T23:48:30Z",
+      "path": "src/itsdangerous/signer.py",
+      "qualified_name": "Signer.unsign",
+      "start_line": 171,
+      "end_line": 184,
+      "body_hash": "61bebb295e6fb542ab6d2b088bed1e9d4ab2986c4e4eefb5b143534de5d10cde",
+      "parse_status": "ok",
+      "lineage_method": "exact"
+    },
+    {
+      "commit_sha": "4559e76d632ecfda09515746790670be3c59b726",
+      "commit_message": "Merge pull request #186 from pallets/typing",
+      "authored_at": "2020-08-31T18:50:36Z",
+      "path": "src/itsdangerous/signer.py",
+      "qualified_name": "Signer.unsign",
+      "start_line": 230,
+      "end_line": 242,
+      "body_hash": "1254429ed98557bb908c4773a1e26419d6c6b54d7a5d2510c938a27c5344be00",
+      "parse_status": "ok",
+      "lineage_method": "exact"
+    },
+    {
+      "commit_sha": "bc88e945d31c407e16c3f4e1c713c12dd598e58d",
+      "commit_message": "improve typing (#373)",
+      "authored_at": "2024-04-13T18:55:04Z",
+      "path": "src/itsdangerous/signer.py",
+      "qualified_name": "Signer.unsign",
+      "start_line": 236,
+      "end_line": 248,
+      "body_hash": "846548279a0057eef7f3109beb0e5f499c587494710d6a24cf7337dc84059971",
+      "parse_status": "ok",
+      "lineage_method": "exact"
+    }
+  ]
+}

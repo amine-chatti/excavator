@@ -1,0 +1,109 @@
+{
+  "symbol": {
+    "id": 89,
+    "repository_id": 3,
+    "language": "python",
+    "kind": "class",
+    "qualified_name": "WeakNamespace",
+    "current_path": "src/blinker/base.py",
+    "status": "deleted"
+  },
+  "versions": [
+    {
+      "commit_sha": "b66e4e9acf6017b3af20fc56666461f01fd4e003",
+      "commit_message": "blinker.signal() and blinker.Namespace no longer use weak references.",
+      "authored_at": "2013-07-03T09:01:53Z",
+      "path": "blinker/base.py",
+      "qualified_name": "WeakNamespace",
+      "start_line": 405,
+      "end_line": 423,
+      "body_hash": "53b20dae5ed21baff90816b690e0dd20f675765276d6c61a0913a32d9ca5575b",
+      "parse_status": "ok",
+      "lineage_method": "exact"
+    },
+    {
+      "commit_sha": "1d4b226d5042622363ec63418523e3c7365c6fc8",
+      "commit_message": "Doc updates",
+      "authored_at": "2013-07-04T13:20:47Z",
+      "path": "blinker/base.py",
+      "qualified_name": "WeakNamespace",
+      "start_line": 405,
+      "end_line": 425,
+      "body_hash": "5b39957c956506a5bdf7a3163ed025fd80c4c6eedcb74ea036dc84e2acc82236",
+      "parse_status": "ok",
+      "lineage_method": "exact"
+    },
+    {
+      "commit_sha": "fae6164cda6c5e9af89895a22f700402fa4b5ec5",
+      "commit_message": "Add an initial set of type hints",
+      "authored_at": "2023-02-26T11:17:50Z",
+      "path": "src/blinker/base.py",
+      "qualified_name": "WeakNamespace",
+      "start_line": 524,
+      "end_line": 544,
+      "body_hash": "2f26024489311bd1f94726590452b572e7f688b1fdf33473e06409f56b9a4586",
+      "parse_status": "ok",
+      "lineage_method": "exact"
+    },
+    {
+      "commit_sha": "c8703aa7c09d7081362647f6659ab2f587279649",
+      "commit_message": "Merge pull request #94 from pallets-eco/lazy-annotations",
+      "authored_at": "2023-04-12T21:31:57Z",
+      "path": "src/blinker/base.py",
+      "qualified_name": "WeakNamespace",
+      "start_line": 527,
+      "end_line": 548,
+      "body_hash": "da59cde0550723fd50d58e1f1c0a8ffaa90022d01b0959ab578a13c477f60654",
+      "parse_status": "ok",
+      "lineage_method": "exact"
+    },
+    {
+      "commit_sha": "7577b88afce38232746a7172e99928e61fc8a5ab",
+      "commit_message": "Merge pull request #139 from pallets-eco/refresh",
+      "authored_at": "2024-04-26T18:30:16Z",
+      "path": "src/blinker/base.py",
+      "qualified_name": "WeakNamespace",
+      "start_line": 538,
+      "end_line": 559,
+      "body_hash": "86f0b9cfc3030abae4f448ebfa87afd27c9b680f7a8855ab9e0d053a872b9322",
+      "parse_status": "ok",
+      "lineage_method": "exact"
+    },
+    {
+      "commit_sha": "64423dfadc9a35000b5399ca3d94a480ec7efe99",
+      "commit_message": "Merge pull request #144 from pallets-eco/simplify-refs",
+      "authored_at": "2024-04-27T02:45:35Z",
+      "path": "src/blinker/base.py",
+      "qualified_name": "WeakNamespace",
+      "start_line": 526,
+      "end_line": 546,
+      "body_hash": "3a6cbf01f36838cd6f0a43560c4a5110c1fa928ce256c3236c7a9d1f09b01cc6",
+      "parse_status": "ok",
+      "lineage_method": "exact"
+    },
+    {
+      "commit_sha": "783c3384f07b5de235028c242ae2792bbd2b2f42",
+      "commit_message": "Merge pull request #146 from pallets-eco/deprecations",
+      "authored_at": "2024-04-27T03:41:00Z",
+      "path": "src/blinker/base.py",
+      "qualified_name": "WeakNamespace",
+      "start_line": 526,
+      "end_line": 558,
+      "body_hash": "8e29f81965e3c4775ccf2244194c3b7065c28d2ec8d7ec9178e0bf74ca8e27e4",
+      "parse_status": "ok",
+      "lineage_method": "exact"
+    },
+    {
+      "commit_sha": "1a29708eed835fb606b7e5b627299c9188daea7c",
+      "commit_message": "deprecate WeakNamespace",
+      "authored_at": "2024-04-27T03:59:52Z",
+      "path": "src/blinker/base.py",
+      "qualified_name": "WeakNamespace",
+      "start_line": 526,
+      "end_line": 558,
+      "body_hash": "8e29f81965e3c4775ccf2244194c3b7065c28d2ec8d7ec9178e0bf74ca8e27e4",
+      "parse_status": "ok",
+      "lineage_method": "exact"
+    }
+  ]
+}

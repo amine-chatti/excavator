@@ -1,0 +1,85 @@
+{
+  "symbol": {
+    "id": 19,
+    "repository_id": 1,
+    "language": "python",
+    "kind": "method",
+    "qualified_name": "_KeepOpenFile.__init__",
+    "current_path": "src/click/utils.py",
+    "status": "exists"
+  },
+  "versions": [
+    {
+      "commit_sha": "a0d426d89434fcade5e96545d5203682c4fc5249",
+      "commit_message": "Merge branch '4.x-maintenance'",
+      "authored_at": "2015-06-21T21:23:19Z",
+      "path": "click/utils.py",
+      "qualified_name": "KeepOpenFile.__init__",
+      "start_line": 201,
+      "end_line": 202,
+      "body_hash": "c1d6192501a49d42d28ed0154a22baa867087d5693988e7089212c34728cec98",
+      "parse_status": "ok",
+      "lineage_method": "exact"
+    },
+    {
+      "commit_sha": "ffeddbaf0c8226201136593d29324c951f2b2fa3",
+      "commit_message": "Merge pull request #1856 from pallets/typing",
+      "authored_at": "2021-04-23T16:25:23Z",
+      "path": "src/click/utils.py",
+      "qualified_name": "KeepOpenFile.__init__",
+      "start_line": 185,
+      "end_line": 186,
+      "body_hash": "06bc784a8060e197991eba2315fa1bf2a52473d698d0691ba0679ae69bb172f1",
+      "parse_status": "ok",
+      "lineage_method": "exact"
+    },
+    {
+      "commit_sha": "cba52fa76135af2edf46c154203b47106f898eb3",
+      "commit_message": "Merge branch '8.1.x'",
+      "authored_at": "2023-01-20T00:38:36Z",
+      "path": "src/click/utils.py",
+      "qualified_name": "KeepOpenFile.__init__",
+      "start_line": 189,
+      "end_line": 190,
+      "body_hash": "80efadfbdfac8d1e3b098d2a80fa236d8d68cb4e471bc5b5bd45d69c13fd1326",
+      "parse_status": "ok",
+      "lineage_method": "exact"
+    },
+    {
+      "commit_sha": "d9af5cfa009c927a96d10ed38a3e37979876a12e",
+      "commit_message": "Merge branch '8.1.x'",
+      "authored_at": "2023-07-06T18:34:29Z",
+      "path": "src/click/utils.py",
+      "qualified_name": "KeepOpenFile.__init__",
+      "start_line": 195,
+      "end_line": 196,
+      "body_hash": "8011ac319a31cda80daf4b5558241f0ce6c814e5bf8f50d6e4648e94ee593e31",
+      "parse_status": "ok",
+      "lineage_method": "exact"
+    },
+    {
+      "commit_sha": "e3e69e3bf8d749ac1a632f2ece4d38ec7f6588f5",
+      "commit_message": "Add type annotations for instance attributes in `utils` (#3422)",
+      "authored_at": "2026-05-16T15:55:46Z",
+      "path": "src/click/utils.py",
+      "qualified_name": "KeepOpenFile.__init__",
+      "start_line": 210,
+      "end_line": 211,
+      "body_hash": "80efadfbdfac8d1e3b098d2a80fa236d8d68cb4e471bc5b5bd45d69c13fd1326",
+      "parse_status": "ok",
+      "lineage_method": "exact"
+    },
+    {
+      "commit_sha": "333c28d79cd982990ee98eef61ec20ab1a4f38ba",
+      "commit_message": "Mark clearly functions private status. Deprecated Python 2 utilities. (#3695)",
+      "authored_at": "2026-07-17T19:24:58Z",
+      "path": "src/click/utils.py",
+      "qualified_name": "_KeepOpenFile.__init__",
+      "start_line": 228,
+      "end_line": 229,
+      "body_hash": "80efadfbdfac8d1e3b098d2a80fa236d8d68cb4e471bc5b5bd45d69c13fd1326",
+      "parse_status": "ok",
+      "lineage_method": "rename_detected"
+    }
+  ]
+}

@@ -1,0 +1,140 @@
+{
+  "status": "extracts",
+  "extracts": [
+    {
+      "source_kind": "commit",
+      "reference": "a0d426d89434fcade5e96545d5203682c4fc5249",
+      "excerpt": "Merge branch '4.x-maintenance'",
+      "lineage_event": "added",
+      "created_at": "2015-06-21T21:23:19Z",
+      "label": "quote",
+      "epistemic_label": "verified"
+    },
+    {
+      "source_kind": "commit",
+      "reference": "7239794a610f3ccae3aaf8bfe273ac70cc58ff07",
+      "excerpt": "Merge branch '7.x'",
+      "lineage_event": "moved",
+      "created_at": "2020-03-08T16:27:19Z",
+      "label": "quote",
+      "epistemic_label": "verified"
+    },
+    {
+      "source_kind": "commit",
+      "reference": "97de2c97275f52adc5c6ef8bb8aa993ce997fe7e",
+      "excerpt": "Merge pull request #1532 from pallets/drop-python2",
+      "lineage_event": "modified",
+      "created_at": "2020-04-20T14:16:07Z",
+      "label": "quote",
+      "epistemic_label": "verified"
+    },
+    {
+      "source_kind": "commit",
+      "reference": "97de2c97275f52adc5c6ef8bb8aa993ce997fe7e",
+      "excerpt": "Drop Python 2",
+      "lineage_event": "modified",
+      "created_at": "2020-04-20T14:16:07Z",
+      "label": "quote",
+      "epistemic_label": "verified"
+    },
+    {
+      "source_kind": "commit",
+      "reference": "ffeddbaf0c8226201136593d29324c951f2b2fa3",
+      "excerpt": "Merge pull request #1856 from pallets/typing",
+      "lineage_event": "modified",
+      "created_at": "2021-04-23T16:25:23Z",
+      "label": "quote",
+      "epistemic_label": "verified"
+    },
+    {
+      "source_kind": "commit",
+      "reference": "ffeddbaf0c8226201136593d29324c951f2b2fa3",
+      "excerpt": "add typing annotations",
+      "lineage_event": "modified",
+      "created_at": "2021-04-23T16:25:23Z",
+      "label": "quote",
+      "epistemic_label": "verified"
+    },
+    {
+      "source_kind": "commit",
+      "reference": "d11059393ddeb8f8f399b3c6fd4ce71f4fdb534b",
+      "excerpt": "Merge branch '8.0.x'",
+      "lineage_event": "modified",
+      "created_at": "2021-09-26T14:07:12Z",
+      "label": "quote",
+      "epistemic_label": "verified"
+    },
+    {
+      "source_kind": "commit",
+      "reference": "cba52fa76135af2edf46c154203b47106f898eb3",
+      "excerpt": "Merge branch '8.1.x'",
+      "lineage_event": "modified",
+      "created_at": "2023-01-20T00:38:36Z",
+      "label": "quote",
+      "epistemic_label": "verified"
+    },
+    {
+      "source_kind": "commit",
+      "reference": "d9af5cfa009c927a96d10ed38a3e37979876a12e",
+      "excerpt": "Merge branch '8.1.x'",
+      "lineage_event": "modified",
+      "created_at": "2023-07-06T18:34:29Z",
+      "label": "quote",
+      "epistemic_label": "verified"
+    },
+    {
+      "source_kind": "commit",
+      "reference": "56db54650fd083cc35bc4891ffbda6e5e08e2762",
+      "excerpt": "enable deferred evaluation of annotations (#2270)",
+      "lineage_event": "modified",
+      "created_at": "2023-08-20T18:48:26Z",
+      "label": "quote",
+      "epistemic_label": "verified"
+    },
+    {
+      "source_kind": "commit",
+      "reference": "1a3baf77d4882f23c9f50995073c6c916c07dff0",
+      "excerpt": "use ruff lint and format (#2658)",
+      "lineage_event": "modified",
+      "created_at": "2023-12-29T16:16:59Z",
+      "label": "quote",
+      "epistemic_label": "verified"
+    },
+    {
+      "source_kind": "commit",
+      "reference": "e3e69e3bf8d749ac1a632f2ece4d38ec7f6588f5",
+      "excerpt": "Add type annotations for instance attributes in `utils` (#3422)",
+      "lineage_event": "modified",
+      "created_at": "2026-05-16T15:55:46Z",
+      "label": "quote",
+      "epistemic_label": "verified"
+    },
+    {
+      "source_kind": "commit",
+      "reference": "333c28d79cd982990ee98eef61ec20ab1a4f38ba",
+      "excerpt": "Mark clearly functions private status.",
+      "lineage_event": "removed",
+      "created_at": "2026-07-17T19:24:58Z",
+      "label": "quote",
+      "epistemic_label": "verified"
+    },
+    {
+      "source_kind": "commit",
+      "reference": "333c28d79cd982990ee98eef61ec20ab1a4f38ba",
+      "excerpt": "Deprecated Python 2 utilities.",
+      "lineage_event": "removed",
+      "created_at": "2026-07-17T19:24:58Z",
+      "label": "quote",
+      "epistemic_label": "verified"
+    },
+    {
+      "source_kind": "commit",
+      "reference": "333c28d79cd982990ee98eef61ec20ab1a4f38ba",
+      "excerpt": "(#3695)",
+      "lineage_event": "removed",
+      "created_at": "2026-07-17T19:24:58Z",
+      "label": "quote",
+      "epistemic_label": "verified"
+    }
+  ]
+}

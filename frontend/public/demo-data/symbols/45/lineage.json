@@ -1,0 +1,25 @@
+{
+  "symbol": {
+    "id": 45,
+    "repository_id": 1,
+    "language": "python",
+    "kind": "function",
+    "qualified_name": "_get_text_stream",
+    "current_path": "src/click/utils.py",
+    "status": "exists"
+  },
+  "versions": [
+    {
+      "commit_sha": "333c28d79cd982990ee98eef61ec20ab1a4f38ba",
+      "commit_message": "Mark clearly functions private status. Deprecated Python 2 utilities. (#3695)",
+      "authored_at": "2026-07-17T19:24:58Z",
+      "path": "src/click/utils.py",
+      "qualified_name": "_get_text_stream",
+      "start_line": 366,
+      "end_line": 390,
+      "body_hash": "3c50987ba2c7f077ad6bd58711725fd281d3ad0869c563174d53b0475141f01f",
+      "parse_status": "ok",
+      "lineage_method": "exact"
+    }
+  ]
+}

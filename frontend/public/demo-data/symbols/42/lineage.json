@@ -1,0 +1,25 @@
+{
+  "symbol": {
+    "id": 42,
+    "repository_id": 1,
+    "language": "python",
+    "kind": "class",
+    "qualified_name": "_KeepOpenFile",
+    "current_path": "src/click/utils.py",
+    "status": "exists"
+  },
+  "versions": [
+    {
+      "commit_sha": "333c28d79cd982990ee98eef61ec20ab1a4f38ba",
+      "commit_message": "Mark clearly functions private status. Deprecated Python 2 utilities. (#3695)",
+      "authored_at": "2026-07-17T19:24:58Z",
+      "path": "src/click/utils.py",
+      "qualified_name": "_KeepOpenFile",
+      "start_line": 211,
+      "end_line": 249,
+      "body_hash": "8a03fcf8dd568405cd36d23f2971f2219e66a41d2bb7950adc228558d91eec52",
+      "parse_status": "ok",
+      "lineage_method": "exact"
+    }
+  ]
+}

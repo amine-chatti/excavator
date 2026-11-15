@@ -1,0 +1,104 @@
+{
+  "status": "extracts",
+  "extracts": [
+    {
+      "source_kind": "commit",
+      "reference": "a0d426d89434fcade5e96545d5203682c4fc5249",
+      "excerpt": "Merge branch '4.x-maintenance'",
+      "lineage_event": "added",
+      "created_at": "2015-06-21T21:23:19Z",
+      "label": "quote",
+      "epistemic_label": "verified"
+    },
+    {
+      "source_kind": "commit",
+      "reference": "7239794a610f3ccae3aaf8bfe273ac70cc58ff07",
+      "excerpt": "Merge branch '7.x'",
+      "lineage_event": "moved",
+      "created_at": "2020-03-08T16:27:19Z",
+      "label": "quote",
+      "epistemic_label": "verified"
+    },
+    {
+      "source_kind": "commit",
+      "reference": "ffeddbaf0c8226201136593d29324c951f2b2fa3",
+      "excerpt": "Merge pull request #1856 from pallets/typing",
+      "lineage_event": "modified",
+      "created_at": "2021-04-23T16:25:23Z",
+      "label": "quote",
+      "epistemic_label": "verified"
+    },
+    {
+      "source_kind": "commit",
+      "reference": "ffeddbaf0c8226201136593d29324c951f2b2fa3",
+      "excerpt": "add typing annotations",
+      "lineage_event": "modified",
+      "created_at": "2021-04-23T16:25:23Z",
+      "label": "quote",
+      "epistemic_label": "verified"
+    },
+    {
+      "source_kind": "commit",
+      "reference": "0c85d80b07742b9f9ed4d583d694c37fce1d1292",
+      "excerpt": "Merge branch '8.0.x'",
+      "lineage_event": "modified",
+      "created_at": "2021-10-25T15:46:34Z",
+      "label": "quote",
+      "epistemic_label": "verified"
+    },
+    {
+      "source_kind": "commit",
+      "reference": "cba52fa76135af2edf46c154203b47106f898eb3",
+      "excerpt": "Merge branch '8.1.x'",
+      "lineage_event": "modified",
+      "created_at": "2023-01-20T00:38:36Z",
+      "label": "quote",
+      "epistemic_label": "verified"
+    },
+    {
+      "source_kind": "commit",
+      "reference": "56db54650fd083cc35bc4891ffbda6e5e08e2762",
+      "excerpt": "enable deferred evaluation of annotations (#2270)",
+      "lineage_event": "modified",
+      "created_at": "2023-08-20T18:48:26Z",
+      "label": "quote",
+      "epistemic_label": "verified"
+    },
+    {
+      "source_kind": "commit",
+      "reference": "99015e1456b6952054fda8312b40ea646737168d",
+      "excerpt": "Merge branch '8.1.x'",
+      "lineage_event": "modified",
+      "created_at": "2024-08-24T01:09:31Z",
+      "label": "quote",
+      "epistemic_label": "verified"
+    },
+    {
+      "source_kind": "commit",
+      "reference": "333c28d79cd982990ee98eef61ec20ab1a4f38ba",
+      "excerpt": "Mark clearly functions private status.",
+      "lineage_event": "modified",
+      "created_at": "2026-07-17T19:24:58Z",
+      "label": "quote",
+      "epistemic_label": "verified"
+    },
+    {
+      "source_kind": "commit",
+      "reference": "333c28d79cd982990ee98eef61ec20ab1a4f38ba",
+      "excerpt": "Deprecated Python 2 utilities.",
+      "lineage_event": "modified",
+      "created_at": "2026-07-17T19:24:58Z",
+      "label": "quote",
+      "epistemic_label": "verified"
+    },
+    {
+      "source_kind": "commit",
+      "reference": "333c28d79cd982990ee98eef61ec20ab1a4f38ba",
+      "excerpt": "(#3695)",
+      "lineage_event": "modified",
+      "created_at": "2026-07-17T19:24:58Z",
+      "label": "quote",
+      "epistemic_label": "verified"
+    }
+  ]
+}

@@ -1,0 +1,49 @@
+{
+  "symbol": {
+    "id": 48,
+    "repository_id": 2,
+    "language": "python",
+    "kind": "class",
+    "qualified_name": "SigningAlgorithm",
+    "current_path": "src/itsdangerous/signer.py",
+    "status": "exists"
+  },
+  "versions": [
+    {
+      "commit_sha": "8e611d7373acc874cc8bd3fc480cf3cf7b5b6a10",
+      "commit_message": "Merge pull request #107 from pallets/split",
+      "authored_at": "2018-10-18T03:17:25Z",
+      "path": "src/itsdangerous/signer.py",
+      "qualified_name": "SigningAlgorithm",
+      "start_line": 12,
+      "end_line": 25,
+      "body_hash": "abfe4f4c54740fcc55b09e7c5268c4129e3c9e51c34819590571ed7a22f08b15",
+      "parse_status": "ok",
+      "lineage_method": "exact"
+    },
+    {
+      "commit_sha": "3703fbdedd13b2630dd9be75a3638408c193765d",
+      "commit_message": "Merge pull request #149 from pallets/drop-python2",
+      "authored_at": "2020-04-14T23:48:30Z",
+      "path": "src/itsdangerous/signer.py",
+      "qualified_name": "SigningAlgorithm",
+      "start_line": 11,
+      "end_line": 24,
+      "body_hash": "0f5fe550867f7f8daacba69cde5dc66540e2c223c970b2ad5f7b1e1a984f6fe4",
+      "parse_status": "ok",
+      "lineage_method": "exact"
+    },
+    {
+      "commit_sha": "4559e76d632ecfda09515746790670be3c59b726",
+      "commit_message": "Merge pull request #186 from pallets/typing",
+      "authored_at": "2020-08-31T18:50:36Z",
+      "path": "src/itsdangerous/signer.py",
+      "qualified_name": "SigningAlgorithm",
+      "start_line": 16,
+      "end_line": 29,
+      "body_hash": "a41dcac9f54a3354fd1600ce7aa34e9af8dffe22188ac85f028f7e27c61c5b96",
+      "parse_status": "ok",
+      "lineage_method": "exact"
+    }
+  ]
+}

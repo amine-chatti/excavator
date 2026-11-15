@@ -1,0 +1,176 @@
+{
+  "items": [
+    {
+      "id": 48,
+      "repository_id": 2,
+      "language": "python",
+      "kind": "class",
+      "qualified_name": "SigningAlgorithm",
+      "current_path": "src/itsdangerous/signer.py",
+      "status": "exists"
+    },
+    {
+      "id": 49,
+      "repository_id": 2,
+      "language": "python",
+      "kind": "method",
+      "qualified_name": "SigningAlgorithm.get_signature",
+      "current_path": "src/itsdangerous/signer.py",
+      "status": "exists"
+    },
+    {
+      "id": 50,
+      "repository_id": 2,
+      "language": "python",
+      "kind": "method",
+      "qualified_name": "SigningAlgorithm.verify_signature",
+      "current_path": "src/itsdangerous/signer.py",
+      "status": "exists"
+    },
+    {
+      "id": 51,
+      "repository_id": 2,
+      "language": "python",
+      "kind": "class",
+      "qualified_name": "NoneAlgorithm",
+      "current_path": "src/itsdangerous/signer.py",
+      "status": "exists"
+    },
+    {
+      "id": 52,
+      "repository_id": 2,
+      "language": "python",
+      "kind": "method",
+      "qualified_name": "NoneAlgorithm.get_signature",
+      "current_path": "src/itsdangerous/signer.py",
+      "status": "exists"
+    },
+    {
+      "id": 53,
+      "repository_id": 2,
+      "language": "python",
+      "kind": "class",
+      "qualified_name": "HMACAlgorithm",
+      "current_path": "src/itsdangerous/signer.py",
+      "status": "exists"
+    },
+    {
+      "id": 54,
+      "repository_id": 2,
+      "language": "python",
+      "kind": "method",
+      "qualified_name": "HMACAlgorithm.__init__",
+      "current_path": "src/itsdangerous/signer.py",
+      "status": "exists"
+    },
+    {
+      "id": 55,
+      "repository_id": 2,
+      "language": "python",
+      "kind": "method",
+      "qualified_name": "HMACAlgorithm.get_signature",
+      "current_path": "src/itsdangerous/signer.py",
+      "status": "exists"
+    },
+    {
+      "id": 56,
+      "repository_id": 2,
+      "language": "python",
+      "kind": "class",
+      "qualified_name": "Signer",
+      "current_path": "src/itsdangerous/signer.py",
+      "status": "exists"
+    },
+    {
+      "id": 57,
+      "repository_id": 2,
+      "language": "python",
+      "kind": "method",
+      "qualified_name": "Signer.__init__",
+      "current_path": "src/itsdangerous/signer.py",
+      "status": "exists"
+    },
+    {
+      "id": 58,
+      "repository_id": 2,
+      "language": "python",
+      "kind": "method",
+      "qualified_name": "Signer.derive_key",
+      "current_path": "src/itsdangerous/signer.py",
+      "status": "exists"
+    },
+    {
+      "id": 59,
+      "repository_id": 2,
+      "language": "python",
+      "kind": "method",
+      "qualified_name": "Signer.get_signature",
+      "current_path": "src/itsdangerous/signer.py",
+      "status": "exists"
+    },
+    {
+      "id": 60,
+      "repository_id": 2,
+      "language": "python",
+      "kind": "method",
+      "qualified_name": "Signer.sign",
+      "current_path": "src/itsdangerous/signer.py",
+      "status": "exists"
+    },
+    {
+      "id": 61,
+      "repository_id": 2,
+      "language": "python",
+      "kind": "method",
+      "qualified_name": "Signer.verify_signature",
+      "current_path": "src/itsdangerous/signer.py",
+      "status": "exists"
+    },
+    {
+      "id": 62,
+      "repository_id": 2,
+      "language": "python",
+      "kind": "method",
+      "qualified_name": "Signer.unsign",
+      "current_path": "src/itsdangerous/signer.py",
+      "status": "exists"
+    },
+    {
+      "id": 63,
+      "repository_id": 2,
+      "language": "python",
+      "kind": "method",
+      "qualified_name": "Signer.validate",
+      "current_path": "src/itsdangerous/signer.py",
+      "status": "exists"
+    },
+    {
+      "id": 64,
+      "repository_id": 2,
+      "language": "python",
+      "kind": "method",
+      "qualified_name": "Signer.secret_key",
+      "current_path": "src/itsdangerous/signer.py",
+      "status": "exists"
+    },
+    {
+      "id": 65,
+      "repository_id": 2,
+      "language": "python",
+      "kind": "function",
+      "qualified_name": "_make_keys_list",
+      "current_path": "src/itsdangerous/signer.py",
+      "status": "exists"
+    },
+    {
+      "id": 66,
+      "repository_id": 2,
+      "language": "python",
+      "kind": "function",
+      "qualified_name": "_lazy_sha1",
+      "current_path": "src/itsdangerous/signer.py",
+      "status": "exists"
+    }
+  ],
+  "total": 19
+}

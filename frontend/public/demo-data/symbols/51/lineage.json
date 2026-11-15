@@ -1,0 +1,37 @@
+{
+  "symbol": {
+    "id": 51,
+    "repository_id": 2,
+    "language": "python",
+    "kind": "class",
+    "qualified_name": "NoneAlgorithm",
+    "current_path": "src/itsdangerous/signer.py",
+    "status": "exists"
+  },
+  "versions": [
+    {
+      "commit_sha": "8e611d7373acc874cc8bd3fc480cf3cf7b5b6a10",
+      "commit_message": "Merge pull request #107 from pallets/split",
+      "authored_at": "2018-10-18T03:17:25Z",
+      "path": "src/itsdangerous/signer.py",
+      "qualified_name": "NoneAlgorithm",
+      "start_line": 28,
+      "end_line": 34,
+      "body_hash": "aca345c0e9ed4e23f880203b1e2ac79f152b340f6fccacfc21ca9189041899d9",
+      "parse_status": "ok",
+      "lineage_method": "exact"
+    },
+    {
+      "commit_sha": "4559e76d632ecfda09515746790670be3c59b726",
+      "commit_message": "Merge pull request #186 from pallets/typing",
+      "authored_at": "2020-08-31T18:50:36Z",
+      "path": "src/itsdangerous/signer.py",
+      "qualified_name": "NoneAlgorithm",
+      "start_line": 32,
+      "end_line": 38,
+      "body_hash": "4c6263baf224229e78ed39a240ea9399794c746b2ca5761e71d27eced84d679e",
+      "parse_status": "ok",
+      "lineage_method": "exact"
+    }
+  ]
+}

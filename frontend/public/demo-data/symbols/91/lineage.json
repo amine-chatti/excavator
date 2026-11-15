@@ -1,0 +1,73 @@
+{
+  "symbol": {
+    "id": 91,
+    "repository_id": 3,
+    "language": "python",
+    "kind": "method",
+    "qualified_name": "Signal._cleanup_bookkeeping",
+    "current_path": "src/blinker/base.py",
+    "status": "exists"
+  },
+  "versions": [
+    {
+      "commit_sha": "bee3b6ebded6daf436b4c1d7f688142d687ae405",
+      "commit_message": "Added Signal._cleanup_bookeeping() to prune stale bookkeeping on demand.",
+      "authored_at": "2015-07-23T10:19:14Z",
+      "path": "blinker/base.py",
+      "qualified_name": "Signal._cleanup_bookkeeping",
+      "start_line": 351,
+      "end_line": 375,
+      "body_hash": "c3dbe4b717f3551481ce29005e714073f9122f14a94b3b2853062aab3296a339",
+      "parse_status": "ok",
+      "lineage_method": "exact"
+    },
+    {
+      "commit_sha": "ccb68825fa49af893220788ac67c47aca7dad8a4",
+      "commit_message": "Merge pull request #51 from Flameeyes/master",
+      "authored_at": "2019-04-21T15:32:31Z",
+      "path": "blinker/base.py",
+      "qualified_name": "Signal._cleanup_bookkeeping",
+      "start_line": 356,
+      "end_line": 380,
+      "body_hash": "e4f22d632dce104ee711d6cb438f8b28fddc26d80bff98cdb6dd193f984a2fdd",
+      "parse_status": "ok",
+      "lineage_method": "exact"
+    },
+    {
+      "commit_sha": "fae6164cda6c5e9af89895a22f700402fa4b5ec5",
+      "commit_message": "Add an initial set of type hints",
+      "authored_at": "2023-02-26T11:17:50Z",
+      "path": "src/blinker/base.py",
+      "qualified_name": "Signal._cleanup_bookkeeping",
+      "start_line": 441,
+      "end_line": 465,
+      "body_hash": "ab634745e88aebe117970f2e9ef262b463a3748bfe58d97ac8789e6c51b79d9d",
+      "parse_status": "ok",
+      "lineage_method": "exact"
+    },
+    {
+      "commit_sha": "64423dfadc9a35000b5399ca3d94a480ec7efe99",
+      "commit_message": "Merge pull request #144 from pallets-eco/simplify-refs",
+      "authored_at": "2024-04-27T02:45:35Z",
+      "path": "src/blinker/base.py",
+      "qualified_name": "Signal._cleanup_bookkeeping",
+      "start_line": 446,
+      "end_line": 470,
+      "body_hash": "af5f7d8303bee6491d8526b104668b407587a02b2a261ff9cd35e2231476333e",
+      "parse_status": "ok",
+      "lineage_method": "exact"
+    },
+    {
+      "commit_sha": "f1bbce1023728a3622687a949bc0beb66be0a6c0",
+      "commit_message": "Merge pull request #151 from pallets-eco/cleanup-docs",
+      "authored_at": "2024-04-28T19:47:40Z",
+      "path": "src/blinker/base.py",
+      "qualified_name": "Signal._cleanup_bookkeeping",
+      "start_line": 462,
+      "end_line": 486,
+      "body_hash": "7acea1a02c779097e4a9b5ace2c7119bbc162751d29b7cf4562bede74973e892",
+      "parse_status": "ok",
+      "lineage_method": "exact"
+    }
+  ]
+}

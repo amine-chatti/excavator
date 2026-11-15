@@ -1,0 +1,49 @@
+{
+  "symbol": {
+    "id": 102,
+    "repository_id": 3,
+    "language": "python",
+    "kind": "function",
+    "qualified_name": "Signal._make_cleanup_receiver.<locals>.cleanup",
+    "current_path": "src/blinker/base.py",
+    "status": "exists"
+  },
+  "versions": [
+    {
+      "commit_sha": "64423dfadc9a35000b5399ca3d94a480ec7efe99",
+      "commit_message": "Merge pull request #144 from pallets-eco/simplify-refs",
+      "authored_at": "2024-04-27T02:45:35Z",
+      "path": "src/blinker/base.py",
+      "qualified_name": "Signal._make_cleanup_receiver.<locals>.cleanup",
+      "start_line": 427,
+      "end_line": 428,
+      "body_hash": "31cd006caa16330a017586dd33f853863e0158b2e82d7af00b7fc9ed753989e0",
+      "parse_status": "ok",
+      "lineage_method": "exact"
+    },
+    {
+      "commit_sha": "fd8a169d633f84874cbc95cddc225240ed4013ff",
+      "commit_message": "Merge pull request #150 from pallets-eco/collections-abc",
+      "authored_at": "2024-04-28T17:17:52Z",
+      "path": "src/blinker/base.py",
+      "qualified_name": "Signal._make_cleanup_receiver.<locals>.cleanup",
+      "start_line": 429,
+      "end_line": 430,
+      "body_hash": "4d74221f13d11d3c16170c7827bbef52ddc2d951bb5d5f76315e1c8b6692cbfe",
+      "parse_status": "ok",
+      "lineage_method": "exact"
+    },
+    {
+      "commit_sha": "16e4bd70a19353d9d7cf47e4df7de54936296377",
+      "commit_message": "Merge pull request #174 from projectgus/bugfix/weakref_disconnect_shutdown",
+      "authored_at": "2024-11-08T16:54:39Z",
+      "path": "src/blinker/base.py",
+      "qualified_name": "Signal._make_cleanup_receiver.<locals>.cleanup",
+      "start_line": 406,
+      "end_line": 410,
+      "body_hash": "4da8062ba88420681f135f76b04eb1bec663a9309a5fb844c9b3290c3cfe8c00",
+      "parse_status": "ok",
+      "lineage_method": "exact"
+    }
+  ]
+}

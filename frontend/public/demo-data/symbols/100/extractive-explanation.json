@@ -1,0 +1,59 @@
+{
+  "status": "extracts",
+  "extracts": [
+    {
+      "source_kind": "commit",
+      "reference": "64423dfadc9a35000b5399ca3d94a480ec7efe99",
+      "excerpt": "Merge pull request #144 from pallets-eco/simplify-refs",
+      "lineage_event": "added",
+      "created_at": "2024-04-27T02:45:35Z",
+      "label": "quote",
+      "epistemic_label": "verified"
+    },
+    {
+      "source_kind": "commit",
+      "reference": "64423dfadc9a35000b5399ca3d94a480ec7efe99",
+      "excerpt": "simplify weakref handling",
+      "lineage_event": "added",
+      "created_at": "2024-04-27T02:45:35Z",
+      "label": "quote",
+      "epistemic_label": "verified"
+    },
+    {
+      "source_kind": "commit",
+      "reference": "fd8a169d633f84874cbc95cddc225240ed4013ff",
+      "excerpt": "Merge pull request #150 from pallets-eco/collections-abc",
+      "lineage_event": "modified",
+      "created_at": "2024-04-28T17:17:52Z",
+      "label": "quote",
+      "epistemic_label": "verified"
+    },
+    {
+      "source_kind": "commit",
+      "reference": "fd8a169d633f84874cbc95cddc225240ed4013ff",
+      "excerpt": "use collections.abc instead of typing",
+      "lineage_event": "modified",
+      "created_at": "2024-04-28T17:17:52Z",
+      "label": "quote",
+      "epistemic_label": "verified"
+    },
+    {
+      "source_kind": "commit",
+      "reference": "952a97b0aefbd39b52c9ad83bfe9f4aaf188dfee",
+      "excerpt": "Merge pull request #156 from pallets-eco/wrapper-type",
+      "lineage_event": "removed",
+      "created_at": "2024-05-06T16:59:20Z",
+      "label": "quote",
+      "epistemic_label": "verified"
+    },
+    {
+      "source_kind": "commit",
+      "reference": "952a97b0aefbd39b52c9ad83bfe9f4aaf188dfee",
+      "excerpt": "simplify type for wrapper arguments",
+      "lineage_event": "removed",
+      "created_at": "2024-05-06T16:59:20Z",
+      "label": "quote",
+      "epistemic_label": "verified"
+    }
+  ]
+}

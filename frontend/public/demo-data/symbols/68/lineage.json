@@ -1,0 +1,133 @@
+{
+  "symbol": {
+    "id": 68,
+    "repository_id": 3,
+    "language": "python",
+    "kind": "method",
+    "qualified_name": "Signal.__init__",
+    "current_path": "src/blinker/base.py",
+    "status": "exists"
+  },
+  "versions": [
+    {
+      "commit_sha": "c2d9461914c3624b49b596e3bd5d76dc32b406d1",
+      "commit_message": "Initial import from flatland.util.signals",
+      "authored_at": "2010-02-14T17:40:29Z",
+      "path": "blinker/base.py",
+      "qualified_name": "Signal.__init__",
+      "start_line": 32,
+      "end_line": 38,
+      "body_hash": "ea077916dcb9babdd4e9cb7e2d0387ab86c366863fd99af03c40e09fb04df75b",
+      "parse_status": "ok",
+      "lineage_method": "exact"
+    },
+    {
+      "commit_sha": "73e7d1d2dfff8a6103faad7ee608083231c28be6",
+      "commit_message": "Sphinx documentation.",
+      "authored_at": "2010-02-16T00:35:48Z",
+      "path": "blinker/base.py",
+      "qualified_name": "Signal.__init__",
+      "start_line": 35,
+      "end_line": 52,
+      "body_hash": "e2e8d6d947e915673d64412e9d1130494e7d56bd775d2841009595cf4c4a1431",
+      "parse_status": "ok",
+      "lineage_method": "exact"
+    },
+    {
+      "commit_sha": "d06b2416ea43c535b907b7d0a2b72fff3b2f3a0f",
+      "commit_message": "Added `muted` context manager for temproary switching signal off (#84)",
+      "authored_at": "2023-01-23T23:00:32Z",
+      "path": "src/blinker/base.py",
+      "qualified_name": "Signal.__init__",
+      "start_line": 70,
+      "end_line": 88,
+      "body_hash": "703e9f3054ad0b6e14dac8adf5757b3776d05920232fccf439843cd72301f09d",
+      "parse_status": "ok",
+      "lineage_method": "exact"
+    },
+    {
+      "commit_sha": "fae6164cda6c5e9af89895a22f700402fa4b5ec5",
+      "commit_message": "Add an initial set of type hints",
+      "authored_at": "2023-02-26T11:17:50Z",
+      "path": "src/blinker/base.py",
+      "qualified_name": "Signal.__init__",
+      "start_line": 84,
+      "end_line": 104,
+      "body_hash": "ed620ecba2172d48d53ac037c901a895855d8d6d3752922334dc17af22fd2b56",
+      "parse_status": "ok",
+      "lineage_method": "exact"
+    },
+    {
+      "commit_sha": "c8703aa7c09d7081362647f6659ab2f587279649",
+      "commit_message": "Merge pull request #94 from pallets-eco/lazy-annotations",
+      "authored_at": "2023-04-12T21:31:57Z",
+      "path": "src/blinker/base.py",
+      "qualified_name": "Signal.__init__",
+      "start_line": 86,
+      "end_line": 104,
+      "body_hash": "784c0eccda66518ab24ae789c516ac02af4d4c6c000fd3afb4f8e2aba9d88be9",
+      "parse_status": "ok",
+      "lineage_method": "exact"
+    },
+    {
+      "commit_sha": "5ad0039fac16e99b4207996903b51052e401ab9e",
+      "commit_message": "Allow the Signal set_class to be customised",
+      "authored_at": "2023-09-23T17:25:31Z",
+      "path": "src/blinker/base.py",
+      "qualified_name": "Signal.__init__",
+      "start_line": 92,
+      "end_line": 114,
+      "body_hash": "6214bad266d7352b53b6f1ad23c639298811d293d604c8a442184b8fc41db06f",
+      "parse_status": "ok",
+      "lineage_method": "exact"
+    },
+    {
+      "commit_sha": "7577b88afce38232746a7172e99928e61fc8a5ab",
+      "commit_message": "Merge pull request #139 from pallets-eco/refresh",
+      "authored_at": "2024-04-26T18:30:16Z",
+      "path": "src/blinker/base.py",
+      "qualified_name": "Signal.__init__",
+      "start_line": 93,
+      "end_line": 117,
+      "body_hash": "bf6f7384c4714669297544f88f957850023f4fce0f163f4a9d192e09f93c3fca",
+      "parse_status": "ok",
+      "lineage_method": "exact"
+    },
+    {
+      "commit_sha": "64423dfadc9a35000b5399ca3d94a480ec7efe99",
+      "commit_message": "Merge pull request #144 from pallets-eco/simplify-refs",
+      "authored_at": "2024-04-27T02:45:35Z",
+      "path": "src/blinker/base.py",
+      "qualified_name": "Signal.__init__",
+      "start_line": 87,
+      "end_line": 106,
+      "body_hash": "cd6754e50433df655e6eaa34974478b3e62bb0555f30451e14bd334be0c69634",
+      "parse_status": "ok",
+      "lineage_method": "exact"
+    },
+    {
+      "commit_sha": "fd8a169d633f84874cbc95cddc225240ed4013ff",
+      "commit_message": "Merge pull request #150 from pallets-eco/collections-abc",
+      "authored_at": "2024-04-28T17:17:52Z",
+      "path": "src/blinker/base.py",
+      "qualified_name": "Signal.__init__",
+      "start_line": 89,
+      "end_line": 108,
+      "body_hash": "e0a625d0b5c9556adf2565b777aed6564811bba1e509d26050cb97d4bcb1b842",
+      "parse_status": "ok",
+      "lineage_method": "exact"
+    },
+    {
+      "commit_sha": "f1bbce1023728a3622687a949bc0beb66be0a6c0",
+      "commit_message": "Merge pull request #151 from pallets-eco/cleanup-docs",
+      "authored_at": "2024-04-28T19:47:40Z",
+      "path": "src/blinker/base.py",
+      "qualified_name": "Signal.__init__",
+      "start_line": 87,
+      "end_line": 103,
+      "body_hash": "7ac6c98e00f4beb32d5289a127bf8aca25c42b56b8b56178440f14268696e946",
+      "parse_status": "ok",
+      "lineage_method": "exact"
+    }
+  ]
+}

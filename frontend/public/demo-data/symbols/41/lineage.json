@@ -1,0 +1,25 @@
+{
+  "symbol": {
+    "id": 41,
+    "repository_id": 1,
+    "language": "python",
+    "kind": "method",
+    "qualified_name": "_LazyFile.__enter__",
+    "current_path": "src/click/utils.py",
+    "status": "exists"
+  },
+  "versions": [
+    {
+      "commit_sha": "333c28d79cd982990ee98eef61ec20ab1a4f38ba",
+      "commit_message": "Mark clearly functions private status. Deprecated Python 2 utilities. (#3695)",
+      "authored_at": "2026-07-17T19:24:58Z",
+      "path": "src/click/utils.py",
+      "qualified_name": "_LazyFile.__enter__",
+      "start_line": 195,
+      "end_line": 196,
+      "body_hash": "4785defbb67c7962262c2b93ac9bb9fcef026c9c1557b4a3e8ded6e4c3cb1449",
+      "parse_status": "ok",
+      "lineage_method": "exact"
+    }
+  ]
+}

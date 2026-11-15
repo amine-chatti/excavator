@@ -1,0 +1,109 @@
+{
+  "symbol": {
+    "id": 28,
+    "repository_id": 1,
+    "language": "python",
+    "kind": "function",
+    "qualified_name": "open_file",
+    "current_path": "src/click/utils.py",
+    "status": "exists"
+  },
+  "versions": [
+    {
+      "commit_sha": "a0d426d89434fcade5e96545d5203682c4fc5249",
+      "commit_message": "Merge branch '4.x-maintenance'",
+      "authored_at": "2015-06-21T21:23:19Z",
+      "path": "click/utils.py",
+      "qualified_name": "open_file",
+      "start_line": 339,
+      "end_line": 369,
+      "body_hash": "aa67e7f87b200929deff7d51ec1aaa05193ca7d9ffd925f938a7953ee190df9e",
+      "parse_status": "ok",
+      "lineage_method": "exact"
+    },
+    {
+      "commit_sha": "7239794a610f3ccae3aaf8bfe273ac70cc58ff07",
+      "commit_message": "Merge branch '7.x'",
+      "authored_at": "2020-03-08T16:27:19Z",
+      "path": "src/click/utils.py",
+      "qualified_name": "open_file",
+      "start_line": 309,
+      "end_line": 339,
+      "body_hash": "2965c38f173dffa23fb39b744dd37d4f1f188907e55ed2e0ca5703d80b22e4bd",
+      "parse_status": "ok",
+      "lineage_method": "exact"
+    },
+    {
+      "commit_sha": "ffeddbaf0c8226201136593d29324c951f2b2fa3",
+      "commit_message": "Merge pull request #1856 from pallets/typing",
+      "authored_at": "2021-04-23T16:25:23Z",
+      "path": "src/click/utils.py",
+      "qualified_name": "open_file",
+      "start_line": 335,
+      "end_line": 370,
+      "body_hash": "74acbbdc4d2c23f39592bd24be6bd78f3096472e583e1744e7174ba16a7809bc",
+      "parse_status": "ok",
+      "lineage_method": "exact"
+    },
+    {
+      "commit_sha": "0c85d80b07742b9f9ed4d583d694c37fce1d1292",
+      "commit_message": "Merge branch '8.0.x'",
+      "authored_at": "2021-10-25T15:46:34Z",
+      "path": "src/click/utils.py",
+      "qualified_name": "open_file",
+      "start_line": 335,
+      "end_line": 379,
+      "body_hash": "b123e549fadcc55cf17eba14d8ef00712371a3ccf701fe5613d8e612d312e4e4",
+      "parse_status": "ok",
+      "lineage_method": "exact"
+    },
+    {
+      "commit_sha": "cba52fa76135af2edf46c154203b47106f898eb3",
+      "commit_message": "Merge branch '8.1.x'",
+      "authored_at": "2023-01-20T00:38:36Z",
+      "path": "src/click/utils.py",
+      "qualified_name": "open_file",
+      "start_line": 339,
+      "end_line": 385,
+      "body_hash": "f25fabc78e887a50450a0baaab60799a63820300a5c4ae509b960bede8741e74",
+      "parse_status": "ok",
+      "lineage_method": "exact"
+    },
+    {
+      "commit_sha": "56db54650fd083cc35bc4891ffbda6e5e08e2762",
+      "commit_message": "enable deferred evaluation of annotations (#2270)",
+      "authored_at": "2023-08-20T18:48:26Z",
+      "path": "src/click/utils.py",
+      "qualified_name": "open_file",
+      "start_line": 358,
+      "end_line": 404,
+      "body_hash": "ef0cf6cbab1d1531d9ebd29b600158466dc0f0c9a23699b7bda0af925523e3fe",
+      "parse_status": "ok",
+      "lineage_method": "exact"
+    },
+    {
+      "commit_sha": "99015e1456b6952054fda8312b40ea646737168d",
+      "commit_message": "Merge branch '8.1.x'",
+      "authored_at": "2024-08-24T01:09:31Z",
+      "path": "src/click/utils.py",
+      "qualified_name": "open_file",
+      "start_line": 358,
+      "end_line": 404,
+      "body_hash": "9f92502f823ed6aa024a7c1e240ae902e6c2325c8093c0fc8d66c97d1d9e8a0d",
+      "parse_status": "ok",
+      "lineage_method": "exact"
+    },
+    {
+      "commit_sha": "333c28d79cd982990ee98eef61ec20ab1a4f38ba",
+      "commit_message": "Mark clearly functions private status. Deprecated Python 2 utilities. (#3695)",
+      "authored_at": "2026-07-17T19:24:58Z",
+      "path": "src/click/utils.py",
+      "qualified_name": "open_file",
+      "start_line": 393,
+      "end_line": 439,
+      "body_hash": "2a8b3d61af66a3a61abf107f75f1511bc8d4f787be304baa5fa36d3fefbed29c",
+      "parse_status": "ok",
+      "lineage_method": "exact"
+    }
+  ]
+}

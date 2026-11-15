@@ -1,0 +1,86 @@
+{
+  "status": "extracts",
+  "extracts": [
+    {
+      "source_kind": "commit",
+      "reference": "a0d426d89434fcade5e96545d5203682c4fc5249",
+      "excerpt": "Merge branch '4.x-maintenance'",
+      "lineage_event": "added",
+      "created_at": "2015-06-21T21:23:19Z",
+      "label": "quote",
+      "epistemic_label": "verified"
+    },
+    {
+      "source_kind": "commit",
+      "reference": "269a4ae575f7dbfba7cd3f4ea340e9c85ebc9694",
+      "excerpt": "Merge pull request #1846 from pallets/fsdecode",
+      "lineage_event": "moved",
+      "created_at": "2021-04-12T14:40:16Z",
+      "label": "quote",
+      "epistemic_label": "verified"
+    },
+    {
+      "source_kind": "commit",
+      "reference": "269a4ae575f7dbfba7cd3f4ea340e9c85ebc9694",
+      "excerpt": "use os.fsdecode to display paths",
+      "lineage_event": "moved",
+      "created_at": "2021-04-12T14:40:16Z",
+      "label": "quote",
+      "epistemic_label": "verified"
+    },
+    {
+      "source_kind": "commit",
+      "reference": "ffeddbaf0c8226201136593d29324c951f2b2fa3",
+      "excerpt": "Merge pull request #1856 from pallets/typing",
+      "lineage_event": "modified",
+      "created_at": "2021-04-23T16:25:23Z",
+      "label": "quote",
+      "epistemic_label": "verified"
+    },
+    {
+      "source_kind": "commit",
+      "reference": "ffeddbaf0c8226201136593d29324c951f2b2fa3",
+      "excerpt": "add typing annotations",
+      "lineage_event": "modified",
+      "created_at": "2021-04-23T16:25:23Z",
+      "label": "quote",
+      "epistemic_label": "verified"
+    },
+    {
+      "source_kind": "commit",
+      "reference": "cba52fa76135af2edf46c154203b47106f898eb3",
+      "excerpt": "Merge branch '8.1.x'",
+      "lineage_event": "modified",
+      "created_at": "2023-01-20T00:38:36Z",
+      "label": "quote",
+      "epistemic_label": "verified"
+    },
+    {
+      "source_kind": "commit",
+      "reference": "d9af5cfa009c927a96d10ed38a3e37979876a12e",
+      "excerpt": "Merge branch '8.1.x'",
+      "lineage_event": "modified",
+      "created_at": "2023-07-06T18:34:29Z",
+      "label": "quote",
+      "epistemic_label": "verified"
+    },
+    {
+      "source_kind": "commit",
+      "reference": "56db54650fd083cc35bc4891ffbda6e5e08e2762",
+      "excerpt": "enable deferred evaluation of annotations (#2270)",
+      "lineage_event": "modified",
+      "created_at": "2023-08-20T18:48:26Z",
+      "label": "quote",
+      "epistemic_label": "verified"
+    },
+    {
+      "source_kind": "commit",
+      "reference": "99015e1456b6952054fda8312b40ea646737168d",
+      "excerpt": "Merge branch '8.1.x'",
+      "lineage_event": "modified",
+      "created_at": "2024-08-24T01:09:31Z",
+      "label": "quote",
+      "epistemic_label": "verified"
+    }
+  ]
+}

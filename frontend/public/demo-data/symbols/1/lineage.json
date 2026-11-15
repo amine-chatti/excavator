@@ -1,0 +1,49 @@
+{
+  "symbol": {
+    "id": 1,
+    "repository_id": 1,
+    "language": "python",
+    "kind": "function",
+    "qualified_name": "_posixify",
+    "current_path": "src/click/utils.py",
+    "status": "exists"
+  },
+  "versions": [
+    {
+      "commit_sha": "a0d426d89434fcade5e96545d5203682c4fc5249",
+      "commit_message": "Merge branch '4.x-maintenance'",
+      "authored_at": "2015-06-21T21:23:19Z",
+      "path": "click/utils.py",
+      "qualified_name": "_posixify",
+      "start_line": 17,
+      "end_line": 18,
+      "body_hash": "fe62f9225be56e3343283aef222f1f4cf7183ec8d4bda3be46bc40a3d4da2efb",
+      "parse_status": "ok",
+      "lineage_method": "exact"
+    },
+    {
+      "commit_sha": "7239794a610f3ccae3aaf8bfe273ac70cc58ff07",
+      "commit_message": "Merge branch '7.x'",
+      "authored_at": "2020-03-08T16:27:19Z",
+      "path": "src/click/utils.py",
+      "qualified_name": "_posixify",
+      "start_line": 32,
+      "end_line": 33,
+      "body_hash": "97f6d89e754436ea0b83fb5eb36475a8d40fc29a702fc5bef7de2bbfa91d8839",
+      "parse_status": "ok",
+      "lineage_method": "exact"
+    },
+    {
+      "commit_sha": "ffeddbaf0c8226201136593d29324c951f2b2fa3",
+      "commit_message": "Merge pull request #1856 from pallets/typing",
+      "authored_at": "2021-04-23T16:25:23Z",
+      "path": "src/click/utils.py",
+      "qualified_name": "_posixify",
+      "start_line": 26,
+      "end_line": 27,
+      "body_hash": "c17e545b82662a8746ec53ab277c053ca037307ce664a4cb42741ecf5ddf7db6",
+      "parse_status": "ok",
+      "lineage_method": "exact"
+    }
+  ]
+}

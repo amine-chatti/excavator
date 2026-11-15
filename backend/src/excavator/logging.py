@@ -22,6 +22,9 @@ def _redact_sensitive_values(
             "authorization",
             "password",
             "secret",
+            "api_key",
+            "apikey",
+            "anthropic_api_key",
         }:
             if value is None:
                 redacted[key] = None

@@ -1,0 +1,121 @@
+{
+  "symbol": {
+    "id": 78,
+    "repository_id": 3,
+    "language": "python",
+    "kind": "class",
+    "qualified_name": "NamedSignal",
+    "current_path": "src/blinker/base.py",
+    "status": "exists"
+  },
+  "versions": [
+    {
+      "commit_sha": "c2d9461914c3624b49b596e3bd5d76dc32b406d1",
+      "commit_message": "Initial import from flatland.util.signals",
+      "authored_at": "2010-02-14T17:40:29Z",
+      "path": "blinker/base.py",
+      "qualified_name": "NamedSignal",
+      "start_line": 198,
+      "end_line": 207,
+      "body_hash": "9d8e2a2759f878fbd8eb766ded7a69388b4c95b6ce1c3eaa0f70083d4bee1225",
+      "parse_status": "ok",
+      "lineage_method": "exact"
+    },
+    {
+      "commit_sha": "73e7d1d2dfff8a6103faad7ee608083231c28be6",
+      "commit_message": "Sphinx documentation.",
+      "authored_at": "2010-02-16T00:35:48Z",
+      "path": "blinker/base.py",
+      "qualified_name": "NamedSignal",
+      "start_line": 270,
+      "end_line": 281,
+      "body_hash": "d5567bbeecfa620056d8868d83b4042bf703df71824d6b9fb2ef3d58edab3c06",
+      "parse_status": "ok",
+      "lineage_method": "exact"
+    },
+    {
+      "commit_sha": "6f86085e71661d874c6c56f49c76044c9b7f29c0",
+      "commit_message": "Merge pull request #41 from hugovk/rm-eol",
+      "authored_at": "2019-11-02T21:04:35Z",
+      "path": "blinker/base.py",
+      "qualified_name": "NamedSignal",
+      "start_line": 408,
+      "end_line": 419,
+      "body_hash": "b4fe72bf372abbe57146d1d28cfd8ac567c1fb1e66418e5c65790d5965def157",
+      "parse_status": "ok",
+      "lineage_method": "exact"
+    },
+    {
+      "commit_sha": "f9d51929f71295d0b0f3acfce2e47656bd0472e1",
+      "commit_message": "Move to src/ layout",
+      "authored_at": "2023-01-19T00:08:51Z",
+      "path": "src/blinker/base.py",
+      "qualified_name": "NamedSignal",
+      "start_line": 403,
+      "end_line": 414,
+      "body_hash": "daeb4f59613d492c2529c2e82264e245acc56f3ae17d7278d619cbe08e668c44",
+      "parse_status": "ok",
+      "lineage_method": "exact"
+    },
+    {
+      "commit_sha": "fae6164cda6c5e9af89895a22f700402fa4b5ec5",
+      "commit_message": "Add an initial set of type hints",
+      "authored_at": "2023-02-26T11:17:50Z",
+      "path": "src/blinker/base.py",
+      "qualified_name": "NamedSignal",
+      "start_line": 495,
+      "end_line": 506,
+      "body_hash": "46756630394d8ff5bb4ced95b4aad76506ce2682ba615215349b96d5586564cb",
+      "parse_status": "ok",
+      "lineage_method": "exact"
+    },
+    {
+      "commit_sha": "c8703aa7c09d7081362647f6659ab2f587279649",
+      "commit_message": "Merge pull request #94 from pallets-eco/lazy-annotations",
+      "authored_at": "2023-04-12T21:31:57Z",
+      "path": "src/blinker/base.py",
+      "qualified_name": "NamedSignal",
+      "start_line": 497,
+      "end_line": 508,
+      "body_hash": "6bcf449e8ebf4b61d212cc6c15601ef4a8576f53383eb3416d18dfe4aeae1bec",
+      "parse_status": "ok",
+      "lineage_method": "exact"
+    },
+    {
+      "commit_sha": "d32c27a9fcc825e22f5993b30f35b20f515a9f9d",
+      "commit_message": "Update the requirements",
+      "authored_at": "2023-11-01T21:51:34Z",
+      "path": "src/blinker/base.py",
+      "qualified_name": "NamedSignal",
+      "start_line": 504,
+      "end_line": 515,
+      "body_hash": "7722efef0f761aca46830998f17abd0c4fe00ae927b3679e119a6e47f83a574e",
+      "parse_status": "ok",
+      "lineage_method": "exact"
+    },
+    {
+      "commit_sha": "64423dfadc9a35000b5399ca3d94a480ec7efe99",
+      "commit_message": "Merge pull request #144 from pallets-eco/simplify-refs",
+      "authored_at": "2024-04-27T02:45:35Z",
+      "path": "src/blinker/base.py",
+      "qualified_name": "NamedSignal",
+      "start_line": 497,
+      "end_line": 508,
+      "body_hash": "5af7556434622e03fd4b6336498483f68db603b960448c985abde4a2be05e39e",
+      "parse_status": "ok",
+      "lineage_method": "exact"
+    },
+    {
+      "commit_sha": "f1bbce1023728a3622687a949bc0beb66be0a6c0",
+      "commit_message": "Merge pull request #151 from pallets-eco/cleanup-docs",
+      "authored_at": "2024-04-28T19:47:40Z",
+      "path": "src/blinker/base.py",
+      "qualified_name": "NamedSignal",
+      "start_line": 513,
+      "end_line": 529,
+      "body_hash": "8e9c1f1e92e6367bdcf83eeb84c204bb25d2cef8236bcf5f702a738196762ca0",
+      "parse_status": "ok",
+      "lineage_method": "exact"
+    }
+  ]
+}

@@ -1,0 +1,61 @@
+{
+  "symbol": {
+    "id": 106,
+    "repository_id": 3,
+    "language": "python",
+    "kind": "class",
+    "qualified_name": "_WeakNamespace",
+    "current_path": "src/blinker/base.py",
+    "status": "deleted"
+  },
+  "versions": [
+    {
+      "commit_sha": "1a29708eed835fb606b7e5b627299c9188daea7c",
+      "commit_message": "deprecate WeakNamespace",
+      "authored_at": "2024-04-27T03:59:52Z",
+      "path": "src/blinker/base.py",
+      "qualified_name": "_WeakNamespace",
+      "start_line": 526,
+      "end_line": 558,
+      "body_hash": "604a985ae88bfa4be6151f5776a2aaf0dbda23e6d317ffbdae56b1e5fcc6621c",
+      "parse_status": "ok",
+      "lineage_method": "exact"
+    },
+    {
+      "commit_sha": "f1bbce1023728a3622687a949bc0beb66be0a6c0",
+      "commit_message": "Merge pull request #151 from pallets-eco/cleanup-docs",
+      "authored_at": "2024-04-28T19:47:40Z",
+      "path": "src/blinker/base.py",
+      "qualified_name": "_WeakNamespace",
+      "start_line": 549,
+      "end_line": 582,
+      "body_hash": "ac399170f55f98a86c2479bf445c23a4382d5cea7b5ad17eae538d911e4d779a",
+      "parse_status": "ok",
+      "lineage_method": "exact"
+    },
+    {
+      "commit_sha": "d15107cc65925d446f67bf9a74a8cb98aef9ce8e",
+      "commit_message": "Merge pull request #152 from pallets-eco/pyright-export",
+      "authored_at": "2024-04-28T19:57:02Z",
+      "path": "src/blinker/base.py",
+      "qualified_name": "_WeakNamespace",
+      "start_line": 559,
+      "end_line": 591,
+      "body_hash": "1da5d6b1b2979a4201d6acdc4f76d05e23767915a539b79c534cc383e92d2616",
+      "parse_status": "ok",
+      "lineage_method": "exact"
+    },
+    {
+      "commit_sha": "8c983ecd764e1d113d24522838c2a7312460b7eb",
+      "commit_message": "remove previously deprecated code (#172)",
+      "authored_at": "2024-10-01T18:46:09Z",
+      "path": "src/blinker/base.py",
+      "qualified_name": "_WeakNamespace",
+      "start_line": 559,
+      "end_line": 591,
+      "body_hash": "1da5d6b1b2979a4201d6acdc4f76d05e23767915a539b79c534cc383e92d2616",
+      "parse_status": "ok",
+      "lineage_method": "exact"
+    }
+  ]
+}

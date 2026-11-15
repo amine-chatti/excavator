@@ -1,0 +1,133 @@
+{
+  "symbol": {
+    "id": 81,
+    "repository_id": 3,
+    "language": "python",
+    "kind": "class",
+    "qualified_name": "Namespace",
+    "current_path": "src/blinker/base.py",
+    "status": "exists"
+  },
+  "versions": [
+    {
+      "commit_sha": "c2d9461914c3624b49b596e3bd5d76dc32b406d1",
+      "commit_message": "Initial import from flatland.util.signals",
+      "authored_at": "2010-02-14T17:40:29Z",
+      "path": "blinker/base.py",
+      "qualified_name": "Namespace",
+      "start_line": 210,
+      "end_line": 217,
+      "body_hash": "4af1d2423a3e5de9d4a00a6b2e0bd59b1015b0ed9bd02b9594f0fec429b1891f",
+      "parse_status": "ok",
+      "lineage_method": "exact"
+    },
+    {
+      "commit_sha": "73e7d1d2dfff8a6103faad7ee608083231c28be6",
+      "commit_message": "Sphinx documentation.",
+      "authored_at": "2010-02-16T00:35:48Z",
+      "path": "blinker/base.py",
+      "qualified_name": "Namespace",
+      "start_line": 284,
+      "end_line": 296,
+      "body_hash": "ea78d64f3b467c18ef689750603d3dbe26d92e55a8bdff2e45a92f87df27ae68",
+      "parse_status": "ok",
+      "lineage_method": "exact"
+    },
+    {
+      "commit_sha": "b66e4e9acf6017b3af20fc56666461f01fd4e003",
+      "commit_message": "blinker.signal() and blinker.Namespace no longer use weak references.",
+      "authored_at": "2013-07-03T09:01:53Z",
+      "path": "blinker/base.py",
+      "qualified_name": "Namespace",
+      "start_line": 390,
+      "end_line": 402,
+      "body_hash": "d0f16859306d1608c220379b7e3e105181411f62899b493e377e02c20cc24ca7",
+      "parse_status": "ok",
+      "lineage_method": "exact"
+    },
+    {
+      "commit_sha": "fae6164cda6c5e9af89895a22f700402fa4b5ec5",
+      "commit_message": "Add an initial set of type hints",
+      "authored_at": "2023-02-26T11:17:50Z",
+      "path": "src/blinker/base.py",
+      "qualified_name": "Namespace",
+      "start_line": 509,
+      "end_line": 521,
+      "body_hash": "764e0af58088876f87e641dd18c6bd174e93894260e6b9817891ffe7fca33212",
+      "parse_status": "ok",
+      "lineage_method": "exact"
+    },
+    {
+      "commit_sha": "c8703aa7c09d7081362647f6659ab2f587279649",
+      "commit_message": "Merge pull request #94 from pallets-eco/lazy-annotations",
+      "authored_at": "2023-04-12T21:31:57Z",
+      "path": "src/blinker/base.py",
+      "qualified_name": "Namespace",
+      "start_line": 511,
+      "end_line": 524,
+      "body_hash": "c083da045eabdc1f169d92f3310901f6bce7fb239cc124a124952a55468baacc",
+      "parse_status": "ok",
+      "lineage_method": "exact"
+    },
+    {
+      "commit_sha": "7577b88afce38232746a7172e99928e61fc8a5ab",
+      "commit_message": "Merge pull request #139 from pallets-eco/refresh",
+      "authored_at": "2024-04-26T18:30:16Z",
+      "path": "src/blinker/base.py",
+      "qualified_name": "Namespace",
+      "start_line": 522,
+      "end_line": 535,
+      "body_hash": "50bb8ddf57d2638831d6d0b826e59e03c53858bdfa065aaaeee4771a4b0974db",
+      "parse_status": "ok",
+      "lineage_method": "exact"
+    },
+    {
+      "commit_sha": "64423dfadc9a35000b5399ca3d94a480ec7efe99",
+      "commit_message": "Merge pull request #144 from pallets-eco/simplify-refs",
+      "authored_at": "2024-04-27T02:45:35Z",
+      "path": "src/blinker/base.py",
+      "qualified_name": "Namespace",
+      "start_line": 511,
+      "end_line": 523,
+      "body_hash": "da3e548ef06de2f41d9c37352a667956af610f14f727f6836f00975a1e16c8c4",
+      "parse_status": "ok",
+      "lineage_method": "exact"
+    },
+    {
+      "commit_sha": "f1bbce1023728a3622687a949bc0beb66be0a6c0",
+      "commit_message": "Merge pull request #151 from pallets-eco/cleanup-docs",
+      "authored_at": "2024-04-28T19:47:40Z",
+      "path": "src/blinker/base.py",
+      "qualified_name": "Namespace",
+      "start_line": 532,
+      "end_line": 546,
+      "body_hash": "c768b07830ee68a0db81c2e6ae3da5d2e761db8dc5cfe7a080f0b265bd8c97cb",
+      "parse_status": "ok",
+      "lineage_method": "exact"
+    },
+    {
+      "commit_sha": "d15107cc65925d446f67bf9a74a8cb98aef9ce8e",
+      "commit_message": "Merge pull request #152 from pallets-eco/pyright-export",
+      "authored_at": "2024-04-28T19:57:02Z",
+      "path": "src/blinker/base.py",
+      "qualified_name": "Namespace",
+      "start_line": 543,
+      "end_line": 556,
+      "body_hash": "d171f0b2e54e171f684850005f98769cb4821caffccb71c8a115f508e6d9c9cf",
+      "parse_status": "ok",
+      "lineage_method": "exact"
+    },
+    {
+      "commit_sha": "dcce3e97743494433025e0b68f742f3582b6ba6a",
+      "commit_message": "Merge pull request #175 from pallets-eco/drop-python3.8",
+      "authored_at": "2024-11-08T16:41:44Z",
+      "path": "src/blinker/base.py",
+      "qualified_name": "Namespace",
+      "start_line": 479,
+      "end_line": 492,
+      "body_hash": "9519fa03e8c70e59be95fd56b50cfd52d41fae2a045580b8e246f59311927667",
+      "parse_status": "ok",
+      "lineage_method": "exact"
+    }
+  ]
+}

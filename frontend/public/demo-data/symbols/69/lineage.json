@@ -1,0 +1,181 @@
+{
+  "symbol": {
+    "id": 69,
+    "repository_id": 3,
+    "language": "python",
+    "kind": "method",
+    "qualified_name": "Signal.connect",
+    "current_path": "src/blinker/base.py",
+    "status": "exists"
+  },
+  "versions": [
+    {
+      "commit_sha": "c2d9461914c3624b49b596e3bd5d76dc32b406d1",
+      "commit_message": "Initial import from flatland.util.signals",
+      "authored_at": "2010-02-14T17:40:29Z",
+      "path": "blinker/base.py",
+      "qualified_name": "Signal.connect",
+      "start_line": 40,
+      "end_line": 92,
+      "body_hash": "4ef2ea62eb4743ee0afa9719a4ba79bc86558c3b46816f56e547aca8602cb95a",
+      "parse_status": "ok",
+      "lineage_method": "exact"
+    },
+    {
+      "commit_sha": "c06a79a31313181f7544d80714457e46d5622ef2",
+      "commit_message": "Python 2.4 compatability.",
+      "authored_at": "2010-02-14T17:47:42Z",
+      "path": "blinker/base.py",
+      "qualified_name": "Signal.connect",
+      "start_line": 40,
+      "end_line": 95,
+      "body_hash": "a7cd6b74ac6acf1644d99ab829dc076d7d60328cb554e4c4f29e42407f6adccc",
+      "parse_status": "ok",
+      "lineage_method": "exact"
+    },
+    {
+      "commit_sha": "73e7d1d2dfff8a6103faad7ee608083231c28be6",
+      "commit_message": "Sphinx documentation.",
+      "authored_at": "2010-02-16T00:35:48Z",
+      "path": "blinker/base.py",
+      "qualified_name": "Signal.connect",
+      "start_line": 54,
+      "end_line": 110,
+      "body_hash": "e97357ec82e59356c908f286fa32849e5832ed62f4a349827bb5a20ce42b9423",
+      "parse_status": "ok",
+      "lineage_method": "exact"
+    },
+    {
+      "commit_sha": "d24501d9f717e930f059b38e3043790edaf35f0c",
+      "commit_message": "Added Signal.receiver_connected and .receiver_disconnected per-Signal signals.",
+      "authored_at": "2011-03-14T21:12:59Z",
+      "path": "blinker/base.py",
+      "qualified_name": "Signal.connect",
+      "start_line": 92,
+      "end_line": 158,
+      "body_hash": "7220412338dd1b1351672bb852c1c75e55643fb91eebb4e4e86c66445793b38e",
+      "parse_status": "ok",
+      "lineage_method": "exact"
+    },
+    {
+      "commit_sha": "904d8d3803e84257c08526e9047474215aa1c976",
+      "commit_message": "Merge pull request #63 from tirkarthi/fix-warnings",
+      "authored_at": "2020-11-07T17:17:12Z",
+      "path": "blinker/base.py",
+      "qualified_name": "Signal.connect",
+      "start_line": 92,
+      "end_line": 158,
+      "body_hash": "29077e0fd99e67300ccec3c4c63f3abccb0cb8cb5db564d8dd300510b20c4cdb",
+      "parse_status": "ok",
+      "lineage_method": "exact"
+    },
+    {
+      "commit_sha": "084d2bdb86f7e2e29e4bc88d5317955b9c4d76dc",
+      "commit_message": "Merge pull request #72 from pallets-eco/refresh",
+      "authored_at": "2022-07-17T16:44:48Z",
+      "path": "blinker/base.py",
+      "qualified_name": "Signal.connect",
+      "start_line": 92,
+      "end_line": 158,
+      "body_hash": "620d370294bca667b1e9e51e4515e7ffc86c101bafd379929151257efd8473c6",
+      "parse_status": "ok",
+      "lineage_method": "exact"
+    },
+    {
+      "commit_sha": "f9d51929f71295d0b0f3acfce2e47656bd0472e1",
+      "commit_message": "Move to src/ layout",
+      "authored_at": "2023-01-19T00:08:51Z",
+      "path": "src/blinker/base.py",
+      "qualified_name": "Signal.connect",
+      "start_line": 89,
+      "end_line": 152,
+      "body_hash": "957e0dbc8527631d79f067f7d934c07fa6160331808a5905e4173fd6b7e51acc",
+      "parse_status": "ok",
+      "lineage_method": "exact"
+    },
+    {
+      "commit_sha": "33a14971c34fcd15deb2b18b50c9bd411eb6ed74",
+      "commit_message": "Fix issues reported by flake8",
+      "authored_at": "2023-01-19T00:33:20Z",
+      "path": "src/blinker/base.py",
+      "qualified_name": "Signal.connect",
+      "start_line": 89,
+      "end_line": 152,
+      "body_hash": "d955d6fe960e443120fca51f239174c071cfbd784eb7e56a562ea9584b567814",
+      "parse_status": "ok",
+      "lineage_method": "exact"
+    },
+    {
+      "commit_sha": "fae6164cda6c5e9af89895a22f700402fa4b5ec5",
+      "commit_message": "Add an initial set of type hints",
+      "authored_at": "2023-02-26T11:17:50Z",
+      "path": "src/blinker/base.py",
+      "qualified_name": "Signal.connect",
+      "start_line": 106,
+      "end_line": 173,
+      "body_hash": "c2ed4a3560287e040a264eaa47946587b319c6b8f4567ff2893c9133258ec0b9",
+      "parse_status": "ok",
+      "lineage_method": "exact"
+    },
+    {
+      "commit_sha": "c8703aa7c09d7081362647f6659ab2f587279649",
+      "commit_message": "Merge pull request #94 from pallets-eco/lazy-annotations",
+      "authored_at": "2023-04-12T21:31:57Z",
+      "path": "src/blinker/base.py",
+      "qualified_name": "Signal.connect",
+      "start_line": 106,
+      "end_line": 174,
+      "body_hash": "15b88a92e6468c97e538d083570ef0da3db927f3b3a27a9c9ee62a6373447194",
+      "parse_status": "ok",
+      "lineage_method": "exact"
+    },
+    {
+      "commit_sha": "7e2c85ab3a3084fc72262fa62df8ab337477ea55",
+      "commit_message": "Merge pull request #142 from pallets-eco/deprecations",
+      "authored_at": "2024-04-26T19:03:48Z",
+      "path": "src/blinker/base.py",
+      "qualified_name": "Signal.connect",
+      "start_line": 119,
+      "end_line": 187,
+      "body_hash": "cd7ff9ae600d37fc2fccee4b6a3d513613e19e16101620a49093e6dfd9e55782",
+      "parse_status": "ok",
+      "lineage_method": "exact"
+    },
+    {
+      "commit_sha": "64423dfadc9a35000b5399ca3d94a480ec7efe99",
+      "commit_message": "Merge pull request #144 from pallets-eco/simplify-refs",
+      "authored_at": "2024-04-27T02:45:35Z",
+      "path": "src/blinker/base.py",
+      "qualified_name": "Signal.connect",
+      "start_line": 108,
+      "end_line": 167,
+      "body_hash": "ce88d83295a1cd5fc5ed60c5559cbcd9a98ce733ce59a573ce12deda0b442852",
+      "parse_status": "ok",
+      "lineage_method": "exact"
+    },
+    {
+      "commit_sha": "f1bbce1023728a3622687a949bc0beb66be0a6c0",
+      "commit_message": "Merge pull request #151 from pallets-eco/cleanup-docs",
+      "authored_at": "2024-04-28T19:47:40Z",
+      "path": "src/blinker/base.py",
+      "qualified_name": "Signal.connect",
+      "start_line": 105,
+      "end_line": 162,
+      "body_hash": "2032b04d6b614bec1bb6b48b601da67697271b10da0fc4fe37d95597f87404be",
+      "parse_status": "ok",
+      "lineage_method": "exact"
+    },
+    {
+      "commit_sha": "8c983ecd764e1d113d24522838c2a7312460b7eb",
+      "commit_message": "remove previously deprecated code (#172)",
+      "authored_at": "2024-10-01T18:46:09Z",
+      "path": "src/blinker/base.py",
+      "qualified_name": "Signal.connect",
+      "start_line": 91,
+      "end_line": 139,
+      "body_hash": "ee99ee3f87523b5865446ec3ad3764d767a0e47c53976901f3cb1a1510fcf71a",
+      "parse_status": "ok",
+      "lineage_method": "exact"
+    }
+  ]
+}

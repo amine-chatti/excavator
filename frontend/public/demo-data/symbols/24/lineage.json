@@ -1,0 +1,61 @@
+{
+  "symbol": {
+    "id": 24,
+    "repository_id": 1,
+    "language": "python",
+    "kind": "method",
+    "qualified_name": "_KeepOpenFile.__iter__",
+    "current_path": "src/click/utils.py",
+    "status": "exists"
+  },
+  "versions": [
+    {
+      "commit_sha": "a0d426d89434fcade5e96545d5203682c4fc5249",
+      "commit_message": "Merge branch '4.x-maintenance'",
+      "authored_at": "2015-06-21T21:23:19Z",
+      "path": "click/utils.py",
+      "qualified_name": "KeepOpenFile.__iter__",
+      "start_line": 216,
+      "end_line": 217,
+      "body_hash": "59b85ad5a7df732d824dcf6294e15afe5a9f818e0efdfec32fcfa2212b0fde81",
+      "parse_status": "ok",
+      "lineage_method": "exact"
+    },
+    {
+      "commit_sha": "ffeddbaf0c8226201136593d29324c951f2b2fa3",
+      "commit_message": "Merge pull request #1856 from pallets/typing",
+      "authored_at": "2021-04-23T16:25:23Z",
+      "path": "src/click/utils.py",
+      "qualified_name": "KeepOpenFile.__iter__",
+      "start_line": 200,
+      "end_line": 201,
+      "body_hash": "90733804c93c52dc9a5f4038d94b6cab0c450440700b55a224d082d148d7f87e",
+      "parse_status": "ok",
+      "lineage_method": "exact"
+    },
+    {
+      "commit_sha": "56db54650fd083cc35bc4891ffbda6e5e08e2762",
+      "commit_message": "enable deferred evaluation of annotations (#2270)",
+      "authored_at": "2023-08-20T18:48:26Z",
+      "path": "src/click/utils.py",
+      "qualified_name": "KeepOpenFile.__iter__",
+      "start_line": 218,
+      "end_line": 219,
+      "body_hash": "eeee072ed2813eded1d612ef6bb633e30ea012c68e33c2a427eda4720535c983",
+      "parse_status": "ok",
+      "lineage_method": "exact"
+    },
+    {
+      "commit_sha": "333c28d79cd982990ee98eef61ec20ab1a4f38ba",
+      "commit_message": "Mark clearly functions private status. Deprecated Python 2 utilities. (#3695)",
+      "authored_at": "2026-07-17T19:24:58Z",
+      "path": "src/click/utils.py",
+      "qualified_name": "_KeepOpenFile.__iter__",
+      "start_line": 248,
+      "end_line": 249,
+      "body_hash": "eeee072ed2813eded1d612ef6bb633e30ea012c68e33c2a427eda4720535c983",
+      "parse_status": "ok",
+      "lineage_method": "rename_detected"
+    }
+  ]
+}

@@ -1,0 +1,133 @@
+{
+  "symbol": {
+    "id": 18,
+    "repository_id": 1,
+    "language": "python",
+    "kind": "class",
+    "qualified_name": "KeepOpenFile",
+    "current_path": "src/click/utils.py",
+    "status": "deleted"
+  },
+  "versions": [
+    {
+      "commit_sha": "a0d426d89434fcade5e96545d5203682c4fc5249",
+      "commit_message": "Merge branch '4.x-maintenance'",
+      "authored_at": "2015-06-21T21:23:19Z",
+      "path": "click/utils.py",
+      "qualified_name": "KeepOpenFile",
+      "start_line": 199,
+      "end_line": 217,
+      "body_hash": "6d759e8a8fa31a8fa2cf60138b348a1529d2e46dc5d87800b45a21a3d2449fc5",
+      "parse_status": "ok",
+      "lineage_method": "exact"
+    },
+    {
+      "commit_sha": "7239794a610f3ccae3aaf8bfe273ac70cc58ff07",
+      "commit_message": "Merge branch '7.x'",
+      "authored_at": "2020-03-08T16:27:19Z",
+      "path": "src/click/utils.py",
+      "qualified_name": "KeepOpenFile",
+      "start_line": 159,
+      "end_line": 176,
+      "body_hash": "b35667931394c634c42ada3366d7e34cf429ee88f7e14fb65582b68dd08c9e4f",
+      "parse_status": "ok",
+      "lineage_method": "exact"
+    },
+    {
+      "commit_sha": "97de2c97275f52adc5c6ef8bb8aa993ce997fe7e",
+      "commit_message": "Merge pull request #1532 from pallets/drop-python2",
+      "authored_at": "2020-04-20T14:16:07Z",
+      "path": "src/click/utils.py",
+      "qualified_name": "KeepOpenFile",
+      "start_line": 151,
+      "end_line": 168,
+      "body_hash": "d4ba30b8d8a07c4f1f86063f221ab3707a44e4b47efb08f66aedc9c513f17eda",
+      "parse_status": "ok",
+      "lineage_method": "exact"
+    },
+    {
+      "commit_sha": "ffeddbaf0c8226201136593d29324c951f2b2fa3",
+      "commit_message": "Merge pull request #1856 from pallets/typing",
+      "authored_at": "2021-04-23T16:25:23Z",
+      "path": "src/click/utils.py",
+      "qualified_name": "KeepOpenFile",
+      "start_line": 184,
+      "end_line": 201,
+      "body_hash": "f8434a686bac9f593fe3f93de64c785f56b1ee4c27f9a3a5fdbcfa6cd06a0f13",
+      "parse_status": "ok",
+      "lineage_method": "exact"
+    },
+    {
+      "commit_sha": "cba52fa76135af2edf46c154203b47106f898eb3",
+      "commit_message": "Merge branch '8.1.x'",
+      "authored_at": "2023-01-20T00:38:36Z",
+      "path": "src/click/utils.py",
+      "qualified_name": "KeepOpenFile",
+      "start_line": 188,
+      "end_line": 205,
+      "body_hash": "6d3cabcd8e9e83853b51f666791183821c37dff8c299d8c84b17faa29dd0e44b",
+      "parse_status": "ok",
+      "lineage_method": "exact"
+    },
+    {
+      "commit_sha": "d9af5cfa009c927a96d10ed38a3e37979876a12e",
+      "commit_message": "Merge branch '8.1.x'",
+      "authored_at": "2023-07-06T18:34:29Z",
+      "path": "src/click/utils.py",
+      "qualified_name": "KeepOpenFile",
+      "start_line": 194,
+      "end_line": 216,
+      "body_hash": "14bfd5b9c0d382f53d3f0dc14b399a37ad518a0218be72cc541246ab584042c4",
+      "parse_status": "ok",
+      "lineage_method": "exact"
+    },
+    {
+      "commit_sha": "56db54650fd083cc35bc4891ffbda6e5e08e2762",
+      "commit_message": "enable deferred evaluation of annotations (#2270)",
+      "authored_at": "2023-08-20T18:48:26Z",
+      "path": "src/click/utils.py",
+      "qualified_name": "KeepOpenFile",
+      "start_line": 197,
+      "end_line": 219,
+      "body_hash": "e2c1145fe9c99eae62b386058ccd40a8417c9a898b4abc1eaaffb88c0902ab84",
+      "parse_status": "ok",
+      "lineage_method": "exact"
+    },
+    {
+      "commit_sha": "e3e69e3bf8d749ac1a632f2ece4d38ec7f6588f5",
+      "commit_message": "Add type annotations for instance attributes in `utils` (#3422)",
+      "authored_at": "2026-05-16T15:55:46Z",
+      "path": "src/click/utils.py",
+      "qualified_name": "KeepOpenFile",
+      "start_line": 207,
+      "end_line": 231,
+      "body_hash": "f6a9130c5dc1a589a090267433534838e1afb0974fd5905343ee079b4ebec492",
+      "parse_status": "ok",
+      "lineage_method": "exact"
+    },
+    {
+      "commit_sha": "8a1b1a33d739be05b7e91251e3c0dde77c5e152f",
+      "commit_message": "Merge `stable` into `main` after `CHANGES` rST to Markdown conversion (#3563)",
+      "authored_at": "2026-06-07T03:59:46Z",
+      "path": "src/click/utils.py",
+      "qualified_name": "KeepOpenFile",
+      "start_line": 206,
+      "end_line": 242,
+      "body_hash": "e0f1a45577f39f3ea48fa274a9dce49f8d68b0920d1b603a6a2dc256a3161c83",
+      "parse_status": "ok",
+      "lineage_method": "exact"
+    },
+    {
+      "commit_sha": "333c28d79cd982990ee98eef61ec20ab1a4f38ba",
+      "commit_message": "Mark clearly functions private status. Deprecated Python 2 utilities. (#3695)",
+      "authored_at": "2026-07-17T19:24:58Z",
+      "path": "src/click/utils.py",
+      "qualified_name": "KeepOpenFile",
+      "start_line": 206,
+      "end_line": 242,
+      "body_hash": "e0f1a45577f39f3ea48fa274a9dce49f8d68b0920d1b603a6a2dc256a3161c83",
+      "parse_status": "ok",
+      "lineage_method": "exact"
+    }
+  ]
+}

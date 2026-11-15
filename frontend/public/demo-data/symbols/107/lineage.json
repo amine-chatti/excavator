@@ -1,0 +1,37 @@
+{
+  "symbol": {
+    "id": 107,
+    "repository_id": 3,
+    "language": "python",
+    "kind": "class",
+    "qualified_name": "PNamespaceSignal",
+    "current_path": "src/blinker/base.py",
+    "status": "deleted"
+  },
+  "versions": [
+    {
+      "commit_sha": "d15107cc65925d446f67bf9a74a8cb98aef9ce8e",
+      "commit_message": "Merge pull request #152 from pallets-eco/pyright-export",
+      "authored_at": "2024-04-28T19:57:02Z",
+      "path": "src/blinker/base.py",
+      "qualified_name": "PNamespaceSignal",
+      "start_line": 534,
+      "end_line": 535,
+      "body_hash": "89ad2ee36ef462691327ce209178af8c087f35f36eeb727d41af7d064d9dff4a",
+      "parse_status": "ok",
+      "lineage_method": "exact"
+    },
+    {
+      "commit_sha": "dcce3e97743494433025e0b68f742f3582b6ba6a",
+      "commit_message": "Merge pull request #175 from pallets-eco/drop-python3.8",
+      "authored_at": "2024-11-08T16:41:44Z",
+      "path": "src/blinker/base.py",
+      "qualified_name": "PNamespaceSignal",
+      "start_line": 534,
+      "end_line": 535,
+      "body_hash": "89ad2ee36ef462691327ce209178af8c087f35f36eeb727d41af7d064d9dff4a",
+      "parse_status": "ok",
+      "lineage_method": "exact"
+    }
+  ]
+}

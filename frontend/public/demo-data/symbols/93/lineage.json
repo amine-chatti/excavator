@@ -1,0 +1,73 @@
+{
+  "symbol": {
+    "id": 93,
+    "repository_id": 3,
+    "language": "python",
+    "kind": "method",
+    "qualified_name": "Signal.muted",
+    "current_path": "src/blinker/base.py",
+    "status": "exists"
+  },
+  "versions": [
+    {
+      "commit_sha": "d06b2416ea43c535b907b7d0a2b72fff3b2f3a0f",
+      "commit_message": "Added `muted` context manager for temproary switching signal off (#84)",
+      "authored_at": "2023-01-23T23:00:32Z",
+      "path": "src/blinker/base.py",
+      "qualified_name": "Signal.muted",
+      "start_line": 213,
+      "end_line": 224,
+      "body_hash": "9749f925fc92378b18fe170340c34622aebd45a7726e7e07ca88cbd62d6fd572",
+      "parse_status": "ok",
+      "lineage_method": "exact"
+    },
+    {
+      "commit_sha": "fae6164cda6c5e9af89895a22f700402fa4b5ec5",
+      "commit_message": "Add an initial set of type hints",
+      "authored_at": "2023-02-26T11:17:50Z",
+      "path": "src/blinker/base.py",
+      "qualified_name": "Signal.muted",
+      "start_line": 237,
+      "end_line": 248,
+      "body_hash": "9422d534990a86dd860b8bee38fa4a62a9e16f18d385b49ffe88392d083566bb",
+      "parse_status": "ok",
+      "lineage_method": "exact"
+    },
+    {
+      "commit_sha": "64423dfadc9a35000b5399ca3d94a480ec7efe99",
+      "commit_message": "Merge pull request #144 from pallets-eco/simplify-refs",
+      "authored_at": "2024-04-27T02:45:35Z",
+      "path": "src/blinker/base.py",
+      "qualified_name": "Signal.muted",
+      "start_line": 226,
+      "end_line": 236,
+      "body_hash": "528cc3909f764be36250d35b1cc7e5c30992b4d9536e52d0f65358ce756e8d6d",
+      "parse_status": "ok",
+      "lineage_method": "exact"
+    },
+    {
+      "commit_sha": "fd8a169d633f84874cbc95cddc225240ed4013ff",
+      "commit_message": "Merge pull request #150 from pallets-eco/collections-abc",
+      "authored_at": "2024-04-28T17:17:52Z",
+      "path": "src/blinker/base.py",
+      "qualified_name": "Signal.muted",
+      "start_line": 228,
+      "end_line": 238,
+      "body_hash": "12aa05289d552fbc3f915e92b6777efb0fa0b2d17729cbb9edc6e9b46b859252",
+      "parse_status": "ok",
+      "lineage_method": "exact"
+    },
+    {
+      "commit_sha": "f1bbce1023728a3622687a949bc0beb66be0a6c0",
+      "commit_message": "Merge pull request #151 from pallets-eco/cleanup-docs",
+      "authored_at": "2024-04-28T19:47:40Z",
+      "path": "src/blinker/base.py",
+      "qualified_name": "Signal.muted",
+      "start_line": 214,
+      "end_line": 225,
+      "body_hash": "e371e7c7885eae0d9af86ce22240122e5263487cd6ed587e5584364b28f0b9aa",
+      "parse_status": "ok",
+      "lineage_method": "exact"
+    }
+  ]
+}

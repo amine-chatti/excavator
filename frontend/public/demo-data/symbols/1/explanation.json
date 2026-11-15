@@ -1,0 +1,19 @@
+{
+  "status": "explained",
+  "summary": "Symbol _posixify has been committed multiple times with the same message, suggesting its purpose is related to handling or enabling POSIX compatibility.",
+  "claims": [
+    {
+      "position": 0,
+      "text": "The symbol _posixify has been committed multiple times.",
+      "quotes": [
+        {
+          "snippet_id": "commit:a0d426d89434fcade5e96545d5203682c4fc5249:message",
+          "source_type": "commit_message",
+          "quote": "Merge branch ",
+          "level": "mentioned",
+          "epistemic_label": "inferred"
+        }
+      ]
+    }
+  ]
+}

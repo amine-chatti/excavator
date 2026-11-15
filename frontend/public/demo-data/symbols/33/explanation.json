@@ -1,0 +1,19 @@
+{
+  "status": "explained",
+  "summary": "Symbol _PacifyFlushWrapper.__init__ has changed",
+  "claims": [
+    {
+      "position": 0,
+      "text": "The symbol has been changed to prevent error messages/exit code 120 after exiting on EPIPE",
+      "quotes": [
+        {
+          "snippet_id": "commit:38a2712d596a5df9288c1817748b71197d8c7c57:message",
+          "source_type": "commit_message",
+          "quote": "Prevent error messages/exit code 120 after exiting on EPIPE",
+          "level": "mentioned",
+          "epistemic_label": "inferred"
+        }
+      ]
+    }
+  ]
+}
