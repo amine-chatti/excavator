@@ -81,9 +81,9 @@ describe("timeline pure logic", () => {
     expect(timeline.points[0]?.baseline).toBe(true);
     expect(timeline.points.map((point) => point.marker)).toEqual([
       "circle",
+      "square",
       "diamond",
       "triangle",
-      "square",
       "cross",
     ]);
     expect(timeline.bands).toHaveLength(5);

@@ -34,19 +34,26 @@ function routeFetch(options: { empty?: boolean; failLineage?: boolean; post?: (i
   });
 }
 
+async function digIntoFirstSymbol() {
+  const button = await screen.findByRole("button", { name: /^Dig into format_filename/ });
+  await waitFor(() => expect(button).not.toHaveProperty("disabled", true));
+  fireEvent.click(button);
+}
+
 describe("field notebook", () => {
   beforeEach(() => { vi.stubGlobal("fetch", routeFetch()); });
   afterEach(() => { cleanup(); vi.unstubAllGlobals(); });
 
   it("loads repositories, selects another symbol, and shows timeline and source extracts", async () => {
     const fetchMock = routeFetch(); vi.stubGlobal("fetch", fetchMock);
-    render(<App />);
+    render(<App />); await digIntoFirstSymbol();
     await screen.findByRole("heading", { name: "pkg.first" });
     expect(await screen.findByRole("heading", { name: "No explanation yet" })).toBeTruthy();
     expect(await screen.findByRole("img", { name: "Timeline for pkg.first" })).toBeTruthy();
     expect(screen.getByText("This is the verbatim origin sentence.")).toBeTruthy();
-    fireEvent.click(screen.getByRole("button", { name: /pkg\.Second/ }));
-    expect(await screen.findByRole("heading", { name: "pkg.Second" })).toBeTruthy();
+    const secondSymbol = screen.getByRole("button", { name: /pkg\.Second/ });
+    fireEvent.click(secondSymbol);
+    await waitFor(() => expect(secondSymbol.className).toContain("is-selected"));
     await waitFor(() => expect(fetchMock).toHaveBeenCalledWith(expect.stringContaining("/symbols/12/extractive-explanation"), expect.anything()));
     expect(fetchMock.mock.calls.some(([url, init]) => String(url).endsWith("/explanation") && (init?.method ?? "GET") === "GET")).toBe(true);
     expect(fetchMock.mock.calls.some(([url, init]) => String(url).endsWith("/explain") && init?.method === "POST")).toBe(false);
@@ -54,13 +61,13 @@ describe("field notebook", () => {
 
   it("shows a designed empty state when there is no extractive evidence", async () => {
     vi.stubGlobal("fetch", routeFetch({ empty: true }));
-    render(<App />);
+    render(<App />); await digIntoFirstSymbol();
     expect(await screen.findByText("Nothing unearthed yet.")).toBeTruthy();
   });
 
   it("shows a retryable error when a detail endpoint fails", async () => {
     vi.stubGlobal("fetch", routeFetch({ failLineage: true }));
-    render(<App />);
+    render(<App />); await digIntoFirstSymbol();
     expect(await screen.findByText("failure")).toBeTruthy();
     expect(screen.getByRole("button", { name: /retry record/i })).toBeTruthy();
   });
@@ -69,7 +76,7 @@ describe("field notebook", () => {
     let resolvePost!: (value: Response) => void;
     const pending = new Promise<Response>((resolve) => { resolvePost = resolve; });
     vi.stubGlobal("fetch", routeFetch({ post: () => pending }));
-    render(<App />);
+    render(<App />); await digIntoFirstSymbol();
     fireEvent.click(await screen.findByRole("button", { name: "Generate explanation" }));
     expect(await screen.findByRole("heading", { name: "Reading the quotes…" })).toBeTruthy();
     expect(screen.getByRole("button", { name: "Writing…" })).toHaveProperty("disabled", true);
@@ -81,7 +88,7 @@ describe("field notebook", () => {
 
   it("shows insufficient evidence without displaying generated claims", async () => {
     vi.stubGlobal("fetch", routeFetch({ post: () => response(insufficient) }));
-    render(<App />);
+    render(<App />); await digIntoFirstSymbol();
     fireEvent.click(await screen.findByRole("button", { name: "Generate explanation" }));
     expect(await screen.findByRole("heading", { name: "Not enough evidence" })).toBeTruthy();
     expect(screen.queryByText("The function avoids repeated work.")).toBeNull();
@@ -91,7 +98,7 @@ describe("field notebook", () => {
   it("shows a server error and retries the explicit generation request", async () => {
     let attempts = 0;
     vi.stubGlobal("fetch", routeFetch({ post: () => ++attempts === 1 ? response({ detail: "local model unavailable" }, 502) : response(explanation) }));
-    render(<App />);
+    render(<App />); await digIntoFirstSymbol();
     fireEvent.click(await screen.findByRole("button", { name: "Generate explanation" }));
     expect(await screen.findByText("local model unavailable")).toBeTruthy();
     expect(screen.getByText("Check that the backend is running and that Ollama is running if you use the local model.")).toBeTruthy();
@@ -103,10 +110,11 @@ describe("field notebook", () => {
     let resolvePost!: (value: Response) => void;
     const pending = new Promise<Response>((resolve) => { resolvePost = resolve; });
     vi.stubGlobal("fetch", routeFetch({ post: () => pending }));
-    render(<App />);
+    render(<App />); await digIntoFirstSymbol();
     fireEvent.click(await screen.findByRole("button", { name: "Generate explanation" }));
-    fireEvent.click(screen.getByRole("button", { name: /pkg\.Second/ }));
-    await screen.findByRole("heading", { name: "pkg.Second" });
+    const secondSymbol = screen.getByRole("button", { name: /pkg\.Second/ });
+    fireEvent.click(secondSymbol);
+    await waitFor(() => expect(secondSymbol.className).toContain("is-selected"));
     await screen.findByRole("heading", { name: "No explanation yet" });
     expect(screen.queryByText("The function avoids repeated work.")).toBeNull();
     resolvePost(await response(explanation));

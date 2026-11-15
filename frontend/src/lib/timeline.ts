@@ -38,9 +38,9 @@ export interface TimelineModel {
 
 const eventMarker: Record<TimelineKind, MarkerShape> = {
   added: "circle",
-  modified: "diamond",
-  renamed: "triangle",
-  moved: "square",
+  modified: "square",
+  renamed: "diamond",
+  moved: "triangle",
   removed: "cross",
   carried: "circle",
 };
