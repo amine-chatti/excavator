@@ -77,7 +77,7 @@ describe("saved-data demo mode", () => {
     vi.stubGlobal("fetch", demoFetch(false));
     render(<App />);
     fireEvent.click(await symbolRow());
-    expect(await screen.findByRole("heading", { name: "No saved AI example" })).toBeTruthy();
-    expect(screen.getByText("To generate an AI explanation, run Excavator locally with an AI key.")).toBeTruthy();
+    expect(await screen.findByRole("heading", { name: "AI examples are saved for a few functions" })).toBeTruthy();
+    expect(screen.getByText("This function has no saved explanation. Functions marked AI in the list do. Generating new ones needs a local run with an AI key.")).toBeTruthy();
   });
 });

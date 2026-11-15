@@ -12,7 +12,7 @@ export type ExplanationPanelState =
   | { status: "explained"; summary: string; claims: ExplanationClaim[]; savedExample?: boolean }
   | { status: "insufficient"; savedExample?: boolean }
   | { status: "error"; message: string; retryAction: "load" | "generate" };
-interface Props { state: ExplanationPanelState; onGenerate: () => void; onRetry: () => void; deleted?: boolean; demoMode?: boolean }
+interface Props { state: ExplanationPanelState; onGenerate: () => void; onRetry: () => void; deleted?: boolean; demoMode?: boolean; onNextExample?: () => void }
 
 function EvidenceClaims({ claims }: { claims: ExplanationClaim[] }) {
   return <div className="claims-list">{claims.map((claim, index) => <motion.article className="claim-block" key={claim.position} initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: index * 0.18 }}>
@@ -21,7 +21,7 @@ function EvidenceClaims({ claims }: { claims: ExplanationClaim[] }) {
   </motion.article>)}</div>;
 }
 
-export function WhyChanged({ state, onGenerate, onRetry, deleted = false, demoMode = false }: Props) {
+export function WhyChanged({ state, onGenerate, onRetry, deleted = false, demoMode = false, onNextExample }: Props) {
   const [elapsed, setElapsed] = useState(0);
   useEffect(() => {
     if (state.status !== "busy") { setElapsed(0); return; }
@@ -42,7 +42,7 @@ export function WhyChanged({ state, onGenerate, onRetry, deleted = false, demoMo
       : state.status === "error" ? <div className="why-state error-state"><AlertTriangle className="state-icon" /><div className="why-copy"><h3>Could not generate an explanation</h3><p>{state.message}</p><p>History and original evidence remain available. You can retry the explanation.</p></div><Button variant="outline" className="explain-button" onClick={retry}><RotateCw />Retry</Button></div>
       : state.status === "insufficient" ? <div className="why-state"><Sparkles className="state-icon" /><div className="why-copy"><h3>Not enough verified evidence</h3><p>No explanation is shown because there were no supported claims. The history and source quotes remain available.</p></div><Button variant="outline" className="explain-button" onClick={onGenerate}>{state.savedExample ? "Replay saved example" : "Try again"}</Button></div>
       : state.status === "demo-ready" ? <div className="why-state"><Sparkles className="state-icon" /><div className="why-copy"><h3>Saved AI example available</h3><p>Replay this saved explanation. Demo mode will not contact an AI service.</p></div><Button className="explain-button" onClick={onGenerate}><Sparkles />Replay saved example</Button></div>
-      : state.status === "demo-unavailable" ? <div className="why-state"><Sparkles className="state-icon" /><div className="why-copy"><h3>No saved AI example</h3><p>To generate an AI explanation, run Excavator locally with an AI key.</p></div><Button variant="outline" className="explain-button" disabled>Local run required</Button></div>
+      : state.status === "demo-unavailable" ? <div className="why-state"><Sparkles className="state-icon" /><div className="why-copy"><h3>AI examples are saved for a few functions</h3><p>This function has no saved explanation. Functions marked AI in the list do. Generating new ones needs a local run with an AI key.</p></div>{onNextExample && <Button className="explain-button" onClick={onNextExample}><Sparkles />Show a function with AI</Button>}</div>
       : state.status === "busy" ? <div className="why-state busy-state" aria-live="polite"><Sparkles className="state-icon" /><div className="why-copy"><h3>{demoMode ? "Replaying saved explanation" : "Generating interpretation"}</h3><p>Elapsed {Math.floor(elapsed / 60)}:{String(elapsed % 60).padStart(2, "0")} &middot; {demoMode ? "Showing a saved example. No live AI request is made." : "The backend handles this as one request and reports no internal progress."}</p><div className="indeterminate-bar" /></div><Button variant="outline" className="explain-button" disabled>In progress</Button></div>
       : <div className="why-state"><Sparkles className="state-icon" /><div className="why-copy"><h3>No explanation yet</h3><p>Ask AI to interpret the history. Every displayed claim will include an exact quote checked by the backend.</p></div><Button className="explain-button" onClick={onGenerate}><Sparkles />Generate explanation</Button></div>}
   </section>;
