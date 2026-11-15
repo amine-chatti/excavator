@@ -1,0 +1,61 @@
+{
+  "symbol": {
+    "id": 54,
+    "repository_id": 2,
+    "language": "python",
+    "kind": "method",
+    "qualified_name": "HMACAlgorithm.__init__",
+    "current_path": "src/itsdangerous/signer.py",
+    "status": "exists"
+  },
+  "versions": [
+    {
+      "commit_sha": "8e611d7373acc874cc8bd3fc480cf3cf7b5b6a10",
+      "commit_message": "Merge pull request #107 from pallets/split",
+      "authored_at": "2018-10-18T03:17:25Z",
+      "path": "src/itsdangerous/signer.py",
+      "qualified_name": "HMACAlgorithm.__init__",
+      "start_line": 48,
+      "end_line": 51,
+      "body_hash": "e599ca7ac27e53517f1052760f73c908a7891ca60b563942ffa2c91a7fa7c126",
+      "parse_status": "ok",
+      "lineage_method": "exact"
+    },
+    {
+      "commit_sha": "3703fbdedd13b2630dd9be75a3638408c193765d",
+      "commit_message": "Merge pull request #149 from pallets/drop-python2",
+      "authored_at": "2020-04-14T23:48:30Z",
+      "path": "src/itsdangerous/signer.py",
+      "qualified_name": "HMACAlgorithm.__init__",
+      "start_line": 44,
+      "end_line": 48,
+      "body_hash": "7d2bd8b048abae144142e3897ee00c3779e87f5083225ba9e8681a6129278fee",
+      "parse_status": "ok",
+      "lineage_method": "exact"
+    },
+    {
+      "commit_sha": "4559e76d632ecfda09515746790670be3c59b726",
+      "commit_message": "Merge pull request #186 from pallets/typing",
+      "authored_at": "2020-08-31T18:50:36Z",
+      "path": "src/itsdangerous/signer.py",
+      "qualified_name": "HMACAlgorithm.__init__",
+      "start_line": 49,
+      "end_line": 53,
+      "body_hash": "5868bf56117983e6b998adc04df51b97e827828fa8754f9c225d3f5c8f2e1c58",
+      "parse_status": "ok",
+      "lineage_method": "exact"
+    },
+    {
+      "commit_sha": "bc88e945d31c407e16c3f4e1c713c12dd598e58d",
+      "commit_message": "improve typing (#373)",
+      "authored_at": "2024-04-13T18:55:04Z",
+      "path": "src/itsdangerous/signer.py",
+      "qualified_name": "HMACAlgorithm.__init__",
+      "start_line": 48,
+      "end_line": 52,
+      "body_hash": "81330dc234e8ba1e260e70ea0692276d13ba37ced1fadd7cf211a7b79ef2fee5",
+      "parse_status": "ok",
+      "lineage_method": "exact"
+    }
+  ]
+}

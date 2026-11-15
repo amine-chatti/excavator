@@ -17,6 +17,7 @@ interface Props {
   symbols: SymbolRecord[]; selectedId: number | null; onSelectSymbol: (id: number) => void;
   query: string; onQueryChange: (query: string) => void; loading: boolean; error: string | null; onRetry: () => void;
   motionOn: boolean; onMotionChange: (enabled: boolean) => void;
+  demoMode: boolean;
 }
 
 export function FieldIndex(props: Props) {
@@ -48,6 +49,7 @@ export function FieldIndex(props: Props) {
           <SelectTrigger id="repository-select" className="repo-select"><SelectValue placeholder="Choose a repository" /></SelectTrigger>
           <SelectContent>{props.repositories.map((repo) => <SelectItem key={repo.id} value={String(repo.id)}>{repo.owner}/{repo.name}</SelectItem>)}</SelectContent>
         </Select>
+        {props.demoMode && <span className="sample-data-badge" role="status">SAMPLE DATA</span>}
         {selectedRepo && <p className="repo-branch">{selectedRepo.default_branch ?? "branch unknown"} · {selectedRepo.indexing_status}</p>}
       </div>
       <Separator className="rail-rule" />

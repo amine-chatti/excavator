@@ -1,0 +1,97 @@
+{
+  "symbol": {
+    "id": 32,
+    "repository_id": 1,
+    "language": "python",
+    "kind": "class",
+    "qualified_name": "PacifyFlushWrapper",
+    "current_path": "src/click/utils.py",
+    "status": "deleted"
+  },
+  "versions": [
+    {
+      "commit_sha": "38a2712d596a5df9288c1817748b71197d8c7c57",
+      "commit_message": "Merge pull request #1106 from frankier/prevent-epipe-exit-120",
+      "authored_at": "2018-09-19T17:39:51Z",
+      "path": "click/utils.py",
+      "qualified_name": "PacifyFlushWrapper",
+      "start_line": 419,
+      "end_line": 440,
+      "body_hash": "b6668538ccaa0c63387808ef73b1617b092ea669ab7074da73c473af37d8b602",
+      "parse_status": "ok",
+      "lineage_method": "exact"
+    },
+    {
+      "commit_sha": "7239794a610f3ccae3aaf8bfe273ac70cc58ff07",
+      "commit_message": "Merge branch '7.x'",
+      "authored_at": "2020-03-08T16:27:19Z",
+      "path": "src/click/utils.py",
+      "qualified_name": "PacifyFlushWrapper",
+      "start_line": 433,
+      "end_line": 455,
+      "body_hash": "d2151cffb2514a077f37a53779239a89250c5e5de43752e688f7a7863432c867",
+      "parse_status": "ok",
+      "lineage_method": "exact"
+    },
+    {
+      "commit_sha": "97de2c97275f52adc5c6ef8bb8aa993ce997fe7e",
+      "commit_message": "Merge pull request #1532 from pallets/drop-python2",
+      "authored_at": "2020-04-20T14:16:07Z",
+      "path": "src/click/utils.py",
+      "qualified_name": "PacifyFlushWrapper",
+      "start_line": 418,
+      "end_line": 440,
+      "body_hash": "c13462ede6ea156c2461160dee32e64e38cb465075c18478be549c7969d56c9a",
+      "parse_status": "ok",
+      "lineage_method": "exact"
+    },
+    {
+      "commit_sha": "ffeddbaf0c8226201136593d29324c951f2b2fa3",
+      "commit_message": "Merge pull request #1856 from pallets/typing",
+      "authored_at": "2021-04-23T16:25:23Z",
+      "path": "src/click/utils.py",
+      "qualified_name": "PacifyFlushWrapper",
+      "start_line": 461,
+      "end_line": 483,
+      "body_hash": "95f9b6f059cffa5e548cfeae325d54784a4e854d46503cc191533e4fd86806cd",
+      "parse_status": "ok",
+      "lineage_method": "exact"
+    },
+    {
+      "commit_sha": "cba52fa76135af2edf46c154203b47106f898eb3",
+      "commit_message": "Merge branch '8.1.x'",
+      "authored_at": "2023-01-20T00:38:36Z",
+      "path": "src/click/utils.py",
+      "qualified_name": "PacifyFlushWrapper",
+      "start_line": 457,
+      "end_line": 479,
+      "body_hash": "688bb88f847928ce7f877f401e6de78f19d6ff3d0aac8f47d26202bd1971c9f9",
+      "parse_status": "ok",
+      "lineage_method": "exact"
+    },
+    {
+      "commit_sha": "e3e69e3bf8d749ac1a632f2ece4d38ec7f6588f5",
+      "commit_message": "Add type annotations for instance attributes in `utils` (#3422)",
+      "authored_at": "2026-05-16T15:55:46Z",
+      "path": "src/click/utils.py",
+      "qualified_name": "PacifyFlushWrapper",
+      "start_line": 510,
+      "end_line": 534,
+      "body_hash": "d689213fab07c2173147595f78cda68fcf914020203c2074b30abd8208322466",
+      "parse_status": "ok",
+      "lineage_method": "exact"
+    },
+    {
+      "commit_sha": "333c28d79cd982990ee98eef61ec20ab1a4f38ba",
+      "commit_message": "Mark clearly functions private status. Deprecated Python 2 utilities. (#3695)",
+      "authored_at": "2026-07-17T19:24:58Z",
+      "path": "src/click/utils.py",
+      "qualified_name": "PacifyFlushWrapper",
+      "start_line": 510,
+      "end_line": 534,
+      "body_hash": "d689213fab07c2173147595f78cda68fcf914020203c2074b30abd8208322466",
+      "parse_status": "ok",
+      "lineage_method": "exact"
+    }
+  ]
+}

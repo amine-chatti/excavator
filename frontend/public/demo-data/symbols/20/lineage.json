@@ -1,0 +1,49 @@
+{
+  "symbol": {
+    "id": 20,
+    "repository_id": 1,
+    "language": "python",
+    "kind": "method",
+    "qualified_name": "_KeepOpenFile.__getattr__",
+    "current_path": "src/click/utils.py",
+    "status": "exists"
+  },
+  "versions": [
+    {
+      "commit_sha": "a0d426d89434fcade5e96545d5203682c4fc5249",
+      "commit_message": "Merge branch '4.x-maintenance'",
+      "authored_at": "2015-06-21T21:23:19Z",
+      "path": "click/utils.py",
+      "qualified_name": "KeepOpenFile.__getattr__",
+      "start_line": 204,
+      "end_line": 205,
+      "body_hash": "8273d01369c913ce1451a2657575e7c2631ab99825a4ce245b79dfe91b6cc4f9",
+      "parse_status": "ok",
+      "lineage_method": "exact"
+    },
+    {
+      "commit_sha": "ffeddbaf0c8226201136593d29324c951f2b2fa3",
+      "commit_message": "Merge pull request #1856 from pallets/typing",
+      "authored_at": "2021-04-23T16:25:23Z",
+      "path": "src/click/utils.py",
+      "qualified_name": "KeepOpenFile.__getattr__",
+      "start_line": 188,
+      "end_line": 189,
+      "body_hash": "dc840c4c9b833cd277419698a1258350b45eda246a3e316f0c9abd3f85b563f2",
+      "parse_status": "ok",
+      "lineage_method": "exact"
+    },
+    {
+      "commit_sha": "333c28d79cd982990ee98eef61ec20ab1a4f38ba",
+      "commit_message": "Mark clearly functions private status. Deprecated Python 2 utilities. (#3695)",
+      "authored_at": "2026-07-17T19:24:58Z",
+      "path": "src/click/utils.py",
+      "qualified_name": "_KeepOpenFile.__getattr__",
+      "start_line": 231,
+      "end_line": 232,
+      "body_hash": "dc840c4c9b833cd277419698a1258350b45eda246a3e316f0c9abd3f85b563f2",
+      "parse_status": "ok",
+      "lineage_method": "rename_detected"
+    }
+  ]
+}

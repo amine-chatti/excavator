@@ -1,0 +1,25 @@
+{
+  "symbol": {
+    "id": 109,
+    "repository_id": 3,
+    "language": "python",
+    "kind": "class",
+    "qualified_name": "_PNamespaceSignal",
+    "current_path": "src/blinker/base.py",
+    "status": "exists"
+  },
+  "versions": [
+    {
+      "commit_sha": "dcce3e97743494433025e0b68f742f3582b6ba6a",
+      "commit_message": "Merge pull request #175 from pallets-eco/drop-python3.8",
+      "authored_at": "2024-11-08T16:41:44Z",
+      "path": "src/blinker/base.py",
+      "qualified_name": "_PNamespaceSignal",
+      "start_line": 495,
+      "end_line": 496,
+      "body_hash": "a6cb39cdeb279f7b3ecc9a00d6aa30695cc482cc27830d4771cb20d09bfb9e89",
+      "parse_status": "ok",
+      "lineage_method": "exact"
+    }
+  ]
+}

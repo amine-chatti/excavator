@@ -1,0 +1,37 @@
+{
+  "symbol": {
+    "id": 39,
+    "repository_id": 1,
+    "language": "python",
+    "kind": "function",
+    "qualified_name": "_make_default_short_help",
+    "current_path": "src/click/utils.py",
+    "status": "exists"
+  },
+  "versions": [
+    {
+      "commit_sha": "333c28d79cd982990ee98eef61ec20ab1a4f38ba",
+      "commit_message": "Mark clearly functions private status. Deprecated Python 2 utilities. (#3695)",
+      "authored_at": "2026-07-17T19:24:58Z",
+      "path": "src/click/utils.py",
+      "qualified_name": "_make_default_short_help",
+      "start_line": 62,
+      "end_line": 112,
+      "body_hash": "a77c7cb2072891b3a3b79edcd663ed9d600eef9589e60b8bf61bdf7dfb631644",
+      "parse_status": "ok",
+      "lineage_method": "exact"
+    },
+    {
+      "commit_sha": "3cbaa76b6014be7427d1ab06b4af40f01e7c278e",
+      "commit_message": "Merge stable into main (#3876)",
+      "authored_at": "2026-09-21T18:54:47Z",
+      "path": "src/click/utils.py",
+      "qualified_name": "_make_default_short_help",
+      "start_line": 62,
+      "end_line": 100,
+      "body_hash": "95e41bdc282dfb292ea2ad84b7151ae2f39e355faed7bd99dbb05174f594edfa",
+      "parse_status": "ok",
+      "lineage_method": "exact"
+    }
+  ]
+}

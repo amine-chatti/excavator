@@ -1,0 +1,73 @@
+{
+  "symbol": {
+    "id": 88,
+    "repository_id": 3,
+    "language": "python",
+    "kind": "method",
+    "qualified_name": "Signal.receiver_disconnected",
+    "current_path": "src/blinker/base.py",
+    "status": "exists"
+  },
+  "versions": [
+    {
+      "commit_sha": "d24501d9f717e930f059b38e3043790edaf35f0c",
+      "commit_message": "Added Signal.receiver_connected and .receiver_disconnected per-Signal signals.",
+      "authored_at": "2011-03-14T21:12:59Z",
+      "path": "blinker/base.py",
+      "qualified_name": "Signal.receiver_disconnected",
+      "start_line": 49,
+      "end_line": 71,
+      "body_hash": "c0631f12b0bfb9a73992d98b0eb06effba5a7705aec5c1f76c5358f64aba19f6",
+      "parse_status": "ok",
+      "lineage_method": "exact"
+    },
+    {
+      "commit_sha": "fae6164cda6c5e9af89895a22f700402fa4b5ec5",
+      "commit_message": "Add an initial set of type hints",
+      "authored_at": "2023-02-26T11:17:50Z",
+      "path": "src/blinker/base.py",
+      "qualified_name": "Signal.receiver_disconnected",
+      "start_line": 60,
+      "end_line": 82,
+      "body_hash": "f27fa98b2c56c6aa6626e90372e982d0c85287cf44fbdefc802b2f9ccc1b0e94",
+      "parse_status": "ok",
+      "lineage_method": "exact"
+    },
+    {
+      "commit_sha": "c8703aa7c09d7081362647f6659ab2f587279649",
+      "commit_message": "Merge pull request #94 from pallets-eco/lazy-annotations",
+      "authored_at": "2023-04-12T21:31:57Z",
+      "path": "src/blinker/base.py",
+      "qualified_name": "Signal.receiver_disconnected",
+      "start_line": 62,
+      "end_line": 84,
+      "body_hash": "d38ea45e7037a937c7896f71c14e44cbea3de50344625ae0e8b244a6167cc65b",
+      "parse_status": "ok",
+      "lineage_method": "exact"
+    },
+    {
+      "commit_sha": "64423dfadc9a35000b5399ca3d94a480ec7efe99",
+      "commit_message": "Merge pull request #144 from pallets-eco/simplify-refs",
+      "authored_at": "2024-04-27T02:45:35Z",
+      "path": "src/blinker/base.py",
+      "qualified_name": "Signal.receiver_disconnected",
+      "start_line": 64,
+      "end_line": 85,
+      "body_hash": "b833555082d950630faa56709c88d7aa11889aff5ed4d68ca2ab6ce4748075dc",
+      "parse_status": "ok",
+      "lineage_method": "exact"
+    },
+    {
+      "commit_sha": "f1bbce1023728a3622687a949bc0beb66be0a6c0",
+      "commit_message": "Merge pull request #151 from pallets-eco/cleanup-docs",
+      "authored_at": "2024-04-28T19:47:40Z",
+      "path": "src/blinker/base.py",
+      "qualified_name": "Signal.receiver_disconnected",
+      "start_line": 66,
+      "end_line": 85,
+      "body_hash": "9ac8da353647b8da77fab32fc0ffd965ca5c5a0951d37997c68c6f082a2ad63b",
+      "parse_status": "ok",
+      "lineage_method": "exact"
+    }
+  ]
+}

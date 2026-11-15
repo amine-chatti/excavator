@@ -1,0 +1,73 @@
+{
+  "symbol": {
+    "id": 30,
+    "repository_id": 1,
+    "language": "python",
+    "kind": "function",
+    "qualified_name": "get_app_dir",
+    "current_path": "src/click/utils.py",
+    "status": "exists"
+  },
+  "versions": [
+    {
+      "commit_sha": "a0d426d89434fcade5e96545d5203682c4fc5249",
+      "commit_message": "Merge branch '4.x-maintenance'",
+      "authored_at": "2015-06-21T21:23:19Z",
+      "path": "click/utils.py",
+      "qualified_name": "get_app_dir",
+      "start_line": 389,
+      "end_line": 437,
+      "body_hash": "7c187103c0b667732d459043840015f3c00193670244e54b299dd3b6080b9768",
+      "parse_status": "ok",
+      "lineage_method": "exact"
+    },
+    {
+      "commit_sha": "7239794a610f3ccae3aaf8bfe273ac70cc58ff07",
+      "commit_message": "Merge branch '7.x'",
+      "authored_at": "2020-03-08T16:27:19Z",
+      "path": "src/click/utils.py",
+      "qualified_name": "get_app_dir",
+      "start_line": 380,
+      "end_line": 430,
+      "body_hash": "2d494ada097354f0c01708ce1ab78d10fd4f371ff8647d45ca59090a4b612a42",
+      "parse_status": "ok",
+      "lineage_method": "exact"
+    },
+    {
+      "commit_sha": "97de2c97275f52adc5c6ef8bb8aa993ce997fe7e",
+      "commit_message": "Merge pull request #1532 from pallets/drop-python2",
+      "authored_at": "2020-04-20T14:16:07Z",
+      "path": "src/click/utils.py",
+      "qualified_name": "get_app_dir",
+      "start_line": 365,
+      "end_line": 415,
+      "body_hash": "c2e1751252620a60735ef09bf902375b04a03a8bdd3c654d426e731cf392d8a9",
+      "parse_status": "ok",
+      "lineage_method": "exact"
+    },
+    {
+      "commit_sha": "ffeddbaf0c8226201136593d29324c951f2b2fa3",
+      "commit_message": "Merge pull request #1856 from pallets/typing",
+      "authored_at": "2021-04-23T16:25:23Z",
+      "path": "src/click/utils.py",
+      "qualified_name": "get_app_dir",
+      "start_line": 412,
+      "end_line": 458,
+      "body_hash": "3467f62fe0279c4dd9484962dd489438ff510d0d33b76e17791a17358a96f8cd",
+      "parse_status": "ok",
+      "lineage_method": "exact"
+    },
+    {
+      "commit_sha": "7271763ea3b33d6b7e089501173fe3234fb1a594",
+      "commit_message": "Merge branch '8.1.x'",
+      "authored_at": "2023-06-01T18:45:26Z",
+      "path": "src/click/utils.py",
+      "qualified_name": "get_app_dir",
+      "start_line": 408,
+      "end_line": 454,
+      "body_hash": "d45cba3eac9bf3c3f79577ca1430e015f74f53926a3cccba4b090e6c2e66a9ed",
+      "parse_status": "ok",
+      "lineage_method": "exact"
+    }
+  ]
+}

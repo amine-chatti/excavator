@@ -1,0 +1,61 @@
+{
+  "symbol": {
+    "id": 33,
+    "repository_id": 1,
+    "language": "python",
+    "kind": "method",
+    "qualified_name": "_PacifyFlushWrapper.__init__",
+    "current_path": "src/click/utils.py",
+    "status": "exists"
+  },
+  "versions": [
+    {
+      "commit_sha": "38a2712d596a5df9288c1817748b71197d8c7c57",
+      "commit_message": "Merge pull request #1106 from frankier/prevent-epipe-exit-120",
+      "authored_at": "2018-09-19T17:39:51Z",
+      "path": "click/utils.py",
+      "qualified_name": "PacifyFlushWrapper.__init__",
+      "start_line": 428,
+      "end_line": 429,
+      "body_hash": "cf44b9045fbc6f013336d9aa2dc07c907f4ec84b9fbc0015988f4552edf9cb75",
+      "parse_status": "ok",
+      "lineage_method": "exact"
+    },
+    {
+      "commit_sha": "ffeddbaf0c8226201136593d29324c951f2b2fa3",
+      "commit_message": "Merge pull request #1856 from pallets/typing",
+      "authored_at": "2021-04-23T16:25:23Z",
+      "path": "src/click/utils.py",
+      "qualified_name": "PacifyFlushWrapper.__init__",
+      "start_line": 470,
+      "end_line": 471,
+      "body_hash": "a6c77b3e67e1906d66d2c06f03295dc551f7bb25aff39077b35382204ed1a3e5",
+      "parse_status": "ok",
+      "lineage_method": "exact"
+    },
+    {
+      "commit_sha": "cba52fa76135af2edf46c154203b47106f898eb3",
+      "commit_message": "Merge branch '8.1.x'",
+      "authored_at": "2023-01-20T00:38:36Z",
+      "path": "src/click/utils.py",
+      "qualified_name": "PacifyFlushWrapper.__init__",
+      "start_line": 466,
+      "end_line": 467,
+      "body_hash": "a4e35a807ac58f775da7eb455be63bc5000c636bd681eb17244b393f164f4688",
+      "parse_status": "ok",
+      "lineage_method": "exact"
+    },
+    {
+      "commit_sha": "333c28d79cd982990ee98eef61ec20ab1a4f38ba",
+      "commit_message": "Mark clearly functions private status. Deprecated Python 2 utilities. (#3695)",
+      "authored_at": "2026-07-17T19:24:58Z",
+      "path": "src/click/utils.py",
+      "qualified_name": "_PacifyFlushWrapper.__init__",
+      "start_line": 546,
+      "end_line": 547,
+      "body_hash": "a4e35a807ac58f775da7eb455be63bc5000c636bd681eb17244b393f164f4688",
+      "parse_status": "ok",
+      "lineage_method": "rename_detected"
+    }
+  ]
+}

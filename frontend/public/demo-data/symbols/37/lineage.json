@@ -1,0 +1,49 @@
+{
+  "symbol": {
+    "id": 37,
+    "repository_id": 1,
+    "language": "python",
+    "kind": "function",
+    "qualified_name": "_expand_args",
+    "current_path": "src/click/utils.py",
+    "status": "exists"
+  },
+  "versions": [
+    {
+      "commit_sha": "9330dbad806a1a76e0c514333cf32fce58e72e86",
+      "commit_message": "Merge pull request #1830 from pallets/windows-glob",
+      "authored_at": "2021-04-01T18:26:31Z",
+      "path": "src/click/utils.py",
+      "qualified_name": "_expand_args",
+      "start_line": 488,
+      "end_line": 530,
+      "body_hash": "b92dbf535b80a3e44b1fb3fd3f6f85320ebd5f1cb73d90dea7b193b711f9e15d",
+      "parse_status": "ok",
+      "lineage_method": "exact"
+    },
+    {
+      "commit_sha": "4a888774ef3c5c80cf3c416d7407e13ad22359f0",
+      "commit_message": "Merge pull request #2201 from pallets/windows-glob",
+      "authored_at": "2022-02-21T21:32:06Z",
+      "path": "src/click/utils.py",
+      "qualified_name": "_expand_args",
+      "start_line": 528,
+      "end_line": 577,
+      "body_hash": "4c49a71f6deb39d5f7dcff7f25a546a5b577895ceaf8d79c70c8fd234c657cc7",
+      "parse_status": "ok",
+      "lineage_method": "exact"
+    },
+    {
+      "commit_sha": "56db54650fd083cc35bc4891ffbda6e5e08e2762",
+      "commit_message": "enable deferred evaluation of annotations (#2270)",
+      "authored_at": "2023-08-20T18:48:26Z",
+      "path": "src/click/utils.py",
+      "qualified_name": "_expand_args",
+      "start_line": 578,
+      "end_line": 627,
+      "body_hash": "c05f68777424c866052b58c0124d8f380cf702705323a138117c4e3890ad21d3",
+      "parse_status": "ok",
+      "lineage_method": "exact"
+    }
+  ]
+}

@@ -1,0 +1,133 @@
+{
+  "symbol": {
+    "id": 73,
+    "repository_id": 3,
+    "language": "python",
+    "kind": "method",
+    "qualified_name": "Signal.disconnect",
+    "current_path": "src/blinker/base.py",
+    "status": "exists"
+  },
+  "versions": [
+    {
+      "commit_sha": "c2d9461914c3624b49b596e3bd5d76dc32b406d1",
+      "commit_message": "Initial import from flatland.util.signals",
+      "authored_at": "2010-02-14T17:40:29Z",
+      "path": "blinker/base.py",
+      "qualified_name": "Signal.disconnect",
+      "start_line": 160,
+      "end_line": 164,
+      "body_hash": "5263afa79118dc0ee3591efd4784f7f89cb7a35dc0e53648983fb35748621f01",
+      "parse_status": "ok",
+      "lineage_method": "exact"
+    },
+    {
+      "commit_sha": "c06a79a31313181f7544d80714457e46d5622ef2",
+      "commit_message": "Python 2.4 compatability.",
+      "authored_at": "2010-02-14T17:47:42Z",
+      "path": "blinker/base.py",
+      "qualified_name": "Signal.disconnect",
+      "start_line": 163,
+      "end_line": 170,
+      "body_hash": "7f6b9b0ed342077dc899a00778c44392f798154399d5ad9c82fc8a5f627ae4ab",
+      "parse_status": "ok",
+      "lineage_method": "exact"
+    },
+    {
+      "commit_sha": "73e7d1d2dfff8a6103faad7ee608083231c28be6",
+      "commit_message": "Sphinx documentation.",
+      "authored_at": "2010-02-16T00:35:48Z",
+      "path": "blinker/base.py",
+      "qualified_name": "Signal.disconnect",
+      "start_line": 214,
+      "end_line": 228,
+      "body_hash": "5b44e16454ca4f37cb5c62546ad33eacd466abacb4b462c06df2b5e7d3e1a175",
+      "parse_status": "ok",
+      "lineage_method": "exact"
+    },
+    {
+      "commit_sha": "d24501d9f717e930f059b38e3043790edaf35f0c",
+      "commit_message": "Added Signal.receiver_connected and .receiver_disconnected per-Signal signals.",
+      "authored_at": "2011-03-14T21:12:59Z",
+      "path": "blinker/base.py",
+      "qualified_name": "Signal.disconnect",
+      "start_line": 307,
+      "end_line": 327,
+      "body_hash": "9cd656451449ecf57462213491c9418cb9a6bdb99cd9e0cd696132e9a04f0bcc",
+      "parse_status": "ok",
+      "lineage_method": "exact"
+    },
+    {
+      "commit_sha": "f9d51929f71295d0b0f3acfce2e47656bd0472e1",
+      "commit_message": "Move to src/ layout",
+      "authored_at": "2023-01-19T00:08:51Z",
+      "path": "src/blinker/base.py",
+      "qualified_name": "Signal.disconnect",
+      "start_line": 305,
+      "end_line": 325,
+      "body_hash": "26382622570eb589ede66868e5e71f5b34925a691fd0ed90ab44cd05c43dfe77",
+      "parse_status": "ok",
+      "lineage_method": "exact"
+    },
+    {
+      "commit_sha": "fae6164cda6c5e9af89895a22f700402fa4b5ec5",
+      "commit_message": "Add an initial set of type hints",
+      "authored_at": "2023-02-26T11:17:50Z",
+      "path": "src/blinker/base.py",
+      "qualified_name": "Signal.disconnect",
+      "start_line": 396,
+      "end_line": 417,
+      "body_hash": "1127d8ed9b9200c3dcff276daaff3677da4c822a23d9f03ffa6782a9f6b205c3",
+      "parse_status": "ok",
+      "lineage_method": "exact"
+    },
+    {
+      "commit_sha": "7577b88afce38232746a7172e99928e61fc8a5ab",
+      "commit_message": "Merge pull request #139 from pallets-eco/refresh",
+      "authored_at": "2024-04-26T18:30:16Z",
+      "path": "src/blinker/base.py",
+      "qualified_name": "Signal.disconnect",
+      "start_line": 409,
+      "end_line": 430,
+      "body_hash": "945912c4c83340ee4b63d1a3e94829795bbe2ba65965c0ef60a9228df4339799",
+      "parse_status": "ok",
+      "lineage_method": "exact"
+    },
+    {
+      "commit_sha": "64423dfadc9a35000b5399ca3d94a480ec7efe99",
+      "commit_message": "Merge pull request #144 from pallets-eco/simplify-refs",
+      "authored_at": "2024-04-27T02:45:35Z",
+      "path": "src/blinker/base.py",
+      "qualified_name": "Signal.disconnect",
+      "start_line": 386,
+      "end_line": 409,
+      "body_hash": "495b1a64576cdf90f113262e216374dc2ad3b9bbf2f92b4b2a39f6282a290172",
+      "parse_status": "ok",
+      "lineage_method": "exact"
+    },
+    {
+      "commit_sha": "fd8a169d633f84874cbc95cddc225240ed4013ff",
+      "commit_message": "Merge pull request #150 from pallets-eco/collections-abc",
+      "authored_at": "2024-04-28T17:17:52Z",
+      "path": "src/blinker/base.py",
+      "qualified_name": "Signal.disconnect",
+      "start_line": 388,
+      "end_line": 411,
+      "body_hash": "f18a881f456e2490ef179577293f7688fbe2e72dfce9747acf32f7db9e7e2ce9",
+      "parse_status": "ok",
+      "lineage_method": "exact"
+    },
+    {
+      "commit_sha": "f1bbce1023728a3622687a949bc0beb66be0a6c0",
+      "commit_message": "Merge pull request #151 from pallets-eco/cleanup-docs",
+      "authored_at": "2024-04-28T19:47:40Z",
+      "path": "src/blinker/base.py",
+      "qualified_name": "Signal.disconnect",
+      "start_line": 399,
+      "end_line": 421,
+      "body_hash": "49eb3c41376c40674351aea367e079c3026858e5577eb0b128432dc313564728",
+      "parse_status": "ok",
+      "lineage_method": "exact"
+    }
+  ]
+}

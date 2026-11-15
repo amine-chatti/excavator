@@ -1,0 +1,97 @@
+{
+  "symbol": {
+    "id": 31,
+    "repository_id": 1,
+    "language": "python",
+    "kind": "function",
+    "qualified_name": "get_os_args",
+    "current_path": "src/click/utils.py",
+    "status": "deleted"
+  },
+  "versions": [
+    {
+      "commit_sha": "de79af181f2164d90d14b0176f4a7bc420138d97",
+      "commit_message": "Merge pull request #451 from mitsuhiko/feature/unicode-cmd",
+      "authored_at": "2015-11-05T21:35:30Z",
+      "path": "click/utils.py",
+      "qualified_name": "get_os_args",
+      "start_line": 386,
+      "end_line": 400,
+      "body_hash": "23273a9242eb9f2771cf45cb18ef72bb41e3e1bb274a5c4e25d254cfc321be9d",
+      "parse_status": "ok",
+      "lineage_method": "exact"
+    },
+    {
+      "commit_sha": "55601835e6fe2cb077715ce959b28bb0c14dc6c9",
+      "commit_message": "Fixed an issue with get_os_args and export it.",
+      "authored_at": "2015-11-05T21:57:30Z",
+      "path": "click/utils.py",
+      "qualified_name": "get_os_args",
+      "start_line": 393,
+      "end_line": 409,
+      "body_hash": "6d41615daaf66909e94037f6ab63406773071e6e9d6d089caa85d3c99c1ad123",
+      "parse_status": "ok",
+      "lineage_method": "exact"
+    },
+    {
+      "commit_sha": "0859d19c5b29ac9cf2895e06e91312b627e6e692",
+      "commit_message": "Only return unicode params from get_os_args if unchanged.",
+      "authored_at": "2015-11-06T11:00:18Z",
+      "path": "click/utils.py",
+      "qualified_name": "get_os_args",
+      "start_line": 394,
+      "end_line": 412,
+      "body_hash": "ea4e653e31fa810182c4bdd3ae92849e847941c1f8990114948565e4a1ad5c00",
+      "parse_status": "ok",
+      "lineage_method": "exact"
+    },
+    {
+      "commit_sha": "97de2c97275f52adc5c6ef8bb8aa993ce997fe7e",
+      "commit_message": "Merge pull request #1532 from pallets/drop-python2",
+      "authored_at": "2020-04-20T14:16:07Z",
+      "path": "src/click/utils.py",
+      "qualified_name": "get_os_args",
+      "start_line": 329,
+      "end_line": 345,
+      "body_hash": "c8d4c6336c4a9bf401a396fcb9e2cfb7d5e82bf290f6746ecb83a2a3a17663d7",
+      "parse_status": "ok",
+      "lineage_method": "exact"
+    },
+    {
+      "commit_sha": "21e35874e7d6e829a8093fc720ec4cf51020b79e",
+      "commit_message": "mention click in deprecation message",
+      "authored_at": "2021-04-15T22:21:08Z",
+      "path": "src/click/utils.py",
+      "qualified_name": "get_os_args",
+      "start_line": 343,
+      "end_line": 359,
+      "body_hash": "b5fc595447c5ec13088a33ea519596b91346c13497866ba18756a34ef935c86a",
+      "parse_status": "ok",
+      "lineage_method": "exact"
+    },
+    {
+      "commit_sha": "ffeddbaf0c8226201136593d29324c951f2b2fa3",
+      "commit_message": "Merge pull request #1856 from pallets/typing",
+      "authored_at": "2021-04-23T16:25:23Z",
+      "path": "src/click/utils.py",
+      "qualified_name": "get_os_args",
+      "start_line": 373,
+      "end_line": 389,
+      "body_hash": "a0ca92474f8622ff47be72d5b93c4a9cb024b921bb853e980d72d1b8e899c0fc",
+      "parse_status": "ok",
+      "lineage_method": "exact"
+    },
+    {
+      "commit_sha": "6411f425fae545f42795665af4162006b36c5e4a",
+      "commit_message": "Merge pull request #2130 from pallets/remove-deprecated-code",
+      "authored_at": "2021-11-11T00:49:47Z",
+      "path": "src/click/utils.py",
+      "qualified_name": "get_os_args",
+      "start_line": 373,
+      "end_line": 389,
+      "body_hash": "a0ca92474f8622ff47be72d5b93c4a9cb024b921bb853e980d72d1b8e899c0fc",
+      "parse_status": "ok",
+      "lineage_method": "exact"
+    }
+  ]
+}

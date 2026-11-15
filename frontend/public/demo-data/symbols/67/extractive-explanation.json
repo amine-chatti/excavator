@@ -1,0 +1,869 @@
+{
+  "status": "extracts",
+  "extracts": [
+    {
+      "source_kind": "commit",
+      "reference": "c2d9461914c3624b49b596e3bd5d76dc32b406d1",
+      "excerpt": "Initial import from flatland.util.signals",
+      "lineage_event": "added",
+      "created_at": "2010-02-14T17:40:29Z",
+      "label": "quote",
+      "epistemic_label": "verified"
+    },
+    {
+      "source_kind": "commit",
+      "reference": "c06a79a31313181f7544d80714457e46d5622ef2",
+      "excerpt": "Python 2.4 compatability.",
+      "lineage_event": "modified",
+      "created_at": "2010-02-14T17:47:42Z",
+      "label": "quote",
+      "epistemic_label": "verified"
+    },
+    {
+      "source_kind": "commit",
+      "reference": "c4579f81ac5490a5722678c01c0fc9e0589a4d5b",
+      "excerpt": "Added ``Signal.temporarily_connected_to`` context manager",
+      "lineage_event": "modified",
+      "created_at": "2010-02-14T20:36:57Z",
+      "label": "quote",
+      "epistemic_label": "verified"
+    },
+    {
+      "source_kind": "commit",
+      "reference": "73e7d1d2dfff8a6103faad7ee608083231c28be6",
+      "excerpt": "Sphinx documentation.",
+      "lineage_event": "modified",
+      "created_at": "2010-02-16T00:35:48Z",
+      "label": "quote",
+      "epistemic_label": "verified"
+    },
+    {
+      "source_kind": "commit",
+      "reference": "6b57dccd11923a094101e178f6033b0a46c52c10",
+      "excerpt": "Renamed 'temporarily_connected_to' to simply 'connected_to'.",
+      "lineage_event": "modified",
+      "created_at": "2010-07-20T18:00:25Z",
+      "label": "quote",
+      "epistemic_label": "verified"
+    },
+    {
+      "source_kind": "commit",
+      "reference": "6b57dccd11923a094101e178f6033b0a46c52c10",
+      "excerpt": "Old spelling will be deprecated in 1.2 and removed in the release after.",
+      "lineage_event": "modified",
+      "created_at": "2010-07-20T18:00:25Z",
+      "label": "quote",
+      "epistemic_label": "verified"
+    },
+    {
+      "source_kind": "commit",
+      "reference": "50ac3faf7d154b6bd57ed3341dae3a31cab82013",
+      "excerpt": "Doc cleanup.",
+      "lineage_event": "modified",
+      "created_at": "2010-07-21T10:06:38Z",
+      "label": "quote",
+      "epistemic_label": "verified"
+    },
+    {
+      "source_kind": "commit",
+      "reference": "fa3be696ab410308191ed4af804a31d2ba60144d",
+      "excerpt": "Added Signal.connect_via() decorator.",
+      "lineage_event": "modified",
+      "created_at": "2010-07-21T10:07:13Z",
+      "label": "quote",
+      "epistemic_label": "verified"
+    },
+    {
+      "source_kind": "commit",
+      "reference": "d24501d9f717e930f059b38e3043790edaf35f0c",
+      "excerpt": "Added Signal.receiver_connected and .receiver_disconnected per-Signal signals.",
+      "lineage_event": "modified",
+      "created_at": "2011-03-14T21:12:59Z",
+      "label": "quote",
+      "epistemic_label": "verified"
+    },
+    {
+      "source_kind": "commit",
+      "reference": "d24501d9f717e930f059b38e3043790edaf35f0c",
+      "excerpt": "Deprecates the global 'receiver_connected' signal.",
+      "lineage_event": "modified",
+      "created_at": "2011-03-14T21:12:59Z",
+      "label": "quote",
+      "epistemic_label": "verified"
+    },
+    {
+      "source_kind": "commit",
+      "reference": "b1d5adf43e69a61a6f825a1533933b8b732ff942",
+      "excerpt": "Upgrade temporarily_connected_to to a deprecation warning.",
+      "lineage_event": "modified",
+      "created_at": "2011-10-27T04:04:52Z",
+      "label": "quote",
+      "epistemic_label": "verified"
+    },
+    {
+      "source_kind": "commit",
+      "reference": "1d4b226d5042622363ec63418523e3c7365c6fc8",
+      "excerpt": "Doc updates",
+      "lineage_event": "modified",
+      "created_at": "2013-07-04T13:20:47Z",
+      "label": "quote",
+      "epistemic_label": "verified"
+    },
+    {
+      "source_kind": "commit",
+      "reference": "efe8d646c932ff091106f0c2b6d5fd79a03efdb4",
+      "excerpt": "Additional bookkeeping cleanup for non-ANY connections at disconnect time.",
+      "lineage_event": "modified",
+      "created_at": "2015-07-23T10:15:29Z",
+      "label": "quote",
+      "epistemic_label": "verified"
+    },
+    {
+      "source_kind": "commit",
+      "reference": "bee3b6ebded6daf436b4c1d7f688142d687ae405",
+      "excerpt": "Added Signal._cleanup_bookeeping() to prune stale bookkeeping on demand.",
+      "lineage_event": "modified",
+      "created_at": "2015-07-23T10:19:14Z",
+      "label": "quote",
+      "epistemic_label": "verified"
+    },
+    {
+      "source_kind": "commit",
+      "reference": "42aad6110a02a86a9a51a77c75c2d638a50656b7",
+      "excerpt": "Fix: Lower baseline cost of no-op signal send() & optional -O speedup",
+      "lineage_event": "modified",
+      "created_at": "2017-08-29T16:33:08Z",
+      "label": "quote",
+      "epistemic_label": "verified"
+    },
+    {
+      "source_kind": "commit",
+      "reference": "ccb68825fa49af893220788ac67c47aca7dad8a4",
+      "excerpt": "Merge pull request #51 from Flameeyes/master",
+      "lineage_event": "modified",
+      "created_at": "2019-04-21T15:32:31Z",
+      "label": "quote",
+      "epistemic_label": "verified"
+    },
+    {
+      "source_kind": "commit",
+      "reference": "ccb68825fa49af893220788ac67c47aca7dad8a4",
+      "excerpt": "Fix typo to maintain consistency.",
+      "lineage_event": "modified",
+      "created_at": "2019-04-21T15:32:31Z",
+      "label": "quote",
+      "epistemic_label": "verified"
+    },
+    {
+      "source_kind": "commit",
+      "reference": "904d8d3803e84257c08526e9047474215aa1c976",
+      "excerpt": "Merge pull request #63 from tirkarthi/fix-warnings",
+      "lineage_event": "modified",
+      "created_at": "2020-11-07T17:17:12Z",
+      "label": "quote",
+      "epistemic_label": "verified"
+    },
+    {
+      "source_kind": "commit",
+      "reference": "904d8d3803e84257c08526e9047474215aa1c976",
+      "excerpt": "Fix deprecation warnings due to invalid escape sequences.",
+      "lineage_event": "modified",
+      "created_at": "2020-11-07T17:17:12Z",
+      "label": "quote",
+      "epistemic_label": "verified"
+    },
+    {
+      "source_kind": "commit",
+      "reference": "b5e9f0629200d2b2f62e13e595b802948bb4fefb",
+      "excerpt": "Merge pull request #18 from jek/feature/send-async",
+      "lineage_event": "modified",
+      "created_at": "2021-01-29T13:36:38Z",
+      "label": "quote",
+      "epistemic_label": "verified"
+    },
+    {
+      "source_kind": "commit",
+      "reference": "b5e9f0629200d2b2f62e13e595b802948bb4fefb",
+      "excerpt": "Adds Signal.send_async for asyncio",
+      "lineage_event": "modified",
+      "created_at": "2021-01-29T13:36:38Z",
+      "label": "quote",
+      "epistemic_label": "verified"
+    },
+    {
+      "source_kind": "commit",
+      "reference": "b5e9f0629200d2b2f62e13e595b802948bb4fefb",
+      "excerpt": "Author: @jek",
+      "lineage_event": "modified",
+      "created_at": "2021-01-29T13:36:38Z",
+      "label": "quote",
+      "epistemic_label": "verified"
+    },
+    {
+      "source_kind": "commit",
+      "reference": "399778023f3dc771329cfa068c1f7a05159d68d9",
+      "excerpt": "Merge pull request #71 from pallets-eco/revert-async",
+      "lineage_event": "modified",
+      "created_at": "2022-07-17T13:37:09Z",
+      "label": "quote",
+      "epistemic_label": "verified"
+    },
+    {
+      "source_kind": "commit",
+      "reference": "399778023f3dc771329cfa068c1f7a05159d68d9",
+      "excerpt": "revert async implementation",
+      "lineage_event": "modified",
+      "created_at": "2022-07-17T13:37:09Z",
+      "label": "quote",
+      "epistemic_label": "verified"
+    },
+    {
+      "source_kind": "commit",
+      "reference": "084d2bdb86f7e2e29e4bc88d5317955b9c4d76dc",
+      "excerpt": "Merge pull request #72 from pallets-eco/refresh",
+      "lineage_event": "modified",
+      "created_at": "2022-07-17T16:44:48Z",
+      "label": "quote",
+      "epistemic_label": "verified"
+    },
+    {
+      "source_kind": "commit",
+      "reference": "084d2bdb86f7e2e29e4bc88d5317955b9c4d76dc",
+      "excerpt": "refresh project layout",
+      "lineage_event": "modified",
+      "created_at": "2022-07-17T16:44:48Z",
+      "label": "quote",
+      "epistemic_label": "verified"
+    },
+    {
+      "source_kind": "commit",
+      "reference": "5ed9c956aaf68a8e2defa9722109aa2c7bcf7ae1",
+      "excerpt": "Add a send_async method to the Signal",
+      "lineage_event": "modified",
+      "created_at": "2022-07-23T10:56:12Z",
+      "label": "quote",
+      "epistemic_label": "verified"
+    },
+    {
+      "source_kind": "commit",
+      "reference": "5ed9c956aaf68a8e2defa9722109aa2c7bcf7ae1",
+      "excerpt": "This allows for signals to send to coroutine receivers by awaiting",
+      "lineage_event": "modified",
+      "created_at": "2022-07-23T10:56:12Z",
+      "label": "quote",
+      "epistemic_label": "verified"
+    },
+    {
+      "source_kind": "commit",
+      "reference": "5ed9c956aaf68a8e2defa9722109aa2c7bcf7ae1",
+      "excerpt": "them.",
+      "lineage_event": "modified",
+      "created_at": "2022-07-23T10:56:12Z",
+      "label": "quote",
+      "epistemic_label": "verified"
+    },
+    {
+      "source_kind": "commit",
+      "reference": "5ed9c956aaf68a8e2defa9722109aa2c7bcf7ae1",
+      "excerpt": "The _async_wrapper and _sync_wrapper allows for conversion of",
+      "lineage_event": "modified",
+      "created_at": "2022-07-23T10:56:12Z",
+      "label": "quote",
+      "epistemic_label": "verified"
+    },
+    {
+      "source_kind": "commit",
+      "reference": "5ed9c956aaf68a8e2defa9722109aa2c7bcf7ae1",
+      "excerpt": "sync and async receivers as required if defined.",
+      "lineage_event": "modified",
+      "created_at": "2022-07-23T10:56:12Z",
+      "label": "quote",
+      "epistemic_label": "verified"
+    },
+    {
+      "source_kind": "commit",
+      "reference": "5ed9c956aaf68a8e2defa9722109aa2c7bcf7ae1",
+      "excerpt": "If not defined a",
+      "lineage_event": "modified",
+      "created_at": "2022-07-23T10:56:12Z",
+      "label": "quote",
+      "epistemic_label": "verified"
+    },
+    {
+      "source_kind": "commit",
+      "reference": "5ed9c956aaf68a8e2defa9722109aa2c7bcf7ae1",
+      "excerpt": "runtime error is raised.",
+      "lineage_event": "modified",
+      "created_at": "2022-07-23T10:56:12Z",
+      "label": "quote",
+      "epistemic_label": "verified"
+    },
+    {
+      "source_kind": "commit",
+      "reference": "5ed9c956aaf68a8e2defa9722109aa2c7bcf7ae1",
+      "excerpt": "The wrappers are used to avoid any direct tie into asyncio, trio,",
+      "lineage_event": "modified",
+      "created_at": "2022-07-23T10:56:12Z",
+      "label": "quote",
+      "epistemic_label": "verified"
+    },
+    {
+      "source_kind": "commit",
+      "reference": "5ed9c956aaf68a8e2defa9722109aa2c7bcf7ae1",
+      "excerpt": "greenbacks, asgiref, or other specific async implementation.",
+      "lineage_event": "modified",
+      "created_at": "2022-07-23T10:56:12Z",
+      "label": "quote",
+      "epistemic_label": "verified"
+    },
+    {
+      "source_kind": "commit",
+      "reference": "f9d51929f71295d0b0f3acfce2e47656bd0472e1",
+      "excerpt": "Move to src/ layout",
+      "lineage_event": "moved",
+      "created_at": "2023-01-19T00:08:51Z",
+      "label": "quote",
+      "epistemic_label": "verified"
+    },
+    {
+      "source_kind": "commit",
+      "reference": "33a14971c34fcd15deb2b18b50c9bd411eb6ed74",
+      "excerpt": "Fix issues reported by flake8",
+      "lineage_event": "modified",
+      "created_at": "2023-01-19T00:33:20Z",
+      "label": "quote",
+      "epistemic_label": "verified"
+    },
+    {
+      "source_kind": "commit",
+      "reference": "d06b2416ea43c535b907b7d0a2b72fff3b2f3a0f",
+      "excerpt": "Added `muted` context manager for temproary switching signal off (#84)",
+      "lineage_event": "modified",
+      "created_at": "2023-01-23T23:00:32Z",
+      "label": "quote",
+      "epistemic_label": "verified"
+    },
+    {
+      "source_kind": "commit",
+      "reference": "d06b2416ea43c535b907b7d0a2b72fff3b2f3a0f",
+      "excerpt": "This is useful whilst testing to remove a signal's affects.",
+      "lineage_event": "modified",
+      "created_at": "2023-01-23T23:00:32Z",
+      "label": "quote",
+      "epistemic_label": "verified"
+    },
+    {
+      "source_kind": "commit",
+      "reference": "d06b2416ea43c535b907b7d0a2b72fff3b2f3a0f",
+      "excerpt": "Co-authored-by: Michael Elovskikh <wronglink@yandex-team.ru>",
+      "lineage_event": "modified",
+      "created_at": "2023-01-23T23:00:32Z",
+      "label": "quote",
+      "epistemic_label": "verified"
+    },
+    {
+      "source_kind": "commit",
+      "reference": "fae6164cda6c5e9af89895a22f700402fa4b5ec5",
+      "excerpt": "Add an initial set of type hints",
+      "lineage_event": "modified",
+      "created_at": "2023-02-26T11:17:50Z",
+      "label": "quote",
+      "epistemic_label": "verified"
+    },
+    {
+      "source_kind": "commit",
+      "reference": "fae6164cda6c5e9af89895a22f700402fa4b5ec5",
+      "excerpt": "These focus on the public API with the private aspect omitted.",
+      "lineage_event": "modified",
+      "created_at": "2023-02-26T11:17:50Z",
+      "label": "quote",
+      "epistemic_label": "verified"
+    },
+    {
+      "source_kind": "commit",
+      "reference": "fae6164cda6c5e9af89895a22f700402fa4b5ec5",
+      "excerpt": "This is",
+      "lineage_event": "modified",
+      "created_at": "2023-02-26T11:17:50Z",
+      "label": "quote",
+      "epistemic_label": "verified"
+    },
+    {
+      "source_kind": "commit",
+      "reference": "fae6164cda6c5e9af89895a22f700402fa4b5ec5",
+      "excerpt": "because these are hard to type, and may not be required with modern",
+      "lineage_event": "modified",
+      "created_at": "2023-02-26T11:17:50Z",
+      "label": "quote",
+      "epistemic_label": "verified"
+    },
+    {
+      "source_kind": "commit",
+      "reference": "fae6164cda6c5e9af89895a22f700402fa4b5ec5",
+      "excerpt": "python.",
+      "lineage_event": "modified",
+      "created_at": "2023-02-26T11:17:50Z",
+      "label": "quote",
+      "epistemic_label": "verified"
+    },
+    {
+      "source_kind": "commit",
+      "reference": "fae6164cda6c5e9af89895a22f700402fa4b5ec5",
+      "excerpt": "However, this should still be useful if adopted for code",
+      "lineage_event": "modified",
+      "created_at": "2023-02-26T11:17:50Z",
+      "label": "quote",
+      "epistemic_label": "verified"
+    },
+    {
+      "source_kind": "commit",
+      "reference": "fae6164cda6c5e9af89895a22f700402fa4b5ec5",
+      "excerpt": "that uses blinker.",
+      "lineage_event": "modified",
+      "created_at": "2023-02-26T11:17:50Z",
+      "label": "quote",
+      "epistemic_label": "verified"
+    },
+    {
+      "source_kind": "commit",
+      "reference": "c8703aa7c09d7081362647f6659ab2f587279649",
+      "excerpt": "Merge pull request #94 from pallets-eco/lazy-annotations",
+      "lineage_event": "modified",
+      "created_at": "2023-04-12T21:31:57Z",
+      "label": "quote",
+      "epistemic_label": "verified"
+    },
+    {
+      "source_kind": "commit",
+      "reference": "c8703aa7c09d7081362647f6659ab2f587279649",
+      "excerpt": "lazy annotations",
+      "lineage_event": "modified",
+      "created_at": "2023-04-12T21:31:57Z",
+      "label": "quote",
+      "epistemic_label": "verified"
+    },
+    {
+      "source_kind": "commit",
+      "reference": "e5a0411296f2d8eebb6753c925cd341e93043049",
+      "excerpt": "receivers_for does not return weak references",
+      "lineage_event": "modified",
+      "created_at": "2023-07-27T18:13:02Z",
+      "label": "quote",
+      "epistemic_label": "verified"
+    },
+    {
+      "source_kind": "commit",
+      "reference": "00e3d22781e0bc7a2b88b0815b0d41846e93f10e",
+      "excerpt": "Signal.connected_to should always disconnect the receiver",
+      "lineage_event": "modified",
+      "created_at": "2023-09-19T10:26:06Z",
+      "label": "quote",
+      "epistemic_label": "verified"
+    },
+    {
+      "source_kind": "commit",
+      "reference": "00e3d22781e0bc7a2b88b0815b0d41846e93f10e",
+      "excerpt": "Bug introduced by 33a14971c34fcd15deb2b18b50c9bd411eb6ed74 which replaced",
+      "lineage_event": "modified",
+      "created_at": "2023-09-19T10:26:06Z",
+      "label": "quote",
+      "epistemic_label": "verified"
+    },
+    {
+      "source_kind": "commit",
+      "reference": "00e3d22781e0bc7a2b88b0815b0d41846e93f10e",
+      "excerpt": "try:",
+      "lineage_event": "modified",
+      "created_at": "2023-09-19T10:26:06Z",
+      "label": "quote",
+      "epistemic_label": "verified"
+    },
+    {
+      "source_kind": "commit",
+      "reference": "00e3d22781e0bc7a2b88b0815b0d41846e93f10e",
+      "excerpt": "yield None",
+      "lineage_event": "modified",
+      "created_at": "2023-09-19T10:26:06Z",
+      "label": "quote",
+      "epistemic_label": "verified"
+    },
+    {
+      "source_kind": "commit",
+      "reference": "00e3d22781e0bc7a2b88b0815b0d41846e93f10e",
+      "excerpt": "except:",
+      "lineage_event": "modified",
+      "created_at": "2023-09-19T10:26:06Z",
+      "label": "quote",
+      "epistemic_label": "verified"
+    },
+    {
+      "source_kind": "commit",
+      "reference": "00e3d22781e0bc7a2b88b0815b0d41846e93f10e",
+      "excerpt": "self.disconnect(receiver)",
+      "lineage_event": "modified",
+      "created_at": "2023-09-19T10:26:06Z",
+      "label": "quote",
+      "epistemic_label": "verified"
+    },
+    {
+      "source_kind": "commit",
+      "reference": "00e3d22781e0bc7a2b88b0815b0d41846e93f10e",
+      "excerpt": "raise",
+      "lineage_event": "modified",
+      "created_at": "2023-09-19T10:26:06Z",
+      "label": "quote",
+      "epistemic_label": "verified"
+    },
+    {
+      "source_kind": "commit",
+      "reference": "00e3d22781e0bc7a2b88b0815b0d41846e93f10e",
+      "excerpt": "else:",
+      "lineage_event": "modified",
+      "created_at": "2023-09-19T10:26:06Z",
+      "label": "quote",
+      "epistemic_label": "verified"
+    },
+    {
+      "source_kind": "commit",
+      "reference": "00e3d22781e0bc7a2b88b0815b0d41846e93f10e",
+      "excerpt": "self.disconnect(receiver)",
+      "lineage_event": "modified",
+      "created_at": "2023-09-19T10:26:06Z",
+      "label": "quote",
+      "epistemic_label": "verified"
+    },
+    {
+      "source_kind": "commit",
+      "reference": "00e3d22781e0bc7a2b88b0815b0d41846e93f10e",
+      "excerpt": "with",
+      "lineage_event": "modified",
+      "created_at": "2023-09-19T10:26:06Z",
+      "label": "quote",
+      "epistemic_label": "verified"
+    },
+    {
+      "source_kind": "commit",
+      "reference": "00e3d22781e0bc7a2b88b0815b0d41846e93f10e",
+      "excerpt": "try:",
+      "lineage_event": "modified",
+      "created_at": "2023-09-19T10:26:06Z",
+      "label": "quote",
+      "epistemic_label": "verified"
+    },
+    {
+      "source_kind": "commit",
+      "reference": "00e3d22781e0bc7a2b88b0815b0d41846e93f10e",
+      "excerpt": "yield None",
+      "lineage_event": "modified",
+      "created_at": "2023-09-19T10:26:06Z",
+      "label": "quote",
+      "epistemic_label": "verified"
+    },
+    {
+      "source_kind": "commit",
+      "reference": "00e3d22781e0bc7a2b88b0815b0d41846e93f10e",
+      "excerpt": "except Exception as e:",
+      "lineage_event": "modified",
+      "created_at": "2023-09-19T10:26:06Z",
+      "label": "quote",
+      "epistemic_label": "verified"
+    },
+    {
+      "source_kind": "commit",
+      "reference": "00e3d22781e0bc7a2b88b0815b0d41846e93f10e",
+      "excerpt": "self.disconnect(receiver)",
+      "lineage_event": "modified",
+      "created_at": "2023-09-19T10:26:06Z",
+      "label": "quote",
+      "epistemic_label": "verified"
+    },
+    {
+      "source_kind": "commit",
+      "reference": "00e3d22781e0bc7a2b88b0815b0d41846e93f10e",
+      "excerpt": "raise",
+      "lineage_event": "modified",
+      "created_at": "2023-09-19T10:26:06Z",
+      "label": "quote",
+      "epistemic_label": "verified"
+    },
+    {
+      "source_kind": "commit",
+      "reference": "00e3d22781e0bc7a2b88b0815b0d41846e93f10e",
+      "excerpt": "else:",
+      "lineage_event": "modified",
+      "created_at": "2023-09-19T10:26:06Z",
+      "label": "quote",
+      "epistemic_label": "verified"
+    },
+    {
+      "source_kind": "commit",
+      "reference": "00e3d22781e0bc7a2b88b0815b0d41846e93f10e",
+      "excerpt": "self.disconnect(receiver)",
+      "lineage_event": "modified",
+      "created_at": "2023-09-19T10:26:06Z",
+      "label": "quote",
+      "epistemic_label": "verified"
+    },
+    {
+      "source_kind": "commit",
+      "reference": "00e3d22781e0bc7a2b88b0815b0d41846e93f10e",
+      "excerpt": "which are not semantically the same, as the latter does not disconnect",
+      "lineage_event": "modified",
+      "created_at": "2023-09-19T10:26:06Z",
+      "label": "quote",
+      "epistemic_label": "verified"
+    },
+    {
+      "source_kind": "commit",
+      "reference": "00e3d22781e0bc7a2b88b0815b0d41846e93f10e",
+      "excerpt": "the receiver if an instance of BaseException is raised.",
+      "lineage_event": "modified",
+      "created_at": "2023-09-19T10:26:06Z",
+      "label": "quote",
+      "epistemic_label": "verified"
+    },
+    {
+      "source_kind": "commit",
+      "reference": "00e3d22781e0bc7a2b88b0815b0d41846e93f10e",
+      "excerpt": "Notably,",
+      "lineage_event": "modified",
+      "created_at": "2023-09-19T10:26:06Z",
+      "label": "quote",
+      "epistemic_label": "verified"
+    },
+    {
+      "source_kind": "commit",
+      "reference": "00e3d22781e0bc7a2b88b0815b0d41846e93f10e",
+      "excerpt": "asyncio.CancelledError is a subclass of BaseException on Python 3.8+",
+      "lineage_event": "modified",
+      "created_at": "2023-09-19T10:26:06Z",
+      "label": "quote",
+      "epistemic_label": "verified"
+    },
+    {
+      "source_kind": "commit",
+      "reference": "5ad0039fac16e99b4207996903b51052e401ab9e",
+      "excerpt": "Allow the Signal set_class to be customised",
+      "lineage_event": "modified",
+      "created_at": "2023-09-23T17:25:31Z",
+      "label": "quote",
+      "epistemic_label": "verified"
+    },
+    {
+      "source_kind": "commit",
+      "reference": "5ad0039fac16e99b4207996903b51052e401ab9e",
+      "excerpt": "This allows an easy way for receivers to be called in registration",
+      "lineage_event": "modified",
+      "created_at": "2023-09-23T17:25:31Z",
+      "label": "quote",
+      "epistemic_label": "verified"
+    },
+    {
+      "source_kind": "commit",
+      "reference": "5ad0039fac16e99b4207996903b51052e401ab9e",
+      "excerpt": "order, as is often desired by users of the library.",
+      "lineage_event": "modified",
+      "created_at": "2023-09-23T17:25:31Z",
+      "label": "quote",
+      "epistemic_label": "verified"
+    },
+    {
+      "source_kind": "commit",
+      "reference": "44d29b3a20c5eb4ecaf954ff30e4cb982d2a250b",
+      "excerpt": "Fix weakref callback errors during finalization",
+      "lineage_event": "modified",
+      "created_at": "2023-10-31T13:08:02Z",
+      "label": "quote",
+      "epistemic_label": "verified"
+    },
+    {
+      "source_kind": "commit",
+      "reference": "44d29b3a20c5eb4ecaf954ff30e4cb982d2a250b",
+      "excerpt": "weakref finalization callbacks need to follow __del__ rules, i.e.",
+      "lineage_event": "modified",
+      "created_at": "2023-10-31T13:08:02Z",
+      "label": "quote",
+      "epistemic_label": "verified"
+    },
+    {
+      "source_kind": "commit",
+      "reference": "44d29b3a20c5eb4ecaf954ff30e4cb982d2a250b",
+      "excerpt": "any globals referenced may have had their attributes set to None.",
+      "lineage_event": "modified",
+      "created_at": "2023-10-31T13:08:02Z",
+      "label": "quote",
+      "epistemic_label": "verified"
+    },
+    {
+      "source_kind": "commit",
+      "reference": "7f3f1a05793e105a8557ba50b0e392cc1df0e1da",
+      "excerpt": "Update the supported Python versions",
+      "lineage_event": "modified",
+      "created_at": "2023-11-01T21:56:57Z",
+      "label": "quote",
+      "epistemic_label": "verified"
+    },
+    {
+      "source_kind": "commit",
+      "reference": "7f3f1a05793e105a8557ba50b0e392cc1df0e1da",
+      "excerpt": "3.7 has reached end of life and is now dropped.",
+      "lineage_event": "modified",
+      "created_at": "2023-11-01T21:56:57Z",
+      "label": "quote",
+      "epistemic_label": "verified"
+    },
+    {
+      "source_kind": "commit",
+      "reference": "7f3f1a05793e105a8557ba50b0e392cc1df0e1da",
+      "excerpt": "Python 3.12 is",
+      "lineage_event": "modified",
+      "created_at": "2023-11-01T21:56:57Z",
+      "label": "quote",
+      "epistemic_label": "verified"
+    },
+    {
+      "source_kind": "commit",
+      "reference": "7f3f1a05793e105a8557ba50b0e392cc1df0e1da",
+      "excerpt": "officially supported.",
+      "lineage_event": "modified",
+      "created_at": "2023-11-01T21:56:57Z",
+      "label": "quote",
+      "epistemic_label": "verified"
+    },
+    {
+      "source_kind": "commit",
+      "reference": "7577b88afce38232746a7172e99928e61fc8a5ab",
+      "excerpt": "Merge pull request #139 from pallets-eco/refresh",
+      "lineage_event": "modified",
+      "created_at": "2024-04-26T18:30:16Z",
+      "label": "quote",
+      "epistemic_label": "verified"
+    },
+    {
+      "source_kind": "commit",
+      "reference": "7577b88afce38232746a7172e99928e61fc8a5ab",
+      "excerpt": "update project files",
+      "lineage_event": "modified",
+      "created_at": "2024-04-26T18:30:16Z",
+      "label": "quote",
+      "epistemic_label": "verified"
+    },
+    {
+      "source_kind": "commit",
+      "reference": "7e2c85ab3a3084fc72262fa62df8ab337477ea55",
+      "excerpt": "Merge pull request #142 from pallets-eco/deprecations",
+      "lineage_event": "modified",
+      "created_at": "2024-04-26T19:03:48Z",
+      "label": "quote",
+      "epistemic_label": "verified"
+    },
+    {
+      "source_kind": "commit",
+      "reference": "7e2c85ab3a3084fc72262fa62df8ab337477ea55",
+      "excerpt": "update deprecations",
+      "lineage_event": "modified",
+      "created_at": "2024-04-26T19:03:48Z",
+      "label": "quote",
+      "epistemic_label": "verified"
+    },
+    {
+      "source_kind": "commit",
+      "reference": "64423dfadc9a35000b5399ca3d94a480ec7efe99",
+      "excerpt": "Merge pull request #144 from pallets-eco/simplify-refs",
+      "lineage_event": "modified",
+      "created_at": "2024-04-27T02:45:35Z",
+      "label": "quote",
+      "epistemic_label": "verified"
+    },
+    {
+      "source_kind": "commit",
+      "reference": "64423dfadc9a35000b5399ca3d94a480ec7efe99",
+      "excerpt": "simplify weakref handling",
+      "lineage_event": "modified",
+      "created_at": "2024-04-27T02:45:35Z",
+      "label": "quote",
+      "epistemic_label": "verified"
+    },
+    {
+      "source_kind": "commit",
+      "reference": "fd8a169d633f84874cbc95cddc225240ed4013ff",
+      "excerpt": "Merge pull request #150 from pallets-eco/collections-abc",
+      "lineage_event": "modified",
+      "created_at": "2024-04-28T17:17:52Z",
+      "label": "quote",
+      "epistemic_label": "verified"
+    },
+    {
+      "source_kind": "commit",
+      "reference": "fd8a169d633f84874cbc95cddc225240ed4013ff",
+      "excerpt": "use collections.abc instead of typing",
+      "lineage_event": "modified",
+      "created_at": "2024-04-28T17:17:52Z",
+      "label": "quote",
+      "epistemic_label": "verified"
+    },
+    {
+      "source_kind": "commit",
+      "reference": "f1bbce1023728a3622687a949bc0beb66be0a6c0",
+      "excerpt": "Merge pull request #151 from pallets-eco/cleanup-docs",
+      "lineage_event": "modified",
+      "created_at": "2024-04-28T19:47:40Z",
+      "label": "quote",
+      "epistemic_label": "verified"
+    },
+    {
+      "source_kind": "commit",
+      "reference": "f1bbce1023728a3622687a949bc0beb66be0a6c0",
+      "excerpt": "clean up docstrings",
+      "lineage_event": "modified",
+      "created_at": "2024-04-28T19:47:40Z",
+      "label": "quote",
+      "epistemic_label": "verified"
+    },
+    {
+      "source_kind": "commit",
+      "reference": "952a97b0aefbd39b52c9ad83bfe9f4aaf188dfee",
+      "excerpt": "Merge pull request #156 from pallets-eco/wrapper-type",
+      "lineage_event": "modified",
+      "created_at": "2024-05-06T16:59:20Z",
+      "label": "quote",
+      "epistemic_label": "verified"
+    },
+    {
+      "source_kind": "commit",
+      "reference": "952a97b0aefbd39b52c9ad83bfe9f4aaf188dfee",
+      "excerpt": "simplify type for wrapper arguments",
+      "lineage_event": "modified",
+      "created_at": "2024-05-06T16:59:20Z",
+      "label": "quote",
+      "epistemic_label": "verified"
+    },
+    {
+      "source_kind": "commit",
+      "reference": "8c983ecd764e1d113d24522838c2a7312460b7eb",
+      "excerpt": "remove previously deprecated code (#172)",
+      "lineage_event": "modified",
+      "created_at": "2024-10-01T18:46:09Z",
+      "label": "quote",
+      "epistemic_label": "verified"
+    },
+    {
+      "source_kind": "commit",
+      "reference": "16e4bd70a19353d9d7cf47e4df7de54936296377",
+      "excerpt": "Merge pull request #174 from projectgus/bugfix/weakref_disconnect_shutdown",
+      "lineage_event": "modified",
+      "created_at": "2024-11-08T16:54:39Z",
+      "label": "quote",
+      "epistemic_label": "verified"
+    },
+    {
+      "source_kind": "commit",
+      "reference": "16e4bd70a19353d9d7cf47e4df7de54936296377",
+      "excerpt": "Fix \"Exception ignored\" in weakref callback during interpreter shutdown.",
+      "lineage_event": "modified",
+      "created_at": "2024-11-08T16:54:39Z",
+      "label": "quote",
+      "epistemic_label": "verified"
+    }
+  ]
+}

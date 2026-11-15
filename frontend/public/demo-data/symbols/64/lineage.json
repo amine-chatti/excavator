@@ -1,0 +1,37 @@
+{
+  "symbol": {
+    "id": 64,
+    "repository_id": 2,
+    "language": "python",
+    "kind": "method",
+    "qualified_name": "Signer.secret_key",
+    "current_path": "src/itsdangerous/signer.py",
+    "status": "exists"
+  },
+  "versions": [
+    {
+      "commit_sha": "2881d93e31c3e80641e28b858cbff71d3899afa0",
+      "commit_message": "Merge pull request #141 from lepture/key-rotate",
+      "authored_at": "2020-05-12T23:16:13Z",
+      "path": "src/itsdangerous/signer.py",
+      "qualified_name": "Signer.secret_key",
+      "start_line": 137,
+      "end_line": 142,
+      "body_hash": "d3a10638c4e0158a2c3f0f19f0d973740354e6dab3bf7e66669148b36701a0fc",
+      "parse_status": "ok",
+      "lineage_method": "exact"
+    },
+    {
+      "commit_sha": "4559e76d632ecfda09515746790670be3c59b726",
+      "commit_message": "Merge pull request #186 from pallets/typing",
+      "authored_at": "2020-08-31T18:50:36Z",
+      "path": "src/itsdangerous/signer.py",
+      "qualified_name": "Signer.secret_key",
+      "start_line": 161,
+      "end_line": 166,
+      "body_hash": "cf099c670b1e3583aac125d99cecbbd344defcc759d41c3992953ce8a139ee58",
+      "parse_status": "ok",
+      "lineage_method": "exact"
+    }
+  ]
+}

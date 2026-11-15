@@ -1,0 +1,73 @@
+{
+  "symbol": {
+    "id": 74,
+    "repository_id": 3,
+    "language": "python",
+    "kind": "method",
+    "qualified_name": "Signal._disconnect",
+    "current_path": "src/blinker/base.py",
+    "status": "exists"
+  },
+  "versions": [
+    {
+      "commit_sha": "c2d9461914c3624b49b596e3bd5d76dc32b406d1",
+      "commit_message": "Initial import from flatland.util.signals",
+      "authored_at": "2010-02-14T17:40:29Z",
+      "path": "blinker/base.py",
+      "qualified_name": "Signal._disconnect",
+      "start_line": 166,
+      "end_line": 173,
+      "body_hash": "c8dabaa02a81cadee096432dfac77898a30c86a5538ae6be7d245600b245af22",
+      "parse_status": "ok",
+      "lineage_method": "exact"
+    },
+    {
+      "commit_sha": "efe8d646c932ff091106f0c2b6d5fd79a03efdb4",
+      "commit_message": "Additional bookkeeping cleanup for non-ANY connections at disconnect time.",
+      "authored_at": "2015-07-23T10:15:29Z",
+      "path": "blinker/base.py",
+      "qualified_name": "Signal._disconnect",
+      "start_line": 329,
+      "end_line": 337,
+      "body_hash": "7ba9165d0437eb1bc3cbf07f3469e4b44a2f249fe15f04669808b49c9e404591",
+      "parse_status": "ok",
+      "lineage_method": "exact"
+    },
+    {
+      "commit_sha": "fae6164cda6c5e9af89895a22f700402fa4b5ec5",
+      "commit_message": "Add an initial set of type hints",
+      "authored_at": "2023-02-26T11:17:50Z",
+      "path": "src/blinker/base.py",
+      "qualified_name": "Signal._disconnect",
+      "start_line": 419,
+      "end_line": 427,
+      "body_hash": "7f0d6490a7c16447cadc44831096dd6f4dc2dd5ca0afc3aaf7a23258716fab08",
+      "parse_status": "ok",
+      "lineage_method": "exact"
+    },
+    {
+      "commit_sha": "64423dfadc9a35000b5399ca3d94a480ec7efe99",
+      "commit_message": "Merge pull request #144 from pallets-eco/simplify-refs",
+      "authored_at": "2024-04-27T02:45:35Z",
+      "path": "src/blinker/base.py",
+      "qualified_name": "Signal._disconnect",
+      "start_line": 411,
+      "end_line": 420,
+      "body_hash": "18698aef61604f968d2f18c2f1c84e5c32b0fa4afdff22cc70f24f3d5f560417",
+      "parse_status": "ok",
+      "lineage_method": "exact"
+    },
+    {
+      "commit_sha": "fd8a169d633f84874cbc95cddc225240ed4013ff",
+      "commit_message": "Merge pull request #150 from pallets-eco/collections-abc",
+      "authored_at": "2024-04-28T17:17:52Z",
+      "path": "src/blinker/base.py",
+      "qualified_name": "Signal._disconnect",
+      "start_line": 413,
+      "end_line": 422,
+      "body_hash": "3fec6ddc480481b35f46bae445b0b9978107ea956fcb05005c2ebe0fa1e154b3",
+      "parse_status": "ok",
+      "lineage_method": "exact"
+    }
+  ]
+}

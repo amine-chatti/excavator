@@ -13,6 +13,7 @@ import type { ExplainResponse, ExtractiveExplanationResponse, LineageResponse, R
 import { contentVariants, mainVariants, selectionTransition } from "@/motion";
 import { MotionConfig } from "motion/react";
 import { makeTimeline } from "@/lib/timeline";
+import { isDemoMode } from "@/lib/demo-mode";
 
 function message(error: unknown) {
   return error instanceof ApiError ? error.message : "The archive could not be read.";
@@ -23,6 +24,7 @@ function supportedClaims(claims: ExplainResponse["claims"]) {
 }
 
 export default function App() {
+  const demoMode = isDemoMode();
   const [repositories, setRepositories] = useState<RepositoryRecord[]>([]);
   const [repositoryId, setRepositoryId] = useState<number | null>(null);
   const [symbols, setSymbols] = useState<SymbolRecord[]>([]);
@@ -78,7 +80,11 @@ export default function App() {
     setExplanationBySymbol((current) => ({ ...current, [id]: { status: "loading" } }));
     void getStoredExplanation(id).then((saved) => {
       if (!saved) {
-        setExplanationBySymbol((current) => ({ ...current, [id]: { status: "idle" } }));
+        setExplanationBySymbol((current) => ({ ...current, [id]: { status: demoMode ? "demo-unavailable" : "idle" } }));
+        return;
+      }
+      if (demoMode) {
+        setExplanationBySymbol((current) => ({ ...current, [id]: { status: "demo-ready" } }));
         return;
       }
       const claims = supportedClaims(saved.claims);
@@ -94,7 +100,7 @@ export default function App() {
         [id]: { status: "error", message: message(error), retryAction: "load" },
       }));
     }).finally(() => explanationLoads.current.delete(id));
-  }, [explanationBySymbol]);
+  }, [explanationBySymbol, demoMode]);
   useEffect(() => {
     if (selectedId !== null) loadExplanation(selectedId);
   }, [selectedId, loadExplanation]);
@@ -102,6 +108,22 @@ export default function App() {
   const generateExplanation = useCallback(async (id: number) => {
     setExplanationBySymbol((current) => ({ ...current, [id]: { status: "busy" } }));
     try {
+      if (demoMode) {
+        const saved = await getStoredExplanation(id);
+        if (!saved) {
+          setExplanationBySymbol((current) => ({ ...current, [id]: { status: "demo-unavailable" } }));
+          return;
+        }
+        await new Promise((resolve) => window.setTimeout(resolve, 900));
+        const claims = supportedClaims(saved.claims);
+        setExplanationBySymbol((current) => ({
+          ...current,
+          [id]: claims.length
+            ? { status: "explained", summary: claims.length === saved.claims.length ? saved.summary : claims.map((claim) => claim.text).join(" "), claims, savedExample: true }
+            : { status: "insufficient", savedExample: true },
+        }));
+        return;
+      }
       const result = await postExplanation(id);
       const claims = supportedClaims(result.claims);
       setExplanationBySymbol((current) => ({
@@ -116,7 +138,7 @@ export default function App() {
         [id]: { status: "error", message: message(error), retryAction: "generate" },
       }));
     }
-  }, []);
+  }, [demoMode]);
 
   const retryDetails = () => { if (selectedId !== null) void loadDetails(selectedId); };
   const activeSymbol = symbols.find((item) => item.id === selectedId) ?? null;
@@ -135,7 +157,7 @@ export default function App() {
   };
   return <MotionConfig reducedMotion={motionOn ? "never" : "user"}><TooltipProvider>
     <div className={`app-shell ${motionOn ? "" : "motion-disabled"}`}>
-      <FieldIndex repositories={repositories} repositoryId={repositoryId} onRepositoryChange={setRepositoryId} symbols={symbols} selectedId={selectedId} onSelectSymbol={(id) => { setSelectedId(id); setSelectedEvent(null); }} query={query} onQueryChange={setQuery} loading={repositoryLoading || symbolsLoading} error={repositoryError ?? symbolsError} onRetry={() => repositoryError ? void loadRepositories() : repositoryId !== null && void loadSymbols(repositoryId)} motionOn={motionOn} onMotionChange={toggleMotion} />
+      <FieldIndex repositories={repositories} repositoryId={repositoryId} onRepositoryChange={setRepositoryId} symbols={symbols} selectedId={selectedId} onSelectSymbol={(id) => { setSelectedId(id); setSelectedEvent(null); }} query={query} onQueryChange={setQuery} loading={repositoryLoading || symbolsLoading} error={repositoryError ?? symbolsError} onRetry={() => repositoryError ? void loadRepositories() : repositoryId !== null && void loadSymbols(repositoryId)} motionOn={motionOn} onMotionChange={toggleMotion} demoMode={demoMode} />
       <motion.main className="field-main" variants={mainVariants} initial="hidden" animate="visible">
         <header className="main-topline"><span>FIELD NOTE <b>№ 001</b></span><span>SYMBOL ARCHIVE <i>·</i> PYTHON LINEAGE</span></header>
         <AnimatePresence mode="wait">
@@ -167,7 +189,7 @@ export default function App() {
         <div className="evidence-head"><span className="panel-kicker">SOURCE MATERIAL</span><h2>Evidence</h2><p>Developer words stay verbatim. Model interpretation is marked separately.</p></div>
         {detailLoading ? <div className="evidence-wait">Loading evidence…</div> : detailError ? <p className="evidence-wait">Evidence could not be loaded.</p> : extractive ? <Unearthed data={extractive} selectedEvent={selectedEvent?.kind ?? null} eventKindCounts={eventKindCounts} onSelectEvent={selectEvidenceEvent} /> : <div className="evidence-wait">Select a symbol to read its history and sources.</div>}
         <div className="evidence-divider" />
-        {activeSymbol && <WhyChanged state={activeExplanation ?? { status: "loading" }} deleted={activeSymbol.status === "deleted"} onGenerate={() => void generateExplanation(activeSymbol.id)} onRetry={() => activeExplanation?.status === "error" && activeExplanation.retryAction === "load" ? loadExplanation(activeSymbol.id, true) : void generateExplanation(activeSymbol.id)} />}
+        {activeSymbol && <WhyChanged state={activeExplanation ?? { status: "loading" }} deleted={activeSymbol.status === "deleted"} demoMode={demoMode} onGenerate={() => void generateExplanation(activeSymbol.id)} onRetry={() => activeExplanation?.status === "error" && activeExplanation.retryAction === "load" ? loadExplanation(activeSymbol.id, true) : void generateExplanation(activeSymbol.id)} />}
       </aside>
     </div>
   </TooltipProvider></MotionConfig>;

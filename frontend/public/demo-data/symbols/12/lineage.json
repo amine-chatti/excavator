@@ -1,0 +1,109 @@
+{
+  "symbol": {
+    "id": 12,
+    "repository_id": 1,
+    "language": "python",
+    "kind": "method",
+    "qualified_name": "_LazyFile.open",
+    "current_path": "src/click/utils.py",
+    "status": "exists"
+  },
+  "versions": [
+    {
+      "commit_sha": "a0d426d89434fcade5e96545d5203682c4fc5249",
+      "commit_message": "Merge branch '4.x-maintenance'",
+      "authored_at": "2015-06-21T21:23:19Z",
+      "path": "click/utils.py",
+      "qualified_name": "LazyFile.open",
+      "start_line": 158,
+      "end_line": 174,
+      "body_hash": "45ecfae433b5a07560a00db647ae33afc2503da406c1f6c1efa2ca5aad83cf75",
+      "parse_status": "ok",
+      "lineage_method": "exact"
+    },
+    {
+      "commit_sha": "7239794a610f3ccae3aaf8bfe273ac70cc58ff07",
+      "commit_message": "Merge branch '7.x'",
+      "authored_at": "2020-03-08T16:27:19Z",
+      "path": "src/click/utils.py",
+      "qualified_name": "LazyFile.open",
+      "start_line": 118,
+      "end_line": 134,
+      "body_hash": "3151b8762ca0266d364c6c1f435481ce9798a970caae10526f4fdd95bd12cd4a",
+      "parse_status": "ok",
+      "lineage_method": "exact"
+    },
+    {
+      "commit_sha": "97de2c97275f52adc5c6ef8bb8aa993ce997fe7e",
+      "commit_message": "Merge pull request #1532 from pallets/drop-python2",
+      "authored_at": "2020-04-20T14:16:07Z",
+      "path": "src/click/utils.py",
+      "qualified_name": "LazyFile.open",
+      "start_line": 110,
+      "end_line": 126,
+      "body_hash": "ef78c3861ccd6d96c8a8eb0d56e8d821e5a44d59c724f826c6047698605c3107",
+      "parse_status": "ok",
+      "lineage_method": "exact"
+    },
+    {
+      "commit_sha": "ffeddbaf0c8226201136593d29324c951f2b2fa3",
+      "commit_message": "Merge pull request #1856 from pallets/typing",
+      "authored_at": "2021-04-23T16:25:23Z",
+      "path": "src/click/utils.py",
+      "qualified_name": "LazyFile.open",
+      "start_line": 143,
+      "end_line": 159,
+      "body_hash": "77b4cdc888888bf9b1f6923e20ece0bc4edc0849adb9d12a7dc9143cae81850a",
+      "parse_status": "ok",
+      "lineage_method": "exact"
+    },
+    {
+      "commit_sha": "d11059393ddeb8f8f399b3c6fd4ce71f4fdb534b",
+      "commit_message": "Merge branch '8.0.x'",
+      "authored_at": "2021-09-26T14:07:12Z",
+      "path": "src/click/utils.py",
+      "qualified_name": "LazyFile.open",
+      "start_line": 143,
+      "end_line": 159,
+      "body_hash": "f4d335059b8dfab74d7c455607b99d56911890ffe68903428127610ebfdbb97c",
+      "parse_status": "ok",
+      "lineage_method": "exact"
+    },
+    {
+      "commit_sha": "cba52fa76135af2edf46c154203b47106f898eb3",
+      "commit_message": "Merge branch '8.1.x'",
+      "authored_at": "2023-01-20T00:38:36Z",
+      "path": "src/click/utils.py",
+      "qualified_name": "LazyFile.open",
+      "start_line": 147,
+      "end_line": 163,
+      "body_hash": "54f820e2d64d19ec1bcd577414bfd91244b67a5db7971deb06332337e7c2c6f7",
+      "parse_status": "ok",
+      "lineage_method": "exact"
+    },
+    {
+      "commit_sha": "1a3baf77d4882f23c9f50995073c6c916c07dff0",
+      "commit_message": "use ruff lint and format (#2658)",
+      "authored_at": "2023-12-29T16:16:59Z",
+      "path": "src/click/utils.py",
+      "qualified_name": "LazyFile.open",
+      "start_line": 151,
+      "end_line": 167,
+      "body_hash": "0d830db616088dfd8f7644d3b3c5e8044569562e185296aa54576a1f1f94ae49",
+      "parse_status": "ok",
+      "lineage_method": "exact"
+    },
+    {
+      "commit_sha": "333c28d79cd982990ee98eef61ec20ab1a4f38ba",
+      "commit_message": "Mark clearly functions private status. Deprecated Python 2 utilities. (#3695)",
+      "authored_at": "2026-07-17T19:24:58Z",
+      "path": "src/click/utils.py",
+      "qualified_name": "_LazyFile.open",
+      "start_line": 165,
+      "end_line": 181,
+      "body_hash": "0d830db616088dfd8f7644d3b3c5e8044569562e185296aa54576a1f1f94ae49",
+      "parse_status": "ok",
+      "lineage_method": "rename_detected"
+    }
+  ]
+}

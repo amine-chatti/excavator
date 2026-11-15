@@ -1,0 +1,37 @@
+{
+  "symbol": {
+    "id": 92,
+    "repository_id": 3,
+    "language": "python",
+    "kind": "method",
+    "qualified_name": "Signal.send_async",
+    "current_path": "blinker/base.py",
+    "status": "deleted"
+  },
+  "versions": [
+    {
+      "commit_sha": "b5e9f0629200d2b2f62e13e595b802948bb4fefb",
+      "commit_message": "Merge pull request #18 from jek/feature/send-async",
+      "authored_at": "2021-01-29T13:36:38Z",
+      "path": "blinker/base.py",
+      "qualified_name": "Signal.send_async",
+      "start_line": 274,
+      "end_line": 283,
+      "body_hash": "cc4b52126fbfdf4d089222eb8a03c02d086912fc62064cceb30299d4e85101fe",
+      "parse_status": "ok",
+      "lineage_method": "exact"
+    },
+    {
+      "commit_sha": "399778023f3dc771329cfa068c1f7a05159d68d9",
+      "commit_message": "Merge pull request #71 from pallets-eco/revert-async",
+      "authored_at": "2022-07-17T13:37:09Z",
+      "path": "blinker/base.py",
+      "qualified_name": "Signal.send_async",
+      "start_line": 274,
+      "end_line": 283,
+      "body_hash": "cc4b52126fbfdf4d089222eb8a03c02d086912fc62064cceb30299d4e85101fe",
+      "parse_status": "ok",
+      "lineage_method": "exact"
+    }
+  ]
+}

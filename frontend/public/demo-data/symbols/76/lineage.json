@@ -1,0 +1,61 @@
+{
+  "symbol": {
+    "id": 76,
+    "repository_id": 3,
+    "language": "python",
+    "kind": "method",
+    "qualified_name": "Signal._cleanup_sender",
+    "current_path": "src/blinker/base.py",
+    "status": "deleted"
+  },
+  "versions": [
+    {
+      "commit_sha": "c2d9461914c3624b49b596e3bd5d76dc32b406d1",
+      "commit_message": "Initial import from flatland.util.signals",
+      "authored_at": "2010-02-14T17:40:29Z",
+      "path": "blinker/base.py",
+      "qualified_name": "Signal._cleanup_sender",
+      "start_line": 179,
+      "end_line": 185,
+      "body_hash": "532fa752b491e86754b260de66b287ffd6ba5a5fbb66b5413f422b9637db255c",
+      "parse_status": "ok",
+      "lineage_method": "exact"
+    },
+    {
+      "commit_sha": "fae6164cda6c5e9af89895a22f700402fa4b5ec5",
+      "commit_message": "Add an initial set of type hints",
+      "authored_at": "2023-02-26T11:17:50Z",
+      "path": "src/blinker/base.py",
+      "qualified_name": "Signal._cleanup_sender",
+      "start_line": 433,
+      "end_line": 439,
+      "body_hash": "603f1ee5a50382cc747323c444acddfdfbf6ea42ef39366f7236a8d5ee633630",
+      "parse_status": "ok",
+      "lineage_method": "exact"
+    },
+    {
+      "commit_sha": "44d29b3a20c5eb4ecaf954ff30e4cb982d2a250b",
+      "commit_message": "Fix weakref callback errors during finalization",
+      "authored_at": "2023-10-31T13:08:02Z",
+      "path": "src/blinker/base.py",
+      "qualified_name": "Signal._cleanup_sender",
+      "start_line": 436,
+      "end_line": 442,
+      "body_hash": "7464832bffcb9fc145ecd8be029b40e6248211b25944ceff5309e8d9f4b1efd2",
+      "parse_status": "ok",
+      "lineage_method": "exact"
+    },
+    {
+      "commit_sha": "64423dfadc9a35000b5399ca3d94a480ec7efe99",
+      "commit_message": "Merge pull request #144 from pallets-eco/simplify-refs",
+      "authored_at": "2024-04-27T02:45:35Z",
+      "path": "src/blinker/base.py",
+      "qualified_name": "Signal._cleanup_sender",
+      "start_line": 436,
+      "end_line": 442,
+      "body_hash": "7464832bffcb9fc145ecd8be029b40e6248211b25944ceff5309e8d9f4b1efd2",
+      "parse_status": "ok",
+      "lineage_method": "exact"
+    }
+  ]
+}

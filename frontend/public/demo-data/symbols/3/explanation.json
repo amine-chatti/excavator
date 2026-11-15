@@ -1,0 +1,33 @@
+{
+  "status": "explained",
+  "summary": "The symbol unpack_args.<locals>._fetch changed in commit 4.x-maintenance.",
+  "claims": [
+    {
+      "position": 0,
+      "text": "The change occurred in multiple commits.",
+      "quotes": [
+        {
+          "snippet_id": "commit:a0d426d89434fcade5e96545d5203682c4fc5249:message",
+          "source_type": "commit_message",
+          "quote": "Merge branch ",
+          "level": "mentioned",
+          "epistemic_label": "inferred"
+        },
+        {
+          "snippet_id": "commit:b06c9c778a134c53bfc6dc93955842da56bc04cb:message",
+          "source_type": "commit_message",
+          "quote": "Merge branch ",
+          "level": "mentioned",
+          "epistemic_label": "inferred"
+        },
+        {
+          "snippet_id": "commit:5f98f570c08a11e607cccfd9c1b787c69a6a67b7:message",
+          "source_type": "commit_message",
+          "quote": "This fixes #463",
+          "level": "mentioned",
+          "epistemic_label": "inferred"
+        }
+      ]
+    }
+  ]
+}

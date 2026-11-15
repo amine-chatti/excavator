@@ -1,0 +1,109 @@
+{
+  "symbol": {
+    "id": 7,
+    "repository_id": 1,
+    "language": "python",
+    "kind": "function",
+    "qualified_name": "make_default_short_help",
+    "current_path": "src/click/utils.py",
+    "status": "deleted"
+  },
+  "versions": [
+    {
+      "commit_sha": "a0d426d89434fcade5e96545d5203682c4fc5249",
+      "commit_message": "Merge branch '4.x-maintenance'",
+      "authored_at": "2015-06-21T21:23:19Z",
+      "path": "click/utils.py",
+      "qualified_name": "make_default_short_help",
+      "start_line": 99,
+      "end_line": 120,
+      "body_hash": "ef8d3b436e91fa9f984d5e22a76dac21e262f752f5abe047b61614519faec08b",
+      "parse_status": "ok",
+      "lineage_method": "exact"
+    },
+    {
+      "commit_sha": "0d48b2fbd256c1c692e3f3ba4c22b102f21f82f7",
+      "commit_message": "Merge pull request #517 from Nudies/master",
+      "authored_at": "2016-04-01T16:07:25Z",
+      "path": "click/utils.py",
+      "qualified_name": "make_default_short_help",
+      "start_line": 45,
+      "end_line": 67,
+      "body_hash": "eceb93864595678d16f1ed09f8fae61c382ca6b5832cb7fe14684e1682f1c66f",
+      "parse_status": "ok",
+      "lineage_method": "exact"
+    },
+    {
+      "commit_sha": "7239794a610f3ccae3aaf8bfe273ac70cc58ff07",
+      "commit_message": "Merge branch '7.x'",
+      "authored_at": "2020-03-08T16:27:19Z",
+      "path": "src/click/utils.py",
+      "qualified_name": "make_default_short_help",
+      "start_line": 58,
+      "end_line": 80,
+      "body_hash": "38dc0bdc8c4d6bcaf872455bde2d506737f042a0cc4e595b9c57ec4a502d713b",
+      "parse_status": "ok",
+      "lineage_method": "exact"
+    },
+    {
+      "commit_sha": "a4763ef93734ccfea497ea10bf0870d588132432",
+      "commit_message": "Merge pull request #1695 from srafi1/help-summary",
+      "authored_at": "2020-10-30T20:27:00Z",
+      "path": "src/click/utils.py",
+      "qualified_name": "make_default_short_help",
+      "start_line": 50,
+      "end_line": 75,
+      "body_hash": "27873005d310f0c43b71ffc997dee7ded09711d10a9f4bdb24985e472dcbd4aa",
+      "parse_status": "ok",
+      "lineage_method": "exact"
+    },
+    {
+      "commit_sha": "69a25da0c0a8a78564f0fef700e1d6e5b21c1e8a",
+      "commit_message": "Merge pull request #1796 from MLH-Fellowship/fix-multiline-help",
+      "authored_at": "2021-03-03T19:23:58Z",
+      "path": "src/click/utils.py",
+      "qualified_name": "make_default_short_help",
+      "start_line": 50,
+      "end_line": 78,
+      "body_hash": "856f81a70fd96e5dccac4921d33a6414efa949fd8de1a6a6f902f579fa5444f8",
+      "parse_status": "ok",
+      "lineage_method": "exact"
+    },
+    {
+      "commit_sha": "82a83fda1fafd4a43c67755140555bfd5afbd592",
+      "commit_message": "Merge pull request #1850 from janLuke/fix/make-default-short-help",
+      "authored_at": "2021-04-14T19:13:44Z",
+      "path": "src/click/utils.py",
+      "qualified_name": "make_default_short_help",
+      "start_line": 50,
+      "end_line": 97,
+      "body_hash": "439bbc2048f51d35bf74ee47ce200460a351ebbb5ad52c1ce749001d21b2321d",
+      "parse_status": "ok",
+      "lineage_method": "exact"
+    },
+    {
+      "commit_sha": "60cad4ad6583bf885c62d6f4597f3555d1ee1a0f",
+      "commit_message": "Mark `make_default_short_help` as private API (#3250)",
+      "authored_at": "2026-04-16T08:13:00Z",
+      "path": "src/click/utils.py",
+      "qualified_name": "make_default_short_help",
+      "start_line": 59,
+      "end_line": 109,
+      "body_hash": "ef6434a05442cd51ae5e571d4654794ae5744886de92814eafcd7fe01df7407f",
+      "parse_status": "ok",
+      "lineage_method": "exact"
+    },
+    {
+      "commit_sha": "333c28d79cd982990ee98eef61ec20ab1a4f38ba",
+      "commit_message": "Mark clearly functions private status. Deprecated Python 2 utilities. (#3695)",
+      "authored_at": "2026-07-17T19:24:58Z",
+      "path": "src/click/utils.py",
+      "qualified_name": "make_default_short_help",
+      "start_line": 59,
+      "end_line": 109,
+      "body_hash": "ef6434a05442cd51ae5e571d4654794ae5744886de92814eafcd7fe01df7407f",
+      "parse_status": "ok",
+      "lineage_method": "exact"
+    }
+  ]
+}

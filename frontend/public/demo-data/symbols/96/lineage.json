@@ -1,0 +1,73 @@
+{
+  "symbol": {
+    "id": 96,
+    "repository_id": 3,
+    "language": "python",
+    "kind": "function",
+    "qualified_name": "__getattr__",
+    "current_path": "src/blinker/base.py",
+    "status": "deleted"
+  },
+  "versions": [
+    {
+      "commit_sha": "7e2c85ab3a3084fc72262fa62df8ab337477ea55",
+      "commit_message": "Merge pull request #142 from pallets-eco/deprecations",
+      "authored_at": "2024-04-26T19:03:48Z",
+      "path": "src/blinker/base.py",
+      "qualified_name": "__getattr__",
+      "start_line": 561,
+      "end_line": 572,
+      "body_hash": "205090aaedb8a49de231e75488f161fb0417fe607f1f5cc5b27505b340af58e7",
+      "parse_status": "ok",
+      "lineage_method": "exact"
+    },
+    {
+      "commit_sha": "1a29708eed835fb606b7e5b627299c9188daea7c",
+      "commit_message": "deprecate WeakNamespace",
+      "authored_at": "2024-04-27T03:59:52Z",
+      "path": "src/blinker/base.py",
+      "qualified_name": "__getattr__",
+      "start_line": 572,
+      "end_line": 591,
+      "body_hash": "f7fc8d0f253abd9ae8d77de0c4d2a3d54019b9625c181970a1ac62cd48f92f0d",
+      "parse_status": "ok",
+      "lineage_method": "exact"
+    },
+    {
+      "commit_sha": "8f9e2450e67e824300d72a3ca44f57096195bd76",
+      "commit_message": "Merge pull request #149 from pallets-eco/deprecated-import",
+      "authored_at": "2024-04-28T17:00:04Z",
+      "path": "src/blinker/base.py",
+      "qualified_name": "__getattr__",
+      "start_line": 572,
+      "end_line": 592,
+      "body_hash": "ef43d184ce9b94f55318a262448742f3cb3e47d7212a592348c6ecd91c8d7afb",
+      "parse_status": "ok",
+      "lineage_method": "exact"
+    },
+    {
+      "commit_sha": "793f8be91149d11c2df765cad334363fbdf68ed1",
+      "commit_message": "Merge pull request #153 from pallets-eco/deprecated-import",
+      "authored_at": "2024-04-28T20:03:19Z",
+      "path": "src/blinker/base.py",
+      "qualified_name": "__getattr__",
+      "start_line": 606,
+      "end_line": 626,
+      "body_hash": "b21205ffe1a94f97fc8a32628a27cedc153e9bab575a47b8ba4be9369b474bb8",
+      "parse_status": "ok",
+      "lineage_method": "exact"
+    },
+    {
+      "commit_sha": "8c983ecd764e1d113d24522838c2a7312460b7eb",
+      "commit_message": "remove previously deprecated code (#172)",
+      "authored_at": "2024-10-01T18:46:09Z",
+      "path": "src/blinker/base.py",
+      "qualified_name": "__getattr__",
+      "start_line": 606,
+      "end_line": 626,
+      "body_hash": "b21205ffe1a94f97fc8a32628a27cedc153e9bab575a47b8ba4be9369b474bb8",
+      "parse_status": "ok",
+      "lineage_method": "exact"
+    }
+  ]
+}

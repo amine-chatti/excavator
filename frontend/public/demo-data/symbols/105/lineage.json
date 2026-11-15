@@ -1,0 +1,49 @@
+{
+  "symbol": {
+    "id": 105,
+    "repository_id": 3,
+    "language": "python",
+    "kind": "method",
+    "qualified_name": "_WeakNamespace.__init__",
+    "current_path": "src/blinker/base.py",
+    "status": "deleted"
+  },
+  "versions": [
+    {
+      "commit_sha": "783c3384f07b5de235028c242ae2792bbd2b2f42",
+      "commit_message": "Merge pull request #146 from pallets-eco/deprecations",
+      "authored_at": "2024-04-27T03:41:00Z",
+      "path": "src/blinker/base.py",
+      "qualified_name": "WeakNamespace.__init__",
+      "start_line": 539,
+      "end_line": 546,
+      "body_hash": "1eb11ed764045ab555dcae2d5f2d7ac506c18d967128f2c1a19426e2b2d99cee",
+      "parse_status": "ok",
+      "lineage_method": "exact"
+    },
+    {
+      "commit_sha": "1a29708eed835fb606b7e5b627299c9188daea7c",
+      "commit_message": "deprecate WeakNamespace",
+      "authored_at": "2024-04-27T03:59:52Z",
+      "path": "src/blinker/base.py",
+      "qualified_name": "_WeakNamespace.__init__",
+      "start_line": 539,
+      "end_line": 546,
+      "body_hash": "1eb11ed764045ab555dcae2d5f2d7ac506c18d967128f2c1a19426e2b2d99cee",
+      "parse_status": "ok",
+      "lineage_method": "rename_detected"
+    },
+    {
+      "commit_sha": "8c983ecd764e1d113d24522838c2a7312460b7eb",
+      "commit_message": "remove previously deprecated code (#172)",
+      "authored_at": "2024-10-01T18:46:09Z",
+      "path": "src/blinker/base.py",
+      "qualified_name": "_WeakNamespace.__init__",
+      "start_line": 539,
+      "end_line": 546,
+      "body_hash": "1eb11ed764045ab555dcae2d5f2d7ac506c18d967128f2c1a19426e2b2d99cee",
+      "parse_status": "ok",
+      "lineage_method": "exact"
+    }
+  ]
+}

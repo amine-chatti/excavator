@@ -1,0 +1,14 @@
+{
+  "status": "extracts",
+  "extracts": [
+    {
+      "source_kind": "commit",
+      "reference": "2f69e841d2a979c616a55b226e444694f5d9c962",
+      "excerpt": "support FIPS builds without SHA-1 (#378)",
+      "lineage_event": "added",
+      "created_at": "2024-04-16T20:09:22Z",
+      "label": "quote",
+      "epistemic_label": "verified"
+    }
+  ]
+}

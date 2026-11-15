@@ -1,0 +1,85 @@
+{
+  "symbol": {
+    "id": 22,
+    "repository_id": 1,
+    "language": "python",
+    "kind": "method",
+    "qualified_name": "_KeepOpenFile.__exit__",
+    "current_path": "src/click/utils.py",
+    "status": "exists"
+  },
+  "versions": [
+    {
+      "commit_sha": "a0d426d89434fcade5e96545d5203682c4fc5249",
+      "commit_message": "Merge branch '4.x-maintenance'",
+      "authored_at": "2015-06-21T21:23:19Z",
+      "path": "click/utils.py",
+      "qualified_name": "KeepOpenFile.__exit__",
+      "start_line": 210,
+      "end_line": 211,
+      "body_hash": "f26fdd68730812ffca9e3fa12f41c69c38591586438dadb6b87d441bb655f17e",
+      "parse_status": "ok",
+      "lineage_method": "exact"
+    },
+    {
+      "commit_sha": "ffeddbaf0c8226201136593d29324c951f2b2fa3",
+      "commit_message": "Merge pull request #1856 from pallets/typing",
+      "authored_at": "2021-04-23T16:25:23Z",
+      "path": "src/click/utils.py",
+      "qualified_name": "KeepOpenFile.__exit__",
+      "start_line": 194,
+      "end_line": 195,
+      "body_hash": "3ac2b931fc4ce274604abca8a77f4d708de23d03723c891e09c533d8084c32dc",
+      "parse_status": "ok",
+      "lineage_method": "exact"
+    },
+    {
+      "commit_sha": "cba52fa76135af2edf46c154203b47106f898eb3",
+      "commit_message": "Merge branch '8.1.x'",
+      "authored_at": "2023-01-20T00:38:36Z",
+      "path": "src/click/utils.py",
+      "qualified_name": "KeepOpenFile.__exit__",
+      "start_line": 198,
+      "end_line": 199,
+      "body_hash": "b828499e14cd087ea6854c7f6a40e3030e0f4f2cfd90c1220a089736c385830d",
+      "parse_status": "ok",
+      "lineage_method": "exact"
+    },
+    {
+      "commit_sha": "d9af5cfa009c927a96d10ed38a3e37979876a12e",
+      "commit_message": "Merge branch '8.1.x'",
+      "authored_at": "2023-07-06T18:34:29Z",
+      "path": "src/click/utils.py",
+      "qualified_name": "KeepOpenFile.__exit__",
+      "start_line": 204,
+      "end_line": 210,
+      "body_hash": "80b471408aee7589f9452bbeccd8f503b1cf647da3d7d80e5ed3bc4f606982af",
+      "parse_status": "ok",
+      "lineage_method": "exact"
+    },
+    {
+      "commit_sha": "56db54650fd083cc35bc4891ffbda6e5e08e2762",
+      "commit_message": "enable deferred evaluation of annotations (#2270)",
+      "authored_at": "2023-08-20T18:48:26Z",
+      "path": "src/click/utils.py",
+      "qualified_name": "KeepOpenFile.__exit__",
+      "start_line": 207,
+      "end_line": 213,
+      "body_hash": "ff49ef20fed34320d9adafa687a58aae1ce20af73a82567bf1d4155c1c86edc7",
+      "parse_status": "ok",
+      "lineage_method": "exact"
+    },
+    {
+      "commit_sha": "333c28d79cd982990ee98eef61ec20ab1a4f38ba",
+      "commit_message": "Mark clearly functions private status. Deprecated Python 2 utilities. (#3695)",
+      "authored_at": "2026-07-17T19:24:58Z",
+      "path": "src/click/utils.py",
+      "qualified_name": "_KeepOpenFile.__exit__",
+      "start_line": 237,
+      "end_line": 243,
+      "body_hash": "ff49ef20fed34320d9adafa687a58aae1ce20af73a82567bf1d4155c1c86edc7",
+      "parse_status": "ok",
+      "lineage_method": "rename_detected"
+    }
+  ]
+}

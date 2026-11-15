@@ -1,0 +1,85 @@
+{
+  "symbol": {
+    "id": 16,
+    "repository_id": 1,
+    "language": "python",
+    "kind": "method",
+    "qualified_name": "_LazyFile.__exit__",
+    "current_path": "src/click/utils.py",
+    "status": "exists"
+  },
+  "versions": [
+    {
+      "commit_sha": "a0d426d89434fcade5e96545d5203682c4fc5249",
+      "commit_message": "Merge branch '4.x-maintenance'",
+      "authored_at": "2015-06-21T21:23:19Z",
+      "path": "click/utils.py",
+      "qualified_name": "LazyFile.__exit__",
+      "start_line": 191,
+      "end_line": 192,
+      "body_hash": "f63f5cfcd34c263a477de098601a32904203db02f7d690afdda4d7ce01f8c5ca",
+      "parse_status": "ok",
+      "lineage_method": "exact"
+    },
+    {
+      "commit_sha": "ffeddbaf0c8226201136593d29324c951f2b2fa3",
+      "commit_message": "Merge pull request #1856 from pallets/typing",
+      "authored_at": "2021-04-23T16:25:23Z",
+      "path": "src/click/utils.py",
+      "qualified_name": "LazyFile.__exit__",
+      "start_line": 176,
+      "end_line": 177,
+      "body_hash": "e224b39a2fcefcef022a5008f348a15303dbea5909465519521d5b6766388b19",
+      "parse_status": "ok",
+      "lineage_method": "exact"
+    },
+    {
+      "commit_sha": "cba52fa76135af2edf46c154203b47106f898eb3",
+      "commit_message": "Merge branch '8.1.x'",
+      "authored_at": "2023-01-20T00:38:36Z",
+      "path": "src/click/utils.py",
+      "qualified_name": "LazyFile.__exit__",
+      "start_line": 180,
+      "end_line": 181,
+      "body_hash": "09ed7042dd2213fdb9cddc28841769bbe5de3cf41067a39d8c112f9821e9802b",
+      "parse_status": "ok",
+      "lineage_method": "exact"
+    },
+    {
+      "commit_sha": "d9af5cfa009c927a96d10ed38a3e37979876a12e",
+      "commit_message": "Merge branch '8.1.x'",
+      "authored_at": "2023-07-06T18:34:29Z",
+      "path": "src/click/utils.py",
+      "qualified_name": "LazyFile.__exit__",
+      "start_line": 181,
+      "end_line": 187,
+      "body_hash": "d9694c1d5d2458f411b410e508a7c9431349ad3d35bea854797b5a0868c33942",
+      "parse_status": "ok",
+      "lineage_method": "exact"
+    },
+    {
+      "commit_sha": "56db54650fd083cc35bc4891ffbda6e5e08e2762",
+      "commit_message": "enable deferred evaluation of annotations (#2270)",
+      "authored_at": "2023-08-20T18:48:26Z",
+      "path": "src/click/utils.py",
+      "qualified_name": "LazyFile.__exit__",
+      "start_line": 184,
+      "end_line": 190,
+      "body_hash": "cdbd08657c876e9c65b50d1d1aeb846b27ffea2f6a244ba9904ece689a6439ae",
+      "parse_status": "ok",
+      "lineage_method": "exact"
+    },
+    {
+      "commit_sha": "333c28d79cd982990ee98eef61ec20ab1a4f38ba",
+      "commit_message": "Mark clearly functions private status. Deprecated Python 2 utilities. (#3695)",
+      "authored_at": "2026-07-17T19:24:58Z",
+      "path": "src/click/utils.py",
+      "qualified_name": "_LazyFile.__exit__",
+      "start_line": 198,
+      "end_line": 204,
+      "body_hash": "cdbd08657c876e9c65b50d1d1aeb846b27ffea2f6a244ba9904ece689a6439ae",
+      "parse_status": "ok",
+      "lineage_method": "rename_detected"
+    }
+  ]
+}

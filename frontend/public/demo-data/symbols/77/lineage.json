@@ -1,0 +1,49 @@
+{
+  "symbol": {
+    "id": 77,
+    "repository_id": 3,
+    "language": "python",
+    "kind": "method",
+    "qualified_name": "Signal._clear_state",
+    "current_path": "src/blinker/base.py",
+    "status": "exists"
+  },
+  "versions": [
+    {
+      "commit_sha": "c2d9461914c3624b49b596e3bd5d76dc32b406d1",
+      "commit_message": "Initial import from flatland.util.signals",
+      "authored_at": "2010-02-14T17:40:29Z",
+      "path": "blinker/base.py",
+      "qualified_name": "Signal._clear_state",
+      "start_line": 187,
+      "end_line": 192,
+      "body_hash": "2c803b5217c4dff63c22d97ce60716d8d6a82935263b2b196b93d75854e77602",
+      "parse_status": "ok",
+      "lineage_method": "exact"
+    },
+    {
+      "commit_sha": "fae6164cda6c5e9af89895a22f700402fa4b5ec5",
+      "commit_message": "Add an initial set of type hints",
+      "authored_at": "2023-02-26T11:17:50Z",
+      "path": "src/blinker/base.py",
+      "qualified_name": "Signal._clear_state",
+      "start_line": 467,
+      "end_line": 472,
+      "body_hash": "76c858d550a77d8b16cd22645f7898876c133f5a59277b3f9820d1f802b2d5bc",
+      "parse_status": "ok",
+      "lineage_method": "exact"
+    },
+    {
+      "commit_sha": "f1bbce1023728a3622687a949bc0beb66be0a6c0",
+      "commit_message": "Merge pull request #151 from pallets-eco/cleanup-docs",
+      "authored_at": "2024-04-28T19:47:40Z",
+      "path": "src/blinker/base.py",
+      "qualified_name": "Signal._clear_state",
+      "start_line": 488,
+      "end_line": 493,
+      "body_hash": "4fab068188d0c09751fb0988e7a3ea4edd9d58fe83dacf082cd72ecb5846f272",
+      "parse_status": "ok",
+      "lineage_method": "exact"
+    }
+  ]
+}

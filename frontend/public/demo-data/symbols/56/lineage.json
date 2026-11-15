@@ -1,0 +1,121 @@
+{
+  "symbol": {
+    "id": 56,
+    "repository_id": 2,
+    "language": "python",
+    "kind": "class",
+    "qualified_name": "Signer",
+    "current_path": "src/itsdangerous/signer.py",
+    "status": "exists"
+  },
+  "versions": [
+    {
+      "commit_sha": "8e611d7373acc874cc8bd3fc480cf3cf7b5b6a10",
+      "commit_message": "Merge pull request #107 from pallets/split",
+      "authored_at": "2018-10-18T03:17:25Z",
+      "path": "src/itsdangerous/signer.py",
+      "qualified_name": "Signer",
+      "start_line": 58,
+      "end_line": 185,
+      "body_hash": "12685db8c392238bbcde7f44c5c44861f0a297a363a8768af8d248cf90c7c003",
+      "parse_status": "ok",
+      "lineage_method": "exact"
+    },
+    {
+      "commit_sha": "af4856aeaa648369b3bc8176089221b038b7a873",
+      "commit_message": "Added fallback signers and switch back to sha1",
+      "authored_at": "2018-10-26T22:45:11Z",
+      "path": "src/itsdangerous/signer.py",
+      "qualified_name": "Signer",
+      "start_line": 55,
+      "end_line": 179,
+      "body_hash": "ad893a28605ab399e524288a0dedbadad0860808976b72b278eaf6d1b5ed3d50",
+      "parse_status": "ok",
+      "lineage_method": "exact"
+    },
+    {
+      "commit_sha": "3703fbdedd13b2630dd9be75a3638408c193765d",
+      "commit_message": "Merge pull request #149 from pallets/drop-python2",
+      "authored_at": "2020-04-14T23:48:30Z",
+      "path": "src/itsdangerous/signer.py",
+      "qualified_name": "Signer",
+      "start_line": 55,
+      "end_line": 194,
+      "body_hash": "efbe0ccb40bb12c61e437739a6c35001bf68f13b597c0535d57464f2ae24cff9",
+      "parse_status": "ok",
+      "lineage_method": "exact"
+    },
+    {
+      "commit_sha": "2881d93e31c3e80641e28b858cbff71d3899afa0",
+      "commit_message": "Merge pull request #141 from lepture/key-rotate",
+      "authored_at": "2020-05-12T23:16:13Z",
+      "path": "src/itsdangerous/signer.py",
+      "qualified_name": "Signer",
+      "start_line": 55,
+      "end_line": 220,
+      "body_hash": "e8bcfc2c582ea515cb026102d678ba83f17e5b9de74f9cb28357b97d1426475b",
+      "parse_status": "ok",
+      "lineage_method": "exact"
+    },
+    {
+      "commit_sha": "786f5de1616e359a2a4c25d5524c181d400e4edd",
+      "commit_message": "Merge pull request #156 from pallets/docs-concepts",
+      "authored_at": "2020-05-12T23:46:28Z",
+      "path": "src/itsdangerous/signer.py",
+      "qualified_name": "Signer",
+      "start_line": 55,
+      "end_line": 243,
+      "body_hash": "6c9b612be7053441928aec14eeeca0ab4b276f36f462f3521bcef939f89d08eb",
+      "parse_status": "ok",
+      "lineage_method": "exact"
+    },
+    {
+      "commit_sha": "4559e76d632ecfda09515746790670be3c59b726",
+      "commit_message": "Merge pull request #186 from pallets/typing",
+      "authored_at": "2020-08-31T18:50:36Z",
+      "path": "src/itsdangerous/signer.py",
+      "qualified_name": "Signer",
+      "start_line": 67,
+      "end_line": 252,
+      "body_hash": "a95259237c8b4905471a77b808f475fc0b9d58d82b7cc7b99526fbafab5db2a7",
+      "parse_status": "ok",
+      "lineage_method": "exact"
+    },
+    {
+      "commit_sha": "b46ebef579ef0a86517453e8106c9d7d5cf7dd29",
+      "commit_message": "Merge branch '2.0.x'",
+      "authored_at": "2021-05-18T15:12:24Z",
+      "path": "src/itsdangerous/signer.py",
+      "qualified_name": "Signer",
+      "start_line": 67,
+      "end_line": 257,
+      "body_hash": "a8f929d079f8a51ebad278f03912ff446db6542a269f0fab68eb8d831daed2a1",
+      "parse_status": "ok",
+      "lineage_method": "exact"
+    },
+    {
+      "commit_sha": "bc88e945d31c407e16c3f4e1c713c12dd598e58d",
+      "commit_message": "improve typing (#373)",
+      "authored_at": "2024-04-13T18:55:04Z",
+      "path": "src/itsdangerous/signer.py",
+      "qualified_name": "Signer",
+      "start_line": 68,
+      "end_line": 258,
+      "body_hash": "1aa86890bf1d09c88166eb26f646da7f0534871525c678f2c4200617a0eca17d",
+      "parse_status": "ok",
+      "lineage_method": "exact"
+    },
+    {
+      "commit_sha": "2f69e841d2a979c616a55b226e444694f5d9c962",
+      "commit_message": "support FIPS builds without SHA-1 (#378)",
+      "authored_at": "2024-04-16T20:09:22Z",
+      "path": "src/itsdangerous/signer.py",
+      "qualified_name": "Signer",
+      "start_line": 76,
+      "end_line": 266,
+      "body_hash": "6a45a39fc18482152a7aac8245388dc1d4dffc717dc153a9e48f00d7e616923c",
+      "parse_status": "ok",
+      "lineage_method": "exact"
+    }
+  ]
+}

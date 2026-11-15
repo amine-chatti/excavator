@@ -1,0 +1,25 @@
+{
+  "symbol": {
+    "id": 46,
+    "repository_id": 1,
+    "language": "python",
+    "kind": "class",
+    "qualified_name": "_PacifyFlushWrapper",
+    "current_path": "src/click/utils.py",
+    "status": "exists"
+  },
+  "versions": [
+    {
+      "commit_sha": "333c28d79cd982990ee98eef61ec20ab1a4f38ba",
+      "commit_message": "Mark clearly functions private status. Deprecated Python 2 utilities. (#3695)",
+      "authored_at": "2026-07-17T19:24:58Z",
+      "path": "src/click/utils.py",
+      "qualified_name": "_PacifyFlushWrapper",
+      "start_line": 533,
+      "end_line": 559,
+      "body_hash": "82d33bacaa93e74d42806812a4bdd6417bdc02fe890e0ea86d98d6f52aeea94d",
+      "parse_status": "ok",
+      "lineage_method": "exact"
+    }
+  ]
+}

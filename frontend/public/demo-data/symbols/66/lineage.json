@@ -1,0 +1,25 @@
+{
+  "symbol": {
+    "id": 66,
+    "repository_id": 2,
+    "language": "python",
+    "kind": "function",
+    "qualified_name": "_lazy_sha1",
+    "current_path": "src/itsdangerous/signer.py",
+    "status": "exists"
+  },
+  "versions": [
+    {
+      "commit_sha": "2f69e841d2a979c616a55b226e444694f5d9c962",
+      "commit_message": "support FIPS builds without SHA-1 (#378)",
+      "authored_at": "2024-04-16T20:09:22Z",
+      "path": "src/itsdangerous/signer.py",
+      "qualified_name": "_lazy_sha1",
+      "start_line": 40,
+      "end_line": 45,
+      "body_hash": "40c075bdd18744a58f39f7aa9c31d21aed4cf0ae2232d7238230b1aa610be7b9",
+      "parse_status": "ok",
+      "lineage_method": "exact"
+    }
+  ]
+}

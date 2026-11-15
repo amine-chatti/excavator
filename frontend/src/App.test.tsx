@@ -47,6 +47,7 @@ describe("field notebook", () => {
   it("loads repositories, selects another symbol, and shows timeline and source extracts", async () => {
     const fetchMock = routeFetch(); vi.stubGlobal("fetch", fetchMock);
     render(<App />); await digIntoFirstSymbol();
+    expect(screen.queryByText("SAMPLE DATA")).toBeNull();
     await screen.findByRole("heading", { name: "pkg.first" });
     expect(await screen.findByRole("heading", { name: "No explanation yet" })).toBeTruthy();
     expect(await screen.findByRole("img", { name: "Timeline for pkg.first" })).toBeTruthy();

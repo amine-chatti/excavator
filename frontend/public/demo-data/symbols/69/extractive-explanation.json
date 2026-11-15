@@ -1,0 +1,248 @@
+{
+  "status": "extracts",
+  "extracts": [
+    {
+      "source_kind": "commit",
+      "reference": "c2d9461914c3624b49b596e3bd5d76dc32b406d1",
+      "excerpt": "Initial import from flatland.util.signals",
+      "lineage_event": "added",
+      "created_at": "2010-02-14T17:40:29Z",
+      "label": "quote",
+      "epistemic_label": "verified"
+    },
+    {
+      "source_kind": "commit",
+      "reference": "c06a79a31313181f7544d80714457e46d5622ef2",
+      "excerpt": "Python 2.4 compatability.",
+      "lineage_event": "modified",
+      "created_at": "2010-02-14T17:47:42Z",
+      "label": "quote",
+      "epistemic_label": "verified"
+    },
+    {
+      "source_kind": "commit",
+      "reference": "73e7d1d2dfff8a6103faad7ee608083231c28be6",
+      "excerpt": "Sphinx documentation.",
+      "lineage_event": "modified",
+      "created_at": "2010-02-16T00:35:48Z",
+      "label": "quote",
+      "epistemic_label": "verified"
+    },
+    {
+      "source_kind": "commit",
+      "reference": "d24501d9f717e930f059b38e3043790edaf35f0c",
+      "excerpt": "Added Signal.receiver_connected and .receiver_disconnected per-Signal signals.",
+      "lineage_event": "modified",
+      "created_at": "2011-03-14T21:12:59Z",
+      "label": "quote",
+      "epistemic_label": "verified"
+    },
+    {
+      "source_kind": "commit",
+      "reference": "d24501d9f717e930f059b38e3043790edaf35f0c",
+      "excerpt": "Deprecates the global 'receiver_connected' signal.",
+      "lineage_event": "modified",
+      "created_at": "2011-03-14T21:12:59Z",
+      "label": "quote",
+      "epistemic_label": "verified"
+    },
+    {
+      "source_kind": "commit",
+      "reference": "904d8d3803e84257c08526e9047474215aa1c976",
+      "excerpt": "Merge pull request #63 from tirkarthi/fix-warnings",
+      "lineage_event": "modified",
+      "created_at": "2020-11-07T17:17:12Z",
+      "label": "quote",
+      "epistemic_label": "verified"
+    },
+    {
+      "source_kind": "commit",
+      "reference": "904d8d3803e84257c08526e9047474215aa1c976",
+      "excerpt": "Fix deprecation warnings due to invalid escape sequences.",
+      "lineage_event": "modified",
+      "created_at": "2020-11-07T17:17:12Z",
+      "label": "quote",
+      "epistemic_label": "verified"
+    },
+    {
+      "source_kind": "commit",
+      "reference": "084d2bdb86f7e2e29e4bc88d5317955b9c4d76dc",
+      "excerpt": "Merge pull request #72 from pallets-eco/refresh",
+      "lineage_event": "modified",
+      "created_at": "2022-07-17T16:44:48Z",
+      "label": "quote",
+      "epistemic_label": "verified"
+    },
+    {
+      "source_kind": "commit",
+      "reference": "084d2bdb86f7e2e29e4bc88d5317955b9c4d76dc",
+      "excerpt": "refresh project layout",
+      "lineage_event": "modified",
+      "created_at": "2022-07-17T16:44:48Z",
+      "label": "quote",
+      "epistemic_label": "verified"
+    },
+    {
+      "source_kind": "commit",
+      "reference": "f9d51929f71295d0b0f3acfce2e47656bd0472e1",
+      "excerpt": "Move to src/ layout",
+      "lineage_event": "moved",
+      "created_at": "2023-01-19T00:08:51Z",
+      "label": "quote",
+      "epistemic_label": "verified"
+    },
+    {
+      "source_kind": "commit",
+      "reference": "33a14971c34fcd15deb2b18b50c9bd411eb6ed74",
+      "excerpt": "Fix issues reported by flake8",
+      "lineage_event": "modified",
+      "created_at": "2023-01-19T00:33:20Z",
+      "label": "quote",
+      "epistemic_label": "verified"
+    },
+    {
+      "source_kind": "commit",
+      "reference": "fae6164cda6c5e9af89895a22f700402fa4b5ec5",
+      "excerpt": "Add an initial set of type hints",
+      "lineage_event": "modified",
+      "created_at": "2023-02-26T11:17:50Z",
+      "label": "quote",
+      "epistemic_label": "verified"
+    },
+    {
+      "source_kind": "commit",
+      "reference": "fae6164cda6c5e9af89895a22f700402fa4b5ec5",
+      "excerpt": "These focus on the public API with the private aspect omitted.",
+      "lineage_event": "modified",
+      "created_at": "2023-02-26T11:17:50Z",
+      "label": "quote",
+      "epistemic_label": "verified"
+    },
+    {
+      "source_kind": "commit",
+      "reference": "fae6164cda6c5e9af89895a22f700402fa4b5ec5",
+      "excerpt": "This is",
+      "lineage_event": "modified",
+      "created_at": "2023-02-26T11:17:50Z",
+      "label": "quote",
+      "epistemic_label": "verified"
+    },
+    {
+      "source_kind": "commit",
+      "reference": "fae6164cda6c5e9af89895a22f700402fa4b5ec5",
+      "excerpt": "because these are hard to type, and may not be required with modern",
+      "lineage_event": "modified",
+      "created_at": "2023-02-26T11:17:50Z",
+      "label": "quote",
+      "epistemic_label": "verified"
+    },
+    {
+      "source_kind": "commit",
+      "reference": "fae6164cda6c5e9af89895a22f700402fa4b5ec5",
+      "excerpt": "python.",
+      "lineage_event": "modified",
+      "created_at": "2023-02-26T11:17:50Z",
+      "label": "quote",
+      "epistemic_label": "verified"
+    },
+    {
+      "source_kind": "commit",
+      "reference": "fae6164cda6c5e9af89895a22f700402fa4b5ec5",
+      "excerpt": "However, this should still be useful if adopted for code",
+      "lineage_event": "modified",
+      "created_at": "2023-02-26T11:17:50Z",
+      "label": "quote",
+      "epistemic_label": "verified"
+    },
+    {
+      "source_kind": "commit",
+      "reference": "fae6164cda6c5e9af89895a22f700402fa4b5ec5",
+      "excerpt": "that uses blinker.",
+      "lineage_event": "modified",
+      "created_at": "2023-02-26T11:17:50Z",
+      "label": "quote",
+      "epistemic_label": "verified"
+    },
+    {
+      "source_kind": "commit",
+      "reference": "c8703aa7c09d7081362647f6659ab2f587279649",
+      "excerpt": "Merge pull request #94 from pallets-eco/lazy-annotations",
+      "lineage_event": "modified",
+      "created_at": "2023-04-12T21:31:57Z",
+      "label": "quote",
+      "epistemic_label": "verified"
+    },
+    {
+      "source_kind": "commit",
+      "reference": "c8703aa7c09d7081362647f6659ab2f587279649",
+      "excerpt": "lazy annotations",
+      "lineage_event": "modified",
+      "created_at": "2023-04-12T21:31:57Z",
+      "label": "quote",
+      "epistemic_label": "verified"
+    },
+    {
+      "source_kind": "commit",
+      "reference": "7e2c85ab3a3084fc72262fa62df8ab337477ea55",
+      "excerpt": "Merge pull request #142 from pallets-eco/deprecations",
+      "lineage_event": "modified",
+      "created_at": "2024-04-26T19:03:48Z",
+      "label": "quote",
+      "epistemic_label": "verified"
+    },
+    {
+      "source_kind": "commit",
+      "reference": "7e2c85ab3a3084fc72262fa62df8ab337477ea55",
+      "excerpt": "update deprecations",
+      "lineage_event": "modified",
+      "created_at": "2024-04-26T19:03:48Z",
+      "label": "quote",
+      "epistemic_label": "verified"
+    },
+    {
+      "source_kind": "commit",
+      "reference": "64423dfadc9a35000b5399ca3d94a480ec7efe99",
+      "excerpt": "Merge pull request #144 from pallets-eco/simplify-refs",
+      "lineage_event": "modified",
+      "created_at": "2024-04-27T02:45:35Z",
+      "label": "quote",
+      "epistemic_label": "verified"
+    },
+    {
+      "source_kind": "commit",
+      "reference": "64423dfadc9a35000b5399ca3d94a480ec7efe99",
+      "excerpt": "simplify weakref handling",
+      "lineage_event": "modified",
+      "created_at": "2024-04-27T02:45:35Z",
+      "label": "quote",
+      "epistemic_label": "verified"
+    },
+    {
+      "source_kind": "commit",
+      "reference": "f1bbce1023728a3622687a949bc0beb66be0a6c0",
+      "excerpt": "Merge pull request #151 from pallets-eco/cleanup-docs",
+      "lineage_event": "modified",
+      "created_at": "2024-04-28T19:47:40Z",
+      "label": "quote",
+      "epistemic_label": "verified"
+    },
+    {
+      "source_kind": "commit",
+      "reference": "f1bbce1023728a3622687a949bc0beb66be0a6c0",
+      "excerpt": "clean up docstrings",
+      "lineage_event": "modified",
+      "created_at": "2024-04-28T19:47:40Z",
+      "label": "quote",
+      "epistemic_label": "verified"
+    },
+    {
+      "source_kind": "commit",
+      "reference": "8c983ecd764e1d113d24522838c2a7312460b7eb",
+      "excerpt": "remove previously deprecated code (#172)",
+      "lineage_event": "modified",
+      "created_at": "2024-10-01T18:46:09Z",
+      "label": "quote",
+      "epistemic_label": "verified"
+    }
+  ]
+}

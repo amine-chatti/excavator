@@ -1,0 +1,61 @@
+{
+  "symbol": {
+    "id": 15,
+    "repository_id": 1,
+    "language": "python",
+    "kind": "method",
+    "qualified_name": "LazyFile.__enter__",
+    "current_path": "src/click/utils.py",
+    "status": "deleted"
+  },
+  "versions": [
+    {
+      "commit_sha": "a0d426d89434fcade5e96545d5203682c4fc5249",
+      "commit_message": "Merge branch '4.x-maintenance'",
+      "authored_at": "2015-06-21T21:23:19Z",
+      "path": "click/utils.py",
+      "qualified_name": "LazyFile.__enter__",
+      "start_line": 188,
+      "end_line": 189,
+      "body_hash": "e11a445075fd069ec109fdc8dc6c2a9d84abeace416080321d935fd1a1d3e401",
+      "parse_status": "ok",
+      "lineage_method": "exact"
+    },
+    {
+      "commit_sha": "ffeddbaf0c8226201136593d29324c951f2b2fa3",
+      "commit_message": "Merge pull request #1856 from pallets/typing",
+      "authored_at": "2021-04-23T16:25:23Z",
+      "path": "src/click/utils.py",
+      "qualified_name": "LazyFile.__enter__",
+      "start_line": 173,
+      "end_line": 174,
+      "body_hash": "36e8c4e05c4cd3b7c7687b70229a5655cc3cbbeace19b2d1876d07755bd594e6",
+      "parse_status": "ok",
+      "lineage_method": "exact"
+    },
+    {
+      "commit_sha": "56db54650fd083cc35bc4891ffbda6e5e08e2762",
+      "commit_message": "enable deferred evaluation of annotations (#2270)",
+      "authored_at": "2023-08-20T18:48:26Z",
+      "path": "src/click/utils.py",
+      "qualified_name": "LazyFile.__enter__",
+      "start_line": 181,
+      "end_line": 182,
+      "body_hash": "9ebed7fdb2007bac84231487688e5df0057bd6b4bfe5e5e8107766be173502e2",
+      "parse_status": "ok",
+      "lineage_method": "exact"
+    },
+    {
+      "commit_sha": "333c28d79cd982990ee98eef61ec20ab1a4f38ba",
+      "commit_message": "Mark clearly functions private status. Deprecated Python 2 utilities. (#3695)",
+      "authored_at": "2026-07-17T19:24:58Z",
+      "path": "src/click/utils.py",
+      "qualified_name": "LazyFile.__enter__",
+      "start_line": 181,
+      "end_line": 182,
+      "body_hash": "9ebed7fdb2007bac84231487688e5df0057bd6b4bfe5e5e8107766be173502e2",
+      "parse_status": "ok",
+      "lineage_method": "exact"
+    }
+  ]
+}

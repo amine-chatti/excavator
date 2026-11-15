@@ -1,0 +1,85 @@
+{
+  "symbol": {
+    "id": 58,
+    "repository_id": 2,
+    "language": "python",
+    "kind": "method",
+    "qualified_name": "Signer.derive_key",
+    "current_path": "src/itsdangerous/signer.py",
+    "status": "exists"
+  },
+  "versions": [
+    {
+      "commit_sha": "8e611d7373acc874cc8bd3fc480cf3cf7b5b6a10",
+      "commit_message": "Merge pull request #107 from pallets/split",
+      "authored_at": "2018-10-18T03:17:25Z",
+      "path": "src/itsdangerous/signer.py",
+      "qualified_name": "Signer.derive_key",
+      "start_line": 125,
+      "end_line": 144,
+      "body_hash": "9a6b92bb58fdc7e3272611a83b18aa46f440e140414964e655c435e376d39690",
+      "parse_status": "ok",
+      "lineage_method": "exact"
+    },
+    {
+      "commit_sha": "3703fbdedd13b2630dd9be75a3638408c193765d",
+      "commit_message": "Merge pull request #149 from pallets/drop-python2",
+      "authored_at": "2020-04-14T23:48:30Z",
+      "path": "src/itsdangerous/signer.py",
+      "qualified_name": "Signer.derive_key",
+      "start_line": 127,
+      "end_line": 147,
+      "body_hash": "5e4712556c5111af477b349d5bd5a600ecad72a754da97c31e57be5c93cfd0f4",
+      "parse_status": "ok",
+      "lineage_method": "exact"
+    },
+    {
+      "commit_sha": "2881d93e31c3e80641e28b858cbff71d3899afa0",
+      "commit_message": "Merge pull request #141 from lepture/key-rotate",
+      "authored_at": "2020-05-12T23:16:13Z",
+      "path": "src/itsdangerous/signer.py",
+      "qualified_name": "Signer.derive_key",
+      "start_line": 144,
+      "end_line": 169,
+      "body_hash": "3713883a545959e2634df319a09e209d26b104bd8d40b886338c3152b5d13664",
+      "parse_status": "ok",
+      "lineage_method": "exact"
+    },
+    {
+      "commit_sha": "786f5de1616e359a2a4c25d5524c181d400e4edd",
+      "commit_message": "Merge pull request #156 from pallets/docs-concepts",
+      "authored_at": "2020-05-12T23:46:28Z",
+      "path": "src/itsdangerous/signer.py",
+      "qualified_name": "Signer.derive_key",
+      "start_line": 161,
+      "end_line": 192,
+      "body_hash": "373b011d08aa2befe03410760c86d2749e3e23712766056266d4fb9a433a66db",
+      "parse_status": "ok",
+      "lineage_method": "exact"
+    },
+    {
+      "commit_sha": "4559e76d632ecfda09515746790670be3c59b726",
+      "commit_message": "Merge pull request #186 from pallets/typing",
+      "authored_at": "2020-08-31T18:50:36Z",
+      "path": "src/itsdangerous/signer.py",
+      "qualified_name": "Signer.derive_key",
+      "start_line": 168,
+      "end_line": 199,
+      "body_hash": "4fd019447e85653594dc6f52b72fc6d30886db6e38356040efd0a125dbd5a05c",
+      "parse_status": "ok",
+      "lineage_method": "exact"
+    },
+    {
+      "commit_sha": "bc88e945d31c407e16c3f4e1c713c12dd598e58d",
+      "commit_message": "improve typing (#373)",
+      "authored_at": "2024-04-13T18:55:04Z",
+      "path": "src/itsdangerous/signer.py",
+      "qualified_name": "Signer.derive_key",
+      "start_line": 174,
+      "end_line": 205,
+      "body_hash": "9745d7cf75f5ef146521f10c705678def85940036777dbc536ad5afeb53f8205",
+      "parse_status": "ok",
+      "lineage_method": "exact"
+    }
+  ]
+}

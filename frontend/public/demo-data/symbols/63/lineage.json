@@ -1,0 +1,49 @@
+{
+  "symbol": {
+    "id": 63,
+    "repository_id": 2,
+    "language": "python",
+    "kind": "method",
+    "qualified_name": "Signer.validate",
+    "current_path": "src/itsdangerous/signer.py",
+    "status": "exists"
+  },
+  "versions": [
+    {
+      "commit_sha": "8e611d7373acc874cc8bd3fc480cf3cf7b5b6a10",
+      "commit_message": "Merge pull request #107 from pallets/split",
+      "authored_at": "2018-10-18T03:17:25Z",
+      "path": "src/itsdangerous/signer.py",
+      "qualified_name": "Signer.validate",
+      "start_line": 177,
+      "end_line": 185,
+      "body_hash": "f5a22dfd183220961b059db1682b6af08b6e13dad4e8aa521d275acca79168de",
+      "parse_status": "ok",
+      "lineage_method": "exact"
+    },
+    {
+      "commit_sha": "4559e76d632ecfda09515746790670be3c59b726",
+      "commit_message": "Merge pull request #186 from pallets/typing",
+      "authored_at": "2020-08-31T18:50:36Z",
+      "path": "src/itsdangerous/signer.py",
+      "qualified_name": "Signer.validate",
+      "start_line": 244,
+      "end_line": 252,
+      "body_hash": "8d8beb9c6929984e092f0f895a569d3279d873b1979cc45574ada25d914fb6f1",
+      "parse_status": "ok",
+      "lineage_method": "exact"
+    },
+    {
+      "commit_sha": "bc88e945d31c407e16c3f4e1c713c12dd598e58d",
+      "commit_message": "improve typing (#373)",
+      "authored_at": "2024-04-13T18:55:04Z",
+      "path": "src/itsdangerous/signer.py",
+      "qualified_name": "Signer.validate",
+      "start_line": 250,
+      "end_line": 258,
+      "body_hash": "b182c5430f31392a21dcc6696befe610f518f53aa93d6e6be0851e8496790622",
+      "parse_status": "ok",
+      "lineage_method": "exact"
+    }
+  ]
+}

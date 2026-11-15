@@ -1,0 +1,49 @@
+{
+  "symbol": {
+    "id": 35,
+    "repository_id": 1,
+    "language": "python",
+    "kind": "method",
+    "qualified_name": "_PacifyFlushWrapper.__getattr__",
+    "current_path": "src/click/utils.py",
+    "status": "exists"
+  },
+  "versions": [
+    {
+      "commit_sha": "38a2712d596a5df9288c1817748b71197d8c7c57",
+      "commit_message": "Merge pull request #1106 from frankier/prevent-epipe-exit-120",
+      "authored_at": "2018-09-19T17:39:51Z",
+      "path": "click/utils.py",
+      "qualified_name": "PacifyFlushWrapper.__getattr__",
+      "start_line": 439,
+      "end_line": 440,
+      "body_hash": "190811995f887e9fce3baf917ae6cae42c91b57af1970aa90e5c6cf47727cd4d",
+      "parse_status": "ok",
+      "lineage_method": "exact"
+    },
+    {
+      "commit_sha": "ffeddbaf0c8226201136593d29324c951f2b2fa3",
+      "commit_message": "Merge pull request #1856 from pallets/typing",
+      "authored_at": "2021-04-23T16:25:23Z",
+      "path": "src/click/utils.py",
+      "qualified_name": "PacifyFlushWrapper.__getattr__",
+      "start_line": 482,
+      "end_line": 483,
+      "body_hash": "6b236e8efce27bac36edb6dab6442b088f3e661f7c2f726c1f86997d5fd66b02",
+      "parse_status": "ok",
+      "lineage_method": "exact"
+    },
+    {
+      "commit_sha": "333c28d79cd982990ee98eef61ec20ab1a4f38ba",
+      "commit_message": "Mark clearly functions private status. Deprecated Python 2 utilities. (#3695)",
+      "authored_at": "2026-07-17T19:24:58Z",
+      "path": "src/click/utils.py",
+      "qualified_name": "_PacifyFlushWrapper.__getattr__",
+      "start_line": 558,
+      "end_line": 559,
+      "body_hash": "6b236e8efce27bac36edb6dab6442b088f3e661f7c2f726c1f86997d5fd66b02",
+      "parse_status": "ok",
+      "lineage_method": "rename_detected"
+    }
+  ]
+}

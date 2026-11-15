@@ -1,0 +1,61 @@
+{
+  "symbol": {
+    "id": 2,
+    "repository_id": 1,
+    "language": "python",
+    "kind": "function",
+    "qualified_name": "unpack_args",
+    "current_path": "click/utils.py",
+    "status": "deleted"
+  },
+  "versions": [
+    {
+      "commit_sha": "a0d426d89434fcade5e96545d5203682c4fc5249",
+      "commit_message": "Merge branch '4.x-maintenance'",
+      "authored_at": "2015-06-21T21:23:19Z",
+      "path": "click/utils.py",
+      "qualified_name": "unpack_args",
+      "start_line": 21,
+      "end_line": 76,
+      "body_hash": "6b504e277de172586437d0339eea002a7f1de0197579722cf6fd0f38c859e5d0",
+      "parse_status": "ok",
+      "lineage_method": "exact"
+    },
+    {
+      "commit_sha": "b06c9c778a134c53bfc6dc93955842da56bc04cb",
+      "commit_message": "Merge branch '4.x-maintenance'",
+      "authored_at": "2015-07-14T17:33:26Z",
+      "path": "click/utils.py",
+      "qualified_name": "unpack_args",
+      "start_line": 21,
+      "end_line": 82,
+      "body_hash": "d876b2b9c0d6a1adf99ef9d015ac39a100deeab9d571448a3cad1c852e253b24",
+      "parse_status": "ok",
+      "lineage_method": "exact"
+    },
+    {
+      "commit_sha": "04e20215bf5f80aaaee72dcc6e089378cfc7c7ee",
+      "commit_message": "Merge branch '4.x-maintenance'",
+      "authored_at": "2015-07-14T17:34:56Z",
+      "path": "click/utils.py",
+      "qualified_name": "unpack_args",
+      "start_line": 21,
+      "end_line": 82,
+      "body_hash": "c38c2d5c63130e74f3d91e2402dd37c96f70dfacea6e0687fd498b84a6197018",
+      "parse_status": "ok",
+      "lineage_method": "exact"
+    },
+    {
+      "commit_sha": "5f98f570c08a11e607cccfd9c1b787c69a6a67b7",
+      "commit_message": "Implemented defaults for args with nargs > 1.",
+      "authored_at": "2015-11-24T17:29:27Z",
+      "path": "click/utils.py",
+      "qualified_name": "unpack_args",
+      "start_line": 21,
+      "end_line": 82,
+      "body_hash": "c38c2d5c63130e74f3d91e2402dd37c96f70dfacea6e0687fd498b84a6197018",
+      "parse_status": "ok",
+      "lineage_method": "exact"
+    }
+  ]
+}

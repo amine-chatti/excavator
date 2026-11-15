@@ -1,0 +1,428 @@
+{
+  "items": [
+    {
+      "id": 1,
+      "repository_id": 1,
+      "language": "python",
+      "kind": "function",
+      "qualified_name": "_posixify",
+      "current_path": "src/click/utils.py",
+      "status": "exists"
+    },
+    {
+      "id": 2,
+      "repository_id": 1,
+      "language": "python",
+      "kind": "function",
+      "qualified_name": "unpack_args",
+      "current_path": "click/utils.py",
+      "status": "deleted"
+    },
+    {
+      "id": 3,
+      "repository_id": 1,
+      "language": "python",
+      "kind": "function",
+      "qualified_name": "unpack_args.<locals>._fetch",
+      "current_path": "click/utils.py",
+      "status": "deleted"
+    },
+    {
+      "id": 4,
+      "repository_id": 1,
+      "language": "python",
+      "kind": "function",
+      "qualified_name": "safecall",
+      "current_path": "src/click/utils.py",
+      "status": "deleted"
+    },
+    {
+      "id": 5,
+      "repository_id": 1,
+      "language": "python",
+      "kind": "function",
+      "qualified_name": "_safecall.<locals>.wrapper",
+      "current_path": "src/click/utils.py",
+      "status": "exists"
+    },
+    {
+      "id": 6,
+      "repository_id": 1,
+      "language": "python",
+      "kind": "function",
+      "qualified_name": "make_str",
+      "current_path": "src/click/utils.py",
+      "status": "exists"
+    },
+    {
+      "id": 7,
+      "repository_id": 1,
+      "language": "python",
+      "kind": "function",
+      "qualified_name": "make_default_short_help",
+      "current_path": "src/click/utils.py",
+      "status": "deleted"
+    },
+    {
+      "id": 8,
+      "repository_id": 1,
+      "language": "python",
+      "kind": "class",
+      "qualified_name": "LazyFile",
+      "current_path": "src/click/utils.py",
+      "status": "deleted"
+    },
+    {
+      "id": 9,
+      "repository_id": 1,
+      "language": "python",
+      "kind": "method",
+      "qualified_name": "_LazyFile.__init__",
+      "current_path": "src/click/utils.py",
+      "status": "exists"
+    },
+    {
+      "id": 10,
+      "repository_id": 1,
+      "language": "python",
+      "kind": "method",
+      "qualified_name": "_LazyFile.__getattr__",
+      "current_path": "src/click/utils.py",
+      "status": "exists"
+    },
+    {
+      "id": 11,
+      "repository_id": 1,
+      "language": "python",
+      "kind": "method",
+      "qualified_name": "_LazyFile.__repr__",
+      "current_path": "src/click/utils.py",
+      "status": "exists"
+    },
+    {
+      "id": 12,
+      "repository_id": 1,
+      "language": "python",
+      "kind": "method",
+      "qualified_name": "_LazyFile.open",
+      "current_path": "src/click/utils.py",
+      "status": "exists"
+    },
+    {
+      "id": 13,
+      "repository_id": 1,
+      "language": "python",
+      "kind": "method",
+      "qualified_name": "_LazyFile.close",
+      "current_path": "src/click/utils.py",
+      "status": "exists"
+    },
+    {
+      "id": 14,
+      "repository_id": 1,
+      "language": "python",
+      "kind": "method",
+      "qualified_name": "_LazyFile.close_intelligently",
+      "current_path": "src/click/utils.py",
+      "status": "exists"
+    },
+    {
+      "id": 15,
+      "repository_id": 1,
+      "language": "python",
+      "kind": "method",
+      "qualified_name": "LazyFile.__enter__",
+      "current_path": "src/click/utils.py",
+      "status": "deleted"
+    },
+    {
+      "id": 16,
+      "repository_id": 1,
+      "language": "python",
+      "kind": "method",
+      "qualified_name": "_LazyFile.__exit__",
+      "current_path": "src/click/utils.py",
+      "status": "exists"
+    },
+    {
+      "id": 17,
+      "repository_id": 1,
+      "language": "python",
+      "kind": "method",
+      "qualified_name": "_LazyFile.__iter__",
+      "current_path": "src/click/utils.py",
+      "status": "exists"
+    },
+    {
+      "id": 18,
+      "repository_id": 1,
+      "language": "python",
+      "kind": "class",
+      "qualified_name": "KeepOpenFile",
+      "current_path": "src/click/utils.py",
+      "status": "deleted"
+    },
+    {
+      "id": 19,
+      "repository_id": 1,
+      "language": "python",
+      "kind": "method",
+      "qualified_name": "_KeepOpenFile.__init__",
+      "current_path": "src/click/utils.py",
+      "status": "exists"
+    },
+    {
+      "id": 20,
+      "repository_id": 1,
+      "language": "python",
+      "kind": "method",
+      "qualified_name": "_KeepOpenFile.__getattr__",
+      "current_path": "src/click/utils.py",
+      "status": "exists"
+    },
+    {
+      "id": 21,
+      "repository_id": 1,
+      "language": "python",
+      "kind": "method",
+      "qualified_name": "KeepOpenFile.__enter__",
+      "current_path": "src/click/utils.py",
+      "status": "deleted"
+    },
+    {
+      "id": 22,
+      "repository_id": 1,
+      "language": "python",
+      "kind": "method",
+      "qualified_name": "_KeepOpenFile.__exit__",
+      "current_path": "src/click/utils.py",
+      "status": "exists"
+    },
+    {
+      "id": 23,
+      "repository_id": 1,
+      "language": "python",
+      "kind": "method",
+      "qualified_name": "_KeepOpenFile.__repr__",
+      "current_path": "src/click/utils.py",
+      "status": "exists"
+    },
+    {
+      "id": 24,
+      "repository_id": 1,
+      "language": "python",
+      "kind": "method",
+      "qualified_name": "_KeepOpenFile.__iter__",
+      "current_path": "src/click/utils.py",
+      "status": "exists"
+    },
+    {
+      "id": 25,
+      "repository_id": 1,
+      "language": "python",
+      "kind": "function",
+      "qualified_name": "echo",
+      "current_path": "src/click/utils.py",
+      "status": "exists"
+    },
+    {
+      "id": 26,
+      "repository_id": 1,
+      "language": "python",
+      "kind": "function",
+      "qualified_name": "get_binary_stream",
+      "current_path": "src/click/utils.py",
+      "status": "deleted"
+    },
+    {
+      "id": 27,
+      "repository_id": 1,
+      "language": "python",
+      "kind": "function",
+      "qualified_name": "get_text_stream",
+      "current_path": "src/click/utils.py",
+      "status": "deleted"
+    },
+    {
+      "id": 28,
+      "repository_id": 1,
+      "language": "python",
+      "kind": "function",
+      "qualified_name": "open_file",
+      "current_path": "src/click/utils.py",
+      "status": "exists"
+    },
+    {
+      "id": 29,
+      "repository_id": 1,
+      "language": "python",
+      "kind": "function",
+      "qualified_name": "format_filename",
+      "current_path": "src/click/utils.py",
+      "status": "exists"
+    },
+    {
+      "id": 30,
+      "repository_id": 1,
+      "language": "python",
+      "kind": "function",
+      "qualified_name": "get_app_dir",
+      "current_path": "src/click/utils.py",
+      "status": "exists"
+    },
+    {
+      "id": 31,
+      "repository_id": 1,
+      "language": "python",
+      "kind": "function",
+      "qualified_name": "get_os_args",
+      "current_path": "src/click/utils.py",
+      "status": "deleted"
+    },
+    {
+      "id": 32,
+      "repository_id": 1,
+      "language": "python",
+      "kind": "class",
+      "qualified_name": "PacifyFlushWrapper",
+      "current_path": "src/click/utils.py",
+      "status": "deleted"
+    },
+    {
+      "id": 33,
+      "repository_id": 1,
+      "language": "python",
+      "kind": "method",
+      "qualified_name": "_PacifyFlushWrapper.__init__",
+      "current_path": "src/click/utils.py",
+      "status": "exists"
+    },
+    {
+      "id": 34,
+      "repository_id": 1,
+      "language": "python",
+      "kind": "method",
+      "qualified_name": "_PacifyFlushWrapper.flush",
+      "current_path": "src/click/utils.py",
+      "status": "exists"
+    },
+    {
+      "id": 35,
+      "repository_id": 1,
+      "language": "python",
+      "kind": "method",
+      "qualified_name": "_PacifyFlushWrapper.__getattr__",
+      "current_path": "src/click/utils.py",
+      "status": "exists"
+    },
+    {
+      "id": 36,
+      "repository_id": 1,
+      "language": "python",
+      "kind": "function",
+      "qualified_name": "_detect_program_name",
+      "current_path": "src/click/utils.py",
+      "status": "exists"
+    },
+    {
+      "id": 37,
+      "repository_id": 1,
+      "language": "python",
+      "kind": "function",
+      "qualified_name": "_expand_args",
+      "current_path": "src/click/utils.py",
+      "status": "exists"
+    },
+    {
+      "id": 38,
+      "repository_id": 1,
+      "language": "python",
+      "kind": "function",
+      "qualified_name": "_safecall",
+      "current_path": "src/click/utils.py",
+      "status": "exists"
+    },
+    {
+      "id": 39,
+      "repository_id": 1,
+      "language": "python",
+      "kind": "function",
+      "qualified_name": "_make_default_short_help",
+      "current_path": "src/click/utils.py",
+      "status": "exists"
+    },
+    {
+      "id": 40,
+      "repository_id": 1,
+      "language": "python",
+      "kind": "class",
+      "qualified_name": "_LazyFile",
+      "current_path": "src/click/utils.py",
+      "status": "exists"
+    },
+    {
+      "id": 41,
+      "repository_id": 1,
+      "language": "python",
+      "kind": "method",
+      "qualified_name": "_LazyFile.__enter__",
+      "current_path": "src/click/utils.py",
+      "status": "exists"
+    },
+    {
+      "id": 42,
+      "repository_id": 1,
+      "language": "python",
+      "kind": "class",
+      "qualified_name": "_KeepOpenFile",
+      "current_path": "src/click/utils.py",
+      "status": "exists"
+    },
+    {
+      "id": 43,
+      "repository_id": 1,
+      "language": "python",
+      "kind": "method",
+      "qualified_name": "_KeepOpenFile.__enter__",
+      "current_path": "src/click/utils.py",
+      "status": "exists"
+    },
+    {
+      "id": 44,
+      "repository_id": 1,
+      "language": "python",
+      "kind": "function",
+      "qualified_name": "_get_binary_stream",
+      "current_path": "src/click/utils.py",
+      "status": "exists"
+    },
+    {
+      "id": 45,
+      "repository_id": 1,
+      "language": "python",
+      "kind": "function",
+      "qualified_name": "_get_text_stream",
+      "current_path": "src/click/utils.py",
+      "status": "exists"
+    },
+    {
+      "id": 46,
+      "repository_id": 1,
+      "language": "python",
+      "kind": "class",
+      "qualified_name": "_PacifyFlushWrapper",
+      "current_path": "src/click/utils.py",
+      "status": "exists"
+    },
+    {
+      "id": 47,
+      "repository_id": 1,
+      "language": "python",
+      "kind": "function",
+      "qualified_name": "__getattr__",
+      "current_path": "src/click/utils.py",
+      "status": "exists"
+    }
+  ],
+  "total": 47
+}

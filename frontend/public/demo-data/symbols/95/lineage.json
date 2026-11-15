@@ -1,0 +1,49 @@
+{
+  "symbol": {
+    "id": 95,
+    "repository_id": 3,
+    "language": "python",
+    "kind": "method",
+    "qualified_name": "Signal._extract_sender",
+    "current_path": "src/blinker/base.py",
+    "status": "deleted"
+  },
+  "versions": [
+    {
+      "commit_sha": "5ed9c956aaf68a8e2defa9722109aa2c7bcf7ae1",
+      "commit_message": "Add a send_async method to the Signal",
+      "authored_at": "2022-07-23T10:56:12Z",
+      "path": "src/blinker/base.py",
+      "qualified_name": "Signal._extract_sender",
+      "start_line": 298,
+      "end_line": 319,
+      "body_hash": "046bcfa6e64d27ff0cf37db9dd909907680a405bd5c895b19216886fa8ac7102",
+      "parse_status": "ok",
+      "lineage_method": "exact"
+    },
+    {
+      "commit_sha": "c8703aa7c09d7081362647f6659ab2f587279649",
+      "commit_message": "Merge pull request #94 from pallets-eco/lazy-annotations",
+      "authored_at": "2023-04-12T21:31:57Z",
+      "path": "src/blinker/base.py",
+      "qualified_name": "Signal._extract_sender",
+      "start_line": 336,
+      "end_line": 357,
+      "body_hash": "e00fa3a4a371092d9357389474cb07685b0efc5cfb03f437ec5375de5ad280be",
+      "parse_status": "ok",
+      "lineage_method": "exact"
+    },
+    {
+      "commit_sha": "64423dfadc9a35000b5399ca3d94a480ec7efe99",
+      "commit_message": "Merge pull request #144 from pallets-eco/simplify-refs",
+      "authored_at": "2024-04-27T02:45:35Z",
+      "path": "src/blinker/base.py",
+      "qualified_name": "Signal._extract_sender",
+      "start_line": 336,
+      "end_line": 357,
+      "body_hash": "e00fa3a4a371092d9357389474cb07685b0efc5cfb03f437ec5375de5ad280be",
+      "parse_status": "ok",
+      "lineage_method": "exact"
+    }
+  ]
+}

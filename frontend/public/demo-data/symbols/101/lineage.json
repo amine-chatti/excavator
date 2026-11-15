@@ -1,0 +1,61 @@
+{
+  "symbol": {
+    "id": 101,
+    "repository_id": 3,
+    "language": "python",
+    "kind": "method",
+    "qualified_name": "Signal._make_cleanup_receiver",
+    "current_path": "src/blinker/base.py",
+    "status": "exists"
+  },
+  "versions": [
+    {
+      "commit_sha": "64423dfadc9a35000b5399ca3d94a480ec7efe99",
+      "commit_message": "Merge pull request #144 from pallets-eco/simplify-refs",
+      "authored_at": "2024-04-27T02:45:35Z",
+      "path": "src/blinker/base.py",
+      "qualified_name": "Signal._make_cleanup_receiver",
+      "start_line": 422,
+      "end_line": 430,
+      "body_hash": "76d76978140ee02933287d218c181b9745a8241a87feeac38c6d093cfe4037f5",
+      "parse_status": "ok",
+      "lineage_method": "exact"
+    },
+    {
+      "commit_sha": "fd8a169d633f84874cbc95cddc225240ed4013ff",
+      "commit_message": "Merge pull request #150 from pallets-eco/collections-abc",
+      "authored_at": "2024-04-28T17:17:52Z",
+      "path": "src/blinker/base.py",
+      "qualified_name": "Signal._make_cleanup_receiver",
+      "start_line": 424,
+      "end_line": 432,
+      "body_hash": "bbeb4049e50e78792ea60c5bd3a6b60a7a4dd97532297b9983f4473d900ca5c4",
+      "parse_status": "ok",
+      "lineage_method": "exact"
+    },
+    {
+      "commit_sha": "f1bbce1023728a3622687a949bc0beb66be0a6c0",
+      "commit_message": "Merge pull request #151 from pallets-eco/cleanup-docs",
+      "authored_at": "2024-04-28T19:47:40Z",
+      "path": "src/blinker/base.py",
+      "qualified_name": "Signal._make_cleanup_receiver",
+      "start_line": 434,
+      "end_line": 444,
+      "body_hash": "86a1eb0b0e17d6d446f56763dfc750f6b22dff440c497a2bde372ac507aa251e",
+      "parse_status": "ok",
+      "lineage_method": "exact"
+    },
+    {
+      "commit_sha": "16e4bd70a19353d9d7cf47e4df7de54936296377",
+      "commit_message": "Merge pull request #174 from projectgus/bugfix/weakref_disconnect_shutdown",
+      "authored_at": "2024-11-08T16:54:39Z",
+      "path": "src/blinker/base.py",
+      "qualified_name": "Signal._make_cleanup_receiver",
+      "start_line": 399,
+      "end_line": 412,
+      "body_hash": "a04e60cc2749bcb67507d82dcabd7bdf45bcae419cf21c4950fd3e6d4f12058c",
+      "parse_status": "ok",
+      "lineage_method": "exact"
+    }
+  ]
+}

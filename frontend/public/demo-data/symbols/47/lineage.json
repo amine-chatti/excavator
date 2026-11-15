@@ -1,0 +1,25 @@
+{
+  "symbol": {
+    "id": 47,
+    "repository_id": 1,
+    "language": "python",
+    "kind": "function",
+    "qualified_name": "__getattr__",
+    "current_path": "src/click/utils.py",
+    "status": "exists"
+  },
+  "versions": [
+    {
+      "commit_sha": "333c28d79cd982990ee98eef61ec20ab1a4f38ba",
+      "commit_message": "Mark clearly functions private status. Deprecated Python 2 utilities. (#3695)",
+      "authored_at": "2026-07-17T19:24:58Z",
+      "path": "src/click/utils.py",
+      "qualified_name": "__getattr__",
+      "start_line": 669,
+      "end_line": 688,
+      "body_hash": "0216e707ba31a08b3f32d7641e45a091881661103ad4feb139b535d10e6586b0",
+      "parse_status": "ok",
+      "lineage_method": "exact"
+    }
+  ]
+}

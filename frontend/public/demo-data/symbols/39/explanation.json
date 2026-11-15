@@ -1,0 +1,19 @@
+{
+  "status": "explained",
+  "summary": "Symbol _make_default_short_help changed to private and deprecated",
+  "claims": [
+    {
+      "position": 0,
+      "text": "Mark clearly functions private status.",
+      "quotes": [
+        {
+          "snippet_id": "commit:333c28d79cd982990ee98eef61ec20ab1a4f38ba:message",
+          "source_type": "commit_message",
+          "quote": "Deprecated Python 2 utilities.",
+          "level": "mentioned",
+          "epistemic_label": "inferred"
+        }
+      ]
+    }
+  ]
+}

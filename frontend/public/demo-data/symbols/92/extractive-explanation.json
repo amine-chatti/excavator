@@ -1,0 +1,50 @@
+{
+  "status": "extracts",
+  "extracts": [
+    {
+      "source_kind": "commit",
+      "reference": "b5e9f0629200d2b2f62e13e595b802948bb4fefb",
+      "excerpt": "Merge pull request #18 from jek/feature/send-async",
+      "lineage_event": "added",
+      "created_at": "2021-01-29T13:36:38Z",
+      "label": "quote",
+      "epistemic_label": "verified"
+    },
+    {
+      "source_kind": "commit",
+      "reference": "b5e9f0629200d2b2f62e13e595b802948bb4fefb",
+      "excerpt": "Adds Signal.send_async for asyncio",
+      "lineage_event": "added",
+      "created_at": "2021-01-29T13:36:38Z",
+      "label": "quote",
+      "epistemic_label": "verified"
+    },
+    {
+      "source_kind": "commit",
+      "reference": "b5e9f0629200d2b2f62e13e595b802948bb4fefb",
+      "excerpt": "Author: @jek",
+      "lineage_event": "added",
+      "created_at": "2021-01-29T13:36:38Z",
+      "label": "quote",
+      "epistemic_label": "verified"
+    },
+    {
+      "source_kind": "commit",
+      "reference": "399778023f3dc771329cfa068c1f7a05159d68d9",
+      "excerpt": "Merge pull request #71 from pallets-eco/revert-async",
+      "lineage_event": "removed",
+      "created_at": "2022-07-17T13:37:09Z",
+      "label": "quote",
+      "epistemic_label": "verified"
+    },
+    {
+      "source_kind": "commit",
+      "reference": "399778023f3dc771329cfa068c1f7a05159d68d9",
+      "excerpt": "revert async implementation",
+      "lineage_event": "removed",
+      "created_at": "2022-07-17T13:37:09Z",
+      "label": "quote",
+      "epistemic_label": "verified"
+    }
+  ]
+}

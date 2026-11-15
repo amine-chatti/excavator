@@ -1,0 +1,73 @@
+{
+  "symbol": {
+    "id": 61,
+    "repository_id": 2,
+    "language": "python",
+    "kind": "method",
+    "qualified_name": "Signer.verify_signature",
+    "current_path": "src/itsdangerous/signer.py",
+    "status": "exists"
+  },
+  "versions": [
+    {
+      "commit_sha": "8e611d7373acc874cc8bd3fc480cf3cf7b5b6a10",
+      "commit_message": "Merge pull request #107 from pallets/split",
+      "authored_at": "2018-10-18T03:17:25Z",
+      "path": "src/itsdangerous/signer.py",
+      "qualified_name": "Signer.verify_signature",
+      "start_line": 157,
+      "end_line": 164,
+      "body_hash": "6d89e634cdf97e5dadd055f132d38761817e1ccf3b74406d0e69272edc52c064",
+      "parse_status": "ok",
+      "lineage_method": "exact"
+    },
+    {
+      "commit_sha": "3703fbdedd13b2630dd9be75a3638408c193765d",
+      "commit_message": "Merge pull request #149 from pallets/drop-python2",
+      "authored_at": "2020-04-14T23:48:30Z",
+      "path": "src/itsdangerous/signer.py",
+      "qualified_name": "Signer.verify_signature",
+      "start_line": 160,
+      "end_line": 169,
+      "body_hash": "91acce2bc2744b40fc8a77f5844f782905cac978fe1ca259265e048f003a59f9",
+      "parse_status": "ok",
+      "lineage_method": "exact"
+    },
+    {
+      "commit_sha": "2881d93e31c3e80641e28b858cbff71d3899afa0",
+      "commit_message": "Merge pull request #141 from lepture/key-rotate",
+      "authored_at": "2020-05-12T23:16:13Z",
+      "path": "src/itsdangerous/signer.py",
+      "qualified_name": "Signer.verify_signature",
+      "start_line": 182,
+      "end_line": 195,
+      "body_hash": "38bdd9c07dec31cb4a0fc715907645ff63eba772e0c7a204862208e7e2fce73b",
+      "parse_status": "ok",
+      "lineage_method": "exact"
+    },
+    {
+      "commit_sha": "4559e76d632ecfda09515746790670be3c59b726",
+      "commit_message": "Merge pull request #186 from pallets/typing",
+      "authored_at": "2020-08-31T18:50:36Z",
+      "path": "src/itsdangerous/signer.py",
+      "qualified_name": "Signer.verify_signature",
+      "start_line": 213,
+      "end_line": 228,
+      "body_hash": "98e92fb666c9491ce3a0ea6c3111227cb0f630df178dafcf16eab73c25bf89d7",
+      "parse_status": "ok",
+      "lineage_method": "exact"
+    },
+    {
+      "commit_sha": "bc88e945d31c407e16c3f4e1c713c12dd598e58d",
+      "commit_message": "improve typing (#373)",
+      "authored_at": "2024-04-13T18:55:04Z",
+      "path": "src/itsdangerous/signer.py",
+      "qualified_name": "Signer.verify_signature",
+      "start_line": 219,
+      "end_line": 234,
+      "body_hash": "d8ac3f1ef926570ed474c24a09ea469661c30ce2a839742e2db26656b59c6bb7",
+      "parse_status": "ok",
+      "lineage_method": "exact"
+    }
+  ]
+}

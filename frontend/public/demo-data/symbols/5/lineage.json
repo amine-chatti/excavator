@@ -1,0 +1,73 @@
+{
+  "symbol": {
+    "id": 5,
+    "repository_id": 1,
+    "language": "python",
+    "kind": "function",
+    "qualified_name": "_safecall.<locals>.wrapper",
+    "current_path": "src/click/utils.py",
+    "status": "exists"
+  },
+  "versions": [
+    {
+      "commit_sha": "a0d426d89434fcade5e96545d5203682c4fc5249",
+      "commit_message": "Merge branch '4.x-maintenance'",
+      "authored_at": "2015-06-21T21:23:19Z",
+      "path": "click/utils.py",
+      "qualified_name": "safecall.<locals>.wrapper",
+      "start_line": 81,
+      "end_line": 85,
+      "body_hash": "c81d99c4d51e7e517b186d78b3e6b5b4723dabd4ed176a675480a13433764032",
+      "parse_status": "ok",
+      "lineage_method": "exact"
+    },
+    {
+      "commit_sha": "ffeddbaf0c8226201136593d29324c951f2b2fa3",
+      "commit_message": "Merge pull request #1856 from pallets/typing",
+      "authored_at": "2021-04-23T16:25:23Z",
+      "path": "src/click/utils.py",
+      "qualified_name": "safecall.<locals>.wrapper",
+      "start_line": 33,
+      "end_line": 37,
+      "body_hash": "41f35ccf500757700096ce3783bcff92524de9c7160df6fa26a1406feba37fca",
+      "parse_status": "ok",
+      "lineage_method": "exact"
+    },
+    {
+      "commit_sha": "cba52fa76135af2edf46c154203b47106f898eb3",
+      "commit_message": "Merge branch '8.1.x'",
+      "authored_at": "2023-01-20T00:38:36Z",
+      "path": "src/click/utils.py",
+      "qualified_name": "safecall.<locals>.wrapper",
+      "start_line": 36,
+      "end_line": 41,
+      "body_hash": "e6118b8cb82aae5dc0acc5e1bf537e2a5125db0736a31c5584083ba9ec7984c7",
+      "parse_status": "ok",
+      "lineage_method": "exact"
+    },
+    {
+      "commit_sha": "56db54650fd083cc35bc4891ffbda6e5e08e2762",
+      "commit_message": "enable deferred evaluation of annotations (#2270)",
+      "authored_at": "2023-08-20T18:48:26Z",
+      "path": "src/click/utils.py",
+      "qualified_name": "safecall.<locals>.wrapper",
+      "start_line": 39,
+      "end_line": 44,
+      "body_hash": "9954b36c7d68487c89fe25cad9a6b9e4863f1aedcc2c904da919fe5c7182fe37",
+      "parse_status": "ok",
+      "lineage_method": "exact"
+    },
+    {
+      "commit_sha": "333c28d79cd982990ee98eef61ec20ab1a4f38ba",
+      "commit_message": "Mark clearly functions private status. Deprecated Python 2 utilities. (#3695)",
+      "authored_at": "2026-07-17T19:24:58Z",
+      "path": "src/click/utils.py",
+      "qualified_name": "_safecall.<locals>.wrapper",
+      "start_line": 42,
+      "end_line": 47,
+      "body_hash": "9954b36c7d68487c89fe25cad9a6b9e4863f1aedcc2c904da919fe5c7182fe37",
+      "parse_status": "ok",
+      "lineage_method": "rename_detected"
+    }
+  ]
+}

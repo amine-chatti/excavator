@@ -1,0 +1,109 @@
+{
+  "symbol": {
+    "id": 72,
+    "repository_id": 3,
+    "language": "python",
+    "kind": "method",
+    "qualified_name": "Signal.receivers_for",
+    "current_path": "src/blinker/base.py",
+    "status": "exists"
+  },
+  "versions": [
+    {
+      "commit_sha": "c2d9461914c3624b49b596e3bd5d76dc32b406d1",
+      "commit_message": "Initial import from flatland.util.signals",
+      "authored_at": "2010-02-14T17:40:29Z",
+      "path": "blinker/base.py",
+      "qualified_name": "Signal.receivers_for",
+      "start_line": 138,
+      "end_line": 158,
+      "body_hash": "6736ea92f0154b8e68c52e71302f954f45b9465440343daa3f732285f65a34a0",
+      "parse_status": "ok",
+      "lineage_method": "exact"
+    },
+    {
+      "commit_sha": "f9d51929f71295d0b0f3acfce2e47656bd0472e1",
+      "commit_message": "Move to src/ layout",
+      "authored_at": "2023-01-19T00:08:51Z",
+      "path": "src/blinker/base.py",
+      "qualified_name": "Signal.receivers_for",
+      "start_line": 284,
+      "end_line": 303,
+      "body_hash": "188f90f80634db14fddd8dd4727eda8db0dba1e8e68fd322b5481ae4777845f6",
+      "parse_status": "ok",
+      "lineage_method": "exact"
+    },
+    {
+      "commit_sha": "fae6164cda6c5e9af89895a22f700402fa4b5ec5",
+      "commit_message": "Add an initial set of type hints",
+      "authored_at": "2023-02-26T11:17:50Z",
+      "path": "src/blinker/base.py",
+      "qualified_name": "Signal.receivers_for",
+      "start_line": 372,
+      "end_line": 394,
+      "body_hash": "fa5b25e4b0fbfc210be905375a46e012ff356bd9ed8086a1ce4f8a150b8ca242",
+      "parse_status": "ok",
+      "lineage_method": "exact"
+    },
+    {
+      "commit_sha": "c8703aa7c09d7081362647f6659ab2f587279649",
+      "commit_message": "Merge pull request #94 from pallets-eco/lazy-annotations",
+      "authored_at": "2023-04-12T21:31:57Z",
+      "path": "src/blinker/base.py",
+      "qualified_name": "Signal.receivers_for",
+      "start_line": 375,
+      "end_line": 396,
+      "body_hash": "aa32abe79249b8445a927c91542addc3393637d6f1c2379677b6cb35bc9c4958",
+      "parse_status": "ok",
+      "lineage_method": "exact"
+    },
+    {
+      "commit_sha": "e5a0411296f2d8eebb6753c925cd341e93043049",
+      "commit_message": "receivers_for does not return weak references",
+      "authored_at": "2023-07-27T18:13:02Z",
+      "path": "src/blinker/base.py",
+      "qualified_name": "Signal.receivers_for",
+      "start_line": 375,
+      "end_line": 396,
+      "body_hash": "cd8de20ccc04b5edeecf1c90335eb25031c38bffdd11b3ea03fd8a652f982eb8",
+      "parse_status": "ok",
+      "lineage_method": "exact"
+    },
+    {
+      "commit_sha": "64423dfadc9a35000b5399ca3d94a480ec7efe99",
+      "commit_message": "Merge pull request #144 from pallets-eco/simplify-refs",
+      "authored_at": "2024-04-27T02:45:35Z",
+      "path": "src/blinker/base.py",
+      "qualified_name": "Signal.receivers_for",
+      "start_line": 354,
+      "end_line": 384,
+      "body_hash": "4bde9a9af076f51b8ceb63f6ca0599dcc53043b2ddc4b27f082ead678fd998da",
+      "parse_status": "ok",
+      "lineage_method": "exact"
+    },
+    {
+      "commit_sha": "fd8a169d633f84874cbc95cddc225240ed4013ff",
+      "commit_message": "Merge pull request #150 from pallets-eco/collections-abc",
+      "authored_at": "2024-04-28T17:17:52Z",
+      "path": "src/blinker/base.py",
+      "qualified_name": "Signal.receivers_for",
+      "start_line": 356,
+      "end_line": 386,
+      "body_hash": "2f79032c8ab5e74e82377035b33301955bde595efed1b481c40ac215efcab99b",
+      "parse_status": "ok",
+      "lineage_method": "exact"
+    },
+    {
+      "commit_sha": "f1bbce1023728a3622687a949bc0beb66be0a6c0",
+      "commit_message": "Merge pull request #151 from pallets-eco/cleanup-docs",
+      "authored_at": "2024-04-28T19:47:40Z",
+      "path": "src/blinker/base.py",
+      "qualified_name": "Signal.receivers_for",
+      "start_line": 361,
+      "end_line": 397,
+      "body_hash": "e5b7eb9c4ccecf3ab9ef882d46a8de3c61b0e940d00c543ec8490d645f2077aa",
+      "parse_status": "ok",
+      "lineage_method": "exact"
+    }
+  ]
+}

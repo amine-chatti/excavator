@@ -1,0 +1,37 @@
+{
+  "symbol": {
+    "id": 49,
+    "repository_id": 2,
+    "language": "python",
+    "kind": "method",
+    "qualified_name": "SigningAlgorithm.get_signature",
+    "current_path": "src/itsdangerous/signer.py",
+    "status": "exists"
+  },
+  "versions": [
+    {
+      "commit_sha": "8e611d7373acc874cc8bd3fc480cf3cf7b5b6a10",
+      "commit_message": "Merge pull request #107 from pallets/split",
+      "authored_at": "2018-10-18T03:17:25Z",
+      "path": "src/itsdangerous/signer.py",
+      "qualified_name": "SigningAlgorithm.get_signature",
+      "start_line": 17,
+      "end_line": 19,
+      "body_hash": "626b5e5acdc63adcd5b89ac87c6683e3c464c3e70a6a2f5a2c8e3176f16c0e4a",
+      "parse_status": "ok",
+      "lineage_method": "exact"
+    },
+    {
+      "commit_sha": "4559e76d632ecfda09515746790670be3c59b726",
+      "commit_message": "Merge pull request #186 from pallets/typing",
+      "authored_at": "2020-08-31T18:50:36Z",
+      "path": "src/itsdangerous/signer.py",
+      "qualified_name": "SigningAlgorithm.get_signature",
+      "start_line": 21,
+      "end_line": 23,
+      "body_hash": "a9762b41813fcfa20b30936e1f91fabb1256b15ce4879efa7181eb566fdc795a",
+      "parse_status": "ok",
+      "lineage_method": "exact"
+    }
+  ]
+}

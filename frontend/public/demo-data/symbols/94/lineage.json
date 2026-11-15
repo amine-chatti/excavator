@@ -1,0 +1,133 @@
+{
+  "symbol": {
+    "id": 94,
+    "repository_id": 3,
+    "language": "python",
+    "kind": "method",
+    "qualified_name": "Signal.send_async",
+    "current_path": "src/blinker/base.py",
+    "status": "exists"
+  },
+  "versions": [
+    {
+      "commit_sha": "5ed9c956aaf68a8e2defa9722109aa2c7bcf7ae1",
+      "commit_message": "Add a send_async method to the Signal",
+      "authored_at": "2022-07-23T10:56:12Z",
+      "path": "src/blinker/base.py",
+      "qualified_name": "Signal.send_async",
+      "start_line": 272,
+      "end_line": 296,
+      "body_hash": "7e4cdf5bfed4c5e3e7e85a8bedf97742e1968b7e7948d3f5ce2ef5615b574b7b",
+      "parse_status": "ok",
+      "lineage_method": "exact"
+    },
+    {
+      "commit_sha": "fae6164cda6c5e9af89895a22f700402fa4b5ec5",
+      "commit_message": "Add an initial set of type hints",
+      "authored_at": "2023-02-26T11:17:50Z",
+      "path": "src/blinker/base.py",
+      "qualified_name": "Signal.send_async",
+      "start_line": 302,
+      "end_line": 331,
+      "body_hash": "6a081dc0ccc3dbfa87c625b770652a1ed1d7dd5237485675767769fa35075754",
+      "parse_status": "ok",
+      "lineage_method": "exact"
+    },
+    {
+      "commit_sha": "c8703aa7c09d7081362647f6659ab2f587279649",
+      "commit_message": "Merge pull request #94 from pallets-eco/lazy-annotations",
+      "authored_at": "2023-04-12T21:31:57Z",
+      "path": "src/blinker/base.py",
+      "qualified_name": "Signal.send_async",
+      "start_line": 304,
+      "end_line": 334,
+      "body_hash": "8c2f9e1f08c119e62ae4f11e9f09ecbc999ba58ddb80fadbb4ecc24ad8c8eba7",
+      "parse_status": "ok",
+      "lineage_method": "exact"
+    },
+    {
+      "commit_sha": "e5a0411296f2d8eebb6753c925cd341e93043049",
+      "commit_message": "receivers_for does not return weak references",
+      "authored_at": "2023-07-27T18:13:02Z",
+      "path": "src/blinker/base.py",
+      "qualified_name": "Signal.send_async",
+      "start_line": 304,
+      "end_line": 334,
+      "body_hash": "7c80caebd85fdc114ff1a335c7b456e391f3f1ddc9b92c7307f0c9b88e73dc8e",
+      "parse_status": "ok",
+      "lineage_method": "exact"
+    },
+    {
+      "commit_sha": "7f3f1a05793e105a8557ba50b0e392cc1df0e1da",
+      "commit_message": "Update the supported Python versions",
+      "authored_at": "2023-11-01T21:56:57Z",
+      "path": "src/blinker/base.py",
+      "qualified_name": "Signal.send_async",
+      "start_line": 311,
+      "end_line": 341,
+      "body_hash": "15379053f5f0b4fefcb85da230bcb2f43f96dfbf5c9bb8a47b7d66bb86ce0b16",
+      "parse_status": "ok",
+      "lineage_method": "exact"
+    },
+    {
+      "commit_sha": "7577b88afce38232746a7172e99928e61fc8a5ab",
+      "commit_message": "Merge pull request #139 from pallets-eco/refresh",
+      "authored_at": "2024-04-26T18:30:16Z",
+      "path": "src/blinker/base.py",
+      "qualified_name": "Signal.send_async",
+      "start_line": 315,
+      "end_line": 345,
+      "body_hash": "7490c6e2835839e4ae6114c14c2ad500f786bca296d8efd9ad728c07554b566e",
+      "parse_status": "ok",
+      "lineage_method": "exact"
+    },
+    {
+      "commit_sha": "64423dfadc9a35000b5399ca3d94a480ec7efe99",
+      "commit_message": "Merge pull request #144 from pallets-eco/simplify-refs",
+      "authored_at": "2024-04-27T02:45:35Z",
+      "path": "src/blinker/base.py",
+      "qualified_name": "Signal.send_async",
+      "start_line": 297,
+      "end_line": 333,
+      "body_hash": "2b79cc82f3d6e03b21c14b0f489e2ca5043876bef9263c7feaf40e4803835604",
+      "parse_status": "ok",
+      "lineage_method": "exact"
+    },
+    {
+      "commit_sha": "fd8a169d633f84874cbc95cddc225240ed4013ff",
+      "commit_message": "Merge pull request #150 from pallets-eco/collections-abc",
+      "authored_at": "2024-04-28T17:17:52Z",
+      "path": "src/blinker/base.py",
+      "qualified_name": "Signal.send_async",
+      "start_line": 299,
+      "end_line": 335,
+      "body_hash": "dfee87062913485971a367fb99a7394ea3fad955b9f956cbea173f84fd9afb52",
+      "parse_status": "ok",
+      "lineage_method": "exact"
+    },
+    {
+      "commit_sha": "f1bbce1023728a3622687a949bc0beb66be0a6c0",
+      "commit_message": "Merge pull request #151 from pallets-eco/cleanup-docs",
+      "authored_at": "2024-04-28T19:47:40Z",
+      "path": "src/blinker/base.py",
+      "qualified_name": "Signal.send_async",
+      "start_line": 293,
+      "end_line": 338,
+      "body_hash": "59d2c003ffeb8946c6367933c67191b670b837783d81a00831e5d3e38ec36097",
+      "parse_status": "ok",
+      "lineage_method": "exact"
+    },
+    {
+      "commit_sha": "952a97b0aefbd39b52c9ad83bfe9f4aaf188dfee",
+      "commit_message": "Merge pull request #156 from pallets-eco/wrapper-type",
+      "authored_at": "2024-05-06T16:59:20Z",
+      "path": "src/blinker/base.py",
+      "qualified_name": "Signal.send_async",
+      "start_line": 285,
+      "end_line": 333,
+      "body_hash": "adfa7c10cff04c10676fb9262709dc75ff0c4fcdfdf3a275e172354c2c61f334",
+      "parse_status": "ok",
+      "lineage_method": "exact"
+    }
+  ]
+}

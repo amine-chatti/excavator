@@ -1,0 +1,85 @@
+{
+  "symbol": {
+    "id": 53,
+    "repository_id": 2,
+    "language": "python",
+    "kind": "class",
+    "qualified_name": "HMACAlgorithm",
+    "current_path": "src/itsdangerous/signer.py",
+    "status": "exists"
+  },
+  "versions": [
+    {
+      "commit_sha": "8e611d7373acc874cc8bd3fc480cf3cf7b5b6a10",
+      "commit_message": "Merge pull request #107 from pallets/split",
+      "authored_at": "2018-10-18T03:17:25Z",
+      "path": "src/itsdangerous/signer.py",
+      "qualified_name": "HMACAlgorithm",
+      "start_line": 37,
+      "end_line": 55,
+      "body_hash": "51aa49adf7532a5d3e2d22d0a56c4f9b7ccdef68fad71f74690fa3422c7fea4e",
+      "parse_status": "ok",
+      "lineage_method": "exact"
+    },
+    {
+      "commit_sha": "af4856aeaa648369b3bc8176089221b038b7a873",
+      "commit_message": "Added fallback signers and switch back to sha1",
+      "authored_at": "2018-10-26T22:45:11Z",
+      "path": "src/itsdangerous/signer.py",
+      "qualified_name": "HMACAlgorithm",
+      "start_line": 37,
+      "end_line": 52,
+      "body_hash": "6e4de3b9e900d693cac2544e1828467cdd96b809b42fd64654cdd88bef74dac6",
+      "parse_status": "ok",
+      "lineage_method": "exact"
+    },
+    {
+      "commit_sha": "3703fbdedd13b2630dd9be75a3638408c193765d",
+      "commit_message": "Merge pull request #149 from pallets/drop-python2",
+      "authored_at": "2020-04-14T23:48:30Z",
+      "path": "src/itsdangerous/signer.py",
+      "qualified_name": "HMACAlgorithm",
+      "start_line": 36,
+      "end_line": 52,
+      "body_hash": "71d3499924555fffc428cc61319d51fa37cf99057e10631b398f511f3b9071af",
+      "parse_status": "ok",
+      "lineage_method": "exact"
+    },
+    {
+      "commit_sha": "4559e76d632ecfda09515746790670be3c59b726",
+      "commit_message": "Merge pull request #186 from pallets/typing",
+      "authored_at": "2020-08-31T18:50:36Z",
+      "path": "src/itsdangerous/signer.py",
+      "qualified_name": "HMACAlgorithm",
+      "start_line": 41,
+      "end_line": 57,
+      "body_hash": "8e52dbf591199b93788aaf0894d6254da38b70c63947a4ac6f7e1c0f5510afcd",
+      "parse_status": "ok",
+      "lineage_method": "exact"
+    },
+    {
+      "commit_sha": "bc88e945d31c407e16c3f4e1c713c12dd598e58d",
+      "commit_message": "improve typing (#373)",
+      "authored_at": "2024-04-13T18:55:04Z",
+      "path": "src/itsdangerous/signer.py",
+      "qualified_name": "HMACAlgorithm",
+      "start_line": 40,
+      "end_line": 56,
+      "body_hash": "f7d9dfd5ee44082b189edaf11da6949e45a022a3d660602d94b68ba600273fe8",
+      "parse_status": "ok",
+      "lineage_method": "exact"
+    },
+    {
+      "commit_sha": "2f69e841d2a979c616a55b226e444694f5d9c962",
+      "commit_message": "support FIPS builds without SHA-1 (#378)",
+      "authored_at": "2024-04-16T20:09:22Z",
+      "path": "src/itsdangerous/signer.py",
+      "qualified_name": "HMACAlgorithm",
+      "start_line": 48,
+      "end_line": 64,
+      "body_hash": "01aed64afd96edeb551dd8384e4fa0b5075f244510c0f56052db1a704cd689cc",
+      "parse_status": "ok",
+      "lineage_method": "exact"
+    }
+  ]
+}

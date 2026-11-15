@@ -6,22 +6,19 @@ import type {
   StoredExplanationResponse,
   SymbolsResponse,
 } from "@/lib/api-types";
+import { ApiError } from "@/lib/api-error";
+import { requestDemoJson } from "@/lib/demo-api";
+import { isDemoMode } from "@/lib/demo-mode";
+
+export { ApiError } from "@/lib/api-error";
 
 export const API_BASE_URL = (
   import.meta.env.VITE_API_BASE_URL ?? "http://127.0.0.1:8000"
 ).replace(/\/$/, "");
 
-export class ApiError extends Error {
-  constructor(
-    message: string,
-    readonly status?: number,
-  ) {
-    super(message);
-    this.name = "ApiError";
-  }
-}
-
 async function requestJson<T>(path: string, method: "GET" | "POST" = "GET"): Promise<T> {
+  if (isDemoMode()) return requestDemoJson<T>(path, method);
+
   let response: Response;
   try {
     response = await fetch(`${API_BASE_URL}${path}`, {

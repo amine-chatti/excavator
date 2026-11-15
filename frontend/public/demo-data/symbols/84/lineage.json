@@ -1,0 +1,121 @@
+{
+  "symbol": {
+    "id": 84,
+    "repository_id": 3,
+    "language": "python",
+    "kind": "method",
+    "qualified_name": "Signal.connected_to",
+    "current_path": "src/blinker/base.py",
+    "status": "exists"
+  },
+  "versions": [
+    {
+      "commit_sha": "6b57dccd11923a094101e178f6033b0a46c52c10",
+      "commit_message": "Renamed 'temporarily_connected_to' to simply 'connected_to'.",
+      "authored_at": "2010-07-20T18:00:25Z",
+      "path": "blinker/base.py",
+      "qualified_name": "Signal.connected_to",
+      "start_line": 113,
+      "end_line": 148,
+      "body_hash": "91cf19d96d745b2415a4d5aaadcd9eb46127ead4e9b2d5b5a6eb254651f163f1",
+      "parse_status": "ok",
+      "lineage_method": "exact"
+    },
+    {
+      "commit_sha": "084d2bdb86f7e2e29e4bc88d5317955b9c4d76dc",
+      "commit_message": "Merge pull request #72 from pallets-eco/refresh",
+      "authored_at": "2022-07-17T16:44:48Z",
+      "path": "blinker/base.py",
+      "qualified_name": "Signal.connected_to",
+      "start_line": 186,
+      "end_line": 214,
+      "body_hash": "a8cb9db10c059728e05159e66ab814ed8fc60a6baf547b11dde239484d8628f5",
+      "parse_status": "ok",
+      "lineage_method": "exact"
+    },
+    {
+      "commit_sha": "33a14971c34fcd15deb2b18b50c9bd411eb6ed74",
+      "commit_message": "Fix issues reported by flake8",
+      "authored_at": "2023-01-19T00:33:20Z",
+      "path": "src/blinker/base.py",
+      "qualified_name": "Signal.connected_to",
+      "start_line": 182,
+      "end_line": 210,
+      "body_hash": "346bfb7e352c84dea9e675d527b9ce060736cc9eae55563708eeb1343e2b7d49",
+      "parse_status": "ok",
+      "lineage_method": "exact"
+    },
+    {
+      "commit_sha": "fae6164cda6c5e9af89895a22f700402fa4b5ec5",
+      "commit_message": "Add an initial set of type hints",
+      "authored_at": "2023-02-26T11:17:50Z",
+      "path": "src/blinker/base.py",
+      "qualified_name": "Signal.connected_to",
+      "start_line": 205,
+      "end_line": 235,
+      "body_hash": "c12c00a86190c3832cfd7295cddf9c066d233b8c2270465dd2b24d7053dafad4",
+      "parse_status": "ok",
+      "lineage_method": "exact"
+    },
+    {
+      "commit_sha": "00e3d22781e0bc7a2b88b0815b0d41846e93f10e",
+      "commit_message": "Signal.connected_to should always disconnect the receiver",
+      "authored_at": "2023-09-19T10:26:06Z",
+      "path": "src/blinker/base.py",
+      "qualified_name": "Signal.connected_to",
+      "start_line": 206,
+      "end_line": 233,
+      "body_hash": "33814260ad655d77f7679bf030534f45144e76b04d5c53ee6ad3b407eccd999f",
+      "parse_status": "ok",
+      "lineage_method": "exact"
+    },
+    {
+      "commit_sha": "7577b88afce38232746a7172e99928e61fc8a5ab",
+      "commit_message": "Merge pull request #139 from pallets-eco/refresh",
+      "authored_at": "2024-04-26T18:30:16Z",
+      "path": "src/blinker/base.py",
+      "qualified_name": "Signal.connected_to",
+      "start_line": 219,
+      "end_line": 246,
+      "body_hash": "b349d5bf050c03981ac87320d05f4a3e64caeb585bf6aeb91baeb275d9686468",
+      "parse_status": "ok",
+      "lineage_method": "exact"
+    },
+    {
+      "commit_sha": "64423dfadc9a35000b5399ca3d94a480ec7efe99",
+      "commit_message": "Merge pull request #144 from pallets-eco/simplify-refs",
+      "authored_at": "2024-04-27T02:45:35Z",
+      "path": "src/blinker/base.py",
+      "qualified_name": "Signal.connected_to",
+      "start_line": 196,
+      "end_line": 224,
+      "body_hash": "91de4a9bc9c4fc04a32d044da7468dcba985b1ebfb19ac0f8f30c69db6588bbb",
+      "parse_status": "ok",
+      "lineage_method": "exact"
+    },
+    {
+      "commit_sha": "fd8a169d633f84874cbc95cddc225240ed4013ff",
+      "commit_message": "Merge pull request #150 from pallets-eco/collections-abc",
+      "authored_at": "2024-04-28T17:17:52Z",
+      "path": "src/blinker/base.py",
+      "qualified_name": "Signal.connected_to",
+      "start_line": 198,
+      "end_line": 226,
+      "body_hash": "e1049960433d3b6bfbaab44eb75ae574474978c186b6d3fc24dff5ff69fbfc40",
+      "parse_status": "ok",
+      "lineage_method": "exact"
+    },
+    {
+      "commit_sha": "f1bbce1023728a3622687a949bc0beb66be0a6c0",
+      "commit_message": "Merge pull request #151 from pallets-eco/cleanup-docs",
+      "authored_at": "2024-04-28T19:47:40Z",
+      "path": "src/blinker/base.py",
+      "qualified_name": "Signal.connected_to",
+      "start_line": 190,
+      "end_line": 212,
+      "body_hash": "b2f37b095c222dfe4a710319ff0d423fd22ab9f5959e96139c8f7ecae3450e28",
+      "parse_status": "ok",
+      "lineage_method": "exact"
+    }
+  ]
+}

@@ -1,0 +1,401 @@
+{
+  "items": [
+    {
+      "id": 67,
+      "repository_id": 3,
+      "language": "python",
+      "kind": "class",
+      "qualified_name": "Signal",
+      "current_path": "src/blinker/base.py",
+      "status": "exists"
+    },
+    {
+      "id": 68,
+      "repository_id": 3,
+      "language": "python",
+      "kind": "method",
+      "qualified_name": "Signal.__init__",
+      "current_path": "src/blinker/base.py",
+      "status": "exists"
+    },
+    {
+      "id": 69,
+      "repository_id": 3,
+      "language": "python",
+      "kind": "method",
+      "qualified_name": "Signal.connect",
+      "current_path": "src/blinker/base.py",
+      "status": "exists"
+    },
+    {
+      "id": 70,
+      "repository_id": 3,
+      "language": "python",
+      "kind": "method",
+      "qualified_name": "Signal.send",
+      "current_path": "src/blinker/base.py",
+      "status": "exists"
+    },
+    {
+      "id": 71,
+      "repository_id": 3,
+      "language": "python",
+      "kind": "method",
+      "qualified_name": "Signal.has_receivers_for",
+      "current_path": "src/blinker/base.py",
+      "status": "exists"
+    },
+    {
+      "id": 72,
+      "repository_id": 3,
+      "language": "python",
+      "kind": "method",
+      "qualified_name": "Signal.receivers_for",
+      "current_path": "src/blinker/base.py",
+      "status": "exists"
+    },
+    {
+      "id": 73,
+      "repository_id": 3,
+      "language": "python",
+      "kind": "method",
+      "qualified_name": "Signal.disconnect",
+      "current_path": "src/blinker/base.py",
+      "status": "exists"
+    },
+    {
+      "id": 74,
+      "repository_id": 3,
+      "language": "python",
+      "kind": "method",
+      "qualified_name": "Signal._disconnect",
+      "current_path": "src/blinker/base.py",
+      "status": "exists"
+    },
+    {
+      "id": 75,
+      "repository_id": 3,
+      "language": "python",
+      "kind": "method",
+      "qualified_name": "Signal._cleanup_receiver",
+      "current_path": "src/blinker/base.py",
+      "status": "deleted"
+    },
+    {
+      "id": 76,
+      "repository_id": 3,
+      "language": "python",
+      "kind": "method",
+      "qualified_name": "Signal._cleanup_sender",
+      "current_path": "src/blinker/base.py",
+      "status": "deleted"
+    },
+    {
+      "id": 77,
+      "repository_id": 3,
+      "language": "python",
+      "kind": "method",
+      "qualified_name": "Signal._clear_state",
+      "current_path": "src/blinker/base.py",
+      "status": "exists"
+    },
+    {
+      "id": 78,
+      "repository_id": 3,
+      "language": "python",
+      "kind": "class",
+      "qualified_name": "NamedSignal",
+      "current_path": "src/blinker/base.py",
+      "status": "exists"
+    },
+    {
+      "id": 79,
+      "repository_id": 3,
+      "language": "python",
+      "kind": "method",
+      "qualified_name": "NamedSignal.__init__",
+      "current_path": "src/blinker/base.py",
+      "status": "exists"
+    },
+    {
+      "id": 80,
+      "repository_id": 3,
+      "language": "python",
+      "kind": "method",
+      "qualified_name": "NamedSignal.__repr__",
+      "current_path": "src/blinker/base.py",
+      "status": "exists"
+    },
+    {
+      "id": 81,
+      "repository_id": 3,
+      "language": "python",
+      "kind": "class",
+      "qualified_name": "Namespace",
+      "current_path": "src/blinker/base.py",
+      "status": "exists"
+    },
+    {
+      "id": 82,
+      "repository_id": 3,
+      "language": "python",
+      "kind": "method",
+      "qualified_name": "Namespace.signal",
+      "current_path": "src/blinker/base.py",
+      "status": "exists"
+    },
+    {
+      "id": 83,
+      "repository_id": 3,
+      "language": "python",
+      "kind": "method",
+      "qualified_name": "Signal.temporarily_connected_to",
+      "current_path": "src/blinker/base.py",
+      "status": "deleted"
+    },
+    {
+      "id": 84,
+      "repository_id": 3,
+      "language": "python",
+      "kind": "method",
+      "qualified_name": "Signal.connected_to",
+      "current_path": "src/blinker/base.py",
+      "status": "exists"
+    },
+    {
+      "id": 85,
+      "repository_id": 3,
+      "language": "python",
+      "kind": "method",
+      "qualified_name": "Signal.connect_via",
+      "current_path": "src/blinker/base.py",
+      "status": "exists"
+    },
+    {
+      "id": 86,
+      "repository_id": 3,
+      "language": "python",
+      "kind": "function",
+      "qualified_name": "Signal.connect_via.<locals>.decorator",
+      "current_path": "src/blinker/base.py",
+      "status": "exists"
+    },
+    {
+      "id": 87,
+      "repository_id": 3,
+      "language": "python",
+      "kind": "method",
+      "qualified_name": "Signal.receiver_connected",
+      "current_path": "src/blinker/base.py",
+      "status": "exists"
+    },
+    {
+      "id": 88,
+      "repository_id": 3,
+      "language": "python",
+      "kind": "method",
+      "qualified_name": "Signal.receiver_disconnected",
+      "current_path": "src/blinker/base.py",
+      "status": "exists"
+    },
+    {
+      "id": 89,
+      "repository_id": 3,
+      "language": "python",
+      "kind": "class",
+      "qualified_name": "WeakNamespace",
+      "current_path": "src/blinker/base.py",
+      "status": "deleted"
+    },
+    {
+      "id": 90,
+      "repository_id": 3,
+      "language": "python",
+      "kind": "method",
+      "qualified_name": "_WeakNamespace.signal",
+      "current_path": "src/blinker/base.py",
+      "status": "deleted"
+    },
+    {
+      "id": 91,
+      "repository_id": 3,
+      "language": "python",
+      "kind": "method",
+      "qualified_name": "Signal._cleanup_bookkeeping",
+      "current_path": "src/blinker/base.py",
+      "status": "exists"
+    },
+    {
+      "id": 92,
+      "repository_id": 3,
+      "language": "python",
+      "kind": "method",
+      "qualified_name": "Signal.send_async",
+      "current_path": "blinker/base.py",
+      "status": "deleted"
+    },
+    {
+      "id": 93,
+      "repository_id": 3,
+      "language": "python",
+      "kind": "method",
+      "qualified_name": "Signal.muted",
+      "current_path": "src/blinker/base.py",
+      "status": "exists"
+    },
+    {
+      "id": 94,
+      "repository_id": 3,
+      "language": "python",
+      "kind": "method",
+      "qualified_name": "Signal.send_async",
+      "current_path": "src/blinker/base.py",
+      "status": "exists"
+    },
+    {
+      "id": 95,
+      "repository_id": 3,
+      "language": "python",
+      "kind": "method",
+      "qualified_name": "Signal._extract_sender",
+      "current_path": "src/blinker/base.py",
+      "status": "deleted"
+    },
+    {
+      "id": 96,
+      "repository_id": 3,
+      "language": "python",
+      "kind": "function",
+      "qualified_name": "__getattr__",
+      "current_path": "src/blinker/base.py",
+      "status": "deleted"
+    },
+    {
+      "id": 97,
+      "repository_id": 3,
+      "language": "python",
+      "kind": "class",
+      "qualified_name": "PAsyncWrapper",
+      "current_path": "src/blinker/base.py",
+      "status": "deleted"
+    },
+    {
+      "id": 98,
+      "repository_id": 3,
+      "language": "python",
+      "kind": "method",
+      "qualified_name": "PAsyncWrapper.__call__",
+      "current_path": "src/blinker/base.py",
+      "status": "deleted"
+    },
+    {
+      "id": 99,
+      "repository_id": 3,
+      "language": "python",
+      "kind": "class",
+      "qualified_name": "PSyncWrapper",
+      "current_path": "src/blinker/base.py",
+      "status": "deleted"
+    },
+    {
+      "id": 100,
+      "repository_id": 3,
+      "language": "python",
+      "kind": "method",
+      "qualified_name": "PSyncWrapper.__call__",
+      "current_path": "src/blinker/base.py",
+      "status": "deleted"
+    },
+    {
+      "id": 101,
+      "repository_id": 3,
+      "language": "python",
+      "kind": "method",
+      "qualified_name": "Signal._make_cleanup_receiver",
+      "current_path": "src/blinker/base.py",
+      "status": "exists"
+    },
+    {
+      "id": 102,
+      "repository_id": 3,
+      "language": "python",
+      "kind": "function",
+      "qualified_name": "Signal._make_cleanup_receiver.<locals>.cleanup",
+      "current_path": "src/blinker/base.py",
+      "status": "exists"
+    },
+    {
+      "id": 103,
+      "repository_id": 3,
+      "language": "python",
+      "kind": "method",
+      "qualified_name": "Signal._make_cleanup_sender",
+      "current_path": "src/blinker/base.py",
+      "status": "exists"
+    },
+    {
+      "id": 104,
+      "repository_id": 3,
+      "language": "python",
+      "kind": "function",
+      "qualified_name": "Signal._make_cleanup_sender.<locals>.cleanup",
+      "current_path": "src/blinker/base.py",
+      "status": "exists"
+    },
+    {
+      "id": 105,
+      "repository_id": 3,
+      "language": "python",
+      "kind": "method",
+      "qualified_name": "_WeakNamespace.__init__",
+      "current_path": "src/blinker/base.py",
+      "status": "deleted"
+    },
+    {
+      "id": 106,
+      "repository_id": 3,
+      "language": "python",
+      "kind": "class",
+      "qualified_name": "_WeakNamespace",
+      "current_path": "src/blinker/base.py",
+      "status": "deleted"
+    },
+    {
+      "id": 107,
+      "repository_id": 3,
+      "language": "python",
+      "kind": "class",
+      "qualified_name": "PNamespaceSignal",
+      "current_path": "src/blinker/base.py",
+      "status": "deleted"
+    },
+    {
+      "id": 108,
+      "repository_id": 3,
+      "language": "python",
+      "kind": "method",
+      "qualified_name": "PNamespaceSignal.__call__",
+      "current_path": "src/blinker/base.py",
+      "status": "deleted"
+    },
+    {
+      "id": 109,
+      "repository_id": 3,
+      "language": "python",
+      "kind": "class",
+      "qualified_name": "_PNamespaceSignal",
+      "current_path": "src/blinker/base.py",
+      "status": "exists"
+    },
+    {
+      "id": 110,
+      "repository_id": 3,
+      "language": "python",
+      "kind": "method",
+      "qualified_name": "_PNamespaceSignal.__call__",
+      "current_path": "src/blinker/base.py",
+      "status": "exists"
+    }
+  ],
+  "total": 44
+}

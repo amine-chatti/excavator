@@ -1,0 +1,49 @@
+{
+  "symbol": {
+    "id": 3,
+    "repository_id": 1,
+    "language": "python",
+    "kind": "function",
+    "qualified_name": "unpack_args.<locals>._fetch",
+    "current_path": "click/utils.py",
+    "status": "deleted"
+  },
+  "versions": [
+    {
+      "commit_sha": "a0d426d89434fcade5e96545d5203682c4fc5249",
+      "commit_message": "Merge branch '4.x-maintenance'",
+      "authored_at": "2015-06-21T21:23:19Z",
+      "path": "click/utils.py",
+      "qualified_name": "unpack_args.<locals>._fetch",
+      "start_line": 47,
+      "end_line": 51,
+      "body_hash": "66797fb6705c8d8ba2e2c68b603a48c1c8a8e445cccbdfbe363df587826391e2",
+      "parse_status": "ok",
+      "lineage_method": "exact"
+    },
+    {
+      "commit_sha": "b06c9c778a134c53bfc6dc93955842da56bc04cb",
+      "commit_message": "Merge branch '4.x-maintenance'",
+      "authored_at": "2015-07-14T17:33:26Z",
+      "path": "click/utils.py",
+      "qualified_name": "unpack_args.<locals>._fetch",
+      "start_line": 49,
+      "end_line": 56,
+      "body_hash": "a8a1637c4528881ca05fc7e4f18d707f311c0baaaa95367348a11168b574d37f",
+      "parse_status": "ok",
+      "lineage_method": "exact"
+    },
+    {
+      "commit_sha": "5f98f570c08a11e607cccfd9c1b787c69a6a67b7",
+      "commit_message": "Implemented defaults for args with nargs > 1.",
+      "authored_at": "2015-11-24T17:29:27Z",
+      "path": "click/utils.py",
+      "qualified_name": "unpack_args.<locals>._fetch",
+      "start_line": 49,
+      "end_line": 56,
+      "body_hash": "a8a1637c4528881ca05fc7e4f18d707f311c0baaaa95367348a11168b574d37f",
+      "parse_status": "ok",
+      "lineage_method": "exact"
+    }
+  ]
+}
