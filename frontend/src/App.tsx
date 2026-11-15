@@ -9,7 +9,7 @@ import { Skeleton } from "@/components/ui/skeleton";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { ApiError, getExtractiveExplanation, getLineage, listRepositories, listSymbols } from "@/lib/api";
 import type { ExtractiveExplanationResponse, LineageResponse, RepositoryRecord, SymbolRecord } from "@/lib/api-types";
-import { mainVariants, selectionTransition } from "@/motion";
+import { contentVariants, mainVariants, selectionTransition } from "@/motion";
 
 function message(error: unknown) {
   return error instanceof ApiError ? error.message : "The archive could not be read.";
