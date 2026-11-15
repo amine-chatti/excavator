@@ -9,12 +9,17 @@ import { Button } from "@/components/ui/button";
 import { Skeleton } from "@/components/ui/skeleton";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { ApiError, getExtractiveExplanation, getLineage, getStoredExplanation, listRepositories, listSymbols, postExplanation } from "@/lib/api";
-import type { ExtractiveExplanationResponse, LineageResponse, RepositoryRecord, SymbolRecord } from "@/lib/api-types";
+import type { ExplainResponse, ExtractiveExplanationResponse, LineageResponse, RepositoryRecord, SymbolRecord } from "@/lib/api-types";
 import { contentVariants, mainVariants, selectionTransition } from "@/motion";
 import { MotionConfig } from "motion/react";
+import { makeTimeline } from "@/lib/timeline";
 
 function message(error: unknown) {
   return error instanceof ApiError ? error.message : "The archive could not be read.";
+}
+
+function supportedClaims(claims: ExplainResponse["claims"]) {
+  return claims.filter((claim) => claim.text.trim().length > 0 && claim.quotes.some((quote) => quote.quote.trim().length > 0));
 }
 
 export default function App() {
@@ -72,11 +77,16 @@ export default function App() {
     explanationLoads.current.add(id);
     setExplanationBySymbol((current) => ({ ...current, [id]: { status: "loading" } }));
     void getStoredExplanation(id).then((saved) => {
+      if (!saved) {
+        setExplanationBySymbol((current) => ({ ...current, [id]: { status: "idle" } }));
+        return;
+      }
+      const claims = supportedClaims(saved.claims);
       setExplanationBySymbol((current) => ({
         ...current,
-        [id]: saved
-          ? { status: "explained", summary: saved.summary, claims: saved.claims }
-          : { status: "idle" },
+        [id]: claims.length
+          ? { status: "explained", summary: claims.length === saved.claims.length ? saved.summary : claims.map((claim) => claim.text).join(" "), claims }
+          : { status: "insufficient" },
       }));
     }).catch((error: unknown) => {
       setExplanationBySymbol((current) => ({
@@ -93,10 +103,11 @@ export default function App() {
     setExplanationBySymbol((current) => ({ ...current, [id]: { status: "busy" } }));
     try {
       const result = await postExplanation(id);
+      const claims = supportedClaims(result.claims);
       setExplanationBySymbol((current) => ({
         ...current,
-        [id]: result.status === "explained" && result.summary !== null
-          ? { status: "explained", summary: result.summary, claims: result.claims }
+        [id]: result.status === "explained" && result.summary !== null && claims.length > 0
+          ? { status: "explained", summary: claims.length === result.claims.length ? result.summary : claims.map((claim) => claim.text).join(" "), claims }
           : { status: "insufficient" },
       }));
     } catch (error) {
@@ -110,6 +121,18 @@ export default function App() {
   const retryDetails = () => { if (selectedId !== null) void loadDetails(selectedId); };
   const activeSymbol = symbols.find((item) => item.id === selectedId) ?? null;
   const activeExplanation = selectedId === null ? undefined : explanationBySymbol[selectedId];
+  const activeTimeline = lineage ? makeTimeline(lineage.versions, lineage.symbol.status) : null;
+  const historicalEventCount = activeTimeline?.points.filter((point) => !point.baseline && point.kind !== "carried").length ?? 0;
+  const displayedPath = activeSymbol?.current_path ?? activeTimeline?.points.at(-1)?.path ?? "Path unavailable";
+  const eventKindCounts = activeTimeline?.points.reduce<Record<string, number>>((counts, point) => {
+    if (!point.baseline && point.kind !== "carried") counts[point.kind] = (counts[point.kind] ?? 0) + 1;
+    return counts;
+  }, {}) ?? {};
+  const selectEvidenceEvent = (kind: string) => {
+    if (eventKindCounts[kind] !== 1) return;
+    const point = activeTimeline?.points.find((item) => item.kind === kind && !item.baseline);
+    if (point) setSelectedEvent({ sha: point.commitSha, kind });
+  };
   return <MotionConfig reducedMotion={motionOn ? "never" : "user"}><TooltipProvider>
     <div className={`app-shell ${motionOn ? "" : "motion-disabled"}`}>
       <FieldIndex repositories={repositories} repositoryId={repositoryId} onRepositoryChange={setRepositoryId} symbols={symbols} selectedId={selectedId} onSelectSymbol={(id) => { setSelectedId(id); setSelectedEvent(null); }} query={query} onQueryChange={setQuery} loading={repositoryLoading || symbolsLoading} error={repositoryError ?? symbolsError} onRetry={() => repositoryError ? void loadRepositories() : repositoryId !== null && void loadSymbols(repositoryId)} motionOn={motionOn} onMotionChange={toggleMotion} />
@@ -117,7 +140,7 @@ export default function App() {
         <header className="main-topline"><span>FIELD NOTE <b>№ 001</b></span><span>SYMBOL ARCHIVE <i>·</i> PYTHON LINEAGE</span></header>
         <AnimatePresence mode="wait">
           {repositoryLoading ? <motion.div key="loading" className="detail-loading" variants={contentVariants} initial="hidden" animate="visible" exit={{ opacity: 0 }}><Skeleton className="h-5 w-44" /><Skeleton className="h-16 w-2/3" /><Skeleton className="h-64 w-full" /></motion.div> : repositoryError || symbolsError ? <motion.div key="error" className="state-panel" initial={{ opacity: 0 }} animate={{ opacity: 1 }}><AlertTriangle /><p>{repositoryError ?? symbolsError}</p><Button variant="outline" onClick={() => repositoryError ? void loadRepositories() : repositoryId !== null && void loadSymbols(repositoryId)}><RotateCw />Retry</Button></motion.div> : !repositories.length ? <motion.div key="no-repositories" className="state-panel" initial={{ opacity: 0 }} animate={{ opacity: 1 }}><Pickaxe /><h1>No field sites yet</h1><p>Index a repository to begin tracing its symbols through time.</p></motion.div> : !symbolsLoading && !symbols.length ? <motion.div key="no-symbols" className="state-panel" initial={{ opacity: 0 }} animate={{ opacity: 1 }}><Pickaxe /><h1>No specimens found</h1><p>This repository has no indexed symbols to inspect.</p></motion.div> : activeSymbol ? <motion.div key={activeSymbol.id} className="specimen-detail" initial={{ opacity: 0, x: 10 }} animate={{ opacity: 1, x: 0 }} exit={{ opacity: 0, x: -8 }} transition={selectionTransition}>
-            <div className="specimen-title"><p className="eyebrow">Specimen <span>/{activeSymbol.kind}</span></p><h1><motion.span layoutId={`symbol-title-${activeSymbol.id}`}>{activeSymbol.qualified_name}</motion.span></h1><div className="title-meta"><span>{activeSymbol.current_path ?? "path not recorded"}</span><span className={`status-tag ${activeSymbol.status}`}>{activeSymbol.status}</span><span>SYMBOL ID {String(activeSymbol.id).padStart(4, "0")}</span></div></div>
+            <div className="specimen-title"><p className="eyebrow">Symbol investigation</p><h1><motion.span layoutId={`symbol-title-${activeSymbol.id}`}>{activeSymbol.qualified_name}</motion.span></h1><div className="title-meta"><span className="kind-label">{activeSymbol.kind}</span><span className={`status-tag ${activeSymbol.status === "deleted" ? "removed" : "alive"}`}>{activeSymbol.status === "deleted" ? "REMOVED" : "ALIVE"}</span><span className="title-path"><small>{activeSymbol.status === "deleted" ? "LAST PATH" : "CURRENT PATH"}</small><code>{displayedPath}</code></span><span>SYMBOL ID {String(activeSymbol.id).padStart(4, "0")}</span>{lineage && <span>{lineage.versions.length} VERSIONS</span>}{activeTimeline && <span>{historicalEventCount} EVENTS</span>}</div></div>
             {detailLoading ? <div className="detail-loading"><Skeleton className="h-5 w-44" /><Skeleton className="h-60 w-full" /><Skeleton className="h-28 w-full" /></div> : detailError ? <div className="state-panel detail-error"><AlertTriangle /><p>{detailError}</p><Button variant="outline" onClick={retryDetails}><RotateCw />Retry record</Button></div> : lineage && extractive ? <div className="detail-content"><CrossSection data={lineage} evidenceCount={extractive.extracts.length} selectedSha={selectedEvent?.sha ?? null} onSelect={(sha, kind) => setSelectedEvent({ sha, kind })} /></div> : null}
           </motion.div> : <motion.section key="intro" className="intro-screen" initial="hidden" animate="visible" exit={{ opacity: 0 }}>
             <p className="intro-kicker">A CODE ARCHAEOLOGY TOOL</p>
@@ -142,7 +165,7 @@ export default function App() {
       </motion.main>
       <aside className="evidence-panel" aria-label="Evidence and interpretation">
         <div className="evidence-head"><span className="panel-kicker">SOURCE MATERIAL</span><h2>Evidence</h2><p>Developer words stay verbatim. Model interpretation is marked separately.</p></div>
-        {detailLoading ? <div className="evidence-wait">Loading evidence…</div> : detailError ? <p className="evidence-wait">Evidence could not be loaded.</p> : extractive ? <Unearthed data={extractive} selectedEvent={selectedEvent?.kind ?? null} /> : <div className="evidence-wait">Select a symbol to read its history and sources.</div>}
+        {detailLoading ? <div className="evidence-wait">Loading evidence…</div> : detailError ? <p className="evidence-wait">Evidence could not be loaded.</p> : extractive ? <Unearthed data={extractive} selectedEvent={selectedEvent?.kind ?? null} eventKindCounts={eventKindCounts} onSelectEvent={selectEvidenceEvent} /> : <div className="evidence-wait">Select a symbol to read its history and sources.</div>}
         <div className="evidence-divider" />
         {activeSymbol && <WhyChanged state={activeExplanation ?? { status: "loading" }} deleted={activeSymbol.status === "deleted"} onGenerate={() => void generateExplanation(activeSymbol.id)} onRetry={() => activeExplanation?.status === "error" && activeExplanation.retryAction === "load" ? loadExplanation(activeSymbol.id, true) : void generateExplanation(activeSymbol.id)} />}
       </aside>

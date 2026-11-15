@@ -78,8 +78,8 @@ describe("field notebook", () => {
     vi.stubGlobal("fetch", routeFetch({ post: () => pending }));
     render(<App />); await digIntoFirstSymbol();
     fireEvent.click(await screen.findByRole("button", { name: "Generate explanation" }));
-    expect(await screen.findByRole("heading", { name: "Reading the quotes…" })).toBeTruthy();
-    expect(screen.getByRole("button", { name: "Writing…" })).toHaveProperty("disabled", true);
+    expect(await screen.findByRole("heading", { name: "Generating interpretation" })).toBeTruthy();
+    expect(screen.getByRole("button", { name: "In progress" })).toHaveProperty("disabled", true);
     resolvePost(await response(explanation));
     expect(await screen.findByText("The function avoids repeated work.")).toBeTruthy();
     expect(screen.getByText("Verified quote from commit 333c28d:")).toBeTruthy();
@@ -90,7 +90,7 @@ describe("field notebook", () => {
     vi.stubGlobal("fetch", routeFetch({ post: () => response(insufficient) }));
     render(<App />); await digIntoFirstSymbol();
     fireEvent.click(await screen.findByRole("button", { name: "Generate explanation" }));
-    expect(await screen.findByRole("heading", { name: "Not enough evidence" })).toBeTruthy();
+    expect(await screen.findByRole("heading", { name: "Not enough verified evidence" })).toBeTruthy();
     expect(screen.queryByText("The function avoids repeated work.")).toBeNull();
     expect(screen.getByRole("button", { name: "Try again" })).toBeTruthy();
   });
@@ -101,7 +101,7 @@ describe("field notebook", () => {
     render(<App />); await digIntoFirstSymbol();
     fireEvent.click(await screen.findByRole("button", { name: "Generate explanation" }));
     expect(await screen.findByText("local model unavailable")).toBeTruthy();
-    expect(screen.getByText("Check that the backend is running and that Ollama is running if you use the local model.")).toBeTruthy();
+    expect(screen.getByText("History and original evidence remain available. You can retry the explanation.")).toBeTruthy();
     fireEvent.click(screen.getByRole("button", { name: "Retry" }));
     expect(await screen.findByText("The function avoids repeated work.")).toBeTruthy();
   });

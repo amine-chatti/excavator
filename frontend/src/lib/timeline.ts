@@ -128,7 +128,7 @@ export function filterSymbols(
   const needle = query.trim().toLocaleLowerCase();
   if (!needle) return [...symbols];
   return symbols.filter((symbol) =>
-    [symbol.qualified_name, symbol.current_path ?? "", symbol.kind, symbol.status]
+    [symbol.qualified_name, symbol.current_path ?? "", symbol.kind, symbol.status, symbol.status === "deleted" ? "removed" : "alive"]
       .some((value) => value.toLocaleLowerCase().includes(needle)),
   );
 }

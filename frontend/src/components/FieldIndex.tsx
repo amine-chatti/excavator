@@ -20,7 +20,8 @@ interface Props {
 }
 
 export function FieldIndex(props: Props) {
-  const filtered = useMemo(() => filterSymbols(props.symbols, props.query), [props.symbols, props.query]);
+  const [kindFilter, setKindFilter] = useState<SymbolRecord["kind"] | "all">("all");
+  const filtered = useMemo(() => filterSymbols(props.symbols, props.query).filter((symbol) => kindFilter === "all" || symbol.kind === kindFilter), [props.symbols, props.query, kindFilter]);
   const selectedRepo = props.repositories.find((repo) => repo.id === props.repositoryId);
   const [drawerOpen, setDrawerOpen] = useState(false);
   const searchRef = useRef<HTMLInputElement>(null);
@@ -52,12 +53,13 @@ export function FieldIndex(props: Props) {
       <Separator className="rail-rule" />
       <div className="symbol-heading"><span className="eyebrow">Symbols</span><Badge variant="outline">{props.symbols.length}</Badge></div>
       <div className="search-wrap"><Search size={14} aria-hidden="true" /><Input ref={searchRef} aria-label="Search symbols" placeholder="Name, path, kind…" value={props.query} onChange={(event) => props.onQueryChange(event.target.value)} /></div>
+      <div className="kind-filters" aria-label="Filter symbols by kind">{(["all", "function", "class", "method"] as const).map((kind) => <button type="button" key={kind} className={kindFilter === kind ? "active" : ""} aria-pressed={kindFilter === kind} onClick={() => setKindFilter(kind)}>{kind === "all" ? "All" : `${kind[0]?.toUpperCase()}${kind.slice(1)}`}</button>)}</div>
       <ScrollArea className="specimen-scroll">
         {props.loading ? <div className="loading-list" aria-label="Loading symbols">{[0, 1, 2, 3, 4].map((n) => <Skeleton key={n} className="h-[62px] w-full" />)}</div> : props.error ? <div className="rail-message"><p>{props.error}</p><Button variant="outline" size="sm" onClick={props.onRetry}><RotateCw /> Retry</Button></div> : filtered.length ? <div className="specimen-list">
           <AnimatePresence initial={false}>{filtered.map((symbol, index) => <motion.button layout key={symbol.id} className={`specimen-row ${props.selectedId === symbol.id ? "is-selected" : ""}`} onClick={() => props.onSelectSymbol(symbol.id)} initial={{ opacity: 0, y: 7 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -5 }} transition={{ duration: 0.2, delay: Math.min(index * 0.018, 0.12) }}>
             {props.selectedId === symbol.id && <motion.span className="selection-mark" layoutId="selected-specimen" />}
             <span className="specimen-main"><motion.span layoutId={`symbol-title-${symbol.id}`} className="specimen-name">{symbol.qualified_name}</motion.span><span className="specimen-path">{symbol.current_path ?? "location unknown"}</span></span>
-            <span className="specimen-meta"><Badge variant="outline">{symbol.kind}</Badge><span className={`status-dot ${symbol.status}`} title={symbol.status} /></span>
+            <span className="specimen-meta"><Badge variant="outline" className={`kind-badge kind-${symbol.kind}`}>{symbol.kind}</Badge><span className={`symbol-status ${symbol.status}`}><i />{symbol.status === "deleted" ? "Removed" : "Alive"}</span></span>
           </motion.button>)}</AnimatePresence>
         </div> : <div className="rail-empty"><Layers3 size={18} /><p>{props.symbols.length ? "No symbols match this search." : "No symbols indexed yet."}</p></div>}
       </ScrollArea>
