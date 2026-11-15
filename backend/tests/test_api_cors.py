@@ -5,7 +5,7 @@ from fastapi.testclient import TestClient
 from excavator.api.main import create_app
 
 
-def test_cors_allows_only_the_two_local_frontend_origins_for_get() -> None:
+def test_cors_allows_get_and_explain_post_only_from_local_frontends() -> None:
     allowed_origins = ("http://localhost:5173", "http://127.0.0.1:5173")
     with TestClient(create_app()) as client:
         for origin in allowed_origins:
@@ -29,13 +29,42 @@ def test_cors_allows_only_the_two_local_frontend_origins_for_get() -> None:
             },
         )
         assert get_preflight.status_code == 200
-        assert get_preflight.headers["access-control-allow-methods"] == "GET"
+        assert get_preflight.headers["access-control-allow-methods"] == "GET, POST"
 
         post_preflight = client.options(
-            "/health",
+            "/symbols/1/explain",
             headers={
                 "Origin": allowed_origins[0],
                 "Access-Control-Request-Method": "POST",
+                "Access-Control-Request-Headers": "content-type",
             },
         )
-        assert post_preflight.status_code == 400
+        assert post_preflight.status_code == 200
+        assert post_preflight.headers["access-control-allow-origin"] == allowed_origins[0]
+        assert post_preflight.headers["access-control-allow-methods"] == "GET, POST"
+        allowed_headers = {
+            header.strip().lower()
+            for header in post_preflight.headers["access-control-allow-headers"].split(",")
+        }
+        assert "content-type" in allowed_headers
+
+        disallowed_preflight = client.options(
+            "/symbols/1/explain",
+            headers={
+                "Origin": "http://localhost:5174",
+                "Access-Control-Request-Method": "POST",
+                "Access-Control-Request-Headers": "content-type",
+            },
+        )
+        assert disallowed_preflight.status_code == 400
+        assert "access-control-allow-origin" not in disallowed_preflight.headers
+
+        for method in ("PUT", "DELETE"):
+            denied_preflight = client.options(
+                "/symbols/1/explain",
+                headers={
+                    "Origin": allowed_origins[0],
+                    "Access-Control-Request-Method": method,
+                },
+            )
+            assert denied_preflight.status_code == 400
