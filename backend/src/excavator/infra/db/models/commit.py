@@ -26,4 +26,4 @@ class Commit(Base):
     author_login: Mapped[str | None] = mapped_column(String, nullable=True)
     authored_at: Mapped[datetime] = mapped_column(UTCDateTime(), nullable=False)
     parent_shas: Mapped[list[str]] = mapped_column(JSON, nullable=False)
-    url: Mapped[str] = mapped_column(String, nullable=False)
+    url: Mapped[str | None] = mapped_column(String, nullable=True)

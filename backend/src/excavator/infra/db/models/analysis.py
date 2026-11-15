@@ -26,6 +26,10 @@ class Analysis(Base):
             name="reason_matches_outcome",
         ),
         CheckConstraint("length(analyzed_commit_sha) = 40", name="commit_sha_length"),
+        CheckConstraint(
+            "explanation_summary IS NULL OR outcome = 'evidence_found'",
+            name="explanation_summary_outcome",
+        ),
     )
 
     id: Mapped[int] = mapped_column(primary_key=True)
@@ -37,6 +41,7 @@ class Analysis(Base):
     analyzed_commit_sha: Mapped[str] = mapped_column(String(40), nullable=False)
     outcome: Mapped[str] = mapped_column(Text, nullable=False)
     insufficient_reason: Mapped[str | None] = mapped_column(Text, nullable=True)
+    explanation_summary: Mapped[str | None] = mapped_column(Text, nullable=True)
     created_at: Mapped[datetime] = mapped_column(
         UTCDateTime(),
         default=_utc_now,
