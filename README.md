@@ -152,4 +152,4 @@ enabling additional repository sources.
 
 ## License
 
-No license has been declared yet.
+Built by Amine Chatti · MIT License
