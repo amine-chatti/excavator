@@ -36,6 +36,7 @@ function demoFetch(withExplanation: boolean) {
     const path = new URL(String(input), "http://localhost").pathname;
     const method = init?.method ?? "GET";
     if (path === "/demo-data/repositories.json") return jsonResponse([repository]);
+    if (path === "/demo-data/ai-symbols.json") return jsonResponse(withExplanation ? [1] : []);
     if (path === "/demo-data/repositories/1/symbols.json") return jsonResponse(symbols);
     if (path === "/demo-data/symbols/1/lineage.json") return jsonResponse(lineage);
     if (path === "/demo-data/symbols/1/extractive-explanation.json") return jsonResponse(extractive);

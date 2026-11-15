@@ -120,6 +120,9 @@ button:focus-visible, input:focus-visible, [tabindex]:focus-visible, [data-slot=
 .kind-filters button { padding: 5px 7px; border: 1px solid var(--paper); background: transparent; color: var(--paper); font: 8px "JetBrains Mono Variable",monospace; cursor: pointer; }
 .kind-filters button.active { background: var(--paper); color: var(--ink); }
 .kind-filters button:focus-visible { outline-color: var(--paper); }
+.ai-filter-toggle { display: flex; align-items: center; gap: 7px; margin: 8px 0 1px; color: var(--signal); font: 8px "JetBrains Mono Variable",monospace; cursor: pointer; }
+.ai-filter-toggle input { accent-color: var(--signal); }
+.ai-marker { display: inline-flex; align-items: center; margin-left: 6px; padding: 2px 4px; border: 1px solid var(--signal); color: var(--signal); font: 700 7px "JetBrains Mono Variable",monospace; letter-spacing: .04em; vertical-align: middle; }
 .kind-badge.kind-function { border-left: 3px solid var(--paper); }
 .kind-badge.kind-class { border-left: 3px double var(--paper); }
 .kind-badge.kind-method { border-left: 3px dashed var(--paper); }

@@ -14,6 +14,7 @@ import { contentVariants, mainVariants, selectionTransition } from "@/motion";
 import { MotionConfig } from "motion/react";
 import { makeTimeline } from "@/lib/timeline";
 import { isDemoMode } from "@/lib/demo-mode";
+import { getDemoAiSymbolIds } from "@/lib/demo-api";
 
 function message(error: unknown) {
   return error instanceof ApiError ? error.message : "The archive could not be read.";
@@ -44,11 +45,20 @@ export default function App() {
   const [detailLoading, setDetailLoading] = useState(false);
   const [repositoryError, setRepositoryError] = useState<string | null>(null);
   const [symbolsError, setSymbolsError] = useState<string | null>(null);
+  const [aiIndexError, setAiIndexError] = useState<string | null>(null);
+  const [demoAiSymbolIds, setDemoAiSymbolIds] = useState<Set<number>>(() => new Set());
   const [detailError, setDetailError] = useState<string | null>(null);
   const [lineage, setLineage] = useState<LineageResponse | null>(null);
   const [extractive, setExtractive] = useState<ExtractiveExplanationResponse | null>(null);
   const [explanationBySymbol, setExplanationBySymbol] = useState<Record<number, ExplanationPanelState>>({});
   const explanationLoads = useRef(new Set<number>());
+
+  useEffect(() => {
+    if (!demoMode) return;
+    void getDemoAiSymbolIds().then(setDemoAiSymbolIds).catch((error) => {
+      setAiIndexError(message(error));
+    });
+  }, [demoMode]);
 
   const loadRepositories = useCallback(async () => {
     setRepositoryLoading(true); setRepositoryError(null);
@@ -157,7 +167,7 @@ export default function App() {
   };
   return <MotionConfig reducedMotion={motionOn ? "never" : "user"}><TooltipProvider>
     <div className={`app-shell ${motionOn ? "" : "motion-disabled"}`}>
-      <FieldIndex repositories={repositories} repositoryId={repositoryId} onRepositoryChange={setRepositoryId} symbols={symbols} selectedId={selectedId} onSelectSymbol={(id) => { setSelectedId(id); setSelectedEvent(null); }} query={query} onQueryChange={setQuery} loading={repositoryLoading || symbolsLoading} error={repositoryError ?? symbolsError} onRetry={() => repositoryError ? void loadRepositories() : repositoryId !== null && void loadSymbols(repositoryId)} motionOn={motionOn} onMotionChange={toggleMotion} demoMode={demoMode} />
+      <FieldIndex repositories={repositories} repositoryId={repositoryId} onRepositoryChange={setRepositoryId} symbols={symbols} selectedId={selectedId} onSelectSymbol={(id) => { setSelectedId(id); setSelectedEvent(null); }} query={query} onQueryChange={setQuery} loading={repositoryLoading || symbolsLoading} error={repositoryError ?? symbolsError ?? aiIndexError} onRetry={() => repositoryError ? void loadRepositories() : repositoryId !== null && void loadSymbols(repositoryId)} motionOn={motionOn} onMotionChange={toggleMotion} demoMode={demoMode} demoAiSymbolIds={demoAiSymbolIds} />
       <motion.main className="field-main" variants={mainVariants} initial="hidden" animate="visible">
         <header className="main-topline"><span>FIELD NOTE <b>№ 001</b></span><span>SYMBOL ARCHIVE <i>·</i> PYTHON LINEAGE</span></header>
         <AnimatePresence mode="wait">

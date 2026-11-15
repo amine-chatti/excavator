@@ -1,5 +1,7 @@
 import { ApiError } from "@/lib/api-error";
 
+let aiSymbolIdsPromise: Promise<Set<number>> | null = null;
+
 function fixturePath(path: string): string {
   const endpoint = path.split("?", 1)[0];
   if (endpoint === "/repositories") return "/repositories.json";
@@ -15,6 +17,26 @@ function fixturePath(path: string): string {
   }
 
   throw new ApiError("This request is not available in the sample demo.", 404);
+}
+
+export function getDemoAiSymbolIds(): Promise<Set<number>> {
+  if (aiSymbolIdsPromise) return aiSymbolIdsPromise;
+  const baseUrl = `${import.meta.env.BASE_URL}demo-data`.replace(/\/$/, "");
+  aiSymbolIdsPromise = fetch(`${baseUrl}/ai-symbols.json`, {
+    headers: { Accept: "application/json" },
+  }).then(async (response) => {
+    if (!response.ok) throw new ApiError(`The saved AI index returned ${response.status}.`, response.status);
+    const data: unknown = await response.json();
+    if (!Array.isArray(data) || data.some((id) => !Number.isInteger(id) || id < 1)) {
+      throw new ApiError("The saved AI index is not valid.");
+    }
+    return new Set(data as number[]);
+  }).catch((error) => {
+    aiSymbolIdsPromise = null;
+    if (error instanceof ApiError) throw error;
+    throw new ApiError("The saved AI index could not be reached.");
+  });
+  return aiSymbolIdsPromise;
 }
 
 export async function requestDemoJson<T>(
